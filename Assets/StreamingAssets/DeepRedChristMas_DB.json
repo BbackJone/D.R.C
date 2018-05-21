@@ -1,0 +1,44 @@
+{
+  "Zombie": [
+    {
+      "Name": "SA_Zombie_Businessman",
+      "Hp": 25,
+      "Speed": 2,
+      "AttackDamage": 1.5,
+      "AttackRange": 2,
+      "AttackSpeed": 2.5
+    }
+  ],
+  "Weapon": [
+    {
+      "Name": "Katana",
+      "MaxBullet": 0,
+      "Recoil": 0,
+      "Weight": 5,
+      "Shotrate": 1,
+      "Bulletsort": "Nobullet",
+      "Autoshot": false,
+      "AniTrigger": "Attack"
+    },
+    {
+      "Name": "Handgun",
+      "MaxBullet": 12,
+      "Recoil": 10,
+      "Weight": 7,
+      "Shotrate": 0,
+      "Bulletsort": "Handgun_Bullet",
+      "Autoshot": false,
+      "AniTrigger": "Handgun_Attack"
+    },
+    {
+      "Name": "Rifle",
+      "MaxBullet": 30,
+      "Recoil": 7,
+      "Weight": 15,
+      "Shotrate": 0.2,
+      "Bulletsort": "Handgun_Bullet",
+      "Autoshot": true,
+      "AniTrigger": "Rifle_Attack"
+    }
+  ]
+}
