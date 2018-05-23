@@ -8,10 +8,10 @@ public class PlayerAction : MonoBehaviour {
     private float m_AttackTimer;
 
     public bool m_Death { get; set; }
-    public float m_DeathTimer { get; set; }
+    public float m_DeathTimer { get; set; }     //time between player's death and player's extinction.
 
-    public MyButton m_AttackButton;
-
+    public MyButton m_AttackButton;     //This is necessary to determine 
+                                        //whether you will allow automatic firing of weapons.
 
 	// Use this for initialization
     void Awake()
@@ -60,7 +60,6 @@ public class PlayerAction : MonoBehaviour {
                 else
                 {
                     this.gameObject.SetActive(false);
-                    m_Data.m_Active = false;
                 }
 
             }
@@ -68,7 +67,6 @@ public class PlayerAction : MonoBehaviour {
             yield return null;
         }
     }
-
 
     IEnumerator CountTime()
     {
@@ -107,7 +105,7 @@ public class PlayerAction : MonoBehaviour {
         //FireBullet per Shotrate if bullet exist
         if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
             && m_Data.m_WeaponInhand.m_AmmoBulletNum > 0
-            || m_Data.m_WeaponInhand.m_ObjName == "Katana")
+            || m_Data.m_WeaponInhand.m_ObjName == "Katana") //(katana doesn't have buttlet)
         {
             m_AttackTimer = 0f;
             m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
@@ -133,6 +131,7 @@ public class PlayerAction : MonoBehaviour {
             {
                 m_Data.m_Ani.SetTrigger("WeaponSwap");
                 m_Data.m_WeaponInhand.gameObject.SetActive(false);
+
                 if (i == m_Data.m_Weapons.Count - 1)
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
@@ -155,6 +154,7 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
+    //if weapon allows auto firing, change the property of attack button to "continuous"
     void Check_WeaponisAuto()
     {
         if (m_Data.m_WeaponInhand.m_Autoshot)
@@ -177,6 +177,7 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
+    //When reload motion is end, charge bullet in weapon.
     void ChargeBullet_Inweapon()
     {
         if (m_Data.m_WeaponInhand)

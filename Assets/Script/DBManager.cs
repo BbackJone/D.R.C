@@ -13,7 +13,6 @@ public class DBManager : MonoBehaviour {
     {
         m_ZomebieDB = new Dictionary<string, ZomebieDB>();
         m_WeaponDB = new Dictionary<string, WeaponDB>();
-        Debug.Log("여기는 DBManager의 생성자");
     }
 
     /*void Awake()

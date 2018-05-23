@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum ObjType
+{
+    OBJ_PLAYER,
+    OBJ_ENEMY,
+    OBJ_WEAPON,
+    OBJ_BULLET,
+    OBJ_COLLEAGUE,
+    OBJ_ETC,    //파티클 등등
+}
+
+
 public enum STATE_ID
 {
     STATE_LOGO,

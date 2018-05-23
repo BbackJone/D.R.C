@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is a variable for getting information from the database.
 [System.Serializable]
 public struct ZomebieDB
 {
@@ -17,23 +18,21 @@ public class ZombieData : MonoBehaviour
 {
     private ObjectManager m_ObjMgr;
 
+    //this is information about this
     public int m_Hp { get; set; }
     public float m_Speed { get; set; }
     public ObjType m_Type { get; set; }
     public bool m_Death { get; set; }
     public float m_DeathTimer { get; set; }
     public string m_ObjName { get; set; }
-
-    //Here
     public int m_MaxHp { get; set; }
 
     public float m_AttackSpeed { get; set; }
     public float m_AttackTimer { get; set; }
     public int m_AttackDamage { get; set; }
     public float m_AttackRange { get; set; }
-    public int m_Price { get; set; }
+    public int m_Price { get; set; }       //Money that is got when player kill this.
 
-    // Use this for initialization
     void Awake()
     {
         m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();

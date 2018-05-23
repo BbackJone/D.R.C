@@ -20,24 +20,6 @@ public class ObjectsWithTag
         m_Bulletlist = new List<Bullet>();
     }
 
-    /*void Start()
-    {
-        / *GameObject[] _Players = GameObject.FindGameObjectsWithTag("Player");
-        for (int i = 0; i < _Players.Length; i++ )
-        {
-            PlayerMove _obj = _Players[i].GetComponent<PlayerMove>();
-            m_Playerlist.Add(_obj);
-        }
-
-
-        GameObject[] _Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        for (int i = 0; i < _Enemies.Length; i++)
-        {
-            ZomebieMove _obj = _Enemies[i].GetComponent<ZomebieMove>();
-            m_Enemylist.Add(_obj);
-        }* /
-    }*/
-
     public void AddObject(GameObject _obj, string _tag)
     {
         if (_tag == "Player")

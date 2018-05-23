@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.AI;   //this for NavMeshAgent
 
 public class ZombieAI : MonoBehaviour {
 
@@ -9,7 +9,7 @@ public class ZombieAI : MonoBehaviour {
     private ZombieInteraction m_Interaction;
     private Animator m_Ani;
     private Collider m_CapsuleCol;
-    private NavMeshAgent m_Nav;
+    private NavMeshAgent m_Nav;     //for finding route or move zombie
 
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
@@ -33,6 +33,7 @@ public class ZombieAI : MonoBehaviour {
         StartCoroutine("NavMove");
         StartCoroutine("DeathCheck");
     }
+
 	// Use this for initialization
 	void Start () {
         m_Nav.speed = m_Data.m_Speed;
@@ -66,6 +67,7 @@ public class ZombieAI : MonoBehaviour {
         }
     }
 
+    //Move toward target
     IEnumerator NavMove()
     {
         while (true)
@@ -90,6 +92,7 @@ public class ZombieAI : MonoBehaviour {
         }
     }
 
+    //FindTarget per 5 seconds.
     private IEnumerator FindTarget()
     {
         while (true)

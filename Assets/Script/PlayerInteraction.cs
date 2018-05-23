@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
 
-
     private ObjectManager m_ObjMgr;
     private PlayerData m_Data;
 
@@ -22,9 +21,10 @@ public class PlayerInteraction : MonoBehaviour {
     void Start()
     {
         StartCoroutine("PlayerStateCheck");
-        ObjListAdd();
+        ObjListAdd();       //Put this object at ObjMgr.
     }
 
+    //If player dead and become inactive, do game over check.
     IEnumerator PlayerStateCheck()
     {
         while (true)

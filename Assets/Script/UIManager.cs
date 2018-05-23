@@ -10,9 +10,9 @@ public class UIManager : MonoBehaviour {
 
     private ObjectManager m_ObjMgr;
     public PlayerData m_Player;
-    private Canvas m_Canvas;
+    private Canvas m_Canvas;        //the place system draws user interfaces
 
-    public GameObject m_GameOver;
+    public GameObject m_GameOver;       //gameover picture
     public Text m_BulletNum;
     public Text m_Hp;
 
@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour {
         
     }
 
+    //Get player's bullet remained and HP.
     IEnumerator ShowPlayerData()
     {
         while(true)
@@ -43,21 +44,23 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    //Activate "Game over"UI when player die.
     public void ActiveUI(string _str)
     {
         m_GameOver.SetActive(true);
     }
 
+    //change scene
     public void NextScene(string _Str)
     {
           SceneManager.LoadScene(_Str);
     }
 
+    //change scene with delay
     public IEnumerator NextScene(string _Str, float _delay)
     {
         while (true)
         {
-            Debug.Log("UIMgr.NextScene");
             if (m_SceneTimer < _delay)
             {
                 m_SceneTimer += Time.deltaTime;

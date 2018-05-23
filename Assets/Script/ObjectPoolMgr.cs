@@ -17,7 +17,7 @@ public class ObjectPoolMgr : MonoBehaviour {
     public Dictionary<string, List<GameObject>> m_PooledObject { get; set; }
 
     private Vector3[] m_PoolingPos;
-    private Transform m_Directory_PooledObject;
+    private Transform m_Directory_PooledObject;     //Forder that contains pooledObjects.
 
     //test
     private float m_Timer = 0f;
@@ -159,7 +159,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         //Pooling 을 하는 작업이다.
         foreach(KeyValuePair<string, ObjectToPool> iter in m_ObjectToPool)
         {
-            ObjectToPool itemToPool = iter.Value;            
+            ObjectToPool itemToPool = iter.Value;
             for (int j = 0; j < itemToPool.AmountToPool; j++)
             {
                 GameObject Obj = Instantiate(itemToPool.Obj);

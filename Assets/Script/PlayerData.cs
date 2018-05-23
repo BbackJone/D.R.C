@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour {
 
+    //Player's values
     public float m_Speed { get; set; }
-    public Vector3 m_Move { get; set; }
+    public Vector3 m_Move { get; set; }  //current speed value
     public int m_Money { get; set; }
     public int m_Hp { get; set; }
     public int m_MaxHp { get; set; }
-    public bool m_Active { get; set; }
     public ObjType m_Type { get; set; }
 
+    //About weapons
     public List<Weapon> m_Weapons { get; set; }
-    public Weapon m_WeaponInhand { get; set; }
+    public Weapon m_WeaponInhand { get; set; }      //플레이어가 현재 들고있는 무기
     public Transform rightHand;
     public bool m_Reloading { get; set; }       //플레이어가 장전 중일때는 공격을 할수 없습니다.
 
+    //Other components
     public Camera m_Camera { get; set; }
     public Animator m_Ani { get; set; }
     public Rigidbody m_Rigidbody { get; set; }
-
-    public KeyDef m_KeyInput { get; set; }
 
     void Awake()
     {
@@ -31,8 +31,10 @@ public class PlayerData : MonoBehaviour {
 
         m_Weapons = new List<Weapon>();
 
+        //Get transform of righthand
         rightHand = transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(0);
 
+        //오른손의 자식으로 설정된 무기들을 m_Weapons에 추가하고, 비활성화 시킨다.
         for (int i = 0; i < rightHand.childCount; i++)
         {
             Transform weap = rightHand.GetChild(i);
@@ -49,7 +51,6 @@ public class PlayerData : MonoBehaviour {
     void OnEnable()
     {
         m_Hp = m_MaxHp;
-        m_Active = true;
     }
 
     void Start()

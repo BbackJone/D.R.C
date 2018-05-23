@@ -7,13 +7,14 @@ public class MyButton : MonoBehaviour {
 
     private ButtonMgr BtnMgr;
     public string EventName;
-    private bool Pressing_Check = false;
-    public bool bcontinuous_Button;
+    private bool Pressing_Check = false;    //Indicates if this button is pressed.
+    public bool bcontinuous_Button;     //Indicates if there is continuous effect when pressed
 
     void Awake()
     {
         BtnMgr = transform.parent.GetComponent<ButtonMgr>();
 
+        //**************I brought it from unity manual about button event*************
         EventTrigger trigger = GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerDown;
@@ -24,6 +25,7 @@ public class MyButton : MonoBehaviour {
         entry.eventID = EventTriggerType.PointerUp;
         entry.callback.AddListener((data) => { MouseUp(); });
         trigger.triggers.Add(entry);
+        //**********************************************************************
     }
 
     void Start()
@@ -34,6 +36,8 @@ public class MyButton : MonoBehaviour {
         }
     }
 
+    //if bcontinous_Button is true, while button pressed here
+    //send message to BtnMgr continuously.
     IEnumerator SendMessage()
     {
         while (true)
@@ -47,6 +51,7 @@ public class MyButton : MonoBehaviour {
         }
     }
 
+    //if bcontinuous_Button is false here send message to BtnMgr only once.
     public void MouseDown()
     {
         if (bcontinuous_Button)
@@ -64,6 +69,7 @@ public class MyButton : MonoBehaviour {
         Pressing_Check = false;
     }
 
+    //change property of button according to weapon kind.
     public void Change_Continuous_Attrib(bool _dat)
     {
         bcontinuous_Button = _dat;

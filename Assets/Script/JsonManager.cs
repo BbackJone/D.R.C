@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
+//this class read jason file and makes DB data.
 
 [System.Serializable]
 public class GameDB
@@ -45,7 +45,7 @@ public class JsonManager : MonoBehaviour {
     {
         ZomebieDB[] TempZomebie = m_GameDB.Zombie;
         WeaponDB[] TempWeapon = m_GameDB.Weapon;
-        Debug.Log("SetDB : TempWeapon.Count == " + TempWeapon.Length);
+
         for (int i = 0; i < TempZomebie.Length; i++)
             m_ObjMgr.m_DBMgr.m_ZomebieDB.Add(TempZomebie[i].Name, TempZomebie[i]);
         for (int i = 0; i < TempWeapon.Length; i++)

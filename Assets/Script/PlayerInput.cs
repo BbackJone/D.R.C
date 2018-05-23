@@ -3,42 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-[System.Flags]
-public enum KeyDef
-{
-    KEY_FIRE            = 0x1,
-    KEY_RELOAD          = 0x2,
-    KEY_SWAP            = 0x4,
-    KEY_FORWARD         = 0x8,
-    KEY_BACKWARD        = 0x10,
-    KEY_ATTACK          = 0x20,
-}
-
 public class PlayerInput : MonoBehaviour
 {
     private PlayerData m_Data;
     public UIManager m_UI;
 
+    //this is required to rotate player's view
     private float m_Mouse_X;
     private float m_Mouse_Y;
+
+    //mouseSensitivity
     [SerializeField]
     [Range(0, 30)]
     private float m_mouseSensitivity;
 
+    //to fix bug about button input.
+    /*"m_Data.m_Move = Vector3.zero;" in Getkey,
+    and "GetButtonMessage()" order problem*/
     public bool init_Getbutton_order_safety { get; set; }
-
-    private KeyCode[] KeyCodes = {
-                                         KeyCode.Alpha0,
-                                         KeyCode.Alpha1,
-                                         KeyCode.Alpha2,
-                                         KeyCode.Alpha3,
-                                     };
 
     // Use this for initialization
     void Awake()
     {
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         m_Data = GetComponent<PlayerData>();
     }
 
@@ -77,13 +63,14 @@ public class PlayerInput : MonoBehaviour
     {
         while (true)
         {
+            //If m_Move is set with some value at "GetButtonMessage" already,
+            //There is no initialization of m_move here.
             if (init_Getbutton_order_safety == true)
             {
                 init_Getbutton_order_safety = false;
             }
             else
             {
-                m_Data.m_KeyInput = 0;
                 m_Data.m_Move = Vector3.zero;
             }
 
@@ -96,6 +83,7 @@ public class PlayerInput : MonoBehaviour
             m_Mouse_Y -= Input.GetAxis("Mouse Y");
             /**************************pc 키입력****************************/
 
+            //Here is about touch input(View rotation value)
             if (Input.touchCount >= 1)
             {
                 Touch touch = Input.GetTouch(0);
@@ -109,7 +97,7 @@ public class PlayerInput : MonoBehaviour
 
     }
 
-
+    //Get Message about button from ButtonMgr, and handle that appropriately
     public void GetButtonMessage(string _msg)
     {
         init_Getbutton_order_safety = true;
@@ -130,19 +118,17 @@ public class PlayerInput : MonoBehaviour
 
         if (_msg == "fire")
         {
-            //m_Data.m_KeyInput |= KeyDef.KEY_FIRE;
             gameObject.SendMessage("Firebullet");
         }
 
         if (_msg == "swap")
         {
-            //m_Data.m_KeyInput |= KeyDef.KEY_SWAP;
             gameObject.SendMessage("SwapWeapon");
         }
 
         if (_msg == "reload")
         {
-            //m_Data.m_KeyInput |= KeyDef.KEY_RELOAD;
+            //Relaod only when player is not reloading
             if (!m_Data.m_Reloading)
                 gameObject.SendMessage("Reload");
         }

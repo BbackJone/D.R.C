@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-
+//make file route to be used to read or write jason file
 public class MyPath : MonoBehaviour {
 
     public string fileName;
-    public string streamingPath;
+    public string streamingPath;    //location to put jason file.
     public string persistentPath;
 
 	// Use this for initialization
