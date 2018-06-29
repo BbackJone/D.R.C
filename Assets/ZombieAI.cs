@@ -27,6 +27,7 @@ public class ZombieAI : MonoBehaviour {
     void OnEnable()
     {
         m_Nav.enabled = true;
+        //m_CapsuleCol.enabled = true;
 
         StartCoroutine("FindTarget");
         StartCoroutine("TargetAttack");
@@ -112,7 +113,7 @@ public class ZombieAI : MonoBehaviour {
                 if (m_Data.m_Death != true)
                 {
                     m_Data.m_Death = true;
-                    m_CapsuleCol.enabled = false;
+                    //m_CapsuleCol.enabled = false;
                     m_Nav.enabled = false;
                     m_Ani.SetBool("DeathBool", m_Data.m_Death);
                     m_Ani.SetTrigger("DeathTrigger");
@@ -126,6 +127,19 @@ public class ZombieAI : MonoBehaviour {
                 StopCoroutine("FindTarget");
                 StopCoroutine("TargetAttack");
                 StopCoroutine("NavMove");
+            }
+
+            //체크용
+            if(Input.GetKeyDown("space"))
+            {
+                m_CapsuleCol.isTrigger = !m_CapsuleCol.isTrigger;
+            }
+            if(Input.GetKeyDown("left alt"))
+            {
+                if(gameObject.active)
+                    gameObject.SetActive(false);
+                else
+                    gameObject.SetActive(true);
             }
 
             yield return null;

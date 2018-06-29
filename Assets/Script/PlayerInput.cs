@@ -75,12 +75,19 @@ public class PlayerInput : MonoBehaviour
             }
 
             /**************************테스트용*****************************/
-            /*Vector3 TempVec = m_Data.m_Move;
+            Vector3 TempVec = m_Data.m_Move;
             TempVec.z = Input.GetAxis("Vertical");
             TempVec.x = Input.GetAxis("Horizontal");
-            m_Data.m_Move = TempVec;*/
+
+            m_Data.m_Move = TempVec;
             m_Mouse_X = Input.GetAxis("Mouse X");
             m_Mouse_Y -= Input.GetAxis("Mouse Y");
+
+            if(Input.GetButton("Fire3"))   //left shift
+            {
+                GetButtonMessage("fire");
+            }
+            
             /**************************pc 키입력****************************/
 
             //Here is about touch input(View rotation value)

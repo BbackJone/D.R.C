@@ -43,7 +43,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         //Zomebie
         ObjectToPool ZomebieToPool = new ObjectToPool();
         ZomebieToPool.Obj = Directory_ObjectToPool.GetChild(0).gameObject;
-        ZomebieToPool.AmountToPool = 10;
+        ZomebieToPool.AmountToPool = 1;
         ZomebieToPool.ObjName = ZomebieToPool.Obj.name;
         ZomebieToPool.objType = ObjType.OBJ_ENEMY;
         ZomebieToPool.ShouldExpand = false;

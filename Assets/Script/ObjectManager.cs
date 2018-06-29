@@ -55,11 +55,6 @@ public class ObjectManager : MonoBehaviour {
     }
 
 
-    /*void Start()
-    {
-
-    }*/
-
     //오브젝트에게 데미지를 가하는 함수입니다.
     public void DamageObj(ObjType _type, Transform _obj, int _strength)
     {

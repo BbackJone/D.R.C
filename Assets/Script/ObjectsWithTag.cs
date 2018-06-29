@@ -20,17 +20,61 @@ public class ObjectsWithTag
         m_Bulletlist = new List<Bullet>();
     }
 
-    public void AddObject(GameObject _obj, string _tag)
+    //public void AddObject(GameObject _obj, string _tag)
+    //{
+    //    if (_tag == "Player")
+    //    {
+    //        PlayerInteraction Player = _obj.GetComponent<PlayerInteraction>();
+    //        m_Playerlist.Add(Player);
+    //    }
+    //    else if (_tag == "Enemy")
+    //    {
+    //        ZombieInteraction Enemy = _obj.GetComponent<ZombieInteraction>();
+    //        m_Enemylist.Add(Enemy);
+    //    }
+    //    else if (_tag == "Bullet")
+    //    {
+    //        Bullet Bullet = _obj.GetComponent<Bullet>();
+    //        m_Bulletlist.Add(Bullet);
+    //    }
+    //}
+    
+    public PlayerInteraction GetPlayer(Transform _obj)
     {
-        if (_tag == "Player")
+        for (int i = 0; i < m_Playerlist.Count; i++)
         {
-            PlayerInteraction Player = _obj.GetComponent<PlayerInteraction>();
-            m_Playerlist.Add(Player);
+            if (m_Playerlist[i].transform == _obj)
+            {
+                return m_Playerlist[i];
+            }
         }
-        else if (_tag == "Enemy")
+
+        return null;
+    }
+
+    public ZombieInteraction Getzombie(Transform _obj)
+    {
+        for (int i = 0; i < m_Enemylist.Count; i++)
         {
-            ZombieInteraction Enemy = _obj.GetComponent<ZombieInteraction>();
-            m_Enemylist.Add(Enemy);
+            if (m_Enemylist[i].transform == _obj)
+            {
+                return m_Enemylist[i];
+            }
         }
+
+        return null;
+    }
+
+    public Bullet Getbullet(Transform _obj)
+    {
+        for (int i = 0; i < m_Bulletlist.Count; i++)
+        {
+            if (m_Bulletlist[i].transform == _obj)
+            {
+                return m_Bulletlist[i];
+            }
+        }
+
+        return null;
     }
 }

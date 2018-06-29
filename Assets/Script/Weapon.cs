@@ -95,7 +95,8 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        if (m_AmmoBulletNum <= 0)
+      
+  if (m_AmmoBulletNum <= 0)
             return;
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit;
@@ -111,7 +112,6 @@ public class Weapon : MonoBehaviour
             Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - transform.position;
             m_ObjPoolMgr.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
         }
-
         
         m_MuzzleFlash.SetTrigger("On");
         m_MuzzleFlash2.SetTrigger("On");

@@ -12,7 +12,6 @@ public class Bullet : MonoBehaviour{
     public int m_AttackDamage { get; set; }
     private float m_StayTime;
     private TrailRenderer m_Trail;
-    //파티클캐싱하기.
 
     
 	// Use this for initialization
@@ -45,22 +44,20 @@ public class Bullet : MonoBehaviour{
     //collision check
     void OnTriggerEnter(Collider col)
     {
+        Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
+
         if (col.CompareTag("Enemy"))
         {
-            Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
             m_ObjMgr.DamageObj(ObjType.OBJ_ENEMY, col.transform, m_AttackDamage);
-            m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, "FX_BloodSplatter_Bullet");   //Make particle at attack point
-            CancelInvoke();
-            Remove();
         }
         else if (col.CompareTag("Player"))
         {
-            Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
             m_ObjMgr.DamageObj(ObjType.OBJ_PLAYER, col.transform, m_AttackDamage);
-            m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, "FX_BloodSplatter_Bullet");
-            CancelInvoke();
-            Remove();
         }
+
+        m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, "FX_BloodSplatter_Bullet");   //Make particle at attack point
+        CancelInvoke();
+        Remove();
     }
 
     void Remove()
