@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        m_Data = GetComponent<PlayerData>();
+        m_Data = GetComponent<PlayerData>(); 
     }
 
     void OnEnable()
