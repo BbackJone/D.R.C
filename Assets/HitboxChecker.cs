@@ -9,16 +9,29 @@ public class HitboxChecker : MonoBehaviour {
     //Set this on unity editor
     public HitboxType hitboxtype;
     public GameObject Object;       //The highest level of parent of this instance
+    public BoxCollider collider;
 
-
-	// Use this for initialization
-	void Start () {
-		
+    private void Start()
+    {
+        collider = this.gameObject.GetComponent<BoxCollider>();
     }
 
-
-    public void GetDamage(int _power)
+    private void OnEnable()
     {
+        collider.enabled = true;
+    }
 
+    public void GetDamage(int[] _power)
+    {
+        if(hitboxtype == HitboxType.BODY)
+        {
+            Object.SendMessage("GetDamage", _power[1]);
+            Debug.Log("Body Hit!! : " + _power[1]);
+        }
+        else if (hitboxtype == HitboxType.HEAD)
+        {
+            Object.SendMessage("GetDamage", _power[0]);
+            Debug.Log("Head Hit!!  :" + _power[0]);
+        }
     }
 }

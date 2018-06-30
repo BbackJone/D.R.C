@@ -101,7 +101,7 @@ public class ObjectPoolMgr : MonoBehaviour {
     }
 
     //Pooling 되있는 오브젝트를 활성화 시키는 함수이다.
-    public void CreatePooledObject(string _objname, Vector3 _pos, Quaternion _rot)
+    public GameObject CreatePooledObject(string _objname, Vector3 _pos, Quaternion _rot)
     {
         List<GameObject> objlist = m_PooledObject[_objname];
         for (int i = 0; i < objlist.Count; i++ )
@@ -111,10 +111,11 @@ public class ObjectPoolMgr : MonoBehaviour {
                 objlist[i].transform.position = _pos;
                 objlist[i].transform.rotation = _rot;
                 objlist[i].SetActive(true);
-                return;
+                return objlist[i];
             }
         }
 
+        //if the number of pooled object is required to expand, it expand that
         if (m_ObjectToPool[_objname].ShouldExpand)
         {
             for (int i = 0; i < 5; i ++ )
@@ -150,6 +151,8 @@ public class ObjectPoolMgr : MonoBehaviour {
             }
             CreatePooledObject(_objname, _pos, _rot);
         }
+
+        return null;
     }
 
 

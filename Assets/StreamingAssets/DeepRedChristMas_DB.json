@@ -2,9 +2,9 @@
   "Zombie": [
     {
       "Name": "SA_Zombie_Businessman",
-      "Hp": 25,
+      "Hp": 100,
       "Speed": 2,
-      "AttackDamage": 1.5,
+      "AttackDamage": 15,
       "AttackRange": 2,
       "AttackSpeed": 2.5
     }
@@ -18,7 +18,9 @@
       "Shotrate": 1,
       "Bulletsort": "Nobullet",
       "Autoshot": false,
-      "AniTrigger": "Attack"
+      "AniTrigger": "Attack",
+      "BodyDamage": 150,
+      "HeadDamage": 300
     },
     {
       "Name": "Handgun",
@@ -28,17 +30,21 @@
       "Shotrate": 0,
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": false,
-      "AniTrigger": "Handgun_Attack"
+      "AniTrigger": "Handgun_Attack",
+      "BodyDamage": 50,
+      "HeadDamage": 100
     },
     {
-      "Name": "Rifle",
+      "Name": "M4",
       "MaxBullet": 30,
-      "Recoil": 7,
-      "Weight": 15,
-      "Shotrate": 0.2,
+      "Recoil": 15,
+      "Weight": 13,
+      "Shotrate": 0.25,
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": true,
-      "AniTrigger": "Rifle_Attack"
+      "AniTrigger": "Rifle_Attack",
+      "BodyDamage": 80,
+      "HeadDamage": 160
     }
   ]
 }

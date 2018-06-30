@@ -8,12 +8,15 @@ public class ZombieAI : MonoBehaviour {
     private ZombieData m_Data;
     private ZombieInteraction m_Interaction;
     private Animator m_Ani;
-    private Collider m_CapsuleCol;
     private NavMeshAgent m_Nav;     //for finding route or move zombie
+
+    public GameObject obj_body;
+    public GameObject obj_head;
+    public BoxCollider body_col;
+    public BoxCollider head_col;
 
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
-
 
     void Awake()
     {
@@ -21,13 +24,14 @@ public class ZombieAI : MonoBehaviour {
         m_Data = GetComponent<ZombieData>();
         m_Interaction = GetComponent<ZombieInteraction>();
         m_Ani = GetComponent<Animator>();
-        m_CapsuleCol = GetComponent<CapsuleCollider>();
+
+        body_col = obj_body.GetComponent<BoxCollider>();
+        head_col = obj_head.GetComponent<BoxCollider>();
     }
 
     void OnEnable()
     {
         m_Nav.enabled = true;
-        //m_CapsuleCol.enabled = true;
 
         StartCoroutine("FindTarget");
         StartCoroutine("TargetAttack");
@@ -113,33 +117,25 @@ public class ZombieAI : MonoBehaviour {
                 if (m_Data.m_Death != true)
                 {
                     m_Data.m_Death = true;
-                    //m_CapsuleCol.enabled = false;
                     m_Nav.enabled = false;
                     m_Ani.SetBool("DeathBool", m_Data.m_Death);
                     m_Ani.SetTrigger("DeathTrigger");
+                    body_col.enabled = false;
+                    head_col.enabled = false;
                     /*m_ObjMgr.GiveMoney(0, m_Price);*/
+                    StopCoroutine("FindTarget");
+                    StopCoroutine("TargetAttack");
+                    StopCoroutine("NavMove");
                 }
                 if (m_Data.m_DeathTimer < 4f)
                     m_Data.m_DeathTimer += Time.deltaTime;
                 else
+                {
+                    body_col.enabled = true;
+                    head_col.enabled = true;
+                    //Because SetActive(false) with colliders inactive make a kind of bug(collider components are out of order), this is required
                     this.gameObject.SetActive(false);
-
-                StopCoroutine("FindTarget");
-                StopCoroutine("TargetAttack");
-                StopCoroutine("NavMove");
-            }
-
-            //체크용
-            if(Input.GetKeyDown("space"))
-            {
-                m_CapsuleCol.isTrigger = !m_CapsuleCol.isTrigger;
-            }
-            if(Input.GetKeyDown("left alt"))
-            {
-                if(gameObject.active)
-                    gameObject.SetActive(false);
-                else
-                    gameObject.SetActive(true);
+                }
             }
 
             yield return null;

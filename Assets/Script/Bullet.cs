@@ -9,12 +9,22 @@ public class Bullet : MonoBehaviour{
     public string m_ObjName { get; set; }
 
     public float m_Speed { get; set; }
-    public int m_AttackDamage { get; set; }
+    public int m_BodyDamage;
+    public int m_HeadDamage;
     private float m_StayTime;
     private TrailRenderer m_Trail;
 
-    
-	// Use this for initialization
+    //these are required to split up because these are used at "sendmessage" method
+    public void SetBodyDamage(int _body)
+    {
+        m_BodyDamage = _body;
+    }
+    public void SetHeadDamage(int _haed)
+    {
+        m_HeadDamage = _haed;
+    }
+
+    // Use this for initialization
     void Awake()
     {
         m_StayTime = 2f;
@@ -25,7 +35,6 @@ public class Bullet : MonoBehaviour{
     void Start()
     {
         ObjListAdd();
-        m_AttackDamage = 10;
         m_Speed = 30f;
     }
 
@@ -44,18 +53,16 @@ public class Bullet : MonoBehaviour{
     //collision check
     void OnTriggerEnter(Collider col)
     {
-        Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
-
         if (col.CompareTag("Enemy"))
         {
-            m_ObjMgr.DamageObj(ObjType.OBJ_ENEMY, col.transform, m_AttackDamage);
-        }
-        else if (col.CompareTag("Player"))
-        {
-            m_ObjMgr.DamageObj(ObjType.OBJ_PLAYER, col.transform, m_AttackDamage);
+            Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
+            int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
+            col.gameObject.SendMessage("GetDamage", DamageSet);
+            m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, "FX_BloodSplatter_Bullet");   //Make particle at attack point
+            CancelInvoke();
+            Remove();
         }
 
-        m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, "FX_BloodSplatter_Bullet");   //Make particle at attack point
         CancelInvoke();
         Remove();
     }

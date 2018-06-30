@@ -13,6 +13,8 @@ public struct WeaponDB
     public string Bulletsort;
     public bool Autoshot;
     public string AniTrigger;
+    public int BodyDamage;
+    public int HeadDamage;
 }
 
 public class Weapon : MonoBehaviour
@@ -29,6 +31,8 @@ public class Weapon : MonoBehaviour
     public float m_ShotRate { get; set; }           //연사속도
     public bool m_Autoshot { get; set; }            //자동발사여부
     public string m_AniTrigger { get; set; }        //실행할 애니메이션을 string 형으로 불러옴.
+    public int m_BodyDamage { get; set; }
+    public int m_HeadDamage { get; set; }
 
     private Camera m_Camera;
 
@@ -53,6 +57,8 @@ public class Weapon : MonoBehaviour
         m_BulletSort = DBData.Bulletsort;
         m_Autoshot = DBData.Autoshot;
         m_AniTrigger = DBData.AniTrigger;
+        m_BodyDamage = DBData.BodyDamage;
+        m_HeadDamage = DBData.HeadDamage;
 
         m_Type = ObjType.OBJ_WEAPON;
     }
@@ -96,7 +102,7 @@ public class Weapon : MonoBehaviour
     public void Shoot()
     {
       
-  if (m_AmmoBulletNum <= 0)
+        if (m_AmmoBulletNum <= 0)
             return;
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit;
@@ -104,7 +110,9 @@ public class Weapon : MonoBehaviour
         {
             Vector3 Dir = hit.point - transform.position;
             Dir = Dir / Dir.magnitude;
-            m_ObjPoolMgr.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            GameObject bullet = m_ObjPoolMgr.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            bullet.SendMessage("SetBodyDamage", m_BodyDamage);
+            bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
         else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
         {

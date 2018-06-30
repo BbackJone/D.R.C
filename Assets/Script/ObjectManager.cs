@@ -55,32 +55,32 @@ public class ObjectManager : MonoBehaviour {
     }
 
 
-    //오브젝트에게 데미지를 가하는 함수입니다.
-    public void DamageObj(ObjType _type, Transform _obj, int _strength)
-    {
-        if (_type == ObjType.OBJ_ENEMY)
-        {
-            List<ZombieInteraction> Templist = Objects.m_Enemylist;
-            for (int i = 0; i < Templist.Count; i++ )
-            {
-                if (Templist[i].transform == _obj)
-                {
-                    Templist[i].gameObject.SendMessage("GetDamage", _strength);
-                }
-            }
-        }
-        else if (_type == ObjType.OBJ_PLAYER)
-        {
-            List<PlayerInteraction> Templist = Objects.m_Playerlist;
-            for (int i = 0; i < Templist.Count; i++)
-            {
-                if (Templist[i].transform == _obj)
-                {
-                    Templist[i].gameObject.SendMessage("GetDamage", _strength);
-                }
-            }
-        }
-    }
+    //오브젝트에게 데미지를 가하는 함수입니다. -> 부위별 HitBox를 추가하며 이 기능은 필요가 없어짐
+    //public void DamageObj(ObjType _type, Transform _obj, int _strength)
+    //{
+    //    if (_type == ObjType.OBJ_ENEMY)
+    //    {
+    //        List<ZombieInteraction> Templist = Objects.m_Enemylist;
+    //        for (int i = 0; i < Templist.Count; i++ )
+    //        {
+    //            if (Templist[i].transform == _obj)
+    //            {
+    //                Templist[i].gameObject.SendMessage("GetDamage", _strength);
+    //            }
+    //        }
+    //    }
+    //    else if (_type == ObjType.OBJ_PLAYER)
+    //    {
+    //        List<PlayerInteraction> Templist = Objects.m_Playerlist;
+    //        for (int i = 0; i < Templist.Count; i++)
+    //        {
+    //            if (Templist[i].transform == _obj)
+    //            {
+    //                Templist[i].gameObject.SendMessage("GetDamage", _strength);
+    //            }
+    //        }
+    //    }
+    //}
 	
     //모든 플레이어가 죽었으면 게임오버 UI를 띄웁니다.
     public void GameOverCheck()

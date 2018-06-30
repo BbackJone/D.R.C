@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon_Katana : Weapon {
 
-    public int m_AttackDamage { get; set; }
     private string m_ParticleName;
 
 	// Use this for initialization
@@ -14,7 +13,6 @@ public class Weapon_Katana : Weapon {
     }
 
 	void Start () {
-        m_AttackDamage = 30;
         m_ObjName = "Katana";
         m_ParticleName = "FX_BloodSplatter_Katana";
 
@@ -33,6 +31,8 @@ public class Weapon_Katana : Weapon {
         m_BulletSort = DBData.Bulletsort;
         m_Autoshot = DBData.Autoshot;
         m_AniTrigger = DBData.AniTrigger;
+        m_BodyDamage = DBData.BodyDamage;
+        m_HeadDamage = DBData.HeadDamage;
 
         m_Type = ObjType.OBJ_WEAPON;
     }
@@ -43,7 +43,8 @@ public class Weapon_Katana : Weapon {
         if (col.transform.CompareTag("Enemy"))
         {
             Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
-            m_ObjMgr.DamageObj(ObjType.OBJ_ENEMY, col.transform, m_AttackDamage);
+            int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
+            col.gameObject.SendMessage("GetDamage", DamageSet);
             m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, m_ParticleName);
         }
     }
