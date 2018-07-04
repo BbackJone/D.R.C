@@ -71,3 +71,4 @@ public class ZombieData : MonoBehaviour
         m_Hp -= _damage;
     }
 }
+
