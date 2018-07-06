@@ -31,6 +31,8 @@ public class ZombieAI : MonoBehaviour {
 
     void OnEnable()
     {
+        StageMgr.instance.AddNormalZombieNumber(1);
+
         m_Nav.enabled = true;
 
         StartCoroutine("FindTarget");
@@ -122,11 +124,11 @@ public class ZombieAI : MonoBehaviour {
                     m_Ani.SetTrigger("DeathTrigger");
                     body_col.enabled = false;
                     head_col.enabled = false;
-                    /*m_ObjMgr.GiveMoney(0, m_Price);*/
                     StopCoroutine("FindTarget");
                     StopCoroutine("TargetAttack");
                     StopCoroutine("NavMove");
                 }
+
                 if (m_Data.m_DeathTimer < 4f)
                     m_Data.m_DeathTimer += Time.deltaTime;
                 else
@@ -135,6 +137,7 @@ public class ZombieAI : MonoBehaviour {
                     head_col.enabled = true;
                     //Because SetActive(false) with colliders inactive make a kind of bug(collider components are out of order), this is required
                     this.gameObject.SetActive(false);
+                    StageMgr.instance.AddNormalZombieNumber(-1);
                 }
             }
 

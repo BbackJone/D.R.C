@@ -41,10 +41,6 @@ public class Weapon : MonoBehaviour
     private Animator m_MuzzleFlash;
     private Animator m_MuzzleFlash2;
 
-    //this gets bullet pooled.
-    private ObjectPoolMgr m_ObjPoolMgr;
-
-
 
     virtual public void Initialize()
     {
@@ -67,7 +63,6 @@ public class Weapon : MonoBehaviour
     void Awake()
     {
         m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
-        m_ObjPoolMgr = FindObjectOfType<ObjectPoolMgr>();
         m_Light = transform.GetChild(1).GetComponent<Animator>();
         m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
         m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
@@ -110,7 +105,7 @@ public class Weapon : MonoBehaviour
         {
             Vector3 Dir = hit.point - transform.position;
             Dir = Dir / Dir.magnitude;
-            GameObject bullet = m_ObjPoolMgr.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
@@ -118,7 +113,7 @@ public class Weapon : MonoBehaviour
         {
             float Updis = m_Camera.transform.position.y - transform.position.y;
             Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - transform.position;
-            m_ObjPoolMgr.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
         }
         
         m_MuzzleFlash.SetTrigger("On");

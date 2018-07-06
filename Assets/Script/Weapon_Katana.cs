@@ -45,7 +45,7 @@ public class Weapon_Katana : Weapon {
             Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
             int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
             col.gameObject.SendMessage("GetDamage", DamageSet);
-            m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, m_ParticleName);
+            ObjectPoolMgr.instance.CreatePooledObject(m_ParticleName, CollsionPoint, this.transform.rotation);
         }
     }
 

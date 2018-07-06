@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectPoolMgr : MonoBehaviour {
 
-    private ObjectManager m_ObjMgr;
+    public static ObjectPoolMgr instance;
+
     private struct ObjectToPool
     {
         public GameObject Obj;
@@ -16,16 +17,13 @@ public class ObjectPoolMgr : MonoBehaviour {
     private Dictionary<string, ObjectToPool> m_ObjectToPool = new Dictionary<string, ObjectToPool>();
     public Dictionary<string, List<GameObject>> m_PooledObject { get; set; }
 
-    private Vector3[] m_PoolingPos;
+    public Vector3[] m_PoolingPos;
     private Transform m_Directory_PooledObject;     //Forder that contains pooledObjects.
-
-    //test
-    private float m_Timer = 0f;
 
     void Awake()
     {
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
-        m_ObjMgr.m_ObjPoolMgr = this;
+        instance = this;
+
         m_PooledObject = new Dictionary<string, List<GameObject>>();
         m_Directory_PooledObject = transform.GetChild(2);
 
@@ -40,10 +38,10 @@ public class ObjectPoolMgr : MonoBehaviour {
         //Initializing ObjectToPool
         Transform Directory_ObjectToPool = transform.GetChild(0);
 
-        //Zomebie
+        //Zomebie(Businessman)
         ObjectToPool ZomebieToPool = new ObjectToPool();
         ZomebieToPool.Obj = Directory_ObjectToPool.GetChild(0).gameObject;
-        ZomebieToPool.AmountToPool = 1;
+        ZomebieToPool.AmountToPool = 50;
         ZomebieToPool.ObjName = ZomebieToPool.Obj.name;
         ZomebieToPool.objType = ObjType.OBJ_ENEMY;
         ZomebieToPool.ShouldExpand = false;
@@ -53,7 +51,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         Directory.name = ZomebieToPool.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
-        //Particle
+        //Particle(FX_BloodSplatter_Katana)
         ObjectToPool ParticleToPool = new ObjectToPool();
         ParticleToPool.Obj = Directory_ObjectToPool.GetChild(1).gameObject;
         ParticleToPool.AmountToPool = 10;
@@ -66,7 +64,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         Directory.name = ParticleToPool.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
-        //Particle
+        //Particle(FX_BloodSplatter_Bullet)
         ObjectToPool ParticleToPool2 = new ObjectToPool();
         ParticleToPool2.Obj = Directory_ObjectToPool.GetChild(3).gameObject;
         ParticleToPool2.AmountToPool = 10;
@@ -118,37 +116,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         //if the number of pooled object is required to expand, it expand that
         if (m_ObjectToPool[_objname].ShouldExpand)
         {
-            for (int i = 0; i < 5; i ++ )
-            {
-                ObjectToPool itemToPool = m_ObjectToPool[_objname];
-                GameObject Obj = Instantiate(itemToPool.Obj);
-                if (itemToPool.objType == ObjType.OBJ_ENEMY)
-                {
-                    ZombieInteraction ZomScript = Obj.gameObject.GetComponent<ZombieInteraction>();
-                    ZomScript.gameObject.SendMessage("Initialize");
-                }
-
-                Obj.name = itemToPool.ObjName;
-                int PosIndex = Random.Range(0, m_PoolingPos.Length);
-                Obj.transform.position = m_PoolingPos[PosIndex];
-                Transform Parent_Directory = m_Directory_PooledObject;
-                for (int h = 0; h < m_Directory_PooledObject.childCount; h++)
-                {
-                    if (m_Directory_PooledObject.GetChild(h).name == itemToPool.Obj.name)
-                    {
-                        Parent_Directory = m_Directory_PooledObject.GetChild(h);
-                        break;
-                    }
-                }
-                Obj.transform.SetParent(Parent_Directory);
-                Obj.SetActive(false);
-
-                if (!m_PooledObject.ContainsKey(itemToPool.ObjName))
-                {
-                    m_PooledObject.Add(itemToPool.ObjName, new List<GameObject>());
-                }
-                m_PooledObject[itemToPool.ObjName].Add(Obj);
-            }
+            MakePool();
             CreatePooledObject(_objname, _pos, _rot);
         }
 
@@ -189,19 +157,5 @@ public class ObjectPoolMgr : MonoBehaviour {
             }
         }
     }
-
-    //일정시간마다 좀비가 생성된다.
-    void Update()
-    {
-        m_Timer += Time.deltaTime;
-        if (m_Timer > 2f)
-        {
-            m_Timer = 0f;
-            int PosIndex = Random.Range(0, m_PoolingPos.Length);
-            Vector3 TempPos = m_PoolingPos[PosIndex];
-            CreatePooledObject("SA_Zombie_Businessman", TempPos, Quaternion.identity);
-        }
-    }
-
 
 }

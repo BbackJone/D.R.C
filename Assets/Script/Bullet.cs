@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour{
             Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
             int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
             col.gameObject.SendMessage("GetDamage", DamageSet);
-            m_ObjMgr.MakeParticle(CollsionPoint, this.transform.rotation, "FX_BloodSplatter_Bullet");   //Make particle at attack point
+            ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
             CancelInvoke();
             Remove();
         }

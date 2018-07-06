@@ -9,6 +9,7 @@ public class GameDB
 {
     public ZomebieDB[] Zombie;
     public WeaponDB[] Weapon;
+    public WaveDB[] Wave;
 }
 
 public class JsonManager : MonoBehaviour {
@@ -45,11 +46,14 @@ public class JsonManager : MonoBehaviour {
     {
         ZomebieDB[] TempZomebie = m_GameDB.Zombie;
         WeaponDB[] TempWeapon = m_GameDB.Weapon;
+        WaveDB[] TempWave = m_GameDB.Wave;
 
         for (int i = 0; i < TempZomebie.Length; i++)
             m_ObjMgr.m_DBMgr.m_ZomebieDB.Add(TempZomebie[i].Name, TempZomebie[i]);
         for (int i = 0; i < TempWeapon.Length; i++)
             m_ObjMgr.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
+        for (int i = 0; i < TempWave.Length; i++)
+            m_ObjMgr.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
 
         Debug.Log("SetDB Complete!");
     }

@@ -21,22 +21,22 @@ public enum STATE_ID
     STATE_STAGE,
     STATE_ENDING
 }
-public class ObjectManager : MonoBehaviour {
+public class ObjectManager : MonoBehaviour
+{
 
     //SingleTon
     private static ObjectManager m_Inst;
 
     public ObjectsWithTag Objects { get; set; }
     private UIManager m_UIMgr;
-    public ObjectPoolMgr m_ObjPoolMgr { get; set; }
     public DBManager m_DBMgr { get; set; }    //NotRef
     private STATE_ID m_SceneState;
 
-	// Use this for initialization
+    // Use this for initialization
     void Awake()
     {
         Screen.SetResolution(720, 1280, true);
-        if(m_Inst == null)
+        if (m_Inst == null)
         {
             m_Inst = this;
             m_SceneState = STATE_ID.STATE_LOGO;
@@ -48,7 +48,6 @@ public class ObjectManager : MonoBehaviour {
         }
 
         m_DBMgr = new DBManager();
-        m_DBMgr.Initialize();
         Objects = new ObjectsWithTag();
 
         m_UIMgr = GetComponent<UIManager>();
@@ -81,7 +80,7 @@ public class ObjectManager : MonoBehaviour {
     //        }
     //    }
     //}
-	
+
     //모든 플레이어가 죽었으면 게임오버 UI를 띄웁니다.
     public void GameOverCheck()
     {
@@ -94,23 +93,6 @@ public class ObjectManager : MonoBehaviour {
         m_UIMgr.ActiveUI("GameOver");
         m_UIMgr.StartCoroutine("NextScene", "Menu");
     }
-
-
-    //파티클을 생성합니다.
-    public void MakeParticle( Vector3 _pos , Quaternion _rot ,string _particleName)
-    {
-        List<GameObject> TempList = m_ObjPoolMgr.m_PooledObject[_particleName];
-        foreach(GameObject _obj in TempList)
-        {
-            if(!_obj.activeInHierarchy)
-            {
-                m_ObjPoolMgr.CreatePooledObject(_particleName, _pos, _rot);
-                return;
-            }
-        }
-    }
-
-
 
     public void NextScene(string _str)     //Button에서 실행시켜주기 위함 
     {
