@@ -100,7 +100,7 @@ public class PlayerAction : MonoBehaviour {
     }
 
 
-    void Firebullet()
+    public void Firebullet()
     {
         //FireBullet per Shotrate if bullet exist
         if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
@@ -122,7 +122,7 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
-    void SwapWeapon()
+    public void SwapWeapon()
     {
         for(int i = 0; i < m_Data.m_Weapons.Count; i++)
         {
@@ -167,7 +167,7 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
-    void Reload()
+    public void Reload()
     {
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum < m_Data.m_WeaponInhand.m_MaxBulletNum)
         {

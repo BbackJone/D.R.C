@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class TitleButtonScript : MonoBehaviour {
+    public GameObject loadingIndicator;
+    public ObjectManager objMgr;
+
+    private bool isButtonPressed = false;
+    
+    public void CallLoadSceneAsync() {
+        if (isButtonPressed) return;
+        isButtonPressed = true;
+
+        loadingIndicator.SetActive(true);
+
+        StartCoroutine(LoadAsync());
+    }
+
+    IEnumerator LoadAsync() {
+        // properly load database first
+        string jsonDB = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "DeepRedChristMas_DB.json"));
+        var gameDB = JsonUtility.FromJson<GameDB>(jsonDB);
+
+        ZomebieDB[] TempZomebie = gameDB.Zombie;
+        WeaponDB[] TempWeapon = gameDB.Weapon;
+        WaveDB[] TempWave = gameDB.Wave;
+
+        for (int i = 0; i < TempZomebie.Length; i++)
+            objMgr.m_DBMgr.m_ZomebieDB.Add(TempZomebie[i].Name, TempZomebie[i]);
+        for (int i = 0; i < TempWeapon.Length; i++)
+            objMgr.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
+        for (int i = 0; i < TempWave.Length; i++)
+            objMgr.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
+
+        var asyncOp = SceneManager.LoadSceneAsync("Stage");
+        GameObject.Find("GameController").GetComponent<ObjectManager>().SetState(STATE_ID.STATE_STAGE);
+
+        while (!asyncOp.isDone) {
+            yield return null;
+        }
+    }
+}

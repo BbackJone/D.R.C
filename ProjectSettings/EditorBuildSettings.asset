@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Menu.unity
     guid: b96d64938ede9444b8dd2fee2fc24f42
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Loading.unity
     guid: 597d7d84608e61c4bbdb7cdae98aad62
   - enabled: 1
     path: Assets/Scene/Stage.unity
     guid: 25012d64869dc4d41834620a3ef09b77
   - enabled: 0
-    path: Assets/Scene/WorkPlace.unity
+    path: Assets/Lightmap/WorkPlace.unity
     guid: 1e63d6d9987ca42498fc9ae006380e22

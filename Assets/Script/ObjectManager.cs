@@ -35,7 +35,7 @@ public class ObjectManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        Screen.SetResolution(720, 1280, true);
+        //Screen.SetResolution(720, 1280, true);
         if (m_Inst == null)
         {
             m_Inst = this;
@@ -105,5 +105,9 @@ public class ObjectManager : MonoBehaviour
             m_SceneState = STATE_ID.STATE_STAGE;
         else if (_str == "Ending")
             m_SceneState = STATE_ID.STATE_ENDING;
+    }
+
+    public void SetState(STATE_ID id) {
+        m_SceneState = id;
     }
 }
