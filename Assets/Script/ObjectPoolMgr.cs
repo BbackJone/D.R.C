@@ -47,8 +47,21 @@ public class ObjectPoolMgr : MonoBehaviour {
         ZomebieToPool.ShouldExpand = false;
 
         m_ObjectToPool.Add(ZomebieToPool.ObjName ,ZomebieToPool);
-        GameObject Directory = new GameObject();
-        Directory.name = ZomebieToPool.ObjName;
+        GameObject Directory = new GameObject();                                           
+        Directory.name = ZomebieToPool.ObjName;                                            
+        Directory.transform.SetParent(m_Directory_PooledObject);                           
+                                                                                           
+        //Zomebie(SA_Zombie_RoadWorker)                                                    
+        ObjectToPool ZomebieToPool2 = new ObjectToPool();                                  
+        ZomebieToPool2.Obj = Directory_ObjectToPool.GetChild(4).gameObject;                
+        ZomebieToPool2.AmountToPool = 50;                                                   
+        ZomebieToPool2.ObjName = ZomebieToPool2.Obj.name;                                   
+        ZomebieToPool2.objType = ObjType.OBJ_ENEMY;                                        
+        ZomebieToPool2.ShouldExpand = false;
+
+        m_ObjectToPool.Add(ZomebieToPool2.ObjName, ZomebieToPool2);
+        Directory = new GameObject();
+        Directory.name = ZomebieToPool2.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
         //Particle(FX_BloodSplatter_Katana)
