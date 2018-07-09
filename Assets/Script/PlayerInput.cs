@@ -85,7 +85,7 @@ public class PlayerInput : MonoBehaviour
 
             if(Input.GetKeyDown("f"))   //left shift
             {
-                GetButtonMessage("fire");
+                gameObject.SendMessage("Firebullet");
             }
             if (Input.GetKeyDown("r"))   //left shift
             {
