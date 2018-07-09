@@ -159,11 +159,11 @@ public class PlayerAction : MonoBehaviour {
     {
         if (m_Data.m_WeaponInhand.m_Autoshot)
         {
-            m_AttackButton.Change_Continuous_Attrib(true);
+            //m_AttackButton.Change_Continuous_Attrib(true);
         }
         else if (!m_Data.m_WeaponInhand.m_Autoshot)
         {
-            m_AttackButton.Change_Continuous_Attrib(false);
+            //m_AttackButton.Change_Continuous_Attrib(false);
         }
     }
 

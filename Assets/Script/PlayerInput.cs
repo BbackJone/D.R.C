@@ -83,11 +83,20 @@ public class PlayerInput : MonoBehaviour
             m_Mouse_X = Input.GetAxis("Mouse X");
             m_Mouse_Y -= Input.GetAxis("Mouse Y");
 
-            if(Input.GetButton("Fire3"))   //left shift
+            if(Input.GetKeyDown("f"))   //left shift
             {
                 GetButtonMessage("fire");
             }
-            
+            if (Input.GetKeyDown("r"))   //left shift
+            {
+                if (!m_Data.m_Reloading)
+                    gameObject.SendMessage("Reload");
+            }
+            if (Input.GetKeyDown("t"))   //left shift
+            {
+                gameObject.SendMessage("SwapWeapon");
+            }
+
             /**************************pc 키입력****************************/
 
             //Here is about touch input(View rotation value)
