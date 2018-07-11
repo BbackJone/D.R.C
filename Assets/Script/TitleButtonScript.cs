@@ -33,7 +33,17 @@ public class TitleButtonScript : MonoBehaviour {
 
     IEnumerator LoadAsync() {
         // properly load database first
-        string jsonDB = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "DeepRedChristMas_DB.json"));
+        string jsonDB;
+        if (Application.platform == RuntimePlatform.Android) {
+            using (WWW www = new WWW("jar:file://" + Application.dataPath + "!/assets/DeepRedChristMas_DB.json")) {
+                while (!www.isDone && www.error == null) {
+                    yield return null;
+                }
+                jsonDB = www.text;
+            }
+        } else {
+            jsonDB = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "DeepRedChristMas_DB.json"));
+        }
         var gameDB = JsonUtility.FromJson<GameDB>(jsonDB);
 
         ZomebieDB[] TempZomebie = gameDB.Zombie;
@@ -46,7 +56,7 @@ public class TitleButtonScript : MonoBehaviour {
             objMgr.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
         for (int i = 0; i < TempWave.Length; i++)
             objMgr.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
-        
+
         var asyncOp = SceneManager.LoadSceneAsync("Stage");
         GameObject.Find("GameController").GetComponent<ObjectManager>().SetState(STATE_ID.STATE_STAGE);
 
@@ -58,7 +68,7 @@ public class TitleButtonScript : MonoBehaviour {
     // temporary function?
     public void ResetSave() {
         SaveData.ClearAll();
-        transform.Find("Text").GetComponent<Text>().text = "Cleared!";
-        GameObject.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = "Continue from\nNew Game";
+        transform.Find("SaveClearButton").Find("Text").GetComponent<Text>().text = "Cleared!";
+        transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = "Continue from\nNew Game";
     }
 }
