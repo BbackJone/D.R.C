@@ -3,20 +3,32 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TitleButtonScript : MonoBehaviour {
-    public GameObject loadingIndicator;
+    //public GameObject loadingIndicator;
+    private GameObject titleButtons;
+    private GameObject loadingText;
     public ObjectManager objMgr;
 
     private bool isButtonPressed = false;
+
+    void Start() {
+        titleButtons = GameObject.Find("TitleButtons");
+        loadingText = GameObject.Find("LoadingText");
+    }
     
-    public void CallLoadSceneAsync() {
+    public void CallLoadSceneAsync(bool isContinue) {
         if (isButtonPressed) return;
         isButtonPressed = true;
 
-        loadingIndicator.SetActive(true);
+        GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>().InitGameSaveData(isContinue);
 
         StartCoroutine(LoadAsync());
+
+        //loadingIndicator.SetActive(true);
+        titleButtons.SetActive(false);
+        loadingText.GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
     }
 
     IEnumerator LoadAsync() {
@@ -34,12 +46,19 @@ public class TitleButtonScript : MonoBehaviour {
             objMgr.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
         for (int i = 0; i < TempWave.Length; i++)
             objMgr.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
-
+        
         var asyncOp = SceneManager.LoadSceneAsync("Stage");
         GameObject.Find("GameController").GetComponent<ObjectManager>().SetState(STATE_ID.STATE_STAGE);
 
         while (!asyncOp.isDone) {
             yield return null;
         }
+    }
+
+    // temporary function?
+    public void ResetSave() {
+        SaveData.ClearAll();
+        transform.Find("Text").GetComponent<Text>().text = "Cleared!";
+        GameObject.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = "Continue from\nNew Game";
     }
 }

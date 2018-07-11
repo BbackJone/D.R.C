@@ -29,19 +29,23 @@ public class StageMgr : MonoBehaviour
     public int m_Current_NormalZombieNumber = 0;     //number of zombies which are alive in stage
     public int m_Current_SpecialZombieNumber = 0;
 
-
+    private SaveDataManager m_SaveMgr;
 
     private void Awake()
     {
         instance = this;
         m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
+        m_SaveMgr = GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>();
     }
 
     // Use this for initialization
     void Start()
     {
+        int startWave = 1;
+        if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
+
         m_GameTime = 0;
-        m_CurrentWave = m_ObjMgr.m_DBMgr.m_WaveDB[1];
+        m_CurrentWave = m_ObjMgr.m_DBMgr.m_WaveDB[startWave];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
