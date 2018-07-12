@@ -6,13 +6,15 @@ public class Bullet : MonoBehaviour{
 
     public ObjType m_Type { get; set; }
     public ObjectManager m_ObjMgr { get; set; }
-    public string m_ObjName { get; set; }
 
     public float m_Speed { get; set; }
     public int m_BodyDamage;
     public int m_HeadDamage;
     private float m_StayTime;
     private TrailRenderer m_Trail;
+
+    //Raycast Parameters
+    public Vector3 m_PrevPos;
 
     //these are required to split up because these are used at "sendmessage" method
     public void SetBodyDamage(int _body)
@@ -35,11 +37,12 @@ public class Bullet : MonoBehaviour{
     void Start()
     {
         ObjListAdd();
-        m_Speed = 30f;
+        m_Speed = 100f;
     }
 
     void OnEnable()
     {
+        m_PrevPos = transform.position;
         Invoke("Remove", m_StayTime);   //Remove this after "m_StayTime"
         m_Trail.Clear();
     }
@@ -47,24 +50,29 @@ public class Bullet : MonoBehaviour{
     //proceed
     private void FixedUpdate()
     {
+        m_PrevPos = transform.position;
         transform.Translate(Vector3.forward * Time.deltaTime * m_Speed);
+        CollisionCheck();
     }
 
-    //collision check
-    void OnTriggerEnter(Collider col)
+    void CollisionCheck()
     {
-        if (col.CompareTag("Enemy"))
-        {
-            Vector3 CollsionPoint = col.ClosestPointOnBounds(this.transform.position);
-            int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
-            col.gameObject.SendMessage("GetDamage", DamageSet);
-            ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
-            CancelInvoke();
-            Remove();
-        }
+        Vector3 direction = transform.position - m_PrevPos;
+        Ray ray = new Ray(m_PrevPos, direction.normalized);
+        RaycastHit hit;
 
-        CancelInvoke();
-        Remove();
+        if(Physics.Raycast(ray, out hit ,direction.magnitude))
+        {
+            if(hit.transform.CompareTag("Enemy"))
+            {
+                Vector3 CollsionPoint = hit.point;
+                int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
+                hit.transform.gameObject.SendMessage("GetDamage", DamageSet);
+                ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
+                CancelInvoke();
+                Remove();
+            }
+        }
     }
 
     void Remove()

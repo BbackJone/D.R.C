@@ -109,6 +109,7 @@ public class PlayerAction : MonoBehaviour {
         {
             m_AttackTimer = 0f;
             m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
+            Shoot();
         }
 
         //Reload when there is no bullet
