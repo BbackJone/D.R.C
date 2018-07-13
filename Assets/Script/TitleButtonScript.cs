@@ -22,6 +22,12 @@ public class TitleButtonScript : MonoBehaviour {
         if (isButtonPressed) return;
         isButtonPressed = true;
 
+        objMgr.Objects.m_Playerlist.Clear();
+        objMgr.Objects.m_Colleaguelist.Clear();
+        objMgr.Objects.m_Enemylist.Clear();
+        objMgr.Objects.m_Weaponlist.Clear();
+        objMgr.Objects.m_Bulletlist.Clear();
+
         GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>().InitGameSaveData(isContinue);
 
         StartCoroutine(LoadAsync());
@@ -33,29 +39,33 @@ public class TitleButtonScript : MonoBehaviour {
 
     IEnumerator LoadAsync() {
         // properly load database first
-        string jsonDB;
-        if (Application.platform == RuntimePlatform.Android) {
-            using (WWW www = new WWW("jar:file://" + Application.dataPath + "!/assets/DeepRedChristMas_DB.json")) {
-                while (!www.isDone && www.error == null) {
-                    yield return null;
+        if (!objMgr.m_DBMgr.loaded) {
+            string jsonDB;
+            if (Application.platform == RuntimePlatform.Android) {
+                 using (WWW www = new WWW ("jar:file://" + Application.dataPath + "!/assets/DeepRedChristMas_DB.json")) {
+                    while (!www.isDone && www.error == null) {
+                        yield return null;
+                    }
+                    jsonDB = www.text;
                 }
-                jsonDB = www.text;
+            } else {
+                jsonDB = File.ReadAllText (Path.Combine (Application.streamingAssetsPath, "DeepRedChristMas_DB.json"));
             }
-        } else {
-            jsonDB = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "DeepRedChristMas_DB.json"));
+            var gameDB = JsonUtility.FromJson<GameDB> (jsonDB);
+
+            ZomebieDB[] TempZomebie = gameDB.Zombie;
+            WeaponDB[] TempWeapon = gameDB.Weapon;
+            WaveDB[] TempWave = gameDB.Wave;
+
+            for (int i = 0; i < TempZomebie.Length; i++)
+                objMgr.m_DBMgr.m_ZomebieDB.Add (TempZomebie [i].Name, TempZomebie [i]);
+            for (int i = 0; i < TempWeapon.Length; i++)
+                objMgr.m_DBMgr.m_WeaponDB.Add (TempWeapon [i].Name, TempWeapon [i]);
+            for (int i = 0; i < TempWave.Length; i++)
+               objMgr.m_DBMgr.m_WaveDB.Add (TempWave [i].Level, TempWave [i]);
+
+            objMgr.m_DBMgr.loaded = true;
         }
-        var gameDB = JsonUtility.FromJson<GameDB>(jsonDB);
-
-        ZomebieDB[] TempZomebie = gameDB.Zombie;
-        WeaponDB[] TempWeapon = gameDB.Weapon;
-        WaveDB[] TempWave = gameDB.Wave;
-
-        for (int i = 0; i < TempZomebie.Length; i++)
-            objMgr.m_DBMgr.m_ZomebieDB.Add(TempZomebie[i].Name, TempZomebie[i]);
-        for (int i = 0; i < TempWeapon.Length; i++)
-            objMgr.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
-        for (int i = 0; i < TempWave.Length; i++)
-            objMgr.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
 
         var asyncOp = SceneManager.LoadSceneAsync("Stage");
         GameObject.Find("GameController").GetComponent<ObjectManager>().SetState(STATE_ID.STATE_STAGE);

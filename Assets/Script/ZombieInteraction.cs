@@ -24,6 +24,7 @@ public class ZombieInteraction : MonoBehaviour {
         PlayerInteraction target = null;
         foreach (PlayerInteraction pm in m_ObjMgr.Objects.m_Playerlist)
         {
+            if (pm == null) continue;
             float dis = Vector3.Distance(pm.transform.position, this.transform.position);
             if (MinDis > dis)
             {

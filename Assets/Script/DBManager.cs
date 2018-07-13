@@ -11,8 +11,11 @@ public class DBManager : MonoBehaviour {
     public Dictionary<string, WeaponDB> m_WeaponDB { get; set; }
     public Dictionary<int, WaveDB> m_WaveDB { get; set; }
 
+    public bool loaded;
+
     public void Start()
     {
+        loaded = false;
         instance = this;
     }
 
