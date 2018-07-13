@@ -28,80 +28,78 @@ public class PlayerInput : MonoBehaviour
         m_Data = GetComponent<PlayerData>(); 
     }
 
-    void OnEnable()
-    {
-        StartCoroutine("Getkey");
-        StartCoroutine("ViewControl");
-    }
 
     void Start()
     {
         m_Mouse_X = 0f;
         m_Mouse_Y = 0f;
         m_mouseSensitivity = 50f;
-
-        StartCoroutine("Getkey");
-        StartCoroutine("ViewControl");
     }
 
-
-    //터치스크린의 슬라이드에 따라 카메라의 시점을 움직여주는 함수이다.
-    IEnumerator ViewControl()
+    private void Update()
     {
-        while (true)
-        {
-            transform.Rotate(Vector3.up * m_Mouse_X * Time.deltaTime * m_mouseSensitivity);
-            m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, -80f, 50f);
-            m_Data.m_Camera.transform.eulerAngles = new Vector3(m_Mouse_Y, m_Data.m_Camera.transform.eulerAngles.y, 0f);
-
-            yield return null;
-        }
+        ViewControl();
+        CheckKey();
     }
 
-    //입력장치로부터 입력을 받아 Key값을 변경시키는 함수이다.
-    IEnumerator Getkey()
+    void CheckKey()
     {
-        while (true)
+        //If m_Move is set with some value at "GetButtonMessage" already,
+        //There is no initialization of m_move here.
+        if (init_Getbutton_order_safety == true)
         {
-            //If m_Move is set with some value at "GetButtonMessage" already,
-            //There is no initialization of m_move here.
-            if (init_Getbutton_order_safety == true)
-            {
-                init_Getbutton_order_safety = false;
-            }
-            else
-            {
-                m_Data.m_Move = Vector3.zero;
-            }
-
-            /**************************테스트용*****************************/
-            Vector3 TempVec = m_Data.m_Move;
-            TempVec.z = Input.GetAxis("Vertical");
-            TempVec.x = Input.GetAxis("Horizontal");
-
-            m_Data.m_Move = TempVec;
-            m_Mouse_X = Input.GetAxis("Mouse X");
-            m_Mouse_Y -= Input.GetAxis("Mouse Y");
-
-            if(Input.GetButton("Fire3"))   //left shift
-            {
-                GetButtonMessage("fire");
-            }
-            
-            /**************************pc 키입력****************************/
-
-            //Here is about touch input(View rotation value)
-            if (Input.touchCount >= 1)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                m_Mouse_X = touch.deltaPosition.x;
-                m_Mouse_Y -= touch.deltaPosition.y;
-            }
-
-            yield return null;
+            init_Getbutton_order_safety = false;
+        }
+        else
+        {
+            m_Data.m_Move = Vector3.zero;
         }
 
+        /**************************테스트용*****************************/
+        Vector3 TempVec = m_Data.m_Move;
+        TempVec.z = Input.GetAxis("Vertical");
+        TempVec.x = Input.GetAxis("Horizontal");
+
+        m_Data.m_Move = TempVec;
+        m_Mouse_X = Input.GetAxis("Mouse X");
+        m_Mouse_Y -= Input.GetAxis("Mouse Y");
+
+        if (Input.GetKeyDown("f"))   //left shift
+        {
+            gameObject.SendMessage("Firebullet");
+            Debug.Log("F Key Pressed!");
+        }
+        if (Input.GetKeyDown("r"))   //left shift
+        {
+            if (!m_Data.m_Reloading)
+                gameObject.SendMessage("Reload");
+        }
+        if (Input.GetKeyDown("t"))   //left shift
+        {
+            gameObject.SendMessage("SwapWeapon");
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        /**************************pc 키입력****************************/
+
+        //Here is about touch input(View rotation value)
+        if (Input.touchCount >= 1)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            m_Mouse_X = touch.deltaPosition.x;
+            m_Mouse_Y -= touch.deltaPosition.y;
+        }
+    }
+    
+    void ViewControl()
+    {
+        transform.Rotate(Vector3.up * m_Mouse_X * Time.deltaTime * m_mouseSensitivity);
+        m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, -80f, 50f);
+        m_Data.m_Camera.transform.eulerAngles = new Vector3(m_Mouse_Y, m_Data.m_Camera.transform.eulerAngles.y, 0f);
     }
 
     //Get Message about button from ButtonMgr, and handle that appropriately
