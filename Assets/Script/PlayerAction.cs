@@ -136,10 +136,12 @@ public class PlayerAction : MonoBehaviour {
                 if (i == m_Data.m_Weapons.Count - 1)
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
+                    m_Data.m_Ani.SetInteger("Weapon_Code", 0);
                 }
                 else
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
+                    m_Data.m_Ani.SetInteger("Weapon_Code", i + 1);
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
                 Check_WeaponisAuto();

@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour
     {
         m_Mouse_X = 0f;
         m_Mouse_Y = 0f;
-        m_mouseSensitivity = 50f;
+        m_mouseSensitivity = 100f;
     }
 
     private void Update()
@@ -55,14 +55,13 @@ public class PlayerInput : MonoBehaviour
             m_Data.m_Move = Vector3.zero;
         }
 
-        /**************************테스트용*****************************/
         Vector3 TempVec = m_Data.m_Move;
         TempVec.z = Input.GetAxis("Vertical");
         TempVec.x = Input.GetAxis("Horizontal");
 
         m_Data.m_Move = TempVec;
         m_Mouse_X = Input.GetAxis("Mouse X");
-        m_Mouse_Y -= Input.GetAxis("Mouse Y");
+        m_Mouse_Y -= Input.GetAxis("Mouse Y") * m_mouseSensitivity * (Screen.width / 1280f) * Time.deltaTime;
 
         if (Input.GetKeyDown("f"))   //left shift
         {
@@ -80,26 +79,20 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        /**************************pc 키입력****************************/
-
-        //Here is about touch input(View rotation value)
-        if (Input.touchCount >= 1)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            m_Mouse_X = touch.deltaPosition.x;
-            m_Mouse_Y -= touch.deltaPosition.y;
+            Cursor.lockState = CursorLockMode.Locked;       //Press "Esc" to Cancel Locked.
         }
     }
     
     void ViewControl()
     {
-        transform.Rotate(Vector3.up * m_Mouse_X * Time.deltaTime * m_mouseSensitivity);
+        transform.Rotate(Vector3.up * m_Mouse_X * Time.deltaTime * m_mouseSensitivity * (Screen.width / 1280f));
         m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, -80f, 50f);
         m_Data.m_Camera.transform.eulerAngles = new Vector3(m_Mouse_Y, m_Data.m_Camera.transform.eulerAngles.y, 0f);
+
+        //transform.Rotate(Vector3.up * mx * lookSensitivity * (Screen.width / 1280f));
+        //lookY -= my * lookSensitivity * (Screen.height / 720f);
+        //lookY = Mathf.Clamp(lookY, -80f, 50f);
+        //data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
     }
 
     //Get Message about button from ButtonMgr, and handle that appropriately
