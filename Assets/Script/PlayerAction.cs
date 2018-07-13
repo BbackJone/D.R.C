@@ -109,6 +109,7 @@ public class PlayerAction : MonoBehaviour {
         {
             m_AttackTimer = 0f;
             m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
+            Shoot();
         }
 
         //Reload when there is no bullet
@@ -159,11 +160,11 @@ public class PlayerAction : MonoBehaviour {
     {
         if (m_Data.m_WeaponInhand.m_Autoshot)
         {
-            m_AttackButton.Change_Continuous_Attrib(true);
+            //m_AttackButton.Change_Continuous_Attrib(true);
         }
         else if (!m_Data.m_WeaponInhand.m_Autoshot)
         {
-            m_AttackButton.Change_Continuous_Attrib(false);
+            //m_AttackButton.Change_Continuous_Attrib(false);
         }
     }
 

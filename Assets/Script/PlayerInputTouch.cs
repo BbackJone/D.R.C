@@ -44,6 +44,13 @@ public class PlayerInputTouch : MonoBehaviour {
                     // assume this touch is trying to rotate camera
                     Touch touch = Input.GetTouch(i);
 
+                    //Temporary...
+                    if(touch.phase == TouchPhase.Began)
+                    {
+                        gameObject.SendMessage("fire");
+                    }
+                    ////
+
                     if (touch.phase != TouchPhase.Began) {
                         // apply rotation
                         transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity);
