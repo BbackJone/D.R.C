@@ -127,6 +127,17 @@ public class ZombieAI : MonoBehaviour {
                     StopCoroutine("FindTarget");
                     StopCoroutine("TargetAttack");
                     StopCoroutine("NavMove");
+
+                    int rv = Random.Range(0, 25);
+                    if (rv == 1) {
+                        // spawn heart drop at 4% rate
+                        GameObject drop = Instantiate(GameObject.Find("DropHeart"), new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                        drop.GetComponent<MeshRenderer>().enabled = true;
+                    } else if (rv == 2) {
+                        // spawn ammo drop at 4% rate
+                        GameObject drop = Instantiate(GameObject.Find("DropAmmo"), new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                        drop.GetComponent<MeshRenderer>().enabled = true;
+                    }
                 }
 
                 if (m_Data.m_DeathTimer < 4f)
