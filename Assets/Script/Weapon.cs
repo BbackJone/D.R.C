@@ -45,7 +45,6 @@ public class Weapon : MonoBehaviour
     public string m_AniTrigger { get; set; }        //실행할 애니메이션을 string 형으로 불러옴.
     public int m_BodyDamage { get; set; }
     public int m_HeadDamage { get; set; }
-
     public Weapon_Type m_WeaponType;
 
     private Camera m_Camera;
@@ -54,6 +53,7 @@ public class Weapon : MonoBehaviour
     public MeshRenderer m_MuzzleFlash;
     public MeshRenderer m_MuzzleFlash2;
 
+    public Transform m_ShootPos;
 
     virtual public void Initialize()
     {
@@ -130,7 +130,7 @@ public class Weapon : MonoBehaviour
         {
             Vector3 Dir = hit.point - transform.position;
             Dir = Dir / Dir.magnitude;
-            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
@@ -138,7 +138,7 @@ public class Weapon : MonoBehaviour
         {
             float Updis = m_Camera.transform.position.y - transform.position.y;
             Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - transform.position;
-            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
