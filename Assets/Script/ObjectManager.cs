@@ -13,7 +13,6 @@ public enum ObjType
     OBJ_ETC,    //파티클 등등
 }
 
-
 public enum STATE_ID
 {
     STATE_LOGO,
@@ -21,11 +20,11 @@ public enum STATE_ID
     STATE_STAGE,
     STATE_ENDING
 }
+
 public class ObjectManager : MonoBehaviour
 {
-
     //SingleTon
-    private static ObjectManager m_Inst;
+    public static ObjectManager m_Inst;
 
     public ObjectsWithTag Objects { get; set; }
     private UIManager m_UIMgr;

@@ -9,7 +9,6 @@ public class TitleButtonScript : MonoBehaviour {
     //public GameObject loadingIndicator;
     private GameObject titleButtons;
     private GameObject loadingText;
-    public ObjectManager objMgr;
 
     private bool isButtonPressed = false;
 
@@ -22,11 +21,11 @@ public class TitleButtonScript : MonoBehaviour {
         if (isButtonPressed) return;
         isButtonPressed = true;
 
-        objMgr.Objects.m_Playerlist.Clear();
-        objMgr.Objects.m_Colleaguelist.Clear();
-        objMgr.Objects.m_Enemylist.Clear();
-        objMgr.Objects.m_Weaponlist.Clear();
-        objMgr.Objects.m_Bulletlist.Clear();
+        ObjectManager.m_Inst.Objects.m_Playerlist.Clear();
+        ObjectManager.m_Inst.Objects.m_Colleaguelist.Clear();
+        ObjectManager.m_Inst.Objects.m_Enemylist.Clear();
+        ObjectManager.m_Inst.Objects.m_Weaponlist.Clear();
+        ObjectManager.m_Inst.Objects.m_Bulletlist.Clear();
 
         GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>().InitGameSaveData(isContinue);
 
@@ -39,7 +38,7 @@ public class TitleButtonScript : MonoBehaviour {
 
     IEnumerator LoadAsync() {
         // properly load database first
-        if (!objMgr.m_DBMgr.loaded) {
+        if (!ObjectManager.m_Inst.m_DBMgr.loaded) {
             string jsonDB;
             if (Application.platform == RuntimePlatform.Android) {
                  using (WWW www = new WWW ("jar:file://" + Application.dataPath + "!/assets/DeepRedChristMas_DB.json")) {
@@ -58,17 +57,17 @@ public class TitleButtonScript : MonoBehaviour {
             WaveDB[] TempWave = gameDB.Wave;
 
             for (int i = 0; i < TempZomebie.Length; i++)
-                objMgr.m_DBMgr.m_ZomebieDB.Add (TempZomebie [i].Name, TempZomebie [i]);
+                ObjectManager.m_Inst.m_DBMgr.m_ZomebieDB.Add (TempZomebie [i].Name, TempZomebie [i]);
             for (int i = 0; i < TempWeapon.Length; i++)
-                objMgr.m_DBMgr.m_WeaponDB.Add (TempWeapon [i].Name, TempWeapon [i]);
+                ObjectManager.m_Inst.m_DBMgr.m_WeaponDB.Add (TempWeapon [i].Name, TempWeapon [i]);
             for (int i = 0; i < TempWave.Length; i++)
-               objMgr.m_DBMgr.m_WaveDB.Add (TempWave [i].Level, TempWave [i]);
+                ObjectManager.m_Inst.m_DBMgr.m_WaveDB.Add (TempWave [i].Level, TempWave [i]);
 
-            objMgr.m_DBMgr.loaded = true;
+            ObjectManager.m_Inst.m_DBMgr.loaded = true;
         }
 
         var asyncOp = SceneManager.LoadSceneAsync("Stage");
-        GameObject.Find("GameController").GetComponent<ObjectManager>().SetState(STATE_ID.STATE_STAGE);
+        ObjectManager.m_Inst.SetState(STATE_ID.STATE_STAGE);
 
         while (!asyncOp.isDone) {
             yield return null;

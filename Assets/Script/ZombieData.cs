@@ -16,8 +16,6 @@ public struct ZomebieDB
 
 public class ZombieData : MonoBehaviour
 {
-    private ObjectManager m_ObjMgr;
-
     //this is information about this
     public int m_Hp { get; set; }
     public float m_Speed { get; set; }
@@ -35,7 +33,6 @@ public class ZombieData : MonoBehaviour
 
     void Awake()
     {
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         Initialize();
     }
 
@@ -55,7 +52,7 @@ public class ZombieData : MonoBehaviour
     public void Initialize()
     {
         //DB에서 캐릭터의 능력치를 받아온다.
-        ZomebieDB DBData = m_ObjMgr.m_DBMgr.m_ZomebieDB[gameObject.name];
+        ZomebieDB DBData = ObjectManager.m_Inst.m_DBMgr.m_ZomebieDB[gameObject.name];
         m_Speed = DBData.Speed;
         m_AttackRange = DBData.AttackRange;
         m_MaxHp = DBData.Hp;

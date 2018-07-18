@@ -8,7 +8,6 @@ public class Weapon_Katana : Weapon {
 
 	// Use this for initialization
     void Awake(){
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         Initialize();
     }
 
@@ -22,7 +21,7 @@ public class Weapon_Katana : Weapon {
 
     public override void Initialize()
     {
-        WeaponDB DBData = m_ObjMgr.m_DBMgr.m_WeaponDB[gameObject.name];
+        WeaponDB DBData = ObjectManager.m_Inst.m_DBMgr.m_WeaponDB[gameObject.name];
         m_ObjName = DBData.Name;
         m_MaxBulletNum = DBData.MaxBullet;
         m_Recoil = DBData.Recoil;
@@ -52,6 +51,6 @@ public class Weapon_Katana : Weapon {
 
     override public void ObjListAdd()
     {
-        m_ObjMgr.Objects.m_Weaponlist.Add(this);
+        ObjectManager.m_Inst.Objects.m_Weaponlist.Add(this);
     }
 }

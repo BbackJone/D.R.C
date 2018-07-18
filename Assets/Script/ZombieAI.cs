@@ -104,7 +104,7 @@ public class ZombieAI : MonoBehaviour {
     {
         while (true)
         {
-            m_target = m_Interaction.GetTarget(this.transform);
+            m_target = GetTarget(this.transform);
             yield return new WaitForSeconds(5f);
         }
     }
@@ -143,5 +143,23 @@ public class ZombieAI : MonoBehaviour {
 
             yield return null;
         }
+    }
+
+    //Set nearest enemy as target
+    public Transform GetTarget(Transform _trans)
+    {
+        float MinDis = 100000f;
+        PlayerInteraction target = null;
+        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
+        {
+            if (pm == null) continue;
+            float dis = Vector3.Distance(pm.transform.position, this.transform.position);
+            if (MinDis > dis)
+            {
+                MinDis = dis;
+                target = pm;
+            }
+        }
+        return target.transform;
     }
 }
