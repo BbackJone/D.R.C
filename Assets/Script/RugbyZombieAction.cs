@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class RugbyZombieAction : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    Animator m_Ani;
 
-    void Approach()
+    private void Awake()
     {
-
+        m_Ani = GetComponent<Animator>();
     }
 
     void WaitAndRush()
     {
-
+        StartCoroutine("WaitforsecondsAndRush", 5f);
     }
 
-    void Rush()
+    IEnumerator WaitforsecondsAndRush(float _seconds)
     {
+        m_Ani.SetTrigger("Waiting");
+        yield return new WaitForSeconds(_seconds);
+        m_Ani.SetTrigger("Rush");
+        Rush();
+    }
 
+    IEnumerator Rush()
+    {
+        yield return null;
+    }
+
+    void StopRush()
+    {
+        gameObject.SendMessage("AttackFinish");
     }
 }

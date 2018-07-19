@@ -31,6 +31,8 @@ public class ZombieData : MonoBehaviour
     public float m_AttackRange { get; set; }
     public int m_Price { get; set; }       //Money that is got when player kill this.
 
+    public string m_ZombieSort;     //This is required to get DB Info.
+
     void Awake()
     {
         Initialize();
@@ -52,14 +54,14 @@ public class ZombieData : MonoBehaviour
     public void Initialize()
     {
         //DB에서 캐릭터의 능력치를 받아온다.
-        ZomebieDB DBData = ObjectManager.m_Inst.m_DBMgr.m_ZomebieDB[gameObject.name];
+        ZomebieDB DBData = ObjectManager.m_Inst.m_DBMgr.m_ZomebieDB[m_ZombieSort];
         m_Speed = DBData.Speed;
         m_AttackRange = DBData.AttackRange;
         m_MaxHp = DBData.Hp;
         m_AttackDamage = DBData.AttackDamage;
         m_AttackSpeed = DBData.AttackSpeed;
         m_ObjName = DBData.Name;
-
+       
         m_Type = ObjType.OBJ_ENEMY;
     }
 

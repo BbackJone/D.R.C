@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Please Set Layer of Object that contain this script "Enemy"
 public class HitboxChecker : MonoBehaviour {
 
     public enum HitboxType { HEAD, BODY}

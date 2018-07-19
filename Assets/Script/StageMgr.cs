@@ -83,6 +83,7 @@ public class StageMgr : MonoBehaviour
     //Spawn zombies at random spot
     public void SpawnZombie(string _zombiename)
     {
+        return;
         int posindex = Random.Range(0, ObjectPoolMgr.instance.m_PoolingPos.Length);
         Vector3 temppos = ObjectPoolMgr.instance.m_PoolingPos[posindex];
         ObjectPoolMgr.instance.CreatePooledObject(_zombiename, temppos, Quaternion.identity);
