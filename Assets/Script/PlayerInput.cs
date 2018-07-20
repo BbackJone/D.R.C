@@ -7,7 +7,12 @@ public class PlayerInput : MonoBehaviour
 {
     private PlayerData m_Data;
     public UIManager m_UI;
+    public AudioClip SwapClip;
+    public AudioSource SwapSource;
 
+    public AudioClip WalkClip;
+    public AudioSource WalkSource;
+    
     //this is required to rotate player's view
     private float m_Mouse_X;
     private float m_Mouse_Y;
@@ -25,6 +30,8 @@ public class PlayerInput : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        WalkSource.clip = WalkClip;
+        SwapSource.clip = SwapClip;
         m_Data = GetComponent<PlayerData>(); 
     }
 
@@ -57,7 +64,17 @@ public class PlayerInput : MonoBehaviour
 
         Vector3 TempVec = m_Data.m_Move;
         TempVec.z = Input.GetAxis("Vertical");
-        TempVec.x = Input.GetAxis("Horizontal");
+        if (TempVec.z != 0)
+        {
+            if(!WalkSource.isPlaying)
+                WalkSource.PlayOneShot(WalkSource.clip);
+        }
+        if (TempVec.z == 0)
+        {
+            WalkSource.Stop();
+        }
+
+            TempVec.x = Input.GetAxis("Horizontal");
 
         m_Data.m_Move = TempVec;
         m_Mouse_X = Input.GetAxis("Mouse X");
@@ -74,6 +91,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKeyDown("t"))   //left shift
         {
+            SwapSource.PlayOneShot(SwapSource.clip);
             gameObject.SendMessage("SwapWeapon");
         }
         if (Input.GetKeyDown(KeyCode.Z))
@@ -130,4 +148,5 @@ public class PlayerInput : MonoBehaviour
                 gameObject.SendMessage("Reload");
         }
     }
+
 }
