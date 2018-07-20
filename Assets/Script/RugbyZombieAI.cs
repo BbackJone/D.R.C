@@ -9,7 +9,7 @@ public class RugbyZombieAI : MonoBehaviour {
     private ZombieData m_Data;
     private Animator m_Ani;
 
-    private Transform m_target;
+    public Transform m_target { get; set; }
 
     public GameObject obj_body;
     public GameObject obj_head;
@@ -31,7 +31,6 @@ public class RugbyZombieAI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        m_Nav.speed = m_Data.m_Speed;
     }
 
     void OnEnable()
@@ -49,7 +48,8 @@ public class RugbyZombieAI : MonoBehaviour {
     // Update is called once per frame
     private void FixedUpdate()
     {
-        AttackTarget();
+        if(m_Data.m_Death == false)
+            AttackTarget();
         DeathCheck();
     }
 

@@ -1149,8 +1149,8 @@ Transform:
   m_PrefabParentObject: {fileID: 479772, guid: 87e8f7080f063734abc6a8369a1ff993, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72558641}
-  m_LocalRotation: {x: 6.938894e-18, y: 3.8368136e-33, z: -1.6102571e-15, w: 1}
-  m_LocalPosition: {x: -0.3360725, y: 3.7261742e-16, z: 2.3643465e-18}
+  m_LocalRotation: {x: 6.938895e-18, y: -2.0679513e-25, z: 4.826906e-35, w: 1}
+  m_LocalPosition: {x: -0.3360726, y: 0, z: 2.364346e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416206154}
@@ -13074,6 +13074,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 520607572}
+  - component: {fileID: 520607574}
+  - component: {fileID: 520607573}
   m_Layer: 0
   m_Name: Hips_jnt
   m_TagString: Untagged
@@ -13097,6 +13099,29 @@ Transform:
   m_Father: {fileID: 780403711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &520607573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520607571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1457303, y: 0.99141985, z: 0.3971634}
+  m_Center: {x: -0.5728857, y: 0.028270833, z: 0.6751505}
+--- !u!114 &520607574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520607571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7549237d28b36b24d9f6cae02d6d99e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &522493379
 Prefab:
   m_ObjectHideFlags: 0
