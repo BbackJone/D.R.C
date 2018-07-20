@@ -17,6 +17,18 @@ public struct WeaponDB
     public int HeadDamage;
 }
 
+public enum Weapon_Type
+{
+    KATANA,
+    HANDGUN,
+    RIFLE,
+    RPG,
+    SNIPER,
+    BOW
+}
+
+//Weapon_Code in animator parameter
+// 0 : katana, 1 : handgun, 2 : rifle
 public class Weapon : MonoBehaviour
 {
     public ObjType m_Type { get; set; }
@@ -33,14 +45,15 @@ public class Weapon : MonoBehaviour
     public string m_AniTrigger { get; set; }        //실행할 애니메이션을 string 형으로 불러옴.
     public int m_BodyDamage { get; set; }
     public int m_HeadDamage { get; set; }
+    public Weapon_Type m_WeaponType;
 
     private Camera m_Camera;
 
     //this makes spark effect when bullet is fired.
-    private Animator m_Light;
-    private Animator m_MuzzleFlash;
-    private Animator m_MuzzleFlash2;
+    public MeshRenderer m_MuzzleFlash;
+    public MeshRenderer m_MuzzleFlash2;
 
+    public Transform m_ShootPos;
 
     virtual public void Initialize()
     {
@@ -63,9 +76,6 @@ public class Weapon : MonoBehaviour
     void Awake()
     {
         m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
-        m_Light = transform.GetChild(1).GetComponent<Animator>();
-        m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
-        m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
         m_Camera = Camera.main;
 
         Initialize();
@@ -79,12 +89,8 @@ public class Weapon : MonoBehaviour
 
     void OnEnable()
     {
-        if (m_Light != null)
-        {
-            m_Light.gameObject.SetActive(false);
-            m_MuzzleFlash.gameObject.SetActive(false);
-            m_MuzzleFlash2.gameObject.SetActive(false);
-        }
+        m_MuzzleFlash.enabled = false;
+        m_MuzzleFlash2.enabled = false;
     }
 
 
@@ -96,16 +102,35 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-      
         if (m_AmmoBulletNum <= 0)
             return;
+
+        if (m_WeaponType == Weapon_Type.RIFLE)
+        {
+            StopCoroutine("Shoot_Rifle");
+            StartCoroutine("Shoot_Rifle");
+        }
+        else
+            ShootBullet();
+    }
+    public IEnumerator Shoot_Rifle()
+    {
+        for(int i = 0; i < 3; i++)      //Shoot 3 bullet per 0.15 sec at once 
+        {
+            ShootBullet();
+            yield return new WaitForSeconds(0.15f);
+        }
+    }
+
+    public void ShootBullet()
+    {
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit;
         if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f))    //raycast forward
         {
             Vector3 Dir = hit.point - transform.position;
             Dir = Dir / Dir.magnitude;
-            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
@@ -113,17 +138,32 @@ public class Weapon : MonoBehaviour
         {
             float Updis = m_Camera.transform.position.y - transform.position.y;
             Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - transform.position;
-            ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, transform.position, Quaternion.LookRotation(Dir));
+            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
+            bullet.SendMessage("SetBodyDamage", m_BodyDamage);
+            bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
-        
-        m_MuzzleFlash.SetTrigger("On");
-        m_MuzzleFlash2.SetTrigger("On");
-        m_Light.SetTrigger("On");
+
+        Makeflash();
         m_AmmoBulletNum -= 1;
     }
 
     public void ChargeBullet()
     {
         m_AmmoBulletNum = m_MaxBulletNum;
+    }
+
+
+    public void Makeflash()
+    {
+        m_MuzzleFlash.enabled = true;
+        m_MuzzleFlash2.enabled = true;
+
+        //Invoke("Cancelflash", 1f); 
+    }
+
+    public void Cancelflash()
+    {
+        m_MuzzleFlash.enabled = false;
+        m_MuzzleFlash2.enabled = false;
     }
 }

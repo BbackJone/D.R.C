@@ -13,6 +13,11 @@ public class PlayerAction : MonoBehaviour {
     public MyButton m_AttackButton;     //This is necessary to determine 
                                         //whether you will allow automatic firing of weapons.
 
+    public Transform left_leg;
+    public Transform right_leg;
+
+    public Transform Look_target;
+
 	// Use this for initialization
     void Awake()
     {
@@ -37,6 +42,12 @@ public class PlayerAction : MonoBehaviour {
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");
+    }
+
+    private void Update()
+    {
+        left_leg.LookAt(Look_target);
+        right_leg.LookAt(Look_target);
     }
 
     IEnumerator DeadCheck()
@@ -136,10 +147,12 @@ public class PlayerAction : MonoBehaviour {
                 if (i == m_Data.m_Weapons.Count - 1)
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
+                    m_Data.m_Ani.SetInteger("Weapon_Code", 0);
                 }
                 else
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
+                    m_Data.m_Ani.SetInteger("Weapon_Code", i + 1);
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
                 Check_WeaponisAuto();
