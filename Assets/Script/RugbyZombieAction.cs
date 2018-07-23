@@ -57,9 +57,8 @@ public class RugbyZombieAction : MonoBehaviour {
 
     void StopRush()
     {
-        Debug.Log("StopRush");
-        m_Ani.SetTrigger("AttackFinish");
-        gameObject.SendMessage("AttackFinish");
+        m_AI.m_Attacking = false;
+        m_Ani.SetBool("Attacking", m_AI.m_Attacking);
         StopCoroutine("Rush");
     }
 }

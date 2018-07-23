@@ -17,7 +17,7 @@ public class RugbyZombieAI : MonoBehaviour {
     private BoxCollider head_col;
 
     private float m_TargetDistance;
-    private bool m_Attacking = false;
+    public bool m_Attacking { get; set; }
 
     private void Awake()
     {
@@ -27,6 +27,8 @@ public class RugbyZombieAI : MonoBehaviour {
 
         body_col = obj_body.GetComponent<BoxCollider>();
         head_col = obj_head.GetComponent<BoxCollider>();
+        
+        m_Attacking = false;
     }
 
     // Use this for initialization
@@ -42,7 +44,7 @@ public class RugbyZombieAI : MonoBehaviour {
         StartCoroutine("FindTarget");
         StartCoroutine("NavMove");
 
-        m_Data.m_AttackSpeed = 3;
+        m_Data.m_AttackTimer = m_Data.m_AttackSpeed;
     }
 
     // Update is called once per frame
@@ -73,6 +75,7 @@ public class RugbyZombieAI : MonoBehaviour {
                     transform.LookAt(m_target);
                     gameObject.SendMessage("WaitAndRush");
                     m_Attacking = true;
+                    m_Ani.SetBool("Attacking", m_Attacking);
                 }
             }
         }
@@ -162,10 +165,5 @@ public class RugbyZombieAI : MonoBehaviour {
                 StageMgr.instance.AddSpecialZombieNumber(-1);
             }
         }
-    }
-
-    void AttackFinish()
-    {
-        m_Attacking = false;
     }
 }
