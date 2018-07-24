@@ -20,6 +20,9 @@ public class HitboxChecker : MonoBehaviour {
         else if (hitboxtype == HitboxType.HEAD)
         {
             Object.SendMessage("GetDamage", _power[0]);
+
+            //Show RedAim for 0.1 seconds
+            UIManager.m_Instance.ShowRedAim();
         }
     }
 }
