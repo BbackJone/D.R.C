@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;   //this for NavMeshAgent
 
-public class ZombieAI : MonoBehaviour {
+public class DevilZombieAI : MonoBehaviour
+{
 
     private ZombieData m_Data;
     private ZombieInteraction m_Interaction;
@@ -31,9 +32,10 @@ public class ZombieAI : MonoBehaviour {
 
     void OnEnable()
     {
-        StageMgr.instance.AddNormalZombieNumber(1);
+        StageMgr.instance.AddSpecialZombieNumber(1);
 
         m_Nav.enabled = true;
+        m_Nav.baseOffset = 25;
 
         StartCoroutine("FindTarget");
         StartCoroutine("TargetAttack");
@@ -41,10 +43,11 @@ public class ZombieAI : MonoBehaviour {
         StartCoroutine("DeathCheck");
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         m_Nav.speed = m_Data.m_Speed;
-	}
+    }
 
 
     IEnumerator TargetAttack()
@@ -65,7 +68,7 @@ public class ZombieAI : MonoBehaviour {
                     {
                         m_Data.m_AttackTimer = 0f;
                         transform.LookAt(m_target);
-                        gameObject.SendMessage("AttackofTwohand");
+                        gameObject.SendMessage("ShootFlame");
                     }
                 }
             }
@@ -83,11 +86,12 @@ public class ZombieAI : MonoBehaviour {
             {
                 if (m_TargetDistance < m_Data.m_AttackRange * 0.75)
                 {
-                    m_Nav.Stop();
+                    m_Nav.speed = 0;
+                    gameObject.SendMessage("Patrol");
                 }
                 else
                 {
-                    m_Nav.Resume();
+                    m_Nav.speed = m_Data.m_Speed;
                     m_Nav.SetDestination(m_target.position);
                 }
             }
@@ -127,17 +131,6 @@ public class ZombieAI : MonoBehaviour {
                     StopCoroutine("FindTarget");
                     StopCoroutine("TargetAttack");
                     StopCoroutine("NavMove");
-
-                    int rv = Random.Range(0, 25);
-                    if (rv == 1) {
-                        // spawn heart drop at 4% rate
-                        GameObject drop = Instantiate(GameObject.Find("DropHeart"), new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                        drop.GetComponent<MeshRenderer>().enabled = true;
-                    } else if (rv == 2) {
-                        // spawn ammo drop at 4% rate
-                        GameObject drop = Instantiate(GameObject.Find("DropAmmo"), new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                        drop.GetComponent<MeshRenderer>().enabled = true;
-                    }
                 }
 
                 if (m_Data.m_DeathTimer < 4f)
@@ -148,7 +141,7 @@ public class ZombieAI : MonoBehaviour {
                     head_col.enabled = true;
                     //Because SetActive(false) with colliders inactive make a kind of bug(collider components are out of order), this is required
                     this.gameObject.SetActive(false);
-                    StageMgr.instance.AddNormalZombieNumber(-1);
+                    StageMgr.instance.AddSpecialZombieNumber(-1);
                 }
             }
 

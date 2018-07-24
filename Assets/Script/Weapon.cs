@@ -32,7 +32,6 @@ public enum Weapon_Type
 public class Weapon : MonoBehaviour
 {
     public ObjType m_Type { get; set; }
-    public ObjectManager m_ObjMgr { get; set; }
     public string m_ObjName { get; set; }
 
     public int m_MaxBulletNum { get; set; }        //한번에장전 할수있는 최대탄수
@@ -57,7 +56,7 @@ public class Weapon : MonoBehaviour
 
     virtual public void Initialize()
     {
-        WeaponDB DBData = m_ObjMgr.m_DBMgr.m_WeaponDB[gameObject.name];
+        WeaponDB DBData = ObjectManager.m_Inst.m_DBMgr.m_WeaponDB[gameObject.name];
         m_ObjName = DBData.Name;
         m_MaxBulletNum = DBData.MaxBullet;
         m_Recoil = DBData.Recoil;
@@ -75,7 +74,6 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         m_Camera = Camera.main;
 
         Initialize();
@@ -96,7 +94,7 @@ public class Weapon : MonoBehaviour
 
     virtual public void ObjListAdd()
     {
-       m_ObjMgr.Objects.m_Weaponlist.Add(this);
+        ObjectManager.m_Inst.Objects.m_Weaponlist.Add(this);
     }
 
 

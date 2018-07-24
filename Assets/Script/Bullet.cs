@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour{
 
     public ObjType m_Type { get; set; }
-    public ObjectManager m_ObjMgr { get; set; }
 
     public float m_Speed { get; set; }
     public int m_BodyDamage;
@@ -30,7 +29,6 @@ public class Bullet : MonoBehaviour{
     void Awake()
     {
         m_StayTime = 2f;
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         m_Trail = transform.GetComponent<TrailRenderer>();
     }
 
@@ -82,6 +80,6 @@ public class Bullet : MonoBehaviour{
 
     public void ObjListAdd()
     {
-        m_ObjMgr.Objects.m_Bulletlist.Add(this);
+        ObjectManager.m_Inst.Objects.m_Bulletlist.Add(this);
     }
 }

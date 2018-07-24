@@ -104,6 +104,31 @@ public class ObjectPoolMgr : MonoBehaviour {
         Directory.name = BulletToPool.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
+        //Flame
+        ObjectToPool FlameToPool = new ObjectToPool();
+        FlameToPool.Obj = Directory_ObjectToPool.GetChild(7).gameObject;
+        FlameToPool.AmountToPool = 10;
+        FlameToPool.ObjName = FlameToPool.Obj.name;
+        FlameToPool.objType = ObjType.OBJ_ETC;
+        FlameToPool.ShouldExpand = true;
+
+        m_ObjectToPool.Add(FlameToPool.ObjName, FlameToPool);
+        Directory = new GameObject();
+        Directory.name = FlameToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //ExplosionParticle
+        ObjectToPool ExplosionToPool = new ObjectToPool();
+        ExplosionToPool.Obj = Directory_ObjectToPool.GetChild(8).gameObject;
+        ExplosionToPool.AmountToPool = 10;
+        ExplosionToPool.ObjName = ExplosionToPool.Obj.name;
+        ExplosionToPool.objType = ObjType.OBJ_ETC;
+        ExplosionToPool.ShouldExpand = true;
+
+        m_ObjectToPool.Add(ExplosionToPool.ObjName, ExplosionToPool);
+        Directory = new GameObject();
+        Directory.name = ExplosionToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
     }
 
     void Start()

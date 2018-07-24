@@ -1,12 +1,28 @@
 {
   "Zombie": [
     {
-      "Name": "SA_Zombie_Businessman",
+      "Name": "NormalZombie",
       "Hp": 100,
       "Speed": 2,
       "AttackDamage": 15,
       "AttackRange": 2,
       "AttackSpeed": 2.5
+    },
+    {
+      "Name": "RugbyZombie",
+      "Hp": 500,
+      "Speed": 2,
+      "AttackDamage": 40,
+      "AttackRange": 20,
+      "AttackSpeed": 15
+    },
+    {
+      "Name": "DevilZombie",
+      "Hp": 100,
+      "Speed": 4,
+      "AttackDamage": 50,
+      "AttackRange": 40,
+      "AttackSpeed": 8
     }
   ],
   "Weapon": [
