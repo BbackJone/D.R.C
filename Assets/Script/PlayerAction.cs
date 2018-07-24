@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour {
 
+    public AudioSource RifleRSource;
+    public AudioClip RifleRClip;
+    public AudioSource HandgunRSource;
+    public AudioClip HandgunRClip;
     private PlayerData m_Data;
     private float m_AttackTimer;
 
@@ -33,6 +37,7 @@ public class PlayerAction : MonoBehaviour {
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");
 	}
+    
 
     void OnEnable()
     {
@@ -186,6 +191,15 @@ public class PlayerAction : MonoBehaviour {
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum < m_Data.m_WeaponInhand.m_MaxBulletNum)
         {
             m_Data.m_Ani.SetTrigger("WeaponReload");
+            if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
+            {
+                RifleRSource.PlayOneShot(RifleRClip);
+            }
+            if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
+            {
+                HandgunRSource.PlayOneShot(HandgunRClip);
+            }
+
             m_Data.m_Reloading = true;
             m_Data.m_Ani.SetBool("WeaponReloadBool", m_Data.m_Reloading);
         }

@@ -63,18 +63,18 @@ public class PlayerInput : MonoBehaviour
         }
 
         Vector3 TempVec = m_Data.m_Move;
-        TempVec.z = Input.GetAxis("Vertical");
-        if (TempVec.z != 0)
+
+            TempVec.z = Input.GetAxis("Vertical");
+            TempVec.x = Input.GetAxis("Horizontal");
+        if (TempVec.x != 0|| TempVec.z !=0)
         {
-            if(!WalkSource.isPlaying)
+            if (!WalkSource.isPlaying)
                 WalkSource.PlayOneShot(WalkSource.clip);
         }
-        if (TempVec.z == 0)
+        if (TempVec.z == 0&& TempVec.x==0)
         {
             WalkSource.Stop();
         }
-
-            TempVec.x = Input.GetAxis("Horizontal");
 
         m_Data.m_Move = TempVec;
         m_Mouse_X = Input.GetAxis("Mouse X");
