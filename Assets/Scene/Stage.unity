@@ -20207,6 +20207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21df1a61275dbf48b38f517a68267ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ZombieSort: DevilZombie
 --- !u!195 &605846014
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -26536,6 +26537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21df1a61275dbf48b38f517a68267ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ZombieSort: NormalZombie
 --- !u!114 &914229363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57153,6 +57155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21df1a61275dbf48b38f517a68267ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ZombieSort: NormalZombie
 --- !u!195 &2073452063
 NavMeshAgent:
   m_ObjectHideFlags: 0
