@@ -31,20 +31,23 @@ public class ZombieData : MonoBehaviour
     public float m_AttackRange { get; set; }
     public int m_Price { get; set; }       //Money that is got when player kill this.
 
-    public string m_ZombieSort;     //This is required to get DB Info.
+    public string m_ZombieSort;     //This is required to get DB Info. 
 
     void Awake()
     {
         Initialize();
+        Debug.Log("Data Awake m_Data.m_Hp : " + m_Hp);
     }
 
     void Start()
     {
+        Debug.Log("Data Start m_Data.m_Hp : " + m_Hp);
         m_Price = 1;
     }
 
     void OnEnable()
     {
+        Debug.Log("Data OnEnable m_Data.m_Hp : " + m_Hp);
         m_Hp = m_MaxHp;
         m_Death = false;
         m_DeathTimer = 0f;
@@ -59,6 +62,7 @@ public class ZombieData : MonoBehaviour
         m_Speed = DBData.Speed;
         m_AttackRange = DBData.AttackRange;
         m_MaxHp = DBData.Hp;
+        m_Hp = m_MaxHp;
         m_AttackDamage = DBData.AttackDamage;
         m_AttackSpeed = DBData.AttackSpeed;
         m_ObjName = DBData.Name;

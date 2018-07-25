@@ -128,7 +128,6 @@ public class UIManager : MonoBehaviour {
                 m_RedAimTimer = 0;
                 StopCoroutine("CoShowImageforSeconds_OpacityChange");
             }
-            Debug.Log("Coroutine");
         
             yield return new WaitForSeconds(_imageSeconds.Seconds / 10f);
         }

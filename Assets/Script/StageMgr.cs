@@ -56,6 +56,10 @@ public class StageMgr : MonoBehaviour
         m_GameTime += Time.deltaTime;
         ZombieSpawnTimer();
         
+        if(Input.GetKeyDown("y"))
+        {
+            SpawnZombie("DevilZombie");
+        }
     }
 
 
@@ -74,6 +78,7 @@ public class StageMgr : MonoBehaviour
 
     public void ZombieSpawnTimer()
     {
+        return;
         //Spawn Normal zombies
         if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber)
         {

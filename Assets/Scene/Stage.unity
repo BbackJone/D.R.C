@@ -174,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &14344236
 GameObject:
@@ -826,6 +826,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 34089726}
   m_Mesh: {fileID: 4300000, guid: 4ee657a274164f848b05b5199966495c, type: 3}
+--- !u!1 &43332521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 43332522}
+  m_Layer: 0
+  m_Name: Down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43332522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43332521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -5.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44607072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1248,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 50758363}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
+--- !u!1 &52380103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 52380104}
+  m_Layer: 0
+  m_Name: Position (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52380104
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52380103}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.76, y: 4.22, z: 4.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &53268221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,8 +1297,8 @@ Transform:
   m_PrefabParentObject: {fileID: 463770, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 53268221}
-  m_LocalRotation: {x: 0.9999078, y: 0.0005809014, z: -0.011708392, w: 0.0068581146}
-  m_LocalPosition: {x: 0.12891664, y: 0.22158809, z: 0.01786388}
+  m_LocalRotation: {x: 0.9998662, y: 0.0035456528, z: -0.013734407, w: 0.0081584}
+  m_LocalPosition: {x: 0.12891667, y: 0.22158815, z: 0.01786388}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1106156749}
@@ -2447,8 +2503,8 @@ Transform:
   m_PrefabParentObject: {fileID: 414784, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108719691}
-  m_LocalRotation: {x: 0.4958342, y: 0.5067274, z: -0.49273258, w: 0.50456953}
-  m_LocalPosition: {x: 0.388744, y: 8.1971365e-12, z: -3.69074e-11}
+  m_LocalRotation: {x: 0.40518597, y: 0.5658992, z: -0.4380924, w: 0.56890905}
+  m_LocalPosition: {x: 0.388744, y: 0, z: -0.000000009313226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1816402284}
@@ -3204,7 +3260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147922786
 GameObject:
@@ -8738,6 +8794,871 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 214197263}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
+--- !u!1001 &217428939
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -650.03107
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.19479989
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 303.6388
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.122945264
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9865034
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.01337457
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.107316084
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -3.169857e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400044, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 3.7106364e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400044, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1.5148283e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000036970737
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000017990025
+      objectReference: {fileID: 0}
+    - target: {fileID: 400088, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400088, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1.1714554e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400072, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5000037
+      objectReference: {fileID: 0}
+    - target: {fileID: 400072, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.49999627
+      objectReference: {fileID: 0}
+    - target: {fileID: 400072, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5000037
+      objectReference: {fileID: 0}
+    - target: {fileID: 400072, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999627
+      objectReference: {fileID: 0}
+    - target: {fileID: 400102, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5506254
+      objectReference: {fileID: 0}
+    - target: {fileID: 400102, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8233238
+      objectReference: {fileID: 0}
+    - target: {fileID: 400102, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.09798881
+      objectReference: {fileID: 0}
+    - target: {fileID: 400102, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0966845
+      objectReference: {fileID: 0}
+    - target: {fileID: 400070, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.4862043
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 3.169857e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49882898
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 7.5787585e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -2.2502393e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 6.123217e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400062, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -3.8359907e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400062, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400062, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400062, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000040232035
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.86036545
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49563456
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.50042224
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5004222
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49957305
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49958175
+      objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000000074505815
+      objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.10238001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000037252899
+      objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99474543
+      objectReference: {fileID: 0}
+    - target: {fileID: 400086, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400086, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400086, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1.6657682e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400086, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.102956444
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0593106
+      objectReference: {fileID: 0}
+    - target: {fileID: 400074, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.67174166
+      objectReference: {fileID: 0}
+    - target: {fileID: 400074, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.21103062
+      objectReference: {fileID: 0}
+    - target: {fileID: 400074, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.21274391
+      objectReference: {fileID: 0}
+    - target: {fileID: 400074, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6774728
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.082624614
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2556394
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.3743462
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.88751715
+      objectReference: {fileID: 0}
+    - target: {fileID: 400070, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5134693
+      objectReference: {fileID: 0}
+    - target: {fileID: 400070, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.48686072
+      objectReference: {fileID: 0}
+    - target: {fileID: 400070, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5127587
+      objectReference: {fileID: 0}
+    - target: {fileID: 400064, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000011175869
+      objectReference: {fileID: 0}
+    - target: {fileID: 400064, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50630003
+      objectReference: {fileID: 0}
+    - target: {fileID: 400064, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000029802319
+      objectReference: {fileID: 0}
+    - target: {fileID: 400064, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8623574
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0030650173
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.025662675
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.118549444
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99261177
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000009173523
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.37773246
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000008731146
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9259148
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5011712
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5011969
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49879736
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.2597436
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9656776
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1 &217428940 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100084, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+  m_PrefabInternal: {fileID: 217428939}
+--- !u!114 &217428941
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217428940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 834953351, guid: 9f0cf3d8d0aa0004a8e74c06041b4da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTransformsTRSList:
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": 
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -650.03107, y: -0.19479989, z: 303.6388}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0, y: 0, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0, y: 1.0449876, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 0.2597436, w: 0.9656776}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.009555898, y: 0.016478358, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 0.86650366, w: -0.49917075}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Body
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.48094505, y: 2.628988e-16, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Prop_Backpack
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.5451429, y: 2.628988e-16, z: -0.3973172}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Prop_FireFighterPack
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.5451429, y: 2.628988e-16, z: -0.3973172}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.6703252, y: 1.488421e-16, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -1.6657682e-15, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.3106261, y: 6.897285e-17, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -1.5543122e-15, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.54227096, y: 1.2040834e-16, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 3.7106361e-16, y: -1.5148282e-16, z: 0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/GasMask
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00000001907338, y: -0.17642334, z: 0.12371803}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hair_Bobs
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 1.0694498e-13, y: -0.053737488, z: -0.19250129}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hair_Ponytail
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 1.0694498e-13, y: -0.46431282, z: -0.4073354}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hair_Punk
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 1.0694498e-13, y: 0.2685141, z: 0.0059797955}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hair_Top
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 1.0694498e-13, y: 0.20238373, z: 0.0019336318}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Cap
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.000000038147082, y: 0.2692938, z: 0.13901028}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Cap_Backwards
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00000001907338, y: 0.24868254, z: -0.10632515}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_FireFighter
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00000015258777, y: -0.05174263, z: 0.064537965}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Helmet
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00000015258777, y: 0.22922362, z: 0.064537965}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Hobo
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.000000038147082, y: 0.18601379, z: 0.0041705323}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Pimp
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.000000038147082, y: 0.24868254, z: 0.0163426}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Police
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 1.0694498e-13, y: 0.2663327, z: 0.016343536}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/Hat_Sheriff
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.000000038147082, y: 0.2893402, z: 0.0163426}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/RiotHelmet
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00000001907338, y: -0.1155957, z: -0.0003385353}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Hat_jnt/WarHelmet
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00000001907338, y: 0.04374603, z: -0.0003385353}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.5537414e-16, y: 3.7064852e-16, z: 2.1788127e-14, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/Head_jnt/Head
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.3517903, y: -4.4937457e-15, z: 0.0016335868}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Left_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.21910845, y: -0.565232, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Left_jnt/LowerArm_Left_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.471188, y: -2.842171e-16, z: 5.77041e-17}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -3.330669e-15, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Left_jnt/LowerArm_Left_jnt/Hand_Left_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.4403, y: 0, z: 5.39209e-17}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Left_jnt/LowerArm_Left_jnt/Hand_Left_jnt/Hand_Left
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.10388977, y: 0.0000007629394, z: 7.156808e-15}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 1, y: 1.7344459e-13, z: 2.3042007e-15, w: 7.2736614e-16}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Left_jnt/LowerArm_Left_jnt/LowerArm_Left
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.21630295, y: 0.000002746582, z: -5.77041e-17}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 1, w: -3.169857e-15}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Left_jnt/UpperArm_Left
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.1898368, y: 0.0000025939942, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: 0, z: 1, w: -1.1714554e-15}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Right_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.21910845, y: 0.565232, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -0.7071068, y: 0.7071068, z: -8.659561e-17, w: -8.7157646e-33}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Right_jnt/LowerArm_Right_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.47118998, y: 5.684342e-16, z: -5.770413e-17}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -6.627657e-19, y: -3.586922e-21, z: 6.1322475e-16, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Right_jnt/LowerArm_Right_jnt/Hand_Right_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.4403, y: -8.5265126e-16, z: -5.3921198e-17}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 6.123234e-17, y: 1, z: -6.123234e-17, w: 6.123234e-17}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Right_jnt/LowerArm_Right_jnt/Hand_Right_jnt/Hand_Right
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.103895105, y: 0.0000018310546, z: 8.298868e-15}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -7.30185e-16, y: 1.8818184e-15, z: -1.3747337e-13, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Right_jnt/LowerArm_Right_jnt/LowerArm_Right
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.2163005, y: 0.000001373291, z: -2.8199606e-17}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 3.8359907e-15, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/Body_jnt/Spine_jnt/UpperArm_Right_jnt/UpperArm_Right
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.18983337, y: 0.000001373291, z: 0.000000019073486}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 3.169857e-15, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/LowerBody
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.017870521, y: -0.030816268, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0.2597436, w: 0.9656776}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.25698245, y: -1.4210854e-16, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -0.00013711104, y: -0.00008424717, z: 0.49917462, w: 0.8665014}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt/LowerLeg_Left_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.37452164, y: -3.5527136e-17, z: -2.7105054e-22}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -0.7075902, y: 0.000006446892, z: -0.0000061459123, w: 0.706623}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt/LowerLeg_Left_jnt/Foot_Left_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.38874373, y: 1.2252568e-17, z: 7.3426066e-12}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0.5004223, y: 0.50042224, z: -0.49957308, w: 0.49958178}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt/LowerLeg_Left_jnt/Foot_Left_jnt/Foot_Left
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.00007686615, y: -0.048915174, z: 0.050484985}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -1.6556106e-16, y: -2.2505175e-12, z: -1.915229e-11, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt/LowerLeg_Left_jnt/Foot_Left_jnt/Foot_Left_jnt1
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -6.72415e-12, y: -0.1497335, z: 0.21969701}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt/LowerLeg_Left_jnt/LowerLeg_Left
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.1630286, y: -0.0000034438171, z: -0.00007684708}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0.4999963, y: 0.50000376, z: -0.4999963, w: 0.50000376}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Left_jnt/UpperLeg_Left
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.18078415, y: -0.0000011253356, z: 0.0000004852732}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -0.00000040232032, y: 0.0000014957509, z: -0.7071068, w: 0.7071068}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.12763838, y: -0.22304337, z: 0}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -0.49918568, y: 0.8664699, z: 0.0057249973, w: -0.0032841142}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt/LowerLeg_Right_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.374522, y: 2.4868996e-16, z: -1.0987412e-12}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: -0.70410997, y: -0.000030960506, z: 0.00005181963, w: 0.710091}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt/LowerLeg_Right_jnt/Foot_Right_jnt
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.388744, y: 8.197135e-12, z: -3.6907224e-11}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0.5011712, y: 0.5011969, z: -0.49882895, w: 0.49879736}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt/LowerLeg_Right_jnt/Foot_Right_jnt/Foot_Right
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.00007598877, y: 0.04891508, z: -0.05048548}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 1, y: -7.5787585e-11, z: 2.2502393e-12, w: -6.123217e-17}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt/LowerLeg_Right_jnt/Foot_Right_jnt/Foot_Right_jnt1
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: -0.000003490797, y: 0.1497333, z: -0.21969701}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0, y: -0, z: -0, w: 1}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt/LowerLeg_Right_jnt/LowerLeg_Right
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.16302867, y: 0.0000034247448, z: 0.000076961514}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0.50000376, y: -0.4999963, z: -0.50000376, w: -0.4999963}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  - "\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u038A\u0389\u0389": Root_jnt/Hips_jnt/UpperLeg_Right_jnt/UpperLeg_Right
+    "\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389":
+      "\u0389\u0389\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u0389\u038A\u0389": {
+        x: 0.18077697, y: 0.00000074386594, z: -0.00000048524976}
+      "\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u038A\u038A\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u0389\u038A\u038A\u038A\u0389\u0389": {
+        x: 0.7071068, y: -0.7071068, z: -0.0000036970737, w: -0.0000017990025}
+      "\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u0389\u0389\u038A\u0389\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u038A\u038A\u038A\u038A\u0389\u0389\u038A\u0389\u038A\u038A\u0389\u038A\u038A\u0389\u0389\u0389\u0389\u038A\u0389\u038A\u0389\u0389\u0389\u038A\u038A": {
+        x: 1, y: 1, z: 1}
+  topMostLocalPositionRefPose: {x: -650.03107, y: -0.19479989, z: 303.6388}
+  topMostLocalRotationRefPose: {x: 0, y: 0, z: 0, w: 1}
+  topMostLocalScaleRefPose: {x: 1, y: 1, z: 1}
+  originalAnimationEnable: 0
+  originalAnimationEnablePrefabOverride: 0
+  createdInEditMode: 1
+  originalApplyRootMotion: 1
+  originalApplyRootMotionPrefabOverride: 0
+  originalCullingMode: 0
+  originalCullingModePrefabOverride: 0
+  componentPropertiesSavedList: []
+  restoreSceneLighting: 0
+  transformsBeforeDeoptimizing: []
+  timelineDirector: {fileID: 0}
+  timelineTrackAsset: {fileID: 0}
 --- !u!1 &219019423
 GameObject:
   m_ObjectHideFlags: 0
@@ -8902,6 +9823,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 225617762}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
+--- !u!1 &229931596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 229931597}
+  m_Layer: 0
+  m_Name: Position (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229931597
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 229931596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.42, y: -2.4, z: -3.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235369693
 GameObject:
   m_ObjectHideFlags: 0
@@ -9054,6 +10003,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 235784770}
   m_Mesh: {fileID: 4300002, guid: e546de01af967544fb126667ca668567, type: 3}
+--- !u!1 &245278220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 245278221}
+  m_Layer: 0
+  m_Name: Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &245278221
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245278220}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246732238
 GameObject:
   m_ObjectHideFlags: 0
@@ -15669,6 +16646,34 @@ Transform:
   m_Father: {fileID: 914229357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &356602783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 356602784}
+  m_Layer: 0
+  m_Name: Position (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &356602784
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356602783}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.419983, y: 4.87, z: 4.461}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357688337
 GameObject:
   m_ObjectHideFlags: 0
@@ -15998,6 +17003,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 368373181}
   m_Mesh: {fileID: 4300000, guid: 76254b4a1339aa24aa6f075338cc3176, type: 3}
+--- !u!1 &373773980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 373773981}
+  m_Layer: 0
+  m_Name: Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &373773981
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 373773980}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &378453318
 GameObject:
   m_ObjectHideFlags: 0
@@ -16698,8 +17731,8 @@ Transform:
   m_PrefabParentObject: {fileID: 417428, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 432039920}
-  m_LocalRotation: {x: 0, y: 0, z: -1.6653345e-15, w: 1}
-  m_LocalPosition: {x: -0.22895189, y: 4.2216863e-16, z: 5.667284e-19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.22895196, y: 0, z: -8.95551e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1968634569}
@@ -17465,7 +18498,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 474476567}
-  m_LocalRotation: {x: 0.42940718, y: 0.5365544, z: -0.5035792, w: 0.5235714}
+  m_LocalRotation: {x: 0.42940712, y: 0.5365544, z: -0.50357914, w: 0.5235714}
   m_LocalPosition: {x: -0.005, y: 0.277, z: 1.8}
   m_LocalScale: {x: -0.08847556, y: -0.088475466, z: -0.08847544}
   m_Children: []
@@ -18298,8 +19331,8 @@ Transform:
   m_PrefabParentObject: {fileID: 451038, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 506898338}
-  m_LocalRotation: {x: 0.50674546, y: 0.49426782, z: -0.50519735, w: 0.4936436}
-  m_LocalPosition: {x: -0.38874373, y: -1.7208457e-17, z: 7.342464e-12}
+  m_LocalRotation: {x: 0.72787565, y: 0.3086293, z: -0.36692992, w: 0.4902117}
+  m_LocalPosition: {x: -0.38874382, y: 0.000000029802322, z: -0.00000005401671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1332678835}
@@ -19744,7 +20777,7 @@ Transform:
   - {fileID: 92536203}
   - {fileID: 2058469340}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &591387501
 GameObject:
@@ -19934,7 +20967,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595163490}
-  m_LocalRotation: {x: -0.48925218, y: -0.49662268, z: -0.5676662, w: -0.43789646}
+  m_LocalRotation: {x: -0.48925218, y: -0.4966227, z: -0.5676662, w: -0.4378965}
   m_LocalPosition: {x: 0.162, y: 0.006, z: 0.098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -20056,8 +21089,8 @@ Transform:
   m_PrefabParentObject: {fileID: 491746, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 598739919}
-  m_LocalRotation: {x: 0, y: 0, z: -1.6102571e-15, w: 1}
-  m_LocalPosition: {x: -0.3360725, y: 3.7261742e-16, z: 2.3643465e-18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3360726, y: 0, z: -8.8037216e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1702736933}
@@ -20156,7 +21189,7 @@ GameObject:
   - component: {fileID: 605846010}
   m_Layer: 0
   m_Name: DevilZombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20185,6 +21218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_body: {fileID: 1702736932}
   obj_head: {fileID: 1968634566}
+  m_WonderingPosParent: {fileID: 880742771}
 --- !u!114 &605846012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20254,14 +21288,15 @@ Transform:
   m_PrefabParentObject: {fileID: 433546, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605846009}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -653, y: -0.0000019669533, z: 305.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -653, y: 10.68, z: 305.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2045270795}
   - {fileID: 301355254}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  - {fileID: 880742771}
+  m_Father: {fileID: 1665428016}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &609451782
 GameObject:
@@ -20450,8 +21485,8 @@ Transform:
   m_PrefabParentObject: {fileID: 424878, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 614151458}
-  m_LocalRotation: {x: -1.7658669e-13, y: 1, z: -7.2736614e-16, w: -2.3041107e-15}
-  m_LocalPosition: {x: 0.4403, y: 0, z: 5.39209e-17}
+  m_LocalRotation: {x: 0.024148624, y: 0.99906576, z: 0.004626215, w: -0.03553905}
+  m_LocalPosition: {x: 0.44030046, y: -2.4440702e-16, z: 5.551115e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722135406}
@@ -22604,8 +23639,8 @@ Transform:
   m_PrefabParentObject: {fileID: 426018, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722135405}
-  m_LocalRotation: {x: 0, y: 0, z: -2.3869795e-15, w: 1}
-  m_LocalPosition: {x: 0.471188, y: -2.842171e-16, z: 5.77041e-17}
+  m_LocalRotation: {x: 0.069380164, y: -0.06243263, z: -0.0037699046, w: 0.99562764}
+  m_LocalPosition: {x: 0.47118855, y: -2.510987e-15, z: 8.881784e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 614151459}
@@ -22740,8 +23775,8 @@ Transform:
   m_PrefabParentObject: {fileID: 471076, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 730550356}
-  m_LocalRotation: {x: -0.7075902, y: 0.0000064468913, z: -0.0000061459123, w: 0.706623}
-  m_LocalPosition: {x: -0.37452164, y: 7.105427e-17, z: 1.110223e-18}
+  m_LocalRotation: {x: -0.6184459, y: -0.00023911241, z: 0.0003003925, w: 0.7858274}
+  m_LocalPosition: {x: -0.37452167, y: -0.000000029802322, z: 9.313226e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 506898339}
@@ -23093,6 +24128,34 @@ Transform:
   m_Father: {fileID: 1857722658}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 67.326004, y: -90.58401, z: 89.314}
+--- !u!1 &752700004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 752700005}
+  m_Layer: 0
+  m_Name: Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &752700005
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 752700004}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.62, y: -3.84, z: 3.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &753074612
 GameObject:
   m_ObjectHideFlags: 0
@@ -24646,6 +25709,160 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 809721779}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
+--- !u!1001 &814554462
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -645.54926
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.19479989
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 302.0702
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0006498136
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.010304519
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0006498136
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.010304519
+      objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.18686023
+      objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.60095865
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7059572
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.015687702
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0068027773
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.41058227
+      objectReference: {fileID: 0}
+    - target: {fileID: 400044, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.114033155
+      objectReference: {fileID: 0}
+    - target: {fileID: 400044, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00978106
+      objectReference: {fileID: 0}
+    - target: {fileID: 400044, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.89084923
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9957005
+      objectReference: {fileID: 0}
+    - target: {fileID: 400084, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.09263137
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000012219929
+      objectReference: {fileID: 0}
+    - target: {fileID: 400042, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.22729197
+      objectReference: {fileID: 0}
+    - target: {fileID: 400042, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.22729197
+      objectReference: {fileID: 0}
+    - target: {fileID: 400034, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.44783446
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0034134407
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0066458187
+      objectReference: {fileID: 0}
+    - target: {fileID: 400046, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.45418105
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49436495
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.86925447
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0008169309
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.05782889
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.36165696
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &819302686
 GameObject:
   m_ObjectHideFlags: 0
@@ -25802,6 +27019,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 879024171}
   m_Mesh: {fileID: 4300000, guid: ce530184356a641479448c02e5d02218, type: 3}
+--- !u!1 &880742770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 880742771}
+  m_Layer: 0
+  m_Name: Wordering_Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880742771
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880742770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1328177246}
+  - {fileID: 1668622618}
+  - {fileID: 1222001618}
+  - {fileID: 245278221}
+  - {fileID: 373773981}
+  - {fileID: 43332522}
+  - {fileID: 752700005}
+  - {fileID: 1805548540}
+  - {fileID: 1952187205}
+  - {fileID: 229931597}
+  - {fileID: 1405262037}
+  - {fileID: 356602784}
+  - {fileID: 52380104}
+  - {fileID: 883769505}
+  - {fileID: 1432515824}
+  m_Father: {fileID: 605846016}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881462346
 GameObject:
   m_ObjectHideFlags: 0
@@ -25878,6 +27138,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 881462346}
   m_Mesh: {fileID: 4300000, guid: 76254b4a1339aa24aa6f075338cc3176, type: 3}
+--- !u!1 &883769504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 883769505}
+  m_Layer: 0
+  m_Name: Position (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &883769505
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883769504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7600098, y: 3.42, z: -3.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &884064515
 GameObject:
   m_ObjectHideFlags: 0
@@ -34944,8 +36232,8 @@ Transform:
   m_PrefabParentObject: {fileID: 482062, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1106156748}
-  m_LocalRotation: {x: -0.70410997, y: -0.000030960506, z: 0.00005181963, w: 0.71009094}
-  m_LocalPosition: {x: 0.374522, y: 3.1974422e-16, z: -1.0987456e-12}
+  m_LocalRotation: {x: -0.7120109, y: -0.09163901, z: -0.09674055, w: 0.6894085}
+  m_LocalPosition: {x: 0.37452215, y: 0.00000011920929, z: 9.313226e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 108719692}
@@ -35167,8 +36455,8 @@ Transform:
   m_PrefabParentObject: {fileID: 499666, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1151677839}
-  m_LocalRotation: {x: 1.4483431e-13, y: 1, z: -1.1714554e-15, w: 1.7466294e-15}
-  m_LocalPosition: {x: -0.4403, y: -4.8316907e-15, z: 6.780326e-20}
+  m_LocalRotation: {x: 0.026424885, y: 0.9983728, z: 0.0037466951, w: 0.050394192}
+  m_LocalPosition: {x: -0.44030046, y: 3.612302e-15, z: 2.220446e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2142115355}
@@ -36833,6 +38121,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 1216462668}
   m_Mesh: {fileID: 4300000, guid: 76254b4a1339aa24aa6f075338cc3176, type: 3}
+--- !u!1 &1222001617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1222001618}
+  m_Layer: 0
+  m_Name: Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222001618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1222001617}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1228273443
 GameObject:
   m_ObjectHideFlags: 0
@@ -37180,8 +38496,8 @@ Transform:
   m_PrefabParentObject: {fileID: 434022, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1233086671}
-  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: 4.3352284e-17, w: -4.3243328e-17}
-  m_LocalPosition: {x: -0.21910845, y: 0.27274165, z: -0.0076430403}
+  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: -0.21910852, y: 0.2727417, z: -0.0076430403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1781725238}
@@ -37221,7 +38537,7 @@ Transform:
   - {fileID: 819302687}
   - {fileID: 1771420169}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237205457
 GameObject:
@@ -37494,7 +38810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1249065061
 GameObject:
@@ -38638,8 +39954,8 @@ Transform:
   m_PrefabParentObject: {fileID: 461520, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1312110846}
-  m_LocalRotation: {x: -0.011695495, y: -0.00040235408, z: 0.9999314, w: 0.00046159804}
-  m_LocalPosition: {x: 0.12891708, y: -0.221588, z: -0.017863873}
+  m_LocalRotation: {x: -0.113107435, y: 0.009839337, z: 0.99255425, w: 0.044113893}
+  m_LocalPosition: {x: 0.12891714, y: -0.22158806, z: -0.017863873}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 730550357}
@@ -38964,6 +40280,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 1323647276}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
+--- !u!1 &1328177245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1328177246}
+  m_Layer: 0
+  m_Name: Forward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1328177246
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328177245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329558147
 GameObject:
   m_ObjectHideFlags: 0
@@ -39151,8 +40495,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400842, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332678834}
-  m_LocalRotation: {x: 6.177083e-15, y: 1.4669058e-16, z: -2.0040257e-16, w: 1}
-  m_LocalPosition: {x: -6.7241143e-12, y: -0.1497335, z: 0.21969701}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0000000020919373, y: -0.1497335, z: 0.21969701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506898339}
@@ -39875,8 +41219,8 @@ Transform:
   m_PrefabParentObject: {fileID: 438744, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380509730}
-  m_LocalRotation: {x: 0.0000000014985858, y: 6.7740297e-12, z: 7.8608344e-13, w: 1}
-  m_LocalPosition: {x: -0.019048661, y: -5.158743e-16, z: 6.2692085e-18}
+  m_LocalRotation: {x: -0, y: -0, z: -0.05100108, w: 0.99869865}
+  m_LocalPosition: {x: -0.019048693, y: 0, z: 6.2692085e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 598739920}
@@ -40384,6 +41728,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 1402646652}
   m_Mesh: {fileID: 4300000, guid: 864d0673765ef644891c2026d19a2af3, type: 3}
+--- !u!1 &1405262036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1405262037}
+  m_Layer: 0
+  m_Name: Position (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1405262037
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405262036}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.419983, y: 4.87, z: -3.380005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1411981443
 GameObject:
   m_ObjectHideFlags: 0
@@ -40671,6 +42043,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 1425328266}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
+--- !u!1 &1432515823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1432515824}
+  m_Layer: 0
+  m_Name: Position (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1432515824
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432515823}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.86, y: 4.78, z: -4.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435464595
 GameObject:
   m_ObjectHideFlags: 0
@@ -40874,8 +42274,8 @@ Transform:
   m_PrefabParentObject: {fileID: 497548, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443127145}
-  m_LocalRotation: {x: 1, y: -2.6645353e-15, z: -4.588833e-20, w: -6.123234e-17}
-  m_LocalPosition: {x: 0.29249033, y: 2.2737367e-15, z: 0.0076430403}
+  m_LocalRotation: {x: 0.73615205, y: -0.66929805, z: -0.05972511, w: 0.08095245}
+  m_LocalPosition: {x: 0.29249057, y: -1.0354922e-13, z: 0.0076430477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 722135406}
@@ -41127,7 +42527,7 @@ RectTransform:
   - {fileID: 1154779061}
   - {fileID: 2067146392}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -42361,7 +43761,7 @@ Transform:
   - {fileID: 657176491}
   - {fileID: 1641082517}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1491306651
 MonoBehaviour:
@@ -44732,7 +46132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617877137
 GameObject:
@@ -45688,8 +47088,37 @@ Transform:
   - {fileID: 421910128}
   - {fileID: 74007139}
   - {fileID: 1680169983}
+  - {fileID: 605846016}
   m_Father: {fileID: 586331949}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1668622617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1668622618}
+  m_Layer: 0
+  m_Name: Backward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668622618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668622617}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670744759
 GameObject:
@@ -45880,14 +47309,14 @@ Transform:
   m_PrefabParentObject: {fileID: 466914, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1678736502}
-  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: 4.3352284e-17, w: -4.3243328e-17}
-  m_LocalPosition: {x: -0.21910845, y: -0.27274165, z: 0.0076430403}
+  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: -0.21910846, y: -0.2727417, z: 0.0076430403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1443127146}
   m_Father: {fileID: 1702736933}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 172.314, y: -1.3829956, z: 53.622993}
 --- !u!1 &1679911117
 GameObject:
   m_ObjectHideFlags: 0
@@ -51103,7 +52532,7 @@ GameObject:
   - component: {fileID: 1702736934}
   m_Layer: 0
   m_Name: Chest_jnt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51114,8 +52543,8 @@ Transform:
   m_PrefabParentObject: {fileID: 411378, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1702736932}
-  m_LocalRotation: {x: -1.8029e-41, y: -8.904e-42, z: -1.6653345e-16, w: 1}
-  m_LocalPosition: {x: -0.33425274, y: -1.2999511e-15, z: -2.3643465e-18}
+  m_LocalRotation: {x: -0, y: -0, z: 1.1228568e-18, w: 1}
+  m_LocalPosition: {x: -0.33425286, y: 0, z: -9.2807706e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432039921}
@@ -51123,7 +52552,7 @@ Transform:
   - {fileID: 1233086672}
   m_Father: {fileID: 598739920}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 8.618, z: 4.602}
 --- !u!114 &1702736934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52526,8 +53955,8 @@ Transform:
   m_PrefabParentObject: {fileID: 457648, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1781725237}
-  m_LocalRotation: {x: -5.404528e-21, y: 5.170119e-19, z: -6.1636894e-16, w: 1}
-  m_LocalPosition: {x: -0.29249033, y: 1.7053025e-15, z: -0.0076430403}
+  m_LocalRotation: {x: -0.13548248, y: -0.024125537, z: 0.68334025, w: 0.7170137}
+  m_LocalPosition: {x: -0.29249057, y: 1.0354922e-13, z: -0.0076430477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2142115355}
@@ -53000,6 +54429,34 @@ Transform:
   m_Father: {fileID: 1768725384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1805548539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1805548540}
+  m_Layer: 0
+  m_Name: Position (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805548540
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805548539}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.6, y: -3.8400002, z: 3.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811984760
 GameObject:
   m_ObjectHideFlags: 0
@@ -53097,8 +54554,8 @@ Transform:
   m_PrefabParentObject: {fileID: 433830, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1816402283}
-  m_LocalRotation: {x: 8.7732285e-15, y: 1.4235312e-17, z: -2.9758814e-16, w: 1}
-  m_LocalPosition: {x: -0.000003490797, y: 0.1497333, z: -0.21969701}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0000034937007, y: 0.14973333, z: -0.21969698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 108719692}
@@ -55237,6 +56694,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952042545}
+--- !u!1 &1952187204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1952187205}
+  m_Layer: 0
+  m_Name: Position (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1952187205
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952187204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.31, y: -2.77, z: -4.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 880742771}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1956463362
 GameObject:
   m_ObjectHideFlags: 0
@@ -55385,7 +56870,7 @@ GameObject:
   - component: {fileID: 1968634567}
   m_Layer: 0
   m_Name: Head_jnt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55421,8 +56906,8 @@ Transform:
   m_PrefabParentObject: {fileID: 444280, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1968634566}
-  m_LocalRotation: {x: -9.023e-42, y: 4.437e-42, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08167417, y: -5.9802247e-16, z: -5.667284e-19}
+  m_LocalRotation: {x: 0.050914727, y: 0.1811491, z: 0.112870485, w: 0.97562957}
+  m_LocalPosition: {x: -0.08167411, y: 0, z: -2.2226145e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 432039921}
@@ -56799,8 +58284,8 @@ Transform:
   m_PrefabParentObject: {fileID: 425564, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2045270794}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.6272008e-16, y: 1.0449876, z: -6.2692085e-18}
+  m_LocalRotation: {x: -0.000008052701, y: 0.00000960089, z: -0.70715046, w: 0.707063}
+  m_LocalPosition: {x: -0.0041503906, y: 1.0318973, z: -0.011474609}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1380509731}
@@ -58100,8 +59585,8 @@ Transform:
   m_PrefabParentObject: {fileID: 403084, guid: 48f67f538aa0f5345b9e3dbbca2cfad2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142115354}
-  m_LocalRotation: {x: 6.115525e-17, y: 6.1309337e-17, z: 4.718448e-15, w: 1}
-  m_LocalPosition: {x: -0.47118998, y: -2.8421708e-15, z: 7.256011e-20}
+  m_LocalRotation: {x: 0.03648589, y: -0.23211579, z: -0.0069689592, w: 0.97197866}
+  m_LocalPosition: {x: -0.4711905, y: -5.8084464e-16, z: 2.220446e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1151677840}

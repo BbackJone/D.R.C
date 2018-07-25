@@ -5,7 +5,6 @@ using UnityEngine.AI;   //this for NavMeshAgent
 
 public class DevilZombieAI : MonoBehaviour
 {
-
     private ZombieData m_Data;
     private ZombieInteraction m_Interaction;
     private Animator m_Ani;
@@ -18,11 +17,13 @@ public class DevilZombieAI : MonoBehaviour
 
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
+    public Transform m_WonderingPosParent;
 
     void Awake()
     {
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
+        Debug.Log("AI Awake : " + m_Data.m_Hp);
         m_Interaction = GetComponent<ZombieInteraction>();
         m_Ani = GetComponent<Animator>();
 
@@ -32,6 +33,7 @@ public class DevilZombieAI : MonoBehaviour
 
     void OnEnable()
     {
+        Debug.Log("AI OnEnable : " + m_Data.m_Hp);
         StageMgr.instance.AddSpecialZombieNumber(1);
 
         m_Nav.enabled = true;
@@ -46,9 +48,9 @@ public class DevilZombieAI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Debug.Log("AI Start : " + m_Data.m_Hp);
         m_Nav.speed = m_Data.m_Speed;
     }
-
 
     IEnumerator TargetAttack()
     {
@@ -67,7 +69,9 @@ public class DevilZombieAI : MonoBehaviour
                     else
                     {
                         m_Data.m_AttackTimer = 0f;
-                        transform.LookAt(m_target);
+                        transform.LookAt(new Vector3(m_target.position.x,
+                            transform.position.y,
+                            m_target.position.z));
                         gameObject.SendMessage("ShootFlame");
                     }
                 }

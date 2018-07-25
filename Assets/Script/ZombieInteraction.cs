@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ZombieInteraction : MonoBehaviour {
 
-    private ObjectManager m_ObjMgr;
-
 	// Use this for initialization
     void Awake()
     {
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
+       
     }
 
     void Start()
@@ -22,7 +20,10 @@ public class ZombieInteraction : MonoBehaviour {
     {
         float MinDis = 100000f;
         PlayerInteraction target = null;
-        foreach (PlayerInteraction pm in m_ObjMgr.Objects.m_Playerlist)
+        if (ObjectManager.m_Inst.Objects.m_Playerlist.Count <= 0)
+            return null;
+
+        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
         {
             if (pm == null) continue;
             float dis = Vector3.Distance(pm.transform.position, this.transform.position);
@@ -37,6 +38,6 @@ public class ZombieInteraction : MonoBehaviour {
 
     public void ObjListAdd()
     {
-        m_ObjMgr.Objects.m_Enemylist.Add(this);
+        ObjectManager.m_Inst.Objects.m_Enemylist.Add(this);
     }
 }

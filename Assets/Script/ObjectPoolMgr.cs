@@ -129,6 +129,19 @@ public class ObjectPoolMgr : MonoBehaviour {
         Directory = new GameObject();
         Directory.name = ExplosionToPool.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //Devil Zombie
+        ObjectToPool DevilZombieToPool = new ObjectToPool();
+        DevilZombieToPool.Obj = Directory_ObjectToPool.GetChild(9).gameObject;
+        DevilZombieToPool.AmountToPool = 10;
+        DevilZombieToPool.ObjName = DevilZombieToPool.Obj.name;
+        DevilZombieToPool.objType = ObjType.OBJ_ENEMY;
+        DevilZombieToPool.ShouldExpand = true;
+
+        m_ObjectToPool.Add(DevilZombieToPool.ObjName, DevilZombieToPool);
+        Directory = new GameObject();
+        Directory.name = DevilZombieToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
     }
 
     void Start()

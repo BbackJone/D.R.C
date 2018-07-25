@@ -18,20 +18,6 @@ public class DevilZombieAction : MonoBehaviour {
 
     }
 
-    public void FlameAttack()
-    {
-        StartCoroutine("CoFlameAttack");
-    }
-
-    public IEnumerator CoFlameAttack()
-    {
-        for(int i = 0; i < 3; i++)
-        {
-            ShootFlame();
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
     void ShootFlame()
     {
         m_Ani.SetTrigger("Attack");
@@ -49,6 +35,5 @@ public class DevilZombieAction : MonoBehaviour {
 
     public void Patrol()
     {
-
     }
 }
