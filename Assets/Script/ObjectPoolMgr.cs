@@ -136,11 +136,25 @@ public class ObjectPoolMgr : MonoBehaviour {
         DevilZombieToPool.AmountToPool = 10;
         DevilZombieToPool.ObjName = DevilZombieToPool.Obj.name;
         DevilZombieToPool.objType = ObjType.OBJ_ENEMY;
-        DevilZombieToPool.ShouldExpand = true;
+        DevilZombieToPool.ShouldExpand = false;
 
         m_ObjectToPool.Add(DevilZombieToPool.ObjName, DevilZombieToPool);
         Directory = new GameObject();
         Directory.name = DevilZombieToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+
+        //Rugby Zombie
+        ObjectToPool RugbyZombieToPool = new ObjectToPool();
+        RugbyZombieToPool.Obj = Directory_ObjectToPool.GetChild(10).gameObject;
+        RugbyZombieToPool.AmountToPool = 10;
+        RugbyZombieToPool.ObjName = RugbyZombieToPool.Obj.name;
+        RugbyZombieToPool.objType = ObjType.OBJ_ENEMY;
+        RugbyZombieToPool.ShouldExpand = false;
+
+        m_ObjectToPool.Add(RugbyZombieToPool.ObjName, RugbyZombieToPool);
+        Directory = new GameObject();
+        Directory.name = RugbyZombieToPool.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
     }
 

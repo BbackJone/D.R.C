@@ -53,6 +53,7 @@ public class Weapon : MonoBehaviour
     public MeshRenderer m_MuzzleFlash2;
 
     public Transform m_ShootPos;
+    private int m_RaycastLayermask;       //Layer for raycast to ignore
 
     virtual public void Initialize()
     {
@@ -86,6 +87,7 @@ public class Weapon : MonoBehaviour
     {
         ObjListAdd();
         m_AmmoBulletNum = 0;
+        m_RaycastLayermask = ~(1 << 2);
     }
 
     void OnEnable()
@@ -94,12 +96,10 @@ public class Weapon : MonoBehaviour
         m_MuzzleFlash2.enabled = false;
     }
 
-
     virtual public void ObjListAdd()
     {
         ObjectManager.m_Inst.Objects.m_Weaponlist.Add(this);
     }
-
 
     public void Shoot()
     {
@@ -127,21 +127,23 @@ public class Weapon : MonoBehaviour
     {
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit;
-        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f))    //raycast forward
+        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, m_RaycastLayermask))    //raycast forward
         {
-            Vector3 Dir = hit.point - transform.position;
+            Vector3 Dir = hit.point - m_ShootPos.position;
             Dir = Dir / Dir.magnitude;
             GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
+            //Debug.DrawRay(m_ShootPos.position, Dir, Color.green);
         }
         else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
         {
             float Updis = m_Camera.transform.position.y - transform.position.y;
-            Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - transform.position;
+            Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - m_ShootPos.position;
             GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
+            //Debug.DrawRay(m_ShootPos.position, Dir, Color.green);
         }
 
         Makeflash();

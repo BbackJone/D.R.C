@@ -17,7 +17,6 @@ public class DevilZombieAI : MonoBehaviour
 
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
-    public Transform m_WonderingPosParent;
 
     void Awake()
     {
@@ -33,7 +32,6 @@ public class DevilZombieAI : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("AI OnEnable : " + m_Data.m_Hp);
         StageMgr.instance.AddSpecialZombieNumber(1);
 
         m_Nav.enabled = true;
@@ -48,7 +46,6 @@ public class DevilZombieAI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("AI Start : " + m_Data.m_Hp);
         m_Nav.speed = m_Data.m_Speed;
     }
 
@@ -91,7 +88,6 @@ public class DevilZombieAI : MonoBehaviour
                 if (m_TargetDistance < m_Data.m_AttackRange * 0.75)
                 {
                     m_Nav.speed = 0;
-                    gameObject.SendMessage("Patrol");
                 }
                 else
                 {
@@ -112,7 +108,7 @@ public class DevilZombieAI : MonoBehaviour
     {
         while (true)
         {
-            m_target = m_Interaction.GetTarget(this.transform);
+            m_target = GetTarget();
             yield return new WaitForSeconds(5f);
         }
     }
@@ -151,5 +147,25 @@ public class DevilZombieAI : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public Transform GetTarget()
+    {
+        if (ObjectManager.m_Inst.Objects.m_Playerlist.Count <= 0)
+            return null;
+
+        float MinDis = 100000f;
+        PlayerInteraction target = null;
+        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
+        {
+            if (pm == null) continue;
+            float dis = Vector3.Distance(pm.transform.position, this.transform.position);
+            if (MinDis > dis)
+            {
+                MinDis = dis;
+                target = pm;
+            }
+        }
+        return target.transform;
     }
 }

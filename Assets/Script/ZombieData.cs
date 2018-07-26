@@ -36,18 +36,16 @@ public class ZombieData : MonoBehaviour
     void Awake()
     {
         Initialize();
-        Debug.Log("Data Awake m_Data.m_Hp : " + m_Hp);
     }
 
     void Start()
     {
-        Debug.Log("Data Start m_Data.m_Hp : " + m_Hp);
         m_Price = 1;
     }
 
     void OnEnable()
     {
-        Debug.Log("Data OnEnable m_Data.m_Hp : " + m_Hp);
+        Debug.Log("m_Hp : " + m_Hp);
         m_Hp = m_MaxHp;
         m_Death = false;
         m_DeathTimer = 0f;

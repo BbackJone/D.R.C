@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum RUGBY_ATTACK_STATE
+{
+    WAIT,
+    RUSH
+}
+
 public class RugbyZombieAction : MonoBehaviour {
 
     Animator m_Ani;
@@ -9,6 +15,7 @@ public class RugbyZombieAction : MonoBehaviour {
     RugbyZombieAI m_AI;
 
     float m_RushTimer = 0f;
+    public RUGBY_ATTACK_STATE m_State { get; set; }
 
     private void Awake()
     {
@@ -30,10 +37,12 @@ public class RugbyZombieAction : MonoBehaviour {
     IEnumerator WaitforsecondsAndRush(float _seconds)
     {
         m_Ani.SetTrigger("Waiting");
+        m_State = RUGBY_ATTACK_STATE.WAIT;
         yield return new WaitForSeconds(_seconds);
         transform.LookAt(m_AI.m_target);
         m_Ani.SetTrigger("Rush");
         StartCoroutine("Rush");
+        m_State = RUGBY_ATTACK_STATE.RUSH;
     }
 
     IEnumerator Rush()
@@ -60,5 +69,6 @@ public class RugbyZombieAction : MonoBehaviour {
         m_AI.m_Attacking = false;
         m_Ani.SetBool("Attacking", m_AI.m_Attacking);
         StopCoroutine("Rush");
+        m_State = RUGBY_ATTACK_STATE.WAIT;
     }
 }
