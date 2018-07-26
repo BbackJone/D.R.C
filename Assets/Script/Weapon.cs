@@ -74,6 +74,9 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
+        //m_Light = transform.GetChild(1).GetComponent<Animator>();
+        //m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
+        //m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
         m_Camera = Camera.main;
 
         Initialize();

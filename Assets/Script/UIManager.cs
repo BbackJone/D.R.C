@@ -16,7 +16,6 @@ public class UIManager : MonoBehaviour {
 
     private float m_SceneTimer;
 
-    private ObjectManager m_ObjMgr;
     public PlayerData m_Player;
     private Canvas m_Canvas;        //the place system draws user interfaces
 
@@ -32,7 +31,6 @@ public class UIManager : MonoBehaviour {
     {
         m_Instance = this;
         m_Canvas = FindObjectOfType<Canvas>();
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
     }
 
 	void Start () {

@@ -20,9 +20,9 @@ public enum STATE_ID
     STATE_STAGE,
     STATE_ENDING
 }
+
 public class ObjectManager : MonoBehaviour
 {
-
     //SingleTon
     public static ObjectManager m_Inst;
 

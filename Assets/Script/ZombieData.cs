@@ -66,7 +66,7 @@ public class ZombieData : MonoBehaviour
         m_AttackDamage = DBData.AttackDamage;
         m_AttackSpeed = DBData.AttackSpeed;
         m_ObjName = DBData.Name;
-
+       
         m_Type = ObjType.OBJ_ENEMY;
     }
 

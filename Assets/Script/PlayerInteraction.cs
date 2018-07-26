@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
 
-    private ObjectManager m_ObjMgr;
     private PlayerData m_Data;
 
 	// Use this for initialization
 	void Awake () {
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         m_Data = GetComponent<PlayerData>();
 	}
 
@@ -31,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour {
         {
             if (m_Data == false)
             {
-                m_ObjMgr.GameOverCheck();
+                ObjectManager.m_Inst.GameOverCheck();
             }
 
             yield return new WaitForSeconds(0.1f);
@@ -40,7 +38,7 @@ public class PlayerInteraction : MonoBehaviour {
 
     public void ObjListAdd()
     {
-        m_ObjMgr.Objects.m_Playerlist.Add(this);
+        ObjectManager.m_Inst.Objects.m_Playerlist.Add(this);
     }
 
     public void GetDamage(int _damage)
