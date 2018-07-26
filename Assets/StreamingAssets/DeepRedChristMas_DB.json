@@ -7,6 +7,14 @@
       "AttackDamage": 15,
       "AttackRange": 2,
       "AttackSpeed": 2.5
+    },
+    {
+      "Name": "SA_Zombie_Prisoner",
+      "Hp": 75,
+      "Speed": 1.5,
+      "AttackDamage": 45,
+      "AttackRange": 4,
+      "AttackSpeed": 1
     }
   ],
   "Weapon": [

@@ -49,19 +49,32 @@ public class ObjectPoolMgr : MonoBehaviour {
         m_ObjectToPool.Add(ZomebieToPool.ObjName ,ZomebieToPool);
         GameObject Directory = new GameObject();                                           
         Directory.name = ZomebieToPool.ObjName;                                            
-        Directory.transform.SetParent(m_Directory_PooledObject);                           
-                                                                                           
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
         //Zomebie(SA_Zombie_RoadWorker)                                                    
-        ObjectToPool ZomebieToPool2 = new ObjectToPool();                                  
-        ZomebieToPool2.Obj = Directory_ObjectToPool.GetChild(4).gameObject;                
-        ZomebieToPool2.AmountToPool = 50;                                                   
-        ZomebieToPool2.ObjName = ZomebieToPool2.Obj.name;                                   
-        ZomebieToPool2.objType = ObjType.OBJ_ENEMY;                                        
+        ObjectToPool ZomebieToPool2 = new ObjectToPool();
+        ZomebieToPool2.Obj = Directory_ObjectToPool.GetChild(4).gameObject;
+        ZomebieToPool2.AmountToPool = 50;
+        ZomebieToPool2.ObjName = ZomebieToPool2.Obj.name;
+        ZomebieToPool2.objType = ObjType.OBJ_ENEMY;
         ZomebieToPool2.ShouldExpand = false;
 
         m_ObjectToPool.Add(ZomebieToPool2.ObjName, ZomebieToPool2);
         Directory = new GameObject();
         Directory.name = ZomebieToPool2.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //Zomebie(SA_Zombie_Prisoner)                                                    
+        ObjectToPool ZomebieToPool3 = new ObjectToPool();
+        ZomebieToPool3.Obj = Directory_ObjectToPool.GetChild(5).gameObject;
+        ZomebieToPool3.AmountToPool = 50;
+        ZomebieToPool3.ObjName = ZomebieToPool3.Obj.name;
+        ZomebieToPool3.objType = ObjType.OBJ_ENEMY;
+        ZomebieToPool3.ShouldExpand = false;
+
+        m_ObjectToPool.Add(ZomebieToPool3.ObjName, ZomebieToPool3);
+        Directory = new GameObject();
+        Directory.name = ZomebieToPool3.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
         //Particle(FX_BloodSplatter_Katana)
