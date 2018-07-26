@@ -80,7 +80,8 @@ public class StageMgr : MonoBehaviour
             if (m_GameTime % 1f < 0.5f)
             {
                 //SpawnZombie("SA_Zombie_Businessman");
-                SpawnZombie("SA_Zombie_Prisoner");
+                //SpawnZombie("SA_Zombie_Prisoner");
+                SpawnZombie("SA_Zombie_Soldier");
             }
         }
     }

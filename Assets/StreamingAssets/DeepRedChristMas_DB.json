@@ -10,11 +10,19 @@
     },
     {
       "Name": "SA_Zombie_Prisoner",
-      "Hp": 75,
-      "Speed": 1.5,
+      "Hp": 1,
+      "Speed": 4.5,
       "AttackDamage": 45,
       "AttackRange": 4,
       "AttackSpeed": 1
+    },
+    {
+      "Name": "SA_Zombie_Soldier",
+      "Hp": 100,
+      "Speed": 2,
+      "AttackDamage": 15,
+      "AttackRange": 15,
+      "AttackSpeed": 0.5
     }
   ],
   "Weapon": [

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;   //this for NavMeshAgent
 
-public class PrisonerZombieAI : MonoBehaviour {
+public class SoldierZombieAI : MonoBehaviour {
 
     private ZombieData m_Data;
     private ZombieInteraction m_Interaction;
@@ -56,7 +56,7 @@ public class PrisonerZombieAI : MonoBehaviour {
                     } else {
                         m_Data.m_AttackTimer = 0f;
                         transform.LookAt(m_target);
-                        gameObject.SendMessage("AttackofTwohand");
+                        gameObject.SendMessage("ShootGun");
                     }
                 }
             }
