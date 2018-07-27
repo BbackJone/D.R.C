@@ -4,34 +4,39 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public struct ImageSeconds      //This is used at "ShowImageForseconds" Coroutine
+{
+    public Image Image;
+    public float Seconds;
+}
+
 public class UIManager : MonoBehaviour {
+
+    public static UIManager m_Instance;
 
     private float m_SceneTimer;
 
-    private ObjectManager m_ObjMgr;
     public PlayerData m_Player;
     private Canvas m_Canvas;        //the place system draws user interfaces
 
     public GameObject m_GameOver;       //gameover picture
+    public Image m_RedAim;         //Redaim picture
     public Text m_BulletNum;
     public Text m_Hp;
+
+    private float m_RedAimTimer = 0f;
 
 	// Use this for initialization
     void Awake()
     {
+        m_Instance = this;
         m_Canvas = FindObjectOfType<Canvas>();
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
     }
 
 	void Start () {
         m_SceneTimer = 0f;
         StartCoroutine("ShowPlayerData");
 	}
-
-    void FixedUdpate()
-    {
-        
-    }
 
     //Get player's bullet remained and HP.
     IEnumerator ShowPlayerData()
@@ -76,4 +81,68 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    public IEnumerator CoShowImageforSeconds(ImageSeconds _imageSeconds)
+    {
+        _imageSeconds.Image.gameObject.SetActive(true);
+        yield return new WaitForSeconds(_imageSeconds.Seconds);
+        _imageSeconds.Image.gameObject.SetActive(false);
+    }
+
+    //It is used to call Coroutine in other script
+    public void ShowImageForSeconds(ImageSeconds _imageSeconds)
+    {
+        StartCoroutine("CoShowImageforSeconds", _imageSeconds);
+    }
+
+
+    public IEnumerator CoShowImageforSeconds_OpacityChange(ImageSeconds _imageSeconds)
+    {
+        _imageSeconds.Image.gameObject.SetActive(true);
+        m_RedAimTimer = 0;
+
+        //Set the alpha of image 0
+        Color alpha = _imageSeconds.Image.color;
+        alpha.a = 0f;
+        _imageSeconds.Image.color = alpha;
+
+        while (true)
+        {
+            m_RedAimTimer += _imageSeconds.Seconds / 10f;
+
+            if (m_RedAimTimer <= _imageSeconds.Seconds / 2.0f)
+            {
+                alpha.a += 0.2f;
+                _imageSeconds.Image.color = alpha;
+            }
+            else
+            {
+                alpha.a -= 0.2f;
+                _imageSeconds.Image.color = alpha;
+            }
+        
+            if(m_RedAimTimer > _imageSeconds.Seconds)
+            {
+                _imageSeconds.Image.gameObject.SetActive(false);
+                m_RedAimTimer = 0;
+                StopCoroutine("CoShowImageforSeconds_OpacityChange");
+            }
+        
+            yield return new WaitForSeconds(_imageSeconds.Seconds / 10f);
+        }
+    }
+
+    //It is used to call Coroutine in other script
+    public void ShowImageForSeconds_OpacityChange(ImageSeconds _imageSeconds)
+    {
+        StartCoroutine("ShowImageForSeconds_OpacityChange", _imageSeconds);
+    }
+
+    public void ShowRedAim()
+    {
+        ImageSeconds Temp = new ImageSeconds();
+        Temp.Image = m_RedAim;
+        Temp.Seconds = 0.1f;
+        StopCoroutine("CoShowImageforSeconds_OpacityChange");
+        StartCoroutine("CoShowImageforSeconds_OpacityChange", Temp);
+    }
 }

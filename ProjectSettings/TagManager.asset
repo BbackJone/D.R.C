@@ -11,6 +11,7 @@ TagManager:
   - DB
   - Bullet
   - Fire
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 

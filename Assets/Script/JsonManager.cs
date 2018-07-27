@@ -15,7 +15,6 @@ public class GameDB
 public class JsonManager : MonoBehaviour {
 
     public MyPath m_Path;
-    private ObjectManager m_ObjMgr;
     public GameDB m_GameDB = new GameDB();
 
 
@@ -23,7 +22,6 @@ public class JsonManager : MonoBehaviour {
     void Awake()
     {
         m_Path = GetComponent<MyPath>();
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
     }
 
 
@@ -38,7 +36,7 @@ public class JsonManager : MonoBehaviour {
         Debug.Log("ReadJson Complete!");
 
         SetDB();
-        m_ObjMgr.NextScene("Stage");
+        ObjectManager.m_Inst.NextScene("Stage");
         yield return null;
     }
 
@@ -49,11 +47,11 @@ public class JsonManager : MonoBehaviour {
         WaveDB[] TempWave = m_GameDB.Wave;
 
         for (int i = 0; i < TempZomebie.Length; i++)
-            m_ObjMgr.m_DBMgr.m_ZomebieDB.Add(TempZomebie[i].Name, TempZomebie[i]);
+            ObjectManager.m_Inst.m_DBMgr.m_ZomebieDB.Add(TempZomebie[i].Name, TempZomebie[i]);
         for (int i = 0; i < TempWeapon.Length; i++)
-            m_ObjMgr.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
+            ObjectManager.m_Inst.m_DBMgr.m_WeaponDB.Add(TempWeapon[i].Name, TempWeapon[i]);
         for (int i = 0; i < TempWave.Length; i++)
-            m_ObjMgr.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
+            ObjectManager.m_Inst.m_DBMgr.m_WaveDB.Add(TempWave[i].Level, TempWave[i]);
 
         Debug.Log("SetDB Complete!");
     }

@@ -6,23 +6,21 @@ using UnityEngine.AI;   //this for NavMeshAgent
 public class ZombieAI : MonoBehaviour {
 
     private ZombieData m_Data;
-    private ZombieInteraction m_Interaction;
     private Animator m_Ani;
     private NavMeshAgent m_Nav;     //for finding route or move zombie
 
     public GameObject obj_body;
     public GameObject obj_head;
-    public BoxCollider body_col;
-    public BoxCollider head_col;
+    private BoxCollider body_col;
+    private BoxCollider head_col;
 
-    public Transform m_target { get; set; }
-    public float m_TargetDistance { get; set; }
+    private Transform m_target;
+    private float m_TargetDistance;
 
     void Awake()
     {
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
-        m_Interaction = GetComponent<ZombieInteraction>();
         m_Ani = GetComponent<Animator>();
 
         body_col = obj_body.GetComponent<BoxCollider>();
@@ -84,17 +82,19 @@ public class ZombieAI : MonoBehaviour {
                 if (m_TargetDistance < m_Data.m_AttackRange * 0.75)
                 {
                     m_Nav.Stop();
+
+                    float move = m_Nav.desiredVelocity.magnitude;
+                    m_Ani.SetFloat("Speed", move);
                 }
                 else
                 {
                     m_Nav.Resume();
                     m_Nav.SetDestination(m_target.position);
+
+                    float move = m_Nav.desiredVelocity.magnitude;
+                    m_Ani.SetFloat("Speed", move);
                 }
             }
-
-            float move = m_Nav.desiredVelocity.magnitude;
-            m_Ani.SetFloat("Speed", move);
-
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -104,11 +104,10 @@ public class ZombieAI : MonoBehaviour {
     {
         while (true)
         {
-            m_target = m_Interaction.GetTarget(this.transform);
+            m_target = GetTarget();
             yield return new WaitForSeconds(5f);
         }
     }
-
 
     IEnumerator DeathCheck()
     {
@@ -154,5 +153,26 @@ public class ZombieAI : MonoBehaviour {
 
             yield return null;
         }
+    }
+
+    //Set nearest enemy as target
+    public Transform GetTarget()
+    {
+        if (ObjectManager.m_Inst.Objects.m_Playerlist.Count <= 0)
+            return null;
+
+        float MinDis = 100000f;
+        PlayerInteraction target = null;
+        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
+        {
+            if (pm == null) continue;
+            float dis = Vector3.Distance(pm.transform.position, this.transform.position);
+            if (MinDis > dis)
+            {
+                MinDis = dis;
+                target = pm;
+            }
+        }
+        return target.transform;
     }
 }

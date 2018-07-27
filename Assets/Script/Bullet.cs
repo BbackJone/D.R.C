@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour{
 
     public ObjType m_Type { get; set; }
-    public ObjectManager m_ObjMgr { get; set; }
 
     public float m_Speed { get; set; }
     public int m_BodyDamage;
@@ -30,7 +29,6 @@ public class Bullet : MonoBehaviour{
     void Awake()
     {
         m_StayTime = 2f;
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         m_Trail = transform.GetComponent<TrailRenderer>();
     }
 
@@ -59,15 +57,16 @@ public class Bullet : MonoBehaviour{
     {
         Vector3 direction = transform.position - m_PrevPos;
         Ray ray = new Ray(m_PrevPos, direction.normalized);
-        RaycastHit hit;
+        RaycastHit[] hit;
 
-        if(Physics.Raycast(ray, out hit ,direction.magnitude))
+        hit = Physics.RaycastAll(ray, direction.magnitude);
+        for(int i = 0; i < hit.Length; i++)
         {
-            if(hit.transform.CompareTag("Enemy"))
+            if (hit[i].transform.CompareTag("Enemy"))
             {
-                Vector3 CollsionPoint = hit.point;
+                Vector3 CollsionPoint = hit[i].point;
                 int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
-                hit.transform.gameObject.SendMessage("GetDamage", DamageSet);
+                hit[i].transform.gameObject.SendMessage("GetDamage", DamageSet);
                 ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
                 CancelInvoke();
                 Remove();
@@ -82,6 +81,6 @@ public class Bullet : MonoBehaviour{
 
     public void ObjListAdd()
     {
-        m_ObjMgr.Objects.m_Bulletlist.Add(this);
+        ObjectManager.m_Inst.Objects.m_Bulletlist.Add(this);
     }
 }

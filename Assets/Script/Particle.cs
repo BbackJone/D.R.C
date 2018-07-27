@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Particle : MonoBehaviour {
 
-    private float m_StayTime;
+    public float m_StayTime;
     private float Timer;
 
 	// Use this for initialization
 	void OnEnable () {
-        m_StayTime = 3f;
         Timer = 0f;
 
         StartCoroutine("CountDown");
