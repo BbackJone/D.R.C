@@ -7,7 +7,7 @@ public class SoldierZombieAction : MonoBehaviour {
     private Animator m_Ani;
 
     // Use this for initialization
-    void Start() {
+    void Awake() {
         m_Ani = GetComponent<Animator>();
     }
 

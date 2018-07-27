@@ -18,6 +18,8 @@ public class SoldierZombieAI : MonoBehaviour {
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
 
+    public GameObject bullet;
+
     void Awake() {
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
@@ -57,6 +59,10 @@ public class SoldierZombieAI : MonoBehaviour {
                         m_Data.m_AttackTimer = 0f;
                         transform.LookAt(m_target);
                         gameObject.SendMessage("ShootGun");
+                        if (bullet != null)
+                        {
+                            Instantiate(bullet, transform).SetActive(true);
+                        }
                     }
                 }
             }

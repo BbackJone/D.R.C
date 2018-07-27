@@ -126,7 +126,7 @@ public class Weapon : MonoBehaviour
     {
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit;
-        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f))    //raycast forward
+        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, ~(1 << 8)))    //raycast forward
         {
             Vector3 Dir = hit.point - transform.position;
             Dir = Dir / Dir.magnitude;

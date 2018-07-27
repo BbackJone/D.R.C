@@ -56,6 +56,10 @@ public class StageMgr : MonoBehaviour
         m_GameTime += Time.deltaTime;
         ZombieSpawnTimer();
         
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SpawnZombie("SA_Zombie_Soldier");
+        }
     }
 
 
@@ -79,9 +83,9 @@ public class StageMgr : MonoBehaviour
         {
             if (m_GameTime % 1f < 0.5f)
             {
-                //SpawnZombie("SA_Zombie_Businessman");
+                SpawnZombie("SA_Zombie_Businessman");
                 //SpawnZombie("SA_Zombie_Prisoner");
-                SpawnZombie("SA_Zombie_Soldier");
+                //SpawnZombie("SA_Zombie_Soldier");
             }
         }
     }
