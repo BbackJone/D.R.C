@@ -130,12 +130,10 @@ public class ZombieAI : MonoBehaviour {
                     int rv = Random.Range(0, 25);
                     if (rv == 1) {
                         // spawn heart drop at 4% rate
-                        GameObject drop = Instantiate(GameObject.Find("DropHeart"), new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                        drop.GetComponent<MeshRenderer>().enabled = true;
+                        ObjectPoolMgr.instance.CreatePooledObject("DropHeart", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
                     } else if (rv == 2) {
                         // spawn ammo drop at 4% rate
-                        GameObject drop = Instantiate(GameObject.Find("DropAmmo"), new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                        drop.GetComponent<MeshRenderer>().enabled = true;
+                        ObjectPoolMgr.instance.CreatePooledObject("DropAmmo", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
                     }
                 }
 

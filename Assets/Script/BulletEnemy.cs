@@ -62,7 +62,6 @@ public class BulletEnemy : MonoBehaviour{
 
         if(Physics.Raycast(ray, out hit ,direction.magnitude))
         {
-            Debug.Log(hit.transform.gameObject.tag);
             if(hit.transform.CompareTag("Player"))
             {
                 Vector3 CollsionPoint = hit.point;

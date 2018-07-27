@@ -3,6 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class GameDB
+{
+    public ZomebieDB[] Zombie;
+    public WeaponDB[] Weapon;
+    public WaveDB[] Wave;
+}
+
 /// <summary>
 /// Class holding game's saved data and related functions.
 /// </summary>

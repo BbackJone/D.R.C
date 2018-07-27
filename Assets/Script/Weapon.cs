@@ -87,7 +87,7 @@ public class Weapon : MonoBehaviour
     {
         ObjListAdd();
         m_AmmoBulletNum = 0;
-        m_RaycastLayermask = ~(1 << 2);
+        m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
     }
 
     void OnEnable()
@@ -127,7 +127,7 @@ public class Weapon : MonoBehaviour
     {
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit;
-        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, ~(1 << 8)))    //raycast forward
+        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, m_RaycastLayermask))    //raycast forward
         {
             Vector3 Dir = hit.point - m_ShootPos.position;
             Dir = Dir / Dir.magnitude;

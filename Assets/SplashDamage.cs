@@ -33,7 +33,6 @@ public class SplashDamage : MonoBehaviour {
             //form of y = a(x - b)^2   =>     Damage following distance
             int Damage = (int)((m_Damage / (Mathf.Pow(RadiusOfExplode, 2))) *
                 Mathf.Pow((DistanceWithPlayer - RadiusOfExplode), 2));
-            Debug.Log("Damage : " + Damage);
             other.gameObject.SendMessage("GetDamage", 1);
 
             //Make normalized vector that is direction of forcing player.
@@ -44,7 +43,6 @@ public class SplashDamage : MonoBehaviour {
             //form of y = -ax^2 + b     =>     pushingforce following distance
             int force = (int)(-(DistanceWithPlayer / (2 * m_PushingForce))
                 + m_PushingForce);
-            Debug.Log("force : " + force);
             other.gameObject.GetComponent<Rigidbody>().AddForce(ForceDirection * force, ForceMode.Impulse);
         }
     }

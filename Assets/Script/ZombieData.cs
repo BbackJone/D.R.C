@@ -45,7 +45,6 @@ public class ZombieData : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("m_Hp : " + m_Hp);
         m_Hp = m_MaxHp;
         m_Death = false;
         m_DeathTimer = 0f;

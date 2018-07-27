@@ -28,6 +28,9 @@ public class StageMgr : MonoBehaviour
 
     private SaveDataManager m_SaveMgr;
 
+    private List<string> m_NormalZombieNameList = new List<string>();
+    private List<string> m_SpecialZombieNameList = new List<string>();
+
     private void Awake()
     {
         instance = this;
@@ -45,6 +48,14 @@ public class StageMgr : MonoBehaviour
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
+
+        m_SpecialZombieNameList.Add("RugbyZombie");
+        m_SpecialZombieNameList.Add("DevilZombie");
+        m_SpecialZombieNameList.Add("PrisonerZombie");
+        m_SpecialZombieNameList.Add("SoldierZombie");
+
+        m_NormalZombieNameList.Add("NormalZombie1");
+        m_NormalZombieNameList.Add("NormalZombie2");
     }
 
     private void Update()
@@ -89,15 +100,23 @@ public class StageMgr : MonoBehaviour
 
     public void ZombieSpawnTimer()
     {
-        return;
         //Spawn Normal zombies
         if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber)
         {
             if (m_GameTime % 1f < 0.5f)
             {
-                SpawnZombie("SA_Zombie_Businessman");
-                //SpawnZombie("SA_Zombie_Prisoner");
-                //SpawnZombie("SA_Zombie_Soldier");
+                int ZombieNameIndex = Random.Range(0, m_NormalZombieNameList.Count);
+                SpawnZombie(m_NormalZombieNameList[ZombieNameIndex]);
+            }
+        }
+
+        //Spawn Special zombies
+        if (m_Spawned_SpecialZombieNumber < m_CurrentWave.SpecialZombieNumber)
+        {
+            if (m_GameTime % 1f < 0.1f)
+            {
+                int ZombieNameIndex = Random.Range(0, m_SpecialZombieNameList.Count);
+                SpawnZombie(m_SpecialZombieNameList[ZombieNameIndex]);
             }
         }
     }

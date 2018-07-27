@@ -22,7 +22,6 @@ public class DevilZombieAI : MonoBehaviour
     {
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
-        Debug.Log("AI Awake : " + m_Data.m_Hp);
         m_Interaction = GetComponent<ZombieInteraction>();
         m_Ani = GetComponent<Animator>();
 
