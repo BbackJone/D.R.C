@@ -93,7 +93,7 @@ public class SoldierZombieAI : MonoBehaviour {
     //FindTarget per 5 seconds.
     private IEnumerator FindTarget() {
         while (true) {
-            m_target = m_Interaction.GetTarget(this.transform);
+            m_target = GetTarget();
             yield return new WaitForSeconds(5f);
         }
     }
@@ -127,5 +127,26 @@ public class SoldierZombieAI : MonoBehaviour {
 
             yield return null;
         }
+    }
+
+    //Set nearest enemy as target
+    public Transform GetTarget()
+    {
+        if (ObjectManager.m_Inst.Objects.m_Playerlist.Count <= 0)
+            return null;
+
+        float MinDis = 100000f;
+        PlayerInteraction target = null;
+        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
+        {
+            if (pm == null) continue;
+            float dis = Vector3.Distance(pm.transform.position, this.transform.position);
+            if (MinDis > dis)
+            {
+                MinDis = dis;
+                target = pm;
+            }
+        }
+        return target.transform;
     }
 }

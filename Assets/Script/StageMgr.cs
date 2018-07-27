@@ -17,9 +17,6 @@ public struct WaveDB
 public class StageMgr : MonoBehaviour
 {
     public static StageMgr instance;    //singleton
-
-    public ObjectManager m_ObjMgr;
-
     public GameObject[] m_LevelImage;
     public WaveDB m_CurrentWave;
     public float m_GameTime;
@@ -34,7 +31,6 @@ public class StageMgr : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         m_SaveMgr = GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>();
     }
 
@@ -45,7 +41,7 @@ public class StageMgr : MonoBehaviour
         if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
 
         m_GameTime = 0;
-        m_CurrentWave = m_ObjMgr.m_DBMgr.m_WaveDB[startWave];
+        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[startWave];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
@@ -55,10 +51,25 @@ public class StageMgr : MonoBehaviour
     {
         m_GameTime += Time.deltaTime;
         ZombieSpawnTimer();
-        
+
+        if (Input.GetKeyDown("y"))
+        {
+            SpawnZombie("DevilZombie");
+        }
+
+        if (Input.GetKeyDown("u"))
+        {
+            SpawnZombie("RugbyZombie");
+        }
+
         if (Input.GetKeyDown(KeyCode.I))
         {
-            SpawnZombie("SA_Zombie_Soldier");
+            SpawnZombie("PrisonerZombie");
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SpawnZombie("SoldierZombie");
         }
     }
 
@@ -78,6 +89,7 @@ public class StageMgr : MonoBehaviour
 
     public void ZombieSpawnTimer()
     {
+        return;
         //Spawn Normal zombies
         if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber)
         {
@@ -114,7 +126,7 @@ public class StageMgr : MonoBehaviour
 
     public void NextWave()
     {
-        m_CurrentWave = m_ObjMgr.m_DBMgr.m_WaveDB[m_CurrentWave.Level + 1];
+        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[m_CurrentWave.Level + 1];
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         m_Spawned_NormalZombieNumber = 0;
         m_Spawned_SpecialZombieNumber = 0;

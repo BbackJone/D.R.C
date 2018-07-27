@@ -64,32 +64,6 @@ public class ObjectPoolMgr : MonoBehaviour {
         Directory.name = ZomebieToPool2.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
-        //Zomebie(SA_Zombie_Prisoner)                                                    
-        ObjectToPool ZomebieToPool3 = new ObjectToPool();
-        ZomebieToPool3.Obj = Directory_ObjectToPool.GetChild(5).gameObject;
-        ZomebieToPool3.AmountToPool = 50;
-        ZomebieToPool3.ObjName = ZomebieToPool3.Obj.name;
-        ZomebieToPool3.objType = ObjType.OBJ_ENEMY;
-        ZomebieToPool3.ShouldExpand = false;
-
-        m_ObjectToPool.Add(ZomebieToPool3.ObjName, ZomebieToPool3);
-        Directory = new GameObject();
-        Directory.name = ZomebieToPool3.ObjName;
-        Directory.transform.SetParent(m_Directory_PooledObject);
-
-        //Zomebie(SA_Zombie_Soldier)                                                    
-        ObjectToPool ZomebieToPool4 = new ObjectToPool();
-        ZomebieToPool4.Obj = Directory_ObjectToPool.GetChild(6).gameObject;
-        ZomebieToPool4.AmountToPool = 50;
-        ZomebieToPool4.ObjName = ZomebieToPool4.Obj.name;
-        ZomebieToPool4.objType = ObjType.OBJ_ENEMY;
-        ZomebieToPool4.ShouldExpand = false;
-
-        m_ObjectToPool.Add(ZomebieToPool4.ObjName, ZomebieToPool4);
-        Directory = new GameObject();
-        Directory.name = ZomebieToPool4.ObjName;
-        Directory.transform.SetParent(m_Directory_PooledObject);
-
         //Particle(FX_BloodSplatter_Katana)
         ObjectToPool ParticleToPool = new ObjectToPool();
         ParticleToPool.Obj = Directory_ObjectToPool.GetChild(1).gameObject;
@@ -130,6 +104,84 @@ public class ObjectPoolMgr : MonoBehaviour {
         Directory.name = BulletToPool.ObjName;
         Directory.transform.SetParent(m_Directory_PooledObject);
 
+        //Flame
+        ObjectToPool FlameToPool = new ObjectToPool();
+        FlameToPool.Obj = Directory_ObjectToPool.GetChild(7).gameObject;
+        FlameToPool.AmountToPool = 10;
+        FlameToPool.ObjName = FlameToPool.Obj.name;
+        FlameToPool.objType = ObjType.OBJ_ETC;
+        FlameToPool.ShouldExpand = true;
+
+        m_ObjectToPool.Add(FlameToPool.ObjName, FlameToPool);
+        Directory = new GameObject();
+        Directory.name = FlameToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //ExplosionParticle
+        ObjectToPool ExplosionToPool = new ObjectToPool();
+        ExplosionToPool.Obj = Directory_ObjectToPool.GetChild(8).gameObject;
+        ExplosionToPool.AmountToPool = 10;
+        ExplosionToPool.ObjName = ExplosionToPool.Obj.name;
+        ExplosionToPool.objType = ObjType.OBJ_ETC;
+        ExplosionToPool.ShouldExpand = true;
+
+        m_ObjectToPool.Add(ExplosionToPool.ObjName, ExplosionToPool);
+        Directory = new GameObject();
+        Directory.name = ExplosionToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //Devil Zombie
+        ObjectToPool DevilZombieToPool = new ObjectToPool();
+        DevilZombieToPool.Obj = Directory_ObjectToPool.GetChild(9).gameObject;
+        DevilZombieToPool.AmountToPool = 10;
+        DevilZombieToPool.ObjName = DevilZombieToPool.Obj.name;
+        DevilZombieToPool.objType = ObjType.OBJ_ENEMY;
+        DevilZombieToPool.ShouldExpand = false;
+
+        m_ObjectToPool.Add(DevilZombieToPool.ObjName, DevilZombieToPool);
+        Directory = new GameObject();
+        Directory.name = DevilZombieToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+
+        //Rugby Zombie
+        ObjectToPool RugbyZombieToPool = new ObjectToPool();
+        RugbyZombieToPool.Obj = Directory_ObjectToPool.GetChild(10).gameObject;
+        RugbyZombieToPool.AmountToPool = 10;
+        RugbyZombieToPool.ObjName = RugbyZombieToPool.Obj.name;
+        RugbyZombieToPool.objType = ObjType.OBJ_ENEMY;
+        RugbyZombieToPool.ShouldExpand = false;
+
+        m_ObjectToPool.Add(RugbyZombieToPool.ObjName, RugbyZombieToPool);
+        Directory = new GameObject();
+        Directory.name = RugbyZombieToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //PrisonerZombie                                                    
+        ObjectToPool PrisonerZombieToPool = new ObjectToPool();
+        PrisonerZombieToPool.Obj = Directory_ObjectToPool.GetChild(11).gameObject;
+        PrisonerZombieToPool.AmountToPool = 50;
+        PrisonerZombieToPool.ObjName = PrisonerZombieToPool.Obj.name;
+        PrisonerZombieToPool.objType = ObjType.OBJ_ENEMY;
+        PrisonerZombieToPool.ShouldExpand = false;
+
+        m_ObjectToPool.Add(PrisonerZombieToPool.ObjName, PrisonerZombieToPool);
+        Directory = new GameObject();
+        Directory.name = PrisonerZombieToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
+
+        //SoldierZombie
+        ObjectToPool SoldierZombieToPool = new ObjectToPool();
+        SoldierZombieToPool.Obj = Directory_ObjectToPool.GetChild(12).gameObject;
+        SoldierZombieToPool.AmountToPool = 50;
+        SoldierZombieToPool.ObjName = SoldierZombieToPool.Obj.name;
+        SoldierZombieToPool.objType = ObjType.OBJ_ENEMY;
+        SoldierZombieToPool.ShouldExpand = false;
+
+        m_ObjectToPool.Add(SoldierZombieToPool.ObjName, SoldierZombieToPool);
+        Directory = new GameObject();
+        Directory.name = SoldierZombieToPool.ObjName;
+        Directory.transform.SetParent(m_Directory_PooledObject);
     }
 
     void Start()

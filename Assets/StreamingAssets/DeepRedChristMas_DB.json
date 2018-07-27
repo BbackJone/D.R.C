@@ -1,7 +1,7 @@
 {
   "Zombie": [
     {
-      "Name": "SA_Zombie_Businessman",
+      "Name": "NormalZombie",
       "Hp": 100,
       "Speed": 2,
       "AttackDamage": 15,
@@ -9,15 +9,31 @@
       "AttackSpeed": 2.5
     },
     {
-      "Name": "SA_Zombie_Prisoner",
+      "Name": "RugbyZombie",
+      "Hp": 500,
+      "Speed": 2,
+      "AttackDamage": 40,
+      "AttackRange": 20,
+      "AttackSpeed": 15
+    },
+    {
+      "Name": "DevilZombie",
+      "Hp": 100,
+      "Speed": 4,
+      "AttackDamage": 50,
+      "AttackRange": 40,
+      "AttackSpeed": 8
+    },
+    {
+      "Name": "PrisonerZombie",
       "Hp": 1,
       "Speed": 4.5,
-      "AttackDamage": 45,
+      "AttackDamage": 50,
       "AttackRange": 5,
       "AttackSpeed": 1
     },
     {
-      "Name": "SA_Zombie_Soldier",
+      "Name": "SoldierZombie",
       "Hp": 100,
       "Speed": 2,
       "AttackDamage": 15,
