@@ -3,23 +3,23 @@
     {
       "Name": "NormalZombie",
       "Hp": 100,
-      "Speed": 2,
+      "Speed": 4.5,
       "AttackDamage": 15,
       "AttackRange": 2,
       "AttackSpeed": 2.5
     },
     {
       "Name": "RugbyZombie",
-      "Hp": 500,
-      "Speed": 2,
+      "Hp": 700,
+      "Speed": 4.5,
       "AttackDamage": 40,
       "AttackRange": 20,
       "AttackSpeed": 15
     },
     {
       "Name": "DevilZombie",
-      "Hp": 100,
-      "Speed": 4,
+      "Hp": 400,
+      "Speed": 5,
       "AttackDamage": 50,
       "AttackRange": 40,
       "AttackSpeed": 8
@@ -27,18 +27,18 @@
     {
       "Name": "PrisonerZombie",
       "Hp": 1,
-      "Speed": 4.5,
+      "Speed": 7,
       "AttackDamage": 50,
       "AttackRange": 5,
       "AttackSpeed": 1
     },
     {
       "Name": "SoldierZombie",
-      "Hp": 100,
-      "Speed": 2,
+      "Hp": 400,
+      "Speed": 4,
       "AttackDamage": 15,
       "AttackRange": 15,
-      "AttackSpeed": 0.5
+      "AttackSpeed": 1
     }
   ],
   "Weapon": [
@@ -77,6 +77,42 @@
       "AniTrigger": "Rifle_Attack",
       "BodyDamage": 80,
       "HeadDamage": 160
+    },
+    {
+      "Name": "Sniper",
+      "MaxBullet": 1,
+      "Recoil": 40,
+      "Weight": 10,
+      "Shotrate": 2,
+      "Bulletsort": "Sniper_Bullet",
+      "Autoshot": false,
+      "AniTrigger": "Sniper_Attack",
+      "BodyDamage": 100,
+      "HeadDamage": 500
+    },
+    {
+      "Name": "Bow",
+      "MaxBullet": 1,
+      "Recoil": 0,
+      "Weight": 10,
+      "Shotrate": 1,
+      "Bulletsort": "Arrow",
+      "Autoshot": true,
+      "AniTrigger": "Bow_Attack",
+      "BodyDamage": 50,
+      "HeadDamage": 1000
+    },
+    {
+      "Name": "FlameThrower",
+      "MaxBullet": 200,
+      "Recoil": 0,
+      "Weight": 25,
+      "Shotrate": 0.1,
+      "Bulletsort": "Flame",
+      "Autoshot": true,
+      "AniTrigger": "FlameThrower_Attack",
+      "BodyDamage": 10,
+      "HeadDamage": 10
     }
   ],
   "Wave": [

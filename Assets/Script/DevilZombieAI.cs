@@ -34,7 +34,7 @@ public class DevilZombieAI : MonoBehaviour
         StageMgr.instance.AddSpecialZombieNumber(1);
 
         m_Nav.enabled = true;
-        m_Nav.baseOffset = 25;
+        m_Nav.baseOffset = Random.Range(15,26);
 
         StartCoroutine("FindTarget");
         StartCoroutine("TargetAttack");

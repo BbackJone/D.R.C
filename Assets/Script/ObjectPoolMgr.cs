@@ -75,6 +75,9 @@ public class ObjectPoolMgr : MonoBehaviour {
 
         //SoldierZombie
         AddObjectToPool(12, 10, ObjType.OBJ_ENEMY, false);
+
+        //SniperBullet
+        AddObjectToPool(13, 5, ObjType.OBJ_BULLET, true);
         //-------------------------------------------------------
     }
 

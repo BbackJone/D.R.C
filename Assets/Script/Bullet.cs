@@ -6,10 +6,12 @@ public class Bullet : MonoBehaviour{
 
     public ObjType m_Type { get; set; }
 
-    public float m_Speed { get; set; }
-    public int m_BodyDamage;
-    public int m_HeadDamage;
-    private float m_StayTime;
+    public float m_Speed;          //Please Set this at editor
+    public bool m_Penetration;     //Please Set this at editor
+    public float m_StayTime;       //Please Set this at editor
+
+    private int m_BodyDamage;
+    private int m_HeadDamage;
     private TrailRenderer m_Trail;
 
     //Raycast Parameters
@@ -28,14 +30,12 @@ public class Bullet : MonoBehaviour{
     // Use this for initialization
     void Awake()
     {
-        m_StayTime = 2f;
         m_Trail = transform.GetComponent<TrailRenderer>();
     }
 
     void Start()
     {
         ObjListAdd();
-        m_Speed = 100f;
     }
 
     void OnEnable()
@@ -55,12 +55,30 @@ public class Bullet : MonoBehaviour{
 
     void CollisionCheck()
     {
+        if (m_Penetration == false)
+            RayCast_NonPenetration();
+        else
+            RayCast_Penetration();
+    }
+
+    void Remove()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ObjListAdd()
+    {
+        ObjectManager.m_Inst.Objects.m_Bulletlist.Add(this);
+    }
+
+    public void RayCast_NonPenetration()
+    {
         Vector3 direction = transform.position - m_PrevPos;
         Ray ray = new Ray(m_PrevPos, direction.normalized);
         RaycastHit[] hit;
 
         hit = Physics.RaycastAll(ray, direction.magnitude);
-        for(int i = 0; i < hit.Length; i++)
+        for (int i = 0; i < hit.Length; i++)
         {
             if (hit[i].transform.CompareTag("Enemy"))
             {
@@ -74,13 +92,32 @@ public class Bullet : MonoBehaviour{
         }
     }
 
-    void Remove()
+    public void RayCast_Penetration()
     {
-        gameObject.SetActive(false);
-    }
+        Vector3 direction = transform.position - m_PrevPos;
+        Ray ray = new Ray(m_PrevPos, direction.normalized);
+        RaycastHit[] hit;
 
-    public void ObjListAdd()
-    {
-        ObjectManager.m_Inst.Objects.m_Bulletlist.Add(this);
+        hit = Physics.RaycastAll(ray, 500f);
+        for (int i = 0; i < hit.Length; i++)
+        {
+            if (hit[i].transform.CompareTag("Enemy"))
+            {
+                Vector3 CollsionPoint = hit[i].point;
+                int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
+                hit[i].transform.gameObject.SendMessage("GetDamage", DamageSet);
+                ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
+
+                //Minus 50 Damage per every penetration
+                m_HeadDamage -= 50;
+                m_BodyDamage -= 50;
+
+                if(m_HeadDamage + m_BodyDamage == 0)
+                {
+                    CancelInvoke();
+                    Remove();
+                }
+            }
+        }
     }
 }

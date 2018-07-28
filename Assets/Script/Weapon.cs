@@ -28,7 +28,7 @@ public enum Weapon_Type
 }
 
 //Weapon_Code in animator parameter
-// 0 : katana, 1 : handgun, 2 : rifle
+// 0 : katana // 1 : handgun // 2 : rifle // 3 : Sniper
 public class Weapon : MonoBehaviour
 {
     public ObjType m_Type { get; set; }
@@ -88,6 +88,8 @@ public class Weapon : MonoBehaviour
         ObjListAdd();
         m_AmmoBulletNum = 0;
         m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
+
+        m_AmmoBulletNum = m_MaxBulletNum;
     }
 
     void OnEnable()
@@ -114,6 +116,7 @@ public class Weapon : MonoBehaviour
         else
             ShootBullet();
     }
+
     public IEnumerator Shoot_Rifle()
     {
         for(int i = 0; i < 3; i++)      //Shoot 3 bullet per 0.15 sec at once 
