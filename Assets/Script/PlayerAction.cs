@@ -143,17 +143,22 @@ public class PlayerAction : MonoBehaviour {
             if (_weap.gameObject.activeInHierarchy)
             {
                 m_Data.m_Ani.SetTrigger("WeaponSwap");
+
                 m_Data.m_WeaponInhand.gameObject.SetActive(false);
 
                 if (i == m_Data.m_Weapons.Count - 1)
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
                     m_Data.m_Ani.SetInteger("Weapon_Code", 0);
+                    gameObject.SendMessage("PlaySound", 0);
+
                 }
                 else
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
                     m_Data.m_Ani.SetInteger("Weapon_Code", i + 1);
+                    gameObject.SendMessage("PlaySound", 0);
+
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
                 Check_WeaponisAuto();
@@ -193,7 +198,8 @@ public class PlayerAction : MonoBehaviour {
             }
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
             {
-                HandgunRSource.PlayOneShot(HandgunRClip);
+                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD));
+
             }
 
             m_Data.m_Reloading = true;

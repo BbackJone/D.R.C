@@ -80,7 +80,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKeyDown("t"))   //left shift
         {
-            SwapSource.PlayOneShot(SwapSource.clip);
+           
             gameObject.SendMessage("SwapWeapon");
         }
         if (Input.GetKeyDown(KeyCode.Z))
