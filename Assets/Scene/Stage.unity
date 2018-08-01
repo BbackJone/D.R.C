@@ -13892,7 +13892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
 --- !u!65 &728759347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21516,6 +21515,10 @@ Prefab:
     - target: {fileID: 4988812956494122, guid: 2d6fb155d6b07354d804a14ea01d106b, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290732564614604, guid: 2d6fb155d6b07354d804a14ea01d106b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d6fb155d6b07354d804a14ea01d106b, type: 2}
@@ -29392,6 +29395,7 @@ GameObject:
   - component: {fileID: 1491306654}
   - component: {fileID: 1491306651}
   - component: {fileID: 1491306645}
+  - component: {fileID: 1491306656}
   m_Layer: 8
   m_Name: Santa
   m_TagString: Player
@@ -29434,7 +29438,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 52c61f2ee12886947ad3049173bce33e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -29586,10 +29590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dc9d5921e3289419964c1caf0260db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RifleRSource: {fileID: 0}
-  RifleRClip: {fileID: 0}
-  HandgunRSource: {fileID: 0}
-  HandgunRClip: {fileID: 0}
+  RifleRSource: {fileID: 73362570}
+  RifleRClip: {fileID: 8300000, guid: f4b1aa6bbffd8b344b7b860d2c7ea46c, type: 3}
+  HandgunRSource: {fileID: 1012481813}
+  HandgunRClip: {fileID: 8300000, guid: 8497fe11d1df23a4c9a4d1d180c9f0b5, type: 3}
   m_AttackButton: {fileID: 0}
   left_leg: {fileID: 752039366}
   right_leg: {fileID: 722890712}
@@ -29606,10 +29610,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UI: {fileID: 1611716509}
-  SwapClip: {fileID: 0}
-  SwapSource: {fileID: 0}
-  WalkClip: {fileID: 0}
-  WalkSource: {fileID: 0}
+  SwapClip: {fileID: 8300000, guid: f4f289ffdf976df409378ed8d5d8f167, type: 3}
+  SwapSource: {fileID: 658849930}
+  WalkClip: {fileID: 8300000, guid: 1feebeb1b55a9d842a20d15dea87ab5f, type: 3}
+  WalkSource: {fileID: 835589428}
   m_mouseSensitivity: 0
 --- !u!114 &1491306653
 MonoBehaviour:
@@ -29646,6 +29650,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlStick: {fileID: 1228273445}
+--- !u!114 &1491306656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491306644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14370b3662c8654d86410b114711e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Audiosouce: {fileID: 0}
+  m_AudioClipArr:
+  - {fileID: 8300000, guid: f4f289ffdf976df409378ed8d5d8f167, type: 3}
+  - {fileID: 8300000, guid: 1feebeb1b55a9d842a20d15dea87ab5f, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: f4b1aa6bbffd8b344b7b860d2c7ea46c, type: 3}
+  - {fileID: 8300000, guid: 8497fe11d1df23a4c9a4d1d180c9f0b5, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1492863547
 GameObject:
   m_ObjectHideFlags: 0
@@ -31896,7 +31924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Player: {fileID: 1491306653}
   m_GameOver: {fileID: 367966920}
-  m_RedAim: {fileID: 0}
+  m_RedAim: {fileID: 2067146393}
   m_BulletNum: {fileID: 1523622985}
   m_Hp: {fileID: 1938575853}
 --- !u!4 &1611716510

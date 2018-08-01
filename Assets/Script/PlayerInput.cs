@@ -7,11 +7,6 @@ public class PlayerInput : MonoBehaviour
 {
     private PlayerData m_Data;
     public UIManager m_UI;
-    public AudioClip SwapClip;
-    public AudioSource SwapSource;
-
-    public AudioClip WalkClip;
-    public AudioSource WalkSource;
     
     //this is required to rotate player's view
     private float m_Mouse_X;
@@ -30,9 +25,7 @@ public class PlayerInput : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        WalkSource.clip = WalkClip;
-        SwapSource.clip = SwapClip;
-        m_Data = GetComponent<PlayerData>(); 
+        m_Data = GetComponent<PlayerData>();
     }
 
 
@@ -68,12 +61,8 @@ public class PlayerInput : MonoBehaviour
             TempVec.x = Input.GetAxis("Horizontal");
         if (TempVec.x != 0|| TempVec.z !=0)
         {
-            if (!WalkSource.isPlaying)
-                WalkSource.PlayOneShot(WalkSource.clip);
-        }
-        if (TempVec.z == 0&& TempVec.x==0)
-        {
-            WalkSource.Stop();
+            //if (!WalkSource.isPlaying)
+                //WalkSource.PlayOneShot(WalkSource.clip);
         }
 
         m_Data.m_Move = TempVec;

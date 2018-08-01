@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour {
 
-    public AudioSource RifleRSource;
-    public AudioClip RifleRClip;
-    public AudioSource HandgunRSource;
-    public AudioClip HandgunRClip;
     private PlayerData m_Data;
     private float m_AttackTimer;
 
@@ -193,7 +189,7 @@ public class PlayerAction : MonoBehaviour {
             m_Data.m_Ani.SetTrigger("WeaponReload");
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
             {
-                RifleRSource.PlayOneShot(RifleRClip);
+                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.RIFLERELOAD));
             }
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
             {
