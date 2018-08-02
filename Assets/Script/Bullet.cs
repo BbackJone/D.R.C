@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Bullet : MonoBehaviour{
 
@@ -42,7 +43,9 @@ public class Bullet : MonoBehaviour{
     {
         m_PrevPos = transform.position;
         Invoke("Remove", m_StayTime);   //Remove this after "m_StayTime"
-        m_Trail.Clear();
+
+        if(m_Trail != null)
+            m_Trail.Clear();
     }
 
     //proceed
@@ -98,7 +101,7 @@ public class Bullet : MonoBehaviour{
         Ray ray = new Ray(m_PrevPos, direction.normalized);
         RaycastHit[] hit;
 
-        hit = Physics.RaycastAll(ray, 500f);
+        hit = Physics.RaycastAll(ray, direction.magnitude).OrderBy(h=>h.distance).ToArray();
         for (int i = 0; i < hit.Length; i++)
         {
             if (hit[i].transform.CompareTag("Enemy"))
@@ -106,13 +109,14 @@ public class Bullet : MonoBehaviour{
                 Vector3 CollsionPoint = hit[i].point;
                 int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
                 hit[i].transform.gameObject.SendMessage("GetDamage", DamageSet);
+                Debug.Log("Head Damage : " + DamageSet[0] + "Name : " + hit[i].transform.name);
                 ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
 
                 //Minus 50 Damage per every penetration
-                m_HeadDamage -= 50;
-                m_BodyDamage -= 50;
+                m_HeadDamage = Mathf.Max(m_HeadDamage-30, 0);
+                m_BodyDamage = Mathf.Max(m_BodyDamage-30, 0);
 
-                if(m_HeadDamage + m_BodyDamage == 0)
+                if (m_HeadDamage + m_BodyDamage == 0)
                 {
                     CancelInvoke();
                     Remove();

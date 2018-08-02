@@ -6,6 +6,7 @@ public class PlayerAction : MonoBehaviour {
 
     private PlayerData m_Data;
     private float m_AttackTimer;
+    private CameraMove m_CameraMove;
 
     public bool m_Death { get; set; }
     public float m_DeathTimer { get; set; }     //time between player's death and player's extinction.
@@ -22,6 +23,7 @@ public class PlayerAction : MonoBehaviour {
     void Awake()
     {
         m_Data = GetComponent<PlayerData>();
+        m_CameraMove = Camera.main.GetComponent<CameraMove>();
     }
 
 	void Start () {
@@ -156,6 +158,12 @@ public class PlayerAction : MonoBehaviour {
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
                 Check_WeaponisAuto();
+
+                //If the weapon is sniper, move camera position
+                if(m_Data.m_WeaponInhand.m_ObjName == "Sniper")
+                    m_CameraMove.CameraLerp(CAMERAPOS.SNIPER_SHOOTPOS);
+                else
+                    m_CameraMove.CameraLerp(CAMERAPOS.NORMALPOS);
 
                 if (m_Data.m_Reloading == true)
                 {
