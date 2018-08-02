@@ -77,6 +77,30 @@
       "AniTrigger": "Rifle_Attack",
       "BodyDamage": 80,
       "HeadDamage": 160
+    },
+	{
+      "Name": "Minigun",
+      "MaxBullet": 300,
+      "Recoil": 5,
+      "Weight": 20,
+      "Shotrate": 0.05,
+      "Bulletsort": "Handgun_Bullet",
+      "Autoshot": true,
+      "AniTrigger": "Minigun_Attack",
+      "BodyDamage": 50,
+      "HeadDamage": 100
+    },
+	{
+      "Name": "RPG",
+      "MaxBullet": 1,
+      "Recoil": 30,
+      "Weight": 20,
+      "Shotrate": 2,
+      "Bulletsort": "Handgun_Bullet",
+      "Autoshot": false,
+      "AniTrigger": "RPG_Attack",
+      "BodyDamage": 50,
+      "HeadDamage": 100
     }
   ],
   "Wave": [

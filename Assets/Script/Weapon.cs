@@ -24,7 +24,8 @@ public enum Weapon_Type
     RIFLE,
     RPG,
     SNIPER,
-    BOW
+    BOW,
+    MINIGUN
 }
 
 //Weapon_Code in animator parameter
@@ -111,6 +112,11 @@ public class Weapon : MonoBehaviour
             StopCoroutine("Shoot_Rifle");
             StartCoroutine("Shoot_Rifle");
         }
+        else if (m_WeaponType == Weapon_Type.MINIGUN)
+        {
+            StopCoroutine("Shoot_Minigun");
+            StartCoroutine("Shoot_Minigun");
+        }
         else
             ShootBullet();
     }
@@ -120,6 +126,15 @@ public class Weapon : MonoBehaviour
         {
             ShootBullet();
             yield return new WaitForSeconds(0.15f);
+        }
+    }
+
+    public IEnumerator Shoot_Minigun() {
+        int k = 50;
+        while (m_AmmoBulletNum > 0 && k > 0) {
+            ShootBullet();
+            k--;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
