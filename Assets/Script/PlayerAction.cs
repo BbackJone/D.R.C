@@ -136,7 +136,8 @@ public class PlayerAction : MonoBehaviour {
 
     public void SwapWeapon()
     {
-        for(int i = 0; i < m_Data.m_Weapons.Count; i++)
+        m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
+        for (int i = 0; i < m_Data.m_Weapons.Count; i++)
         {
             Weapon _weap = m_Data.m_Weapons[i];
             if (_weap.gameObject.activeInHierarchy)
@@ -188,6 +189,7 @@ public class PlayerAction : MonoBehaviour {
             m_Data.m_Ani.SetTrigger("WeaponReload");
             m_Data.m_Reloading = true;
             m_Data.m_Ani.SetBool("WeaponReloadBool", m_Data.m_Reloading);
+            m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
         }
     }
 

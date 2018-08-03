@@ -7,9 +7,18 @@ public class RPGRocket : MonoBehaviour {
     public ParticleSystem fireTail;
 
     private bool IsLaunched = false;
+    private float m_StayTime = 2f;
 
-	// Update is called once per frame
-	void FixedUpdate () {
+    public int m_BodyDamage;
+    public int m_HeadDamage;
+
+    public void Remove()
+    {
+        gameObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		if (IsLaunched)
         {
             var m_PrevPos = transform.position;
@@ -23,46 +32,34 @@ public class RPGRocket : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, direction.magnitude))
             {
-                if (hit.transform.CompareTag("Floor"))
+                if (hit.transform.CompareTag("Floor") || hit.transform.CompareTag("Enemy"))
                 {
                     Vector3 CollsionPoint = hit.point;
                     ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));
                     var cds = Physics.OverlapSphere(hit.point, 10);
 
-                    try
+                    foreach (Collider cd in cds)
                     {
-                        foreach (Collider cd in cds)
+                        var obj = cd.gameObject;
+                        if (obj.tag.Equals("Enemy"))
                         {
-                            var obj = cd.gameObject;
-                            if (obj.tag.Equals("Enemy"))
-                            {
-                                if (obj.GetComponent<HitboxChecker>() != null && obj.GetComponent<HitboxChecker>().Object != null)
-                                {
-                                    obj.GetComponent<HitboxChecker>().Object.GetComponent<ZombieData>().GetDamage(250);
-                                }
-                            }
+                            int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
+                            obj.SendMessage("GetDamage", DamageSet);
                         }
                     }
-                    catch (Exception)
-                    {
 
-                    }
-
-                    Destroy(gameObject);
+                    CancelInvoke();
+                    Remove();
                 }
             }
         }
 	}
 
-    public void SetPosRot(Vector3 pos, Quaternion rot)
-    {
-        this.transform.position = pos;
-        this.transform.rotation = rot;
-    }
-
     public void Fire()
     {
         if (fireTail != null) fireTail.gameObject.SetActive(true);
         IsLaunched = true;
+
+        Invoke("Remove", m_StayTime);
     }
 }

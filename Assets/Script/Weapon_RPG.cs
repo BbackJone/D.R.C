@@ -10,7 +10,7 @@ public class Weapon_RPG : Weapon
     
     private int m_RaycastLayermask;       //Layer for raycast to ignore
 
-    private Transform RpgRocket = null;
+    private RPGRocket RpgRocket = null;
     private Vector3 Dir;
    
     void Awake()
@@ -20,7 +20,7 @@ public class Weapon_RPG : Weapon
         //m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
         m_Camera = Camera.main;
 
-        RpgRocket = transform.Find("SA_Wep_RPGLauncher_Rocket");
+        RpgRocket = transform.Find("SA_Wep_RPGLauncher_Rocket").GetComponent<RPGRocket>();
 
         Initialize();
     }
@@ -54,9 +54,10 @@ public class Weapon_RPG : Weapon
 
     public void ShootRPG()
     {
-        var newRocket = Instantiate(RpgRocket.gameObject);
-        newRocket.GetComponent<RPGRocket>().SetPosRot(RpgRocket.transform.position, m_Camera.transform.rotation);
-        newRocket.GetComponent<RPGRocket>().Fire();
+        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", RpgRocket.transform.position, m_Camera.transform.rotation).GetComponent<RPGRocket>();
+        newRocket.m_BodyDamage = m_BodyDamage;
+        newRocket.m_HeadDamage = m_HeadDamage;
+        newRocket.Fire();
         m_AmmoBulletNum -= 1;
         return;
     }

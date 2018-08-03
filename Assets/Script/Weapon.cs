@@ -56,6 +56,8 @@ public class Weapon : MonoBehaviour
     public Transform m_ShootPos;
     private int m_RaycastLayermask;       //Layer for raycast to ignore
 
+    private Animator m_Ani;
+
     virtual public void Initialize()
     {
         WeaponDB DBData = ObjectManager.m_Inst.m_DBMgr.m_WeaponDB[gameObject.name];
@@ -80,6 +82,7 @@ public class Weapon : MonoBehaviour
         //m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
         //m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
         m_Camera = Camera.main;
+        m_Ani = GameObject.Find("Santa").GetComponent<Animator>();
 
         Initialize();
     }
@@ -129,13 +132,22 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public IEnumerator Shoot_Minigun() {
-        int k = 10;
-        while (m_AmmoBulletNum > 0 && k > 0) {
+    public IEnumerator Shoot_Minigun()
+    {
+        if (!m_Ani.GetBool("Minigun_Attack_Bool"))
+        {
+            m_Ani.SetBool("Minigun_Attack_Bool", true);
+            yield return new WaitForSeconds(1.5f);
+        }
+        int k = 30;
+        while (m_AmmoBulletNum > 0 && k > 0)
+        {
+            if (!m_Ani.GetBool("Minigun_Attack_Bool")) break;
             ShootBullet();
             k--;
             yield return new WaitForSeconds(0.05f);
         }
+        m_Ani.SetBool("Minigun_Attack_Bool", false);
     }
     
     public void ShootBullet()
