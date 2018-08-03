@@ -75,6 +75,15 @@ public class ObjectPoolMgr : MonoBehaviour {
 
         //SoldierZombie
         AddObjectToPool(12, 10, ObjType.OBJ_ENEMY, false);
+
+        //Zomebie(Normal3)            
+        AddObjectToPool(13, 50, ObjType.OBJ_ENEMY, false);
+
+        //Zomebie(Normal4)            
+        AddObjectToPool(14, 50, ObjType.OBJ_ENEMY, false);
+
+        //Zomebie(Normal5)            
+        AddObjectToPool(15, 50, ObjType.OBJ_ENEMY, false);
         //-------------------------------------------------------
     }
 

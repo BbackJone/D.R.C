@@ -62,4 +62,10 @@ public class PlayerData : MonoBehaviour {
         m_Money = 0;
     }
 
+    //Test
+    private void Update()
+    {
+        m_Hp = m_MaxHp;
+    }
+
 }

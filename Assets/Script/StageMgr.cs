@@ -56,6 +56,9 @@ public class StageMgr : MonoBehaviour
 
         m_NormalZombieNameList.Add("NormalZombie1");
         m_NormalZombieNameList.Add("NormalZombie2");
+        m_NormalZombieNameList.Add("NormalZombie3");
+        m_NormalZombieNameList.Add("NormalZombie4");
+        m_NormalZombieNameList.Add("NormalZombie5");
     }
 
     private void Update()
