@@ -42,7 +42,8 @@ public class ZombieAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_Nav.speed = m_Data.m_Speed;
-	}
+        m_Nav.stoppingDistance = m_Data.m_AttackRange * 0.75f;
+    }
 
 
     IEnumerator TargetAttack()
@@ -79,21 +80,9 @@ public class ZombieAI : MonoBehaviour {
         {
             if (m_target)
             {
-                if (m_TargetDistance < m_Data.m_AttackRange * 0.75)
-                {
-                    m_Nav.Stop();
-
-                    float move = m_Nav.desiredVelocity.magnitude;
-                    m_Ani.SetFloat("Speed", move);
-                }
-                else
-                {
-                    m_Nav.Resume();
-                    m_Nav.SetDestination(m_target.position);
-
-                    float move = m_Nav.desiredVelocity.magnitude;
-                    m_Ani.SetFloat("Speed", move);
-                }
+                 m_Nav.SetDestination(m_target.position);
+                 float move = m_Nav.desiredVelocity.magnitude;
+                 m_Ani.SetFloat("Speed", move);
             }
             yield return new WaitForSeconds(0.5f);
         }

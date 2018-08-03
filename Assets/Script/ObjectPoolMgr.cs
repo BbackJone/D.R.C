@@ -76,9 +76,17 @@ public class ObjectPoolMgr : MonoBehaviour {
         //SoldierZombie
         AddObjectToPool(12, 10, ObjType.OBJ_ENEMY, false);
 
+        //Zomebie(Normal3)            
+        AddObjectToPool(13, 50, ObjType.OBJ_ENEMY, false);
+
+        //Zomebie(Normal4)            
+        AddObjectToPool(14, 50, ObjType.OBJ_ENEMY, false);
+
+        //Zomebie(Normal5)            
+        AddObjectToPool(15, 50, ObjType.OBJ_ENEMY, false);
+
         //Rocket
-        AddObjectToPool(13, 3, ObjType.OBJ_BULLET, true);
-        //-------------------------------------------------------
+        AddObjectToPool(16, 3, ObjType.OBJ_BULLET, true);
     }
 
     public void AddObjectToPool(int _childindex, int _amountToPool, ObjType _objtype, bool _shouldexpand)
