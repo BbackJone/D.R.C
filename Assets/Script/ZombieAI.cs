@@ -80,8 +80,7 @@ public class ZombieAI : MonoBehaviour {
         {
             if (m_target)
             {
-                if(m_target)
-                    m_Nav.SetDestination(m_target.position);
+                 m_Nav.SetDestination(m_target.position);
                  float move = m_Nav.desiredVelocity.magnitude;
                  m_Ani.SetFloat("Speed", move);
             }

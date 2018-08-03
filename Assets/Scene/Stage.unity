@@ -32785,7 +32785,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1459206887}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -41333,7 +41333,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1846190062}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -42960,6 +42960,26 @@ Transform:
   m_PrefabParentObject: {fileID: 4433408330787702, guid: 397926657ec5ab144bf047ed6279cc6a,
     type: 2}
   m_PrefabInternal: {fileID: 1928472632}
+--- !u!1 &1928472634 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1001184048745154, guid: 397926657ec5ab144bf047ed6279cc6a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1928472632}
+--- !u!208 &1928472635
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928472634}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1929267574
 GameObject:
   m_ObjectHideFlags: 0
