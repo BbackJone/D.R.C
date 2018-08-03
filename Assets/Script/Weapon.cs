@@ -102,7 +102,7 @@ public class Weapon : MonoBehaviour
         ObjectManager.m_Inst.Objects.m_Weaponlist.Add(this);
     }
 
-    public void Shoot()
+    public virtual void Shoot()
     {
         if (m_AmmoBulletNum <= 0)
             return;
@@ -130,14 +130,14 @@ public class Weapon : MonoBehaviour
     }
 
     public IEnumerator Shoot_Minigun() {
-        int k = 50;
+        int k = 10;
         while (m_AmmoBulletNum > 0 && k > 0) {
             ShootBullet();
             k--;
             yield return new WaitForSeconds(0.05f);
         }
     }
-
+    
     public void ShootBullet()
     {
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
