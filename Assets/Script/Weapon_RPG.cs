@@ -11,7 +11,7 @@ public class Weapon_RPG : Weapon
     private int m_RaycastLayermask;       //Layer for raycast to ignore
 
     private RPGRocket RpgRocket = null;
-    private Vector3 Dir;
+    private Vector3 m_ShootDir;
    
     void Awake()
     {
@@ -54,7 +54,19 @@ public class Weapon_RPG : Weapon
 
     public void ShootRPG()
     {
-        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", RpgRocket.transform.position, m_Camera.transform.rotation).GetComponent<RPGRocket>();
+        Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
+        RaycastHit hit; 
+        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, m_RaycastLayermask))    //raycast forward
+        {
+            m_ShootDir = hit.point - m_ShootPos.position;
+            m_ShootDir = m_ShootDir / m_ShootDir.magnitude;
+        }
+        else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
+        {
+            m_ShootDir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - m_ShootPos.position;
+        }
+
+        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", m_ShootPos.transform.position, Quaternion.LookRotation(m_ShootDir)).GetComponent<RPGRocket>();
         newRocket.m_BodyDamage = m_BodyDamage;
         newRocket.m_HeadDamage = m_HeadDamage;
         newRocket.Fire();

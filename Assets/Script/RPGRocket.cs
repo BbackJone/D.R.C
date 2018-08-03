@@ -36,17 +36,11 @@ public class RPGRocket : MonoBehaviour {
                 {
                     Vector3 CollsionPoint = hit.point;
                     ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));
-                    var cds = Physics.OverlapSphere(hit.point, 10);
 
-                    foreach (Collider cd in cds)
-                    {
-                        var obj = cd.gameObject;
-                        if (obj.tag.Equals("Enemy"))
-                        {
-                            int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
-                            obj.SendMessage("GetDamage", DamageSet);
-                        }
-                    }
+                    DamageNearEnemies(hit.point, 4);
+                    DamageNearEnemies(hit.point, 6);
+                    DamageNearEnemies(hit.point, 8);
+                    DamageNearEnemies(hit.point, 10);
 
                     CancelInvoke();
                     Remove();
@@ -54,6 +48,21 @@ public class RPGRocket : MonoBehaviour {
             }
         }
 	}
+
+    private void DamageNearEnemies(Vector3 pos, float radius)
+    {
+        var cds = Physics.OverlapSphere(pos, radius);
+
+        foreach (Collider cd in cds)
+        {
+            var obj = cd.gameObject;
+            if (obj.tag.Equals("Enemy") && !obj.name.Contains("Head"))
+            {
+                int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
+                obj.SendMessage("GetDamage", DamageSet);
+            }
+        }
+    }
 
     public void Fire()
     {

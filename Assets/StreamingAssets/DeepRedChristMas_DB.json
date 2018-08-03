@@ -99,8 +99,8 @@
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": false,
       "AniTrigger": "RPG_Attack",
-      "BodyDamage": 50,
-      "HeadDamage": 100
+      "BodyDamage": 100,
+      "HeadDamage": 60
     }
   ],
   "Wave": [
