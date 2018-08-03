@@ -113,16 +113,6 @@ public class PlayerAction : MonoBehaviour {
 
     public void Firebullet()
     {
-        //FireBullet per Shotrate if bullet exist
-        if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
-            && m_Data.m_WeaponInhand.m_AmmoBulletNum > 0
-            || m_Data.m_WeaponInhand.m_ObjName == "Katana") //(katana doesn't have buttlet)
-        {
-            m_AttackTimer = 0f;
-            m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
-            Shoot();
-        }
-
         //Reload when there is no bullet
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum <= 0)
         {
@@ -131,6 +121,16 @@ public class PlayerAction : MonoBehaviour {
                 Reload();
             }
             return;
+        }
+
+        //FireBullet per Shotrate if bullet exist
+        if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
+            && m_Data.m_WeaponInhand.m_AmmoBulletNum > 0
+            || m_Data.m_WeaponInhand.m_ObjName == "Katana") //(katana doesn't have buttlet)
+        {
+            m_AttackTimer = 0f;
+            m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
+            Shoot();
         }
     }
 
