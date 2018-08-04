@@ -87,6 +87,9 @@ public class ObjectPoolMgr : MonoBehaviour {
 
         //Rocket
         AddObjectToPool(16, 3, ObjType.OBJ_BULLET, true);
+
+        //SniperBullet
+        AddObjectToPool(17, 5, ObjType.OBJ_BULLET, true);
     }
 
     public void AddObjectToPool(int _childindex, int _amountToPool, ObjType _objtype, bool _shouldexpand)

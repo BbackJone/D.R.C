@@ -102,25 +102,17 @@ public class UIManager : MonoBehaviour {
 
         //Set the alpha of image 0
         Color alpha = _imageSeconds.Image.color;
-        alpha.a = 0f;
+        alpha.a = 1f;
         _imageSeconds.Image.color = alpha;
 
         while (true)
         {
             m_RedAimTimer += _imageSeconds.Seconds / 10f;
 
-            if (m_RedAimTimer <= _imageSeconds.Seconds / 2.0f)
-            {
-                alpha.a += 0.2f;
-                _imageSeconds.Image.color = alpha;
-            }
-            else
-            {
-                alpha.a -= 0.2f;
-                _imageSeconds.Image.color = alpha;
-            }
-        
-            if(m_RedAimTimer > _imageSeconds.Seconds)
+            alpha.a -= 0.1f;
+            _imageSeconds.Image.color = alpha;
+
+            if (m_RedAimTimer > _imageSeconds.Seconds)
             {
                 _imageSeconds.Image.gameObject.SetActive(false);
                 m_RedAimTimer = 0;
