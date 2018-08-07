@@ -6,7 +6,7 @@ public class Weapon_Katana : Weapon {
 
     private string m_ParticleName;
 
-	// Use this for initialization
+    // Use this for initialization
     void Awake(){
         Initialize();
     }

@@ -101,6 +101,7 @@
       "AniTrigger": "RPG_Attack",
       "BodyDamage": 100,
       "HeadDamage": 60
+    },
     {
       "Name": "Sniper",
       "MaxBullet": 1,

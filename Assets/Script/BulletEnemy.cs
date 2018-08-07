@@ -11,7 +11,8 @@ public class BulletEnemy : MonoBehaviour{
     public int m_BodyDamage;
     public int m_HeadDamage;
     private float m_StayTime;
-    private TrailRenderer m_Trail;
+
+    private LineRenderer m_LineRenderer;
 
     //Raycast Parameters
     public Vector3 m_PrevPos;
@@ -31,27 +32,41 @@ public class BulletEnemy : MonoBehaviour{
     {
         m_StayTime = 2f;
         m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
-        m_Trail = transform.GetComponent<TrailRenderer>();
+        m_LineRenderer = transform.GetComponent<LineRenderer>();
     }
 
     void Start()
     {
-        m_Speed = 100f;
+        m_Speed = 1000f;
     }
 
     void OnEnable()
     {
         m_PrevPos = transform.position;
         Invoke("Remove", m_StayTime);   //Remove this after "m_StayTime"
-        m_Trail.Clear();
+        StartCoroutine("CoCollisionCheck");
     }
 
     //proceed
     private void FixedUpdate()
     {
         m_PrevPos = transform.position;
+        m_LineRenderer.SetPosition(0, m_PrevPos);
+
         transform.Translate(Vector3.forward * Time.deltaTime * m_Speed);
-        CollisionCheck();
+
+        m_LineRenderer.SetPosition(1, transform.position);
+    }
+
+    public IEnumerator CoCollisionCheck()
+    {
+        while(true)
+        {
+            //We have to wait for unity to render a bullet trail before it destroyed.
+            yield return new WaitForEndOfFrame();
+
+            CollisionCheck();
+        }
     }
 
     void CollisionCheck()
@@ -75,6 +90,6 @@ public class BulletEnemy : MonoBehaviour{
 
     void Remove()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

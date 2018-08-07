@@ -20,6 +20,9 @@ public class SoldierZombieAI : MonoBehaviour {
 
     public GameObject bullet;
 
+    public MeshRenderer m_MuzzleFlash;
+    public MeshRenderer m_MuzzleFlash2;
+
     void Awake() {
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
@@ -39,6 +42,9 @@ public class SoldierZombieAI : MonoBehaviour {
         StartCoroutine("TargetAttack");
         StartCoroutine("NavMove");
         StartCoroutine("DeathCheck");
+
+        m_MuzzleFlash.enabled = false;
+        m_MuzzleFlash2.enabled = false;
     }
 
     // Use this for initialization
@@ -58,10 +64,9 @@ public class SoldierZombieAI : MonoBehaviour {
                     } else {
                         m_Data.m_AttackTimer = 0f;
                         transform.LookAt(m_target);
-                        gameObject.SendMessage("ShootGun");
                         if (bullet != null)
                         {
-                            Instantiate(bullet, transform).SetActive(true);
+                            Invoke("Shoot", 0.2f);
                         }
                     }
                 }
@@ -69,6 +74,14 @@ public class SoldierZombieAI : MonoBehaviour {
 
             yield return null;
         }
+    }
+
+    public void Shoot()
+    {
+        gameObject.SendMessage("ShootGun");
+        Instantiate(bullet, transform).SetActive(true);
+
+        MakeFlash();    //make muzzleflash
     }
 
     //Move toward target
@@ -148,5 +161,22 @@ public class SoldierZombieAI : MonoBehaviour {
             }
         }
         return target.transform;
+    }
+
+    public void MakeFlash()
+    {
+        m_MuzzleFlash.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
+        m_MuzzleFlash2.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
+
+        m_MuzzleFlash.enabled = true;
+        m_MuzzleFlash2.enabled = true;
+
+        Invoke("Cancelflash", 0.05f);
+    }
+
+    public void Cancelflash()
+    {
+        m_MuzzleFlash.enabled = false;
+        m_MuzzleFlash2.enabled = false;
     }
 }

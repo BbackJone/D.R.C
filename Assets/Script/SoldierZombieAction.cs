@@ -11,10 +11,6 @@ public class SoldierZombieAction : MonoBehaviour {
         m_Ani = GetComponent<Animator>();
     }
 
-    void AttackofTwohand() {
-        //m_Ani.SetTrigger("Attack");
-    }
-
     void ShootGun() {
         m_Ani.SetTrigger("Attack");
     }

@@ -29,7 +29,7 @@ public enum Weapon_Type
 }
 
 //Weapon_Code in animator parameter
-// 0 : katana // 1 : handgun // 2 : rifle // 3 : Sniper
+// 0 : katana // 1 : handgun // 2 : rifle // 3 : Minigun // 4 : RPG // 5 : Sniper
 public class Weapon : MonoBehaviour
 {
     public ObjType m_Type { get; set; }
@@ -98,8 +98,8 @@ public class Weapon : MonoBehaviour
 
     void OnEnable()
     {
-        m_MuzzleFlash.enabled = false;
-        m_MuzzleFlash2.enabled = false;
+       m_MuzzleFlash.enabled = false;
+       m_MuzzleFlash2.enabled = false;
     }
 
     virtual public void ObjListAdd()
@@ -167,13 +167,13 @@ public class Weapon : MonoBehaviour
         }
         else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
         {
-            Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - m_ShootPos.position;
+            Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 1000f) - m_ShootPos.position;
             GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
             bullet.SendMessage("SetBodyDamage", m_BodyDamage);
             bullet.SendMessage("SetHeadDamage", m_HeadDamage);
         }
 
-        //m_AmmoBulletNum -= 1;
+        m_AmmoBulletNum -= 1;
         Makeflash();
     }
 
@@ -185,10 +185,13 @@ public class Weapon : MonoBehaviour
 
     public void Makeflash()
     {
+        m_MuzzleFlash.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
+        m_MuzzleFlash2.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
+
         m_MuzzleFlash.enabled = true;
         m_MuzzleFlash2.enabled = true;
 
-        //Invoke("Cancelflash", 1f); 
+        Invoke("Cancelflash", 0.05f); 
     }
 
     public void Cancelflash()

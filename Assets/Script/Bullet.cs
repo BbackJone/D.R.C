@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour{
 
     private int m_BodyDamage;
     private int m_HeadDamage;
-    private TrailRenderer m_Trail;
+
+    private LineRenderer m_LineRenderer;
 
     //Raycast Parameters
     public Vector3 m_PrevPos;
@@ -31,7 +32,7 @@ public class Bullet : MonoBehaviour{
     // Use this for initialization
     void Awake()
     {
-        m_Trail = transform.GetComponent<TrailRenderer>();
+        m_LineRenderer = transform.GetComponent<LineRenderer>();
     }
 
     void Start()
@@ -43,16 +44,17 @@ public class Bullet : MonoBehaviour{
     {
         m_PrevPos = transform.position;
         Invoke("Remove", m_StayTime);   //Remove this after "m_StayTime"
-
-        if(m_Trail != null)
-            m_Trail.Clear();
     }
 
-    //proceed
+    //proceed and Check Collision
     private void FixedUpdate()
     {
         m_PrevPos = transform.position;
+        m_LineRenderer.SetPosition(0, m_PrevPos);
+
         transform.Translate(Vector3.forward * Time.deltaTime * m_Speed);
+
+        m_LineRenderer.SetPosition(1, transform.position);
         CollisionCheck();
     }
 
@@ -86,6 +88,7 @@ public class Bullet : MonoBehaviour{
             if (hit[i].transform.CompareTag("Enemy"))
             {
                 Vector3 CollsionPoint = hit[i].point;
+                m_LineRenderer.SetPosition(1, CollsionPoint);
                 int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
                 hit[i].transform.gameObject.SendMessage("GetDamage", DamageSet);
                 ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
