@@ -48,6 +48,8 @@ public abstract class Weapon : MonoBehaviour{
     public int m_HeadDamage { get; set; }
     public Weapon_Type m_WeaponType;
 
+    public Transform m_ShootTarget { get; set; }
+
     public void Initialize()
     {
         WeaponDB DBData = ObjectManager.m_Inst.m_DBMgr.m_WeaponDB[gameObject.name];

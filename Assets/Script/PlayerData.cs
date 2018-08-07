@@ -22,12 +22,14 @@ public class PlayerData : MonoBehaviour {
     public Camera m_Camera { get; set; }
     public Animator m_Ani { get; set; }
     public Rigidbody m_Rigidbody { get; set; }
+    private AimSystem m_AimSystem;
 
     void Awake()
     {
         m_Camera = Camera.main;
         m_Ani = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_AimSystem = GetComponent<AimSystem>();
 
         m_Weapons = new List<Weapon>();
 
@@ -37,8 +39,9 @@ public class PlayerData : MonoBehaviour {
         //오른손의 자식으로 설정된 무기들을 m_Weapons에 추가하고, 비활성화 시킨다.
         for (int i = 0; i < rightHand.childCount; i++)
         {
-            Transform weap = rightHand.GetChild(i);
-            m_Weapons.Add(weap.GetComponent<Weapon>());
+            Weapon weap = rightHand.GetChild(i).GetComponent<Weapon>();
+            weap.m_ShootTarget = m_AimSystem.m_RayTarget;
+            m_Weapons.Add(weap);
             weap.gameObject.SetActive(false);
         }
 

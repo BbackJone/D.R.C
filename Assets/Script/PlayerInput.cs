@@ -36,7 +36,7 @@ public class PlayerInput : MonoBehaviour
         m_mouseSensitivity = 100f;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         ViewControl();
         CheckKey();

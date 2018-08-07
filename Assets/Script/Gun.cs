@@ -5,14 +5,11 @@ using UnityEngine;
 
 public class Gun : Weapon
 {
-    private Camera m_Camera;
-
     //this makes spark effect when bullet is fired.
     public MeshRenderer m_MuzzleFlash;
     public MeshRenderer m_MuzzleFlash2;
 
     public Transform m_ShootPos;
-    private int m_RaycastLayermask;       //Layer for raycast to ignore
 
     private Animator m_Ani;
 
@@ -37,7 +34,6 @@ public class Gun : Weapon
 
     void Awake()
     {
-        m_Camera = Camera.main;
         m_Ani = GameObject.Find("Santa").GetComponent<Animator>();
 
         Initialize();
@@ -53,7 +49,6 @@ public class Gun : Weapon
     {
         ObjListAdd();
         m_AmmoBulletNum = 0;
-        m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
 
         m_AmmoBulletNum = m_MaxBulletNum;
     }
@@ -87,23 +82,11 @@ public class Gun : Weapon
     
     public void ShootBullet()
     {
-        Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
-        RaycastHit hit;
-        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, m_RaycastLayermask) )    //raycast forward
-        {
-            Vector3 Dir = hit.point - m_ShootPos.position;
-            Dir = Dir / Dir.magnitude;
-            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
-            bullet.SendMessage("SetBodyDamage", m_BodyDamage);
-            bullet.SendMessage("SetHeadDamage", m_HeadDamage);
-        }
-        else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
-        {
-            Vector3 Dir = (m_Camera.transform.position + m_Camera.transform.forward * 1000f) - m_ShootPos.position;
-            GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
-            bullet.SendMessage("SetBodyDamage", m_BodyDamage);
-            bullet.SendMessage("SetHeadDamage", m_HeadDamage);
-        }
+        Vector3 Dir = m_ShootTarget.position - m_ShootPos.position;
+        Dir = Dir / Dir.magnitude;
+        GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
+        bullet.SendMessage("SetBodyDamage", m_BodyDamage);
+        bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
         Makeflash();
