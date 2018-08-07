@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Weapon_Code in animator parameter
-// 0 : katana, 1 : handgun, 2 : rifle
+
 public class Weapon_RPG : Weapon
 {
     private Camera m_Camera;
-    
+
+    public Transform m_ShootPos;
     private int m_RaycastLayermask;       //Layer for raycast to ignore
 
     private RPGRocket RpgRocket = null;
     private Vector3 m_ShootDir;
-   
+
+    public override void Shoot()
+    {
+        if (m_AmmoBulletNum <= 0)
+            return;
+
+        if (RpgRocket != null) ShootRPG();
+        else Debug.LogError("RPG: Failed to find rocket");
+    }
+
     void Awake()
     {
-        //m_Light = transform.GetChild(1).GetComponent<Animator>();
-        //m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
-        //m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
         m_Camera = Camera.main;
 
         RpgRocket = transform.Find("SA_Wep_RPGLauncher_Rocket").GetComponent<RPGRocket>();
@@ -32,26 +38,11 @@ public class Weapon_RPG : Weapon
         m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
     }
 
-    void OnEnable()
-    {
-        m_MuzzleFlash.enabled = false;
-        m_MuzzleFlash2.enabled = false;
-    }
-
     private void Update()
     {
         RpgRocket.gameObject.SetActive(m_AmmoBulletNum != 0);
     }
     
-    public override void Shoot()
-    {
-        if (m_AmmoBulletNum <= 0)
-            return;
-
-        if (RpgRocket != null) ShootRPG();
-        else Debug.LogError("RPG: Failed to find rocket");
-    }
-
     public void ShootRPG()
     {
         Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen

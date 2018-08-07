@@ -19,25 +19,6 @@ public class ObjectsWithTag
         m_Weaponlist = new List<Weapon>();
         m_Bulletlist = new List<Bullet>();
     }
-
-    //public void AddObject(GameObject _obj, string _tag)
-    //{
-    //    if (_tag == "Player")
-    //    {
-    //        PlayerInteraction Player = _obj.GetComponent<PlayerInteraction>();
-    //        m_Playerlist.Add(Player);
-    //    }
-    //    else if (_tag == "Enemy")
-    //    {
-    //        ZombieInteraction Enemy = _obj.GetComponent<ZombieInteraction>();
-    //        m_Enemylist.Add(Enemy);
-    //    }
-    //    else if (_tag == "Bullet")
-    //    {
-    //        Bullet Bullet = _obj.GetComponent<Bullet>();
-    //        m_Bulletlist.Add(Bullet);
-    //    }
-    //}
     
     public PlayerInteraction GetPlayer(Transform _obj)
     {

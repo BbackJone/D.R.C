@@ -60685,8 +60685,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 3
-  m_MuzzleFlash: {fileID: 0}
-  m_MuzzleFlash2: {fileID: 0}
   m_ShootPos: {fileID: 1124107421}
 --- !u!23 &1486978297
 MeshRenderer:
@@ -67541,7 +67539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1751186410
 Transform:
   m_ObjectHideFlags: 0
@@ -67559,8 +67557,7 @@ Transform:
 --- !u!114 &1751186411
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114812493929150624, guid: 4613bae3c56e9b84fafffe79964399cb,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1751186409}
   m_Enabled: 1
@@ -67569,9 +67566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 0
-  m_MuzzleFlash: {fileID: 0}
-  m_MuzzleFlash2: {fileID: 0}
-  m_ShootPos: {fileID: 0}
 --- !u!65 &1751186412
 BoxCollider:
   m_ObjectHideFlags: 0

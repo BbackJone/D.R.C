@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_Katana : Weapon {
-
+public class Weapon_Katana : Weapon
+{
     private string m_ParticleName;
+
+    public override void Shoot()
+    {
+        //Shoot of katana is Implemented at animation(onehand attack)
+    }
 
     // Use this for initialization
     void Awake(){
@@ -18,25 +23,6 @@ public class Weapon_Katana : Weapon {
         ObjListAdd();
     }
 
-
-    public override void Initialize()
-    {
-        WeaponDB DBData = ObjectManager.m_Inst.m_DBMgr.m_WeaponDB[gameObject.name];
-        m_ObjName = DBData.Name;
-        m_MaxBulletNum = DBData.MaxBullet;
-        m_Recoil = DBData.Recoil;
-        m_Weight = DBData.Weight;
-        m_ShotRate = DBData.Shotrate;
-        m_BulletSort = DBData.Bulletsort;
-        m_Autoshot = DBData.Autoshot;
-        m_AniTrigger = DBData.AniTrigger;
-        m_BodyDamage = DBData.BodyDamage;
-        m_HeadDamage = DBData.HeadDamage;
-
-        m_Type = ObjType.OBJ_WEAPON;
-    }
-
-
     void OnTriggerEnter(Collider col)
     {
         if (col.transform.CompareTag("Enemy"))
@@ -46,11 +32,5 @@ public class Weapon_Katana : Weapon {
             col.gameObject.SendMessage("GetDamage", DamageSet);
             ObjectPoolMgr.instance.CreatePooledObject(m_ParticleName, CollsionPoint, this.transform.rotation);
         }
-    }
-
-
-    override public void ObjListAdd()
-    {
-        ObjectManager.m_Inst.Objects.m_Weaponlist.Add(this);
     }
 }
