@@ -18,6 +18,10 @@ public class TitleButtonScript : MonoBehaviour {
     }
     
     public void CallLoadSceneAsync(bool isContinue) {
+        if (isContinue) {
+            if (!SaveData.SaveExists(0)) return;
+        }
+
         if (isButtonPressed) return;
         isButtonPressed = true;
 
@@ -65,6 +69,11 @@ public class TitleButtonScript : MonoBehaviour {
 
             ObjectManager.m_Inst.m_DBMgr.loaded = true;
         }
+        
+        var titleSanta = GameObject.Find("TitleSanta");
+        titleSanta.GetComponent<TitleSantaAction>().enabled = false;
+        titleSanta.GetComponent<PlayerInput>().enabled = false;
+        GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation);
 
         var asyncOp = SceneManager.LoadSceneAsync("Stage");
         ObjectManager.m_Inst.SetState(STATE_ID.STATE_STAGE);

@@ -31,6 +31,10 @@ public class PlayerAction : MonoBehaviour {
         m_DeathTimer = 0f;
         m_AttackTimer = 0f;
 
+        var gameController = GameObject.Find("GameController");
+        var santa = GameObject.Find("Santa");
+        if (gameController != null && santa != null) gameController.GetComponent<SantaPositionPreserver>().LoadSantaPos(santa);
+
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");

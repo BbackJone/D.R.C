@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ContinueButtonUpdateScript : MonoBehaviour {
 	void Start () {
         if (!SaveData.SaveExists(0)) {
-            transform.Find("Text").GetComponent<Text>().text = "Continue from\nNew Game";
+            transform.Find("Text").GetComponent<Text>().text = "Continue Data\nNot Found";
         } else {
             transform.Find("Text").GetComponent<Text>().text = "Continue from\nWave " + SaveData.Load(0).currentWave;
         }
