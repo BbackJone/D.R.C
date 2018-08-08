@@ -1,5 +1,4 @@
-﻿#if false
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 using System.IO;
 using System.Linq;
@@ -62,5 +61,3 @@ public class PlayFromScene : EditorWindow {
         return text;
     }
 }
-
-#endif
