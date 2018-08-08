@@ -11,8 +11,8 @@ public class PlayerInputTouch : MonoBehaviour {
     private PlayerAction action;
     
     private float stickSensitivity = 2f;
-    private float rotateXSensitivity = 0.24f;
-    private float rotateYSensitivity = 0.16f;
+    private float rotateXSensitivity = 0.20f;
+    private float rotateYSensitivity = 0.12f;
 
     private Vector3 touchPos;
     private float lookY;
@@ -25,7 +25,7 @@ public class PlayerInputTouch : MonoBehaviour {
     private const float touchFireTimeConst = 0.2f;
     private float touchFireTime = touchFireTimeConst;
 
-    private Vector2[] touchDragDeltaA;
+    //private Vector2[] touchDragDeltaA;
     
 	void Start () {
         if (controlStick == null) enabled = false;
@@ -35,11 +35,12 @@ public class PlayerInputTouch : MonoBehaviour {
 
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
-
+        /*
         touchDragDeltaA = new Vector2[20];
         for (int i = 0; i < 20; i++) {
             touchDragDeltaA[i] = Vector2.zero;
         }
+        */
 }
 
     void Update() {
@@ -49,6 +50,32 @@ public class PlayerInputTouch : MonoBehaviour {
             data.m_Move = vec;
         }
 
+        #region Look-around only implementation
+        // Handle camera movement
+        if (Input.touchCount > 0) {
+            // for every active touch pointer...
+            for (int i = 0; i < Input.touchCount; i++) {
+                Touch touch = Input.GetTouch(i);
+
+                // if this touch pointer is not using control stick...
+                if (touch.fingerId != controlStick.draggingPointer) {
+                    // assume this touch is trying to rotate camera
+                    if (touch.phase != TouchPhase.Began) {
+                        // apply rotation
+                        transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity);
+                        lookY -= touch.deltaPosition.y * rotateYSensitivity;
+                        lookY = Mathf.Clamp(lookY, -80f, 50f);
+                        data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
+                    }
+
+                    break;
+                }
+            }
+        }
+        #endregion
+
+        #region Short touch fire implementation (not used)
+#if false
         // Handle camera movement
         if (Input.touchCount > 0) {
             // for every active touch pointer...
@@ -81,6 +108,8 @@ public class PlayerInputTouch : MonoBehaviour {
                 }
             }
         }
+#endif
+        #endregion
 
 #if false
         // Mouse substitution

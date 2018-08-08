@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ControlStickScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler {
     Vector3 startPos;
-    const float range = 75;
+    const float range = 100;
     
     /// <summary>
     /// Range between -1 to 1

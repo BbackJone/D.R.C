@@ -1,12 +1,15 @@
 fileFormatVersion: 2
 guid: 0534e71275798294ab043edb48b969a8
-timeCreated: 1530910817
+timeCreated: 1533752596
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: control_stick
     21300002: control_btn_normal
     21300004: control_btn_pressed
+    21300006: control_stick_indicator
+    21300008: control_reload
+    21300010: control_shoot
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -34,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -94,9 +97,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 131
-        width: 125
-        height: 122
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,10 +110,38 @@ TextureImporter:
       name: control_btn_normal
       rect:
         serializedVersion: 2
-        x: 132
-        y: 132
-        width: 120
-        height: 121
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: control_reload
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: control_shoot
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +152,24 @@ TextureImporter:
       name: control_btn_pressed
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 120
-        height: 121
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: control_stick_indicator
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

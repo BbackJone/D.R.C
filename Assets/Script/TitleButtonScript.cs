@@ -72,7 +72,7 @@ public class TitleButtonScript : MonoBehaviour {
         
         var titleSanta = GameObject.Find("TitleSanta");
         titleSanta.GetComponent<TitleSantaAction>().enabled = false;
-        titleSanta.GetComponent<PlayerInput>().enabled = false;
+        //titleSanta.GetComponent<PlayerInput>().enabled = false;
         GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation);
 
         var asyncOp = SceneManager.LoadSceneAsync("Stage");
