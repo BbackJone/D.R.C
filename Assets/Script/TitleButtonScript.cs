@@ -32,25 +32,31 @@ public class TitleButtonScript : MonoBehaviour {
         ObjectManager.m_Inst.Objects.m_Bulletlist.Clear();
 
         GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>().InitGameSaveData(isContinue);
-
-        StartCoroutine(LoadAsync());
+        
+        var titleSanta = GameObject.Find("TitleSanta");
+        titleSanta.GetComponent<TitleSantaAction>().enabled = false;
+        //titleSanta.GetComponent<PlayerInput>().enabled = false;
+        GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation);
 
         //loadingIndicator.SetActive(true);
-        titleButtons.SetActive(false);
+        foreach (Transform t in transform) {
+            t.gameObject.SetActive(false);
+        }
         loadingText.GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
+
+        StartCoroutine(LoadAsync());
     }
 
     IEnumerator LoadAsync() {
+        Debug.Log("god");
+
         // properly load database first
         if (!ObjectManager.m_Inst.m_DBMgr.loaded) {
             string jsonDB;
             if (Application.platform == RuntimePlatform.Android) {
-                 using (WWW www = new WWW ("jar:file://" + Application.dataPath + "!/assets/DeepRedChristMas_DB.json")) {
-                    while (!www.isDone && www.error == null) {
-                        yield return null;
-                    }
-                    jsonDB = www.text;
-                }
+                WWW www = new WWW("jar:file://" + Application.dataPath + "!/assets/DeepRedChristMas_DB.json");
+                yield return www;
+                jsonDB = www.text;
             } else {
                 jsonDB = File.ReadAllText (Path.Combine (Application.streamingAssetsPath, "DeepRedChristMas_DB.json"));
             }
@@ -69,14 +75,11 @@ public class TitleButtonScript : MonoBehaviour {
 
             ObjectManager.m_Inst.m_DBMgr.loaded = true;
         }
-        
-        var titleSanta = GameObject.Find("TitleSanta");
-        titleSanta.GetComponent<TitleSantaAction>().enabled = false;
-        //titleSanta.GetComponent<PlayerInput>().enabled = false;
-        GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation);
 
-        var asyncOp = SceneManager.LoadSceneAsync("Stage");
+        Debug.Log("jesus");
+
         ObjectManager.m_Inst.SetState(STATE_ID.STATE_STAGE);
+        var asyncOp = SceneManager.LoadSceneAsync("Stage");
 
         while (!asyncOp.isDone) {
             yield return null;
