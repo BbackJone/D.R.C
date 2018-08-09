@@ -13,12 +13,6 @@ public class CameraMove : MonoBehaviour {
     public Transform m_SniperPos;
     public Transform m_NormalPos;
 
-    private void Awake()
-    {
-        m_SniperPos = GameObject.Find("Sniper_ShootPos").transform;
-        m_NormalPos = GameObject.Find("NormalPos").transform;
-    }
-
     public void CameraLerp(CAMERAPOS _camerapos)
     {
         StopCoroutine("CoCameraLerp");

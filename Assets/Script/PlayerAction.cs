@@ -17,8 +17,6 @@ public class PlayerAction : MonoBehaviour {
     public Transform left_leg;
     public Transform right_leg;
 
-    public Transform Look_target;
-
 	// Use this for initialization
     void Awake()
     {
@@ -44,12 +42,6 @@ public class PlayerAction : MonoBehaviour {
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");
-    }
-
-    private void Update()
-    {
-        left_leg.LookAt(Look_target);
-        right_leg.LookAt(Look_target);
     }
 
     IEnumerator DeadCheck()
@@ -97,9 +89,10 @@ public class PlayerAction : MonoBehaviour {
         while (true)
         {
             transform.Translate(Vector3.forward * m_Data.m_Move.z * Time.deltaTime * m_Data.m_Speed);
-            transform.Translate(Vector3.right * m_Data.m_Move.x * Time.deltaTime * m_Data.m_Speed);
+            transform.Translate(Vector3.right * m_Data.m_Move.x * Time.deltaTime * m_Data.m_Speed * 0.5f);
 
-            m_Data.m_Ani.SetFloat("Speed", m_Data.m_Move.z);
+            m_Data.m_Ani.SetFloat("Speed_Horizontal", m_Data.m_Move.x);
+            m_Data.m_Ani.SetFloat("Speed_Vertical", m_Data.m_Move.z);
             yield return null;
         }
     }
@@ -118,7 +111,7 @@ public class PlayerAction : MonoBehaviour {
         //Reload when there is no bullet
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum <= 0)
         {
-            if (!m_Data.m_Reloading)
+            if (!m_Data.m_isReloading)
             {
                 Reload();
             }
@@ -127,11 +120,15 @@ public class PlayerAction : MonoBehaviour {
 
         //FireBullet per Shotrate if bullet exist
         if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
+            && !m_Data.m_isReloading
             && m_Data.m_WeaponInhand.m_AmmoBulletNum > 0
             || m_Data.m_WeaponInhand.m_ObjName == "Katana") //(katana doesn't have buttlet)
         {
             m_AttackTimer = 0f;
-            m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
+            //m_Data.m_Ani.SetTrigger(m_Data.m_WeaponInhand.m_AniTrigger);
+            m_Data.m_isShooting = true;
+            m_Data.m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
+            Invoke("SetShootingFalse", 0.05f);
             Shoot();
         }
     }
@@ -166,9 +163,9 @@ public class PlayerAction : MonoBehaviour {
                 else
                     m_CameraMove.CameraLerp(CAMERAPOS.NORMALPOS);
 
-                if (m_Data.m_Reloading == true)
+                if (m_Data.m_isReloading == true)
                 {
-                    m_Data.m_Reloading = false;
+                    m_Data.m_isReloading = false;
                     m_Data.m_Ani.SetBool("WeaponReloadBool", false);
                 }
 
@@ -194,9 +191,10 @@ public class PlayerAction : MonoBehaviour {
     {
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum < m_Data.m_WeaponInhand.m_MaxBulletNum)
         {
-            m_Data.m_Ani.SetTrigger("WeaponReload");
-            m_Data.m_Reloading = true;
-            m_Data.m_Ani.SetBool("WeaponReloadBool", m_Data.m_Reloading);
+            //m_Data.m_Ani.SetTrigger("WeaponReload");
+            m_Data.m_isReloading = true;
+            m_Data.m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
+            Invoke("SetRelaodingFalse", 2f);         //DB에 리로딩 시간 적어넣을것
             m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
         }
     }
@@ -207,8 +205,20 @@ public class PlayerAction : MonoBehaviour {
         if (m_Data.m_WeaponInhand)
         {
             m_Data.m_WeaponInhand.ChargeBullet();
-            m_Data.m_Reloading = false;
+            m_Data.m_isReloading = false;
             m_Data.m_Ani.SetBool("WeaponReloadBool", false);
         }
+    }
+
+    void SetShootingFalse()
+    {
+        m_Data.m_isShooting = false;
+        m_Data.m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
+    }
+
+    void SetRelaodingFalse()
+    {
+        m_Data.m_isReloading = false;
+        m_Data.m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
     }
 }
