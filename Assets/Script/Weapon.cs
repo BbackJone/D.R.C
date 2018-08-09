@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+
 public struct WeaponDB
 {
     public string Name;
@@ -109,6 +110,7 @@ public class Weapon : MonoBehaviour
         if (m_WeaponType == Weapon_Type.RIFLE)
         {
             StopCoroutine("Shoot_Rifle");
+            
             StartCoroutine("Shoot_Rifle");
         }
         else
