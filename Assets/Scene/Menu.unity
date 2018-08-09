@@ -23446,8 +23446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d8743abab7e824292e14a3955625b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SniperPos: {fileID: 0}
-  m_NormalPos: {fileID: 0}
+  m_SniperPos: {fileID: 642578655}
+  m_NormalPos: {fileID: 121330331}
 --- !u!81 &1508553285
 AudioListener:
   m_ObjectHideFlags: 0
@@ -36530,7 +36530,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2120930254}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b571327ea467ec4eaad0c07202b7b9d, type: 3}
   m_Name: 
@@ -36542,7 +36542,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2120930254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a92200d8b8206c642be58084aa5f4748, type: 3}
   m_Name: 

@@ -10,7 +10,7 @@ public class PlayerInputTouch : MonoBehaviour {
     private PlayerData data;
     private PlayerAction action;
     
-    private float stickSensitivity = 2f;
+    private float stickSensitivity = 0.75f;
     private float rotateXSensitivity = 0.20f;
     private float rotateYSensitivity = 0.12f;
 
@@ -26,6 +26,7 @@ public class PlayerInputTouch : MonoBehaviour {
     private float touchFireTime = touchFireTimeConst;
 
     //private Vector2[] touchDragDeltaA;
+    private float touchDragDist;
     
 	void Start () {
         if (controlStick == null) enabled = false;
@@ -60,12 +61,20 @@ public class PlayerInputTouch : MonoBehaviour {
                 // if this touch pointer is not using control stick...
                 if (touch.fingerId != controlStick.draggingPointer) {
                     // assume this touch is trying to rotate camera
-                    if (touch.phase != TouchPhase.Began) {
-                        // apply rotation
-                        transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity);
-                        lookY -= touch.deltaPosition.y * rotateYSensitivity;
-                        lookY = Mathf.Clamp(lookY, -80f, 50f);
-                        data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
+                    if (touch.phase != TouchPhase.Began &&
+                        touch.phase != TouchPhase.Ended &&
+                        touch.phase != TouchPhase.Canceled) {
+                        if (touchDragDist < touchRotateThreshold) {
+                            touchDragDist += touch.deltaPosition.magnitude;
+                        } else {
+                            // apply rotation
+                            transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity);
+                            lookY -= touch.deltaPosition.y * rotateYSensitivity;
+                            lookY = Mathf.Clamp(lookY, -80f, 50f);
+                            data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
+                        }
+                    } else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) {
+                        touchDragDist = 0;
                     }
 
                     break;
