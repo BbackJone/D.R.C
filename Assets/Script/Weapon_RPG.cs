@@ -6,9 +6,9 @@ using UnityEngine;
 // 0 : katana, 1 : handgun, 2 : rifle
 public class Weapon_RPG : Weapon
 {
-    private Camera m_Camera;
+    private Camera m_CameraR;
     
-    private int m_RaycastLayermask;       //Layer for raycast to ignore
+    private int m_RaycastLayermaskR;       //Layer for raycast to ignore
 
     private RPGRocket RpgRocket = null;
     private Vector3 m_ShootDir;
@@ -18,7 +18,7 @@ public class Weapon_RPG : Weapon
         //m_Light = transform.GetChild(1).GetComponent<Animator>();
         //m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
         //m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
-        m_Camera = Camera.main;
+        m_CameraR = Camera.main;
 
         RpgRocket = transform.Find("SA_Wep_RPGLauncher_Rocket").GetComponent<RPGRocket>();
 
@@ -29,7 +29,7 @@ public class Weapon_RPG : Weapon
     {
         ObjListAdd();
         m_AmmoBulletNum = 0;
-        m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
+        m_RaycastLayermaskR = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
     }
 
     void OnEnable()
@@ -54,16 +54,16 @@ public class Weapon_RPG : Weapon
 
     public void ShootRPG()
     {
-        Vector3 RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
+        Vector3 RayStartPos = m_CameraR.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         RaycastHit hit; 
-        if (Physics.Raycast(RayStartPos, m_Camera.transform.forward, out hit, 100f, m_RaycastLayermask))    //raycast forward
+        if (Physics.Raycast(RayStartPos, m_CameraR.transform.forward, out hit, 100f, m_RaycastLayermaskR))    //raycast forward
         {
             m_ShootDir = hit.point - m_ShootPos.position;
             m_ShootDir = m_ShootDir / m_ShootDir.magnitude;
         }
         else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
         {
-            m_ShootDir = (m_Camera.transform.position + m_Camera.transform.forward * 30f) - m_ShootPos.position;
+            m_ShootDir = (m_CameraR.transform.position + m_CameraR.transform.forward * 30f) - m_ShootPos.position;
         }
 
         var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", m_ShootPos.transform.position, Quaternion.LookRotation(m_ShootDir)).GetComponent<RPGRocket>();
