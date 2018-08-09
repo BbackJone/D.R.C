@@ -86,7 +86,7 @@ public class TitleButtonScript : MonoBehaviour {
     // temporary function?
     public void ResetSave() {
         SaveData.ClearAll();
-        transform.Find("SaveClearButton").Find("Text").GetComponent<Text>().text = "Cleared!";
-        transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = "Continue from\nNew Game";
+        GameObject.Find("SaveClearButton").transform.Find("Text").GetComponent<Text>().text = "Cleared!";
+        transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = "Continue Data\nNot Found";
     }
 }
