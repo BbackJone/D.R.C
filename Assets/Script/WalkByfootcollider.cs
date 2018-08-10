@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class WalkByfootcollider : MonoBehaviour {
 
-    
+    private SoundPlayer m_SoundPlayer;
 
         public AudioClip SandSound;
 
         public AudioClip WalkSound;
 
-
-
-        void OnTriggerEnter(Collider col)
-        {
-
-            if (col.gameObject.layer == LayerMask.NameToLayer("Sand"))
-
-            gameObject.SendMessage("PlaySound", 2);
-
-
-        if (col.gameObject.layer == LayerMask.NameToLayer("Floor"))
-
-            gameObject.SendMessage("PlaySound", 3);
-
-
+    private void Awake()
+    {
+        m_SoundPlayer = transform.root.GetComponent<SoundPlayer>();
     }
+
+    void OnTriggerEnter(Collider col)
+        {
+        if (col.gameObject.CompareTag("Sand"))
+        {
+            m_SoundPlayer.PlaySound(SOUNDCLIP.SANDWALK);
+            Debug.Log("Sand");
+        }
+        if (col.gameObject.CompareTag("Floor"))
+        {
+            m_SoundPlayer.PlaySound(SOUNDCLIP.ASPHALTWALK);
+            Debug.Log("Floor");
+        }
+
+
+        }
 
 }
 

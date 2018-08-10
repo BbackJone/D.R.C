@@ -28,9 +28,9 @@ public class SoundPlayer : MonoBehaviour {
         m_Audiosouce = GetComponent<AudioSource>();
     }
 
-    public void PlaySound(int _soundclip)
+    public void PlaySound(SOUNDCLIP _soundclip)
     {
-        m_Audiosouce.PlayOneShot(m_AudioClipArr[_soundclip]);
+        m_Audiosouce.PlayOneShot(m_AudioClipArr[(int)_soundclip]);
     }
 
     public bool isPlaying()
