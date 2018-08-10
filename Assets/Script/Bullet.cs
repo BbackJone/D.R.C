@@ -7,9 +7,9 @@ public class Bullet : MonoBehaviour{
 
     public ObjType m_Type { get; set; }
 
-    public float m_Speed;          //Please Set this at editor
-    public bool m_Penetration;     //Please Set this at editor
-    public float m_StayTime;       //Please Set this at editor
+    private float m_Speed;     
+    private bool m_Penetration;
+    private float m_StayTime;  
 
     private int m_BodyDamage;
     private int m_HeadDamage;
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour{
     {
         m_HeadDamage = _haed;
     }
-
+    
     // Use this for initialization
     void Awake()
     {
@@ -37,6 +37,11 @@ public class Bullet : MonoBehaviour{
 
     void Start()
     {
+        m_Speed = 1000f;
+        m_StayTime = 0.5f;
+        if (gameObject.name == "Sniper_Bullet")
+            m_Penetration = true;
+
         ObjListAdd();
     }
 

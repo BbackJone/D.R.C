@@ -34,7 +34,7 @@ public class Gun : Weapon
 
     void Awake()
     {
-        m_Ani = GameObject.Find("Santa").GetComponent<Animator>();
+        m_Ani = transform.root.GetComponent<Animator>();
 
         Initialize();
     }

@@ -39,6 +39,7 @@ public class PlayerAction : MonoBehaviour {
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");
 	}
+    
 
     void OnEnable()
     {
@@ -108,6 +109,16 @@ public class PlayerAction : MonoBehaviour {
         if (m_Data.m_WeaponInhand)
         {
             m_Data.m_WeaponInhand.Shoot();
+            if (m_Data.m_WeaponInhand.m_ObjName == "Handgun")
+            {
+                gameObject.SendMessage("PlaySound", SOUNDCLIP.HANDGUNSHOT);
+            }
+            if (m_Data.m_WeaponInhand.m_ObjName == "M4")
+            {
+
+                gameObject.SendMessage("PlaySound", SOUNDCLIP.SEMIGOUNSHOT);
+            }
+            
         }
     }
 
@@ -148,17 +159,22 @@ public class PlayerAction : MonoBehaviour {
             if (_weap.gameObject.activeInHierarchy)
             {
                 m_Data.m_Ani.SetTrigger("WeaponSwap");
+
                 m_Data.m_WeaponInhand.gameObject.SetActive(false);
 
                 if (i == m_Data.m_Weapons.Count - 1)
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
                     m_Data.m_Ani.SetInteger("Weapon_Code", 0);
+                    gameObject.SendMessage("PlaySound", SOUNDCLIP.SWAP);
+
                 }
                 else
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
                     m_Data.m_Ani.SetInteger("Weapon_Code", i + 1);
+                    gameObject.SendMessage("PlaySound", SOUNDCLIP.SWAP);
+
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
                 Check_WeaponisAuto();
@@ -202,6 +218,16 @@ public class PlayerAction : MonoBehaviour {
             m_Data.m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
             Invoke("SetRelaodingFalse", 2f);         //DB에 리로딩 시간 적어넣을것
             m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
+
+            if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
+            {
+                gameObject.SendMessage("PlaySound", (SOUNDCLIP.RIFLERELOAD));
+            }
+            if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
+            {
+                gameObject.SendMessage("PlaySound", (SOUNDCLIP.HANDGUNRELOAD));
+
+            }
         }
     }
 

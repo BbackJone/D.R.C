@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 597d7d84608e61c4bbdb7cdae98aad62
   - enabled: 1
     path: Assets/Scene/Stage.unity
-    guid: 72a92dde1e53b77419f9d1d31675c0ce
+    guid: ce60733509f18844692ba1ad34469c6d
   - enabled: 0
     path: Assets/Lightmap/WorkPlace.unity
     guid: 1e63d6d9987ca42498fc9ae006380e22
