@@ -2,18 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SOUNDCLIP
-{
-    SWAP,
-    SANDWALK,
-    ASPHALTWALK,
-    RIFLERELOAD,
-    HANDGUNRELOAD,
-    HANDGUNSHOT,
-    SEMIGOUNSHOT,
-    KATANASHOT,
-}
-
+[RequireComponent(typeof(AudioSource))]
 public class SoundPlayer : MonoBehaviour {
 
     public AudioSource m_Audiosouce;
@@ -26,9 +15,9 @@ public class SoundPlayer : MonoBehaviour {
         m_Audiosouce = GetComponent<AudioSource>();
     }
 
-    public void PlaySound(SOUNDCLIP _soundclip)
+    public void PlaySound(int _soundclip)
     {
-        m_Audiosouce.PlayOneShot(m_AudioClipArr[(int)_soundclip]);
+        m_Audiosouce.PlayOneShot(m_AudioClipArr[_soundclip]);
     }
 
     public bool isPlaying()

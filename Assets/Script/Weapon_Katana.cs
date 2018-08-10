@@ -8,7 +8,7 @@ public class Weapon_Katana : Weapon
 
     public override void Shoot()
     {
-        //Shoot of katana is Implemented at animation(onehand attack)
+        gameObject.SendMessage("PlaySound", 0);
     }
 
     // Use this for initialization

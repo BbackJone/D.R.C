@@ -53,6 +53,7 @@ public class Weapon_RPG : Weapon
         newRocket.m_HeadDamage = m_HeadDamage;
         newRocket.Fire();
 
+        gameObject.SendMessage("PlaySound", 0);
         m_AmmoBulletNum -= 1;
     }
 }

@@ -15,7 +15,7 @@ public class PlayerData : MonoBehaviour {
     //About weapons
     public List<Weapon> m_Weapons { get; set; }
     public Weapon m_WeaponInhand { get; set; }      //플레이어가 현재 들고있는 무기
-    public Transform rightHand;
+    public Transform rightHand { get; set; }
     public bool m_isReloading { get; set; }       //플레이어가 장전 중일때는 공격을 할수 없습니다.
     public bool m_isShooting { get; set; }
 

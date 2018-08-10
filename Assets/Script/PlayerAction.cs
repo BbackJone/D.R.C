@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour {
 
+    public enum SOUNDCLIP
+    {
+        SWAP,
+        SANDWALK,
+        ASPHALTWALK,
+        RIFLERELOAD,
+        HANDGUNRELOAD,
+    }
+
     private PlayerData m_Data;
     private float m_AttackTimer;
     private CameraMove m_CameraMove;
@@ -109,16 +118,6 @@ public class PlayerAction : MonoBehaviour {
         if (m_Data.m_WeaponInhand)
         {
             m_Data.m_WeaponInhand.Shoot();
-            if (m_Data.m_WeaponInhand.m_ObjName == "Handgun")
-            {
-                gameObject.SendMessage("PlaySound", SOUNDCLIP.HANDGUNSHOT);
-            }
-            if (m_Data.m_WeaponInhand.m_ObjName == "M4")
-            {
-
-                gameObject.SendMessage("PlaySound", SOUNDCLIP.SEMIGOUNSHOT);
-            }
-            
         }
     }
 
@@ -166,14 +165,14 @@ public class PlayerAction : MonoBehaviour {
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
                     m_Data.m_Ani.SetInteger("Weapon_Code", 0);
-                    gameObject.SendMessage("PlaySound", SOUNDCLIP.SWAP);
+                    gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP));
 
                 }
                 else
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
                     m_Data.m_Ani.SetInteger("Weapon_Code", i + 1);
-                    gameObject.SendMessage("PlaySound", SOUNDCLIP.SWAP);
+                    gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP));
 
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
@@ -221,11 +220,11 @@ public class PlayerAction : MonoBehaviour {
 
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
             {
-                gameObject.SendMessage("PlaySound", (SOUNDCLIP.RIFLERELOAD));
+                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.RIFLERELOAD));
             }
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
             {
-                gameObject.SendMessage("PlaySound", (SOUNDCLIP.HANDGUNRELOAD));
+                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD));
 
             }
         }

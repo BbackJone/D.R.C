@@ -89,6 +89,7 @@ public class Gun : Weapon
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
+        gameObject.SendMessage("PlaySound", value:0);
         Makeflash();
     }
 
@@ -100,7 +101,7 @@ public class Gun : Weapon
         m_MuzzleFlash.enabled = true;
         m_MuzzleFlash2.enabled = true;
 
-        Invoke("Cancelflash", 0.05f); 
+        Invoke("Cancelflash", 0.05f);
     }
 
     public void Cancelflash()
