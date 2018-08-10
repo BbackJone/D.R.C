@@ -10,6 +10,7 @@ public class FadeCurtainEffectScript : MonoBehaviour {
 
     void Start() {
         image = GetComponent<Image>();
+        image.enabled = true;
         if (image == null) Destroy(gameObject);
     }
     	

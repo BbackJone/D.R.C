@@ -34,9 +34,10 @@ public class TitleButtonScript : MonoBehaviour {
         GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>().InitGameSaveData(isContinue);
         
         var titleSanta = GameObject.Find("TitleSanta");
-        titleSanta.GetComponent<TitleSantaAction>().enabled = false;
+        //titleSanta.GetComponent<TitleSantaAction>().enabled = false;
         //titleSanta.GetComponent<PlayerInput>().enabled = false;
-        GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation);
+        GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation,
+                                                                                              titleSanta.GetComponent<PlayerInput>().m_Mouse_Y);
 
         //loadingIndicator.SetActive(true);
         foreach (Transform t in transform) {
@@ -48,8 +49,6 @@ public class TitleButtonScript : MonoBehaviour {
     }
 
     IEnumerator LoadAsync() {
-        Debug.Log("god");
-
         // properly load database first
         if (!ObjectManager.m_Inst.m_DBMgr.loaded) {
             string jsonDB;
@@ -75,8 +74,6 @@ public class TitleButtonScript : MonoBehaviour {
 
             ObjectManager.m_Inst.m_DBMgr.loaded = true;
         }
-
-        Debug.Log("jesus");
 
         ObjectManager.m_Inst.SetState(STATE_ID.STATE_STAGE);
         var asyncOp = SceneManager.LoadSceneAsync("Stage");

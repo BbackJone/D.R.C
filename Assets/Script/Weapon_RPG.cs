@@ -2,23 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Weapon_Code in animator parameter
-// 0 : katana, 1 : handgun, 2 : rifle
+
 public class Weapon_RPG : Weapon
 {
-    private Camera m_CameraR;
-    
-    private int m_RaycastLayermaskR;       //Layer for raycast to ignore
+    private Camera m_Camera;
+
+    public Transform m_ShootPos;
+    private int m_RaycastLayermask;       //Layer for raycast to ignore
 
     private RPGRocket RpgRocket = null;
     private Vector3 m_ShootDir;
-   
+
+    public override void Shoot()
+    {
+        if (m_AmmoBulletNum <= 0)
+            return;
+
+        if (RpgRocket != null) ShootRPG();
+        else Debug.LogError("RPG: Failed to find rocket");
+    }
+
     void Awake()
     {
-        //m_Light = transform.GetChild(1).GetComponent<Animator>();
-        //m_MuzzleFlash = transform.GetChild(0).GetComponent<Animator>();
-        //m_MuzzleFlash2 = transform.GetChild(2).GetComponent<Animator>();
-        m_CameraR = Camera.main;
+        m_Camera = Camera.main;
 
         RpgRocket = transform.Find("SA_Wep_RPGLauncher_Rocket").GetComponent<RPGRocket>();
 
@@ -29,13 +35,7 @@ public class Weapon_RPG : Weapon
     {
         ObjListAdd();
         m_AmmoBulletNum = 0;
-        m_RaycastLayermaskR = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
-    }
-
-    void OnEnable()
-    {
-        m_MuzzleFlash.enabled = false;
-        m_MuzzleFlash2.enabled = false;
+        m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
     }
 
     private void Update()
@@ -43,34 +43,16 @@ public class Weapon_RPG : Weapon
         RpgRocket.gameObject.SetActive(m_AmmoBulletNum != 0);
     }
     
-    public override void Shoot()
-    {
-        if (m_AmmoBulletNum <= 0)
-            return;
-
-        if (RpgRocket != null) ShootRPG();
-        else Debug.LogError("RPG: Failed to find rocket");
-    }
-
     public void ShootRPG()
     {
-        Vector3 RayStartPos = m_CameraR.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
-        RaycastHit hit; 
-        if (Physics.Raycast(RayStartPos, m_CameraR.transform.forward, out hit, 100f, m_RaycastLayermaskR))    //raycast forward
-        {
-            m_ShootDir = hit.point - m_ShootPos.position;
-            m_ShootDir = m_ShootDir / m_ShootDir.magnitude;
-        }
-        else    //if there is no point where the ray hit, set destination point as moderate forward at camera.
-        {
-            m_ShootDir = (m_CameraR.transform.position + m_CameraR.transform.forward * 30f) - m_ShootPos.position;
-        }
+        Vector3 Dir = m_ShootTarget.position - m_ShootPos.position;
+        Dir = Dir / Dir.magnitude;
 
-        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", m_ShootPos.transform.position, Quaternion.LookRotation(m_ShootDir)).GetComponent<RPGRocket>();
+        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", m_ShootPos.transform.position, Quaternion.LookRotation(Dir)).GetComponent<RPGRocket>();
         newRocket.m_BodyDamage = m_BodyDamage;
         newRocket.m_HeadDamage = m_HeadDamage;
         newRocket.Fire();
+
         m_AmmoBulletNum -= 1;
-        return;
     }
 }

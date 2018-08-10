@@ -10,7 +10,8 @@ public class PlayerInput : MonoBehaviour
 
     //this is required to rotate player's view
     private float m_Mouse_X;
-    private float m_Mouse_Y;
+    [HideInInspector]
+    public float m_Mouse_Y;
 
     //mouseSensitivity
     [SerializeField]
@@ -32,11 +33,11 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         m_Mouse_X = 0f;
-        m_Mouse_Y = 0f;
+        //m_Mouse_Y = transform.GetChild(2).eulerAngles.x;
         m_mouseSensitivity = 100f;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         ViewControl();
         CheckKey();
@@ -69,7 +70,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKeyDown("r"))   //left shift
         {
-            if (!m_Data.m_Reloading)
+            if (!m_Data.m_isReloading)
                 gameObject.SendMessage("Reload");
         }
         if (Input.GetKeyDown("t"))   //left shift
@@ -88,10 +89,7 @@ public class PlayerInput : MonoBehaviour
         m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, -80f, 50f);
         m_Data.m_Camera.transform.eulerAngles = new Vector3(m_Mouse_Y, m_Data.m_Camera.transform.eulerAngles.y, 0f);
 
-        //transform.Rotate(Vector3.up * mx * lookSensitivity * (Screen.width / 1280f));
-        //lookY -= my * lookSensitivity * (Screen.height / 720f);
-        //lookY = Mathf.Clamp(lookY, -80f, 50f);
-        //data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
+        GetComponent<Animator>().SetFloat("Body_Vertical", -m_Mouse_Y * 0.02f);
     }
 
     //Get Message about button from ButtonMgr, and handle that appropriately
@@ -126,7 +124,7 @@ public class PlayerInput : MonoBehaviour
         if (_msg == "reload")
         {
             //Relaod only when player is not reloading
-            if (!m_Data.m_Reloading)
+            if (!m_Data.m_isReloading)
                 gameObject.SendMessage("Reload");
         }
     }

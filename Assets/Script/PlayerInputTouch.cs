@@ -15,7 +15,7 @@ public class PlayerInputTouch : MonoBehaviour {
     private float rotateYSensitivity = 0.12f;
 
     private Vector3 touchPos;
-    private float lookY;
+    public float lookY { get; set; }
 
     private float mouseX;
     private float mouseY;
@@ -32,7 +32,9 @@ public class PlayerInputTouch : MonoBehaviour {
         if (controlStick == null) enabled = false;
         data = GetComponent<PlayerData>();
         action = GetComponent<PlayerAction>();
-        lookY = data.m_Camera.transform.eulerAngles.y;
+        //lookY = data.m_Camera.transform.eulerAngles.y;
+
+        data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
 
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
