@@ -53,7 +53,7 @@ public abstract class Weapon : MonoBehaviour{
     public Transform m_GrabPosRight;
     public Transform m_GrabPosLeft;
 
-    //state
+    //state(for animation)
     public bool m_IsShooting;
 
     public void Initialize()

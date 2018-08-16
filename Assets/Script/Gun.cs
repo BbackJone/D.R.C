@@ -12,7 +12,7 @@ public class Gun : Weapon
     public Transform m_ShootPos;
 
     private Animator m_Ani;
-    private Animator m_GunAni; 
+    public Animator m_GunAni; 
 
     public override void Shoot()
     {
@@ -36,7 +36,6 @@ public class Gun : Weapon
     void Awake()
     {
         m_Ani = GameObject.Find("Santa").GetComponent<Animator>();
-        m_GunAni = GetComponent<Animator>();
 
         Initialize();
     }

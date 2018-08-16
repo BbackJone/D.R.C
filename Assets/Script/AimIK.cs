@@ -13,6 +13,11 @@ public class AimIK : MonoBehaviour {
     public Transform m_AimPivot;       //This will make hands up and down according to direction player is looking.
     private Transform m_RightShoulder;
 
+    //Test
+    public Transform m_righthand;
+    public Transform m_lefthand;
+    public Transform m_offset;
+
     //Grab Points
     public Transform m_LeftHandPosition;
     public Transform m_RightHandPosition;
@@ -31,6 +36,9 @@ public class AimIK : MonoBehaviour {
         m_Aimsystem = GetComponent<AimSystem>();
         m_AimTarget = m_Aimsystem.m_RayTarget;
         m_RightShoulder = m_Ani.GetBoneTransform(HumanBodyBones.RightShoulder).transform;
+
+        m_righthand = m_Ani.GetBoneTransform(HumanBodyBones.RightHand).transform;
+        m_lefthand = m_Ani.GetBoneTransform(HumanBodyBones.LeftHand).transform;
     }
 
     private void OnAnimatorMove()
@@ -46,17 +54,17 @@ public class AimIK : MonoBehaviour {
         {
             m_Ani.SetIKPositionWeight(AvatarIKGoal.LeftHand, m_LeftHandIKWeight);
             m_Ani.SetIKPosition(AvatarIKGoal.LeftHand, m_LeftHandPosition.position);
+            //m_Ani.SetIKRotationWeight(AvatarIKGoal.LeftHand, m_LeftHandIKWeight);
+            //m_Ani.SetIKRotation(AvatarIKGoal.LeftHand, m_LeftHandPosition.rotation);
         }
-        else
-            m_Ani.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
 
         if (m_RightHandPosition)
         {
-            m_Ani.SetIKPositionWeight(AvatarIKGoal.RightHand, m_LeftHandIKWeight);
+            m_Ani.SetIKPositionWeight(AvatarIKGoal.RightHand, m_RightHandIKWeight);
             m_Ani.SetIKPosition(AvatarIKGoal.RightHand, m_RightHandPosition.position);
+            m_Ani.SetIKRotationWeight(AvatarIKGoal.RightHand, m_RightHandIKWeight);
+            m_Ani.SetIKRotation(AvatarIKGoal.RightHand, m_RightHandPosition.rotation);
         }
-        else
-            m_Ani.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
 
         //Look IK
         m_Ani.SetLookAtPosition(m_AimTarget.position);
