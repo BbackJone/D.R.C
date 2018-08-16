@@ -12,9 +12,9 @@ public struct WeaponDB
     public float Shotrate;
     public string Bulletsort;
     public bool Autoshot;
-    public string AniTrigger;
     public int BodyDamage;
     public int HeadDamage;
+    public float ReloadTime;
 }
 
 public enum Weapon_Type
@@ -43,12 +43,18 @@ public abstract class Weapon : MonoBehaviour{
     public float m_Weight { get; set; }             //중량
     public float m_ShotRate { get; set; }           //연사속도
     public bool m_Autoshot { get; set; }            //자동발사여부
-    public string m_AniTrigger { get; set; }        //실행할 애니메이션을 string 형으로 불러옴.
     public int m_BodyDamage { get; set; }
     public int m_HeadDamage { get; set; }
+    public float m_ReloadTime { get; set; }         //재장전 시간
     public Weapon_Type m_WeaponType;
 
     public Transform m_ShootTarget { get; set; }
+
+    public Transform m_GrabPosRight;
+    public Transform m_GrabPosLeft;
+
+    //state
+    public bool m_IsShooting;
 
     public void Initialize()
     {
@@ -60,9 +66,9 @@ public abstract class Weapon : MonoBehaviour{
         m_ShotRate = DBData.Shotrate;
         m_BulletSort = DBData.Bulletsort;
         m_Autoshot = DBData.Autoshot;
-        m_AniTrigger = DBData.AniTrigger;
         m_BodyDamage = DBData.BodyDamage;
         m_HeadDamage = DBData.HeadDamage;
+        m_ReloadTime = DBData.ReloadTime;
 
         m_Type = ObjType.OBJ_WEAPON;
     }

@@ -80,6 +80,13 @@ public class PlayerInput : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;       //Press "Esc" to Cancel Locked.
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+                Cursor.lockState = CursorLockMode.None;
+            else if (Cursor.lockState == CursorLockMode.None)
+                Cursor.lockState = CursorLockMode.Locked;
+        }
     }
     
     void ViewControl()
@@ -88,7 +95,8 @@ public class PlayerInput : MonoBehaviour
         m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, -80f, 50f);
         m_Data.m_Camera.transform.eulerAngles = new Vector3(m_Mouse_Y, m_Data.m_Camera.transform.eulerAngles.y, 0f);
 
-        GetComponent<Animator>().SetFloat("Body_Vertical", -m_Mouse_Y * 0.02f);
+        //idle and walk animation itself bend santa's waist
+        GetComponent<Animator>().SetFloat("Body_Vertical", (-m_Mouse_Y * 0.02f) - 0.8f);
     }
 
     //Get Message about button from ButtonMgr, and handle that appropriately

@@ -50,9 +50,9 @@
       "Shotrate": 1,
       "Bulletsort": "Nobullet",
       "Autoshot": false,
-      "AniTrigger": "Attack",
       "BodyDamage": 150,
-      "HeadDamage": 300
+      "HeadDamage": 300,
+      "ReloadTime": 0
     },
     {
       "Name": "Handgun",
@@ -62,9 +62,9 @@
       "Shotrate": 0,
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": false,
-      "AniTrigger": "Handgun_Attack",
       "BodyDamage": 50,
-      "HeadDamage": 100
+      "HeadDamage": 100,
+      "ReloadTime": 1.567
     },
     {
       "Name": "M4",
@@ -74,34 +74,9 @@
       "Shotrate": 0.25,
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": true,
-      "AniTrigger": "Rifle_Attack",
       "BodyDamage": 80,
-      "HeadDamage": 160
-    },
-    {
-      "Name": "Minigun",
-      "MaxBullet": 300,
-      "Recoil": 5,
-      "Weight": 20,
-      "Shotrate": 0.05,
-      "Bulletsort": "Handgun_Bullet",
-      "Autoshot": true,
-      "AniTrigger": "Minigun_Attack",
-      "BodyDamage": 50,
-      "HeadDamage": 100
-    },
-    {
-      "Name": "RPG",
-      "MaxBullet": 1,
-      "Recoil": 30,
-      "Weight": 20,
-      "Shotrate": 2,
-      "Bulletsort": "Handgun_Bullet",
-      "Autoshot": false,
-      "AniTrigger": "RPG_Attack",
-      "BodyDamage": 100,
-      "HeadDamage": 60
-    },
+      "HeadDamage": 160,
+      "ReloadTime": 1.99    },
     {
       "Name": "Sniper",
       "MaxBullet": 1,
@@ -110,10 +85,9 @@
       "Shotrate": 2,
       "Bulletsort": "Sniper_Bullet",
       "Autoshot": false,
-      "AniTrigger": "Sniper_Attack",
       "BodyDamage": 100,
-      "HeadDamage": 500
-    },
+      "HeadDamage": 500,
+      "ReloadTime": 2    },
     {
       "Name": "Bow",
       "MaxBullet": 1,
@@ -122,9 +96,9 @@
       "Shotrate": 1,
       "Bulletsort": "Arrow",
       "Autoshot": true,
-      "AniTrigger": "Bow_Attack",
       "BodyDamage": 50,
-      "HeadDamage": 1000
+      "HeadDamage": 1000,
+      "ReloadTime": 1
     },
     {
       "Name": "FlameThrower",
@@ -134,9 +108,33 @@
       "Shotrate": 0.1,
       "Bulletsort": "Flame",
       "Autoshot": true,
-      "AniTrigger": "FlameThrower_Attack",
       "BodyDamage": 10,
-      "HeadDamage": 10
+      "HeadDamage": 10,
+      "ReloadTime": 1
+    },
+    {
+      "Name": "RPG",
+      "MaxBullet": 1,
+      "Recoil": 30,
+      "Weight": 20,
+      "Shotrate": 2,
+      "Bulletsort": "-",
+      "Autoshot": false,
+      "BodyDamage": 100,
+      "HeadDamage": 60,
+      "ReloadTime": 1.933
+    },
+    {
+      "Name": "Minigun",
+      "MaxBullet": 300,
+      "Recoil": 5,
+      "Weight": 20,
+      "Shotrate": 0.05,
+      "Bulletsort": "Handgun_Bullet",
+      "Autoshot": true,
+      "BodyDamage": 50,
+      "HeadDamage": 100,
+      "ReloadTime": 3.866
     }
   ],
   "Wave": [

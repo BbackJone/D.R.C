@@ -12,6 +12,7 @@ public class Gun : Weapon
     public Transform m_ShootPos;
 
     private Animator m_Ani;
+    private Animator m_GunAni; 
 
     public override void Shoot()
     {
@@ -35,6 +36,7 @@ public class Gun : Weapon
     void Awake()
     {
         m_Ani = GameObject.Find("Santa").GetComponent<Animator>();
+        m_GunAni = GetComponent<Animator>();
 
         Initialize();
     }
@@ -90,6 +92,11 @@ public class Gun : Weapon
 
         m_AmmoBulletNum -= 1;
         Makeflash();
+
+        //SetAni
+        m_IsShooting = true;
+        m_GunAni.SetBool("Shoot_b", m_IsShooting);
+        Invoke("SetIsShootingFalse", 0.1f);
     }
 
     public void Makeflash()
@@ -107,5 +114,11 @@ public class Gun : Weapon
     {
         m_MuzzleFlash.enabled = false;
         m_MuzzleFlash2.enabled = false;
+    }
+
+    public void SetIsShootingFalse()
+    {
+        m_IsShooting = false;
+        m_GunAni.SetBool("Shoot_b", m_IsShooting);
     }
 }
