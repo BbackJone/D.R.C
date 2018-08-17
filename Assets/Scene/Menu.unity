@@ -29650,7 +29650,7 @@ MonoBehaviour:
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.75
+    m_LineSpacing: 1
   m_Text: New Game
 --- !u!222 &1587615382
 CanvasRenderer:
@@ -35684,7 +35684,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.75
+    m_LineSpacing: 1
   m_Text: Continue
 --- !u!222 &1947585829
 CanvasRenderer:
