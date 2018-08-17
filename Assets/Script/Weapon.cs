@@ -49,6 +49,7 @@ public abstract class Weapon : MonoBehaviour{
     public Weapon_Type m_WeaponType;
 
     public Transform m_ShootTarget { get; set; }
+    public float m_StackedRecoil { get; set; }
 
     public Transform m_GrabPosRight;
     public Transform m_GrabPosLeft;
@@ -84,4 +85,15 @@ public abstract class Weapon : MonoBehaviour{
     }
 
     public abstract void Shoot();
+
+    public IEnumerator NarrowDownAim()
+    {
+        while(true)
+        {
+            m_StackedRecoil = Mathf.Max(0, m_StackedRecoil - 0.8f);
+            m_StackedRecoil = Mathf.Min(5, m_StackedRecoil);        //Max Recoil : 5.0f
+
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

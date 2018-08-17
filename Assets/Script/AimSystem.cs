@@ -11,7 +11,6 @@ public class AimSystem : MonoBehaviour {
                                         //but not, this is position of target moderate forward at camera.
     private Vector3 m_RayStartPos;
     private RaycastHit m_RaycastHit;
-
     private int m_RaycastLayermask;       //Layer for raycast to ignore
 
     private void Awake()
@@ -26,6 +25,12 @@ public class AimSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        SetRayTargetPos();
+    }
+
+
+    public void SetRayTargetPos()
+    {
         m_RayStartPos = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));   //middle point of screen
         if (Physics.Raycast(m_RayStartPos, m_Camera.transform.forward, out m_RaycastHit, 100f, m_RaycastLayermask))    //raycast forward
         {
@@ -36,4 +41,5 @@ public class AimSystem : MonoBehaviour {
             m_RayTarget.position = m_RayStartPos + m_Camera.transform.forward * 100f;
         }
     }
+
 }

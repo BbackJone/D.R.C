@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Gun : Weapon
 {
     //this makes spark effect when bullet is fired.
@@ -12,7 +11,7 @@ public class Gun : Weapon
     public Transform m_ShootPos;
 
     private Animator m_Ani;
-    public Animator m_GunAni; 
+    public Animator m_GunAni;
 
     public override void Shoot()
     {
@@ -44,6 +43,9 @@ public class Gun : Weapon
     {
         m_MuzzleFlash.enabled = false;
         m_MuzzleFlash2.enabled = false;
+
+        m_StackedRecoil = 0;
+        StartCoroutine("NarrowDownAim");
     }
 
     void Start()
@@ -83,9 +85,11 @@ public class Gun : Weapon
     
     public void ShootBullet()
     {
+        //Get Bullet Direction
         Vector3 Dir = m_ShootTarget.position - m_ShootPos.position;
         Dir = Dir / Dir.magnitude;
-        GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, Quaternion.LookRotation(Dir));
+
+        GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject(m_BulletSort, m_ShootPos.position, GetRecoiledDirection(Dir));
         bullet.SendMessage("SetBodyDamage", m_BodyDamage);
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
@@ -96,6 +100,8 @@ public class Gun : Weapon
         m_IsShooting = true;
         m_GunAni.SetBool("Shoot_b", m_IsShooting);
         Invoke("SetIsShootingFalse", 0.1f);
+
+        m_StackedRecoil += m_Recoil;
     }
 
     public void Makeflash()
@@ -119,5 +125,17 @@ public class Gun : Weapon
     {
         m_IsShooting = false;
         m_GunAni.SetBool("Shoot_b", m_IsShooting);
+    }
+
+    public Quaternion GetRecoiledDirection(Vector3 _dirVector)
+    {
+        //rotate dir vector at right axis with random angle.
+        Vector3 RightTempVec = Quaternion.AngleAxis(Random.Range(-m_StackedRecoil, m_StackedRecoil), m_ShootPos.right) * _dirVector;
+
+        //rotate RightTempVec at up axis with random angle.
+        Vector3 retVector = Quaternion.AngleAxis(Random.Range(-m_StackedRecoil, m_StackedRecoil), m_ShootPos.up) * RightTempVec;
+
+        //return (UpRot * RightRot);
+        return (Quaternion.LookRotation(retVector));
     }
 }

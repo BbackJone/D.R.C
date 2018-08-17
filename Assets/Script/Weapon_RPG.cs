@@ -31,6 +31,11 @@ public class Weapon_RPG : Weapon
         Initialize();
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine("NarrowDownAim");
+    }
+
     void Start()
     {
         ObjListAdd();
