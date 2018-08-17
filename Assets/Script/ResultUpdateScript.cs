@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ResultUpdateScript : MonoBehaviour {
+    public Text varTitle;
     public Text varKill;
     public Text varWave;
     public Text varScore;
@@ -19,6 +20,7 @@ public class ResultUpdateScript : MonoBehaviour {
 
         if (rsc != null) {
             var rscs = rsc.GetComponent<ResultScoreContainerScript>();
+            varTitle.text = (rscs.isGameClear ? "Congratulations!" : "Game Over");
             varKill.text = rscs.kills + "";
             varWave.text = rscs.waves + "";
             varScore.text = rscs.score + "";
@@ -37,7 +39,7 @@ public class ResultUpdateScript : MonoBehaviour {
     public void ReturnToTitle() {
         if (isTitleLoading) return;
         isTitleLoading = true;
-        textReturn.text = "Loading...";
+        textReturn.text = "Please wait...";
         SceneManager.LoadSceneAsync("Menu");
     }
 }

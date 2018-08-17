@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SettingsTitleScript : MonoBehaviour {
+    public GameObject helpScreen;
     public Slider musicVolumeSlider;
     public Slider seVolumeSlider;
     public Slider touchSensitivitySlider;
@@ -54,5 +55,9 @@ public class SettingsTitleScript : MonoBehaviour {
     public void HideSettingsAndResume() {
         HideSettings();
         Time.timeScale = 1f;
+    }
+
+    public void ShowHelpScreen() {
+        helpScreen.SetActive(true);
     }
 }

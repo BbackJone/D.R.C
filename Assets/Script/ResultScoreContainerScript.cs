@@ -8,6 +8,7 @@ public class ResultScoreContainerScript : MonoBehaviour {
     public int waves { get; set; }
     public int score { get; set; }
     public float timeInSec { get; set; }
+    public bool isGameClear { get; set; }
 
     bool doCalcTime;
 
@@ -23,11 +24,12 @@ public class ResultScoreContainerScript : MonoBehaviour {
         }
     }
 
-    public void SetResultsAndStopTime(int kills, int waves, int score) {
+    public void SetResultsAndStopTime(int kills, int waves, int score, bool isGameClear) {
         doCalcTime = false;
 
         this.kills = kills;
         this.waves = waves;
         this.score = score;
+        this.isGameClear = isGameClear;
     }
 }
