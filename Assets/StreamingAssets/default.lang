@@ -9,6 +9,7 @@ title_help_credits: Credits
 title_help_credits_details: asdf
 
 settings_title: Settings
+settings_title_paused: Game Paused
 settings_volume: Volume
 settings_musicvol: Music
 settings_sevol: SE
@@ -16,5 +17,16 @@ settings_control: Control
 settings_sensitivity: Sensitivity
 settings_clearsavedata: Clear Saved Data
 settings_cleared: Cleared!
+settings_resume: Resume
+settings_saveandexit: Save and Exit
+
+result_title: Game Over
+result_title_clear: Congratulations!
+result_kills: Kills
+result_waves: Waves
+result_totalscore: Total Score
+result_time: Play Time
+result_return: Return
+result_loading: Please wait...
 
 ok: OK

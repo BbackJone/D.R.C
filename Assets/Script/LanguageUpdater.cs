@@ -15,7 +15,6 @@ public class LanguageUpdater : MonoBehaviour {
 
     public List<TranslateMap> textsToTranslate;
 
-	// Use this for initialization
 	void Start () {
         lm = LanguageManager.GetInstance();
         if (!lm.IsLoaded) StartCoroutine(lm.LoadLanguage());
