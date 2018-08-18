@@ -91,10 +91,17 @@ public abstract class Weapon : MonoBehaviour{
     {
         while(true)
         {
-            m_StackedRecoil = Mathf.Max(0, m_StackedRecoil - 0.8f);
+            m_StackedRecoil = Mathf.Max(0, m_StackedRecoil - (7 * Time.deltaTime));
             m_StackedRecoil = Mathf.Min(5, m_StackedRecoil);        //Max Recoil : 5.0f
 
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
+    }
+
+    public void HandleRecoil()  //수정할것
+    {
+        //m_StackedRecoil += m_Recoil;
+        //GetComponentInParent<PlayerInput>().m_Mouse_Y = Mathf.Lerp(GetComponentInParent<PlayerInput>().m_Mouse_Y, GetComponentInParent<PlayerInput>().m_Mouse_Y - m_Recoil * 0.5f
+            //, Time.deltaTime * 50);
     }
 }

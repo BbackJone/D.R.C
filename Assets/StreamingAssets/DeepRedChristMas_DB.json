@@ -69,7 +69,7 @@
     {
       "Name": "M4",
       "MaxBullet": 30,
-      "Recoil": 1,
+      "Recoil": 1.5,
       "Weight": 13,
       "Shotrate": 0.25,
       "Bulletsort": "Handgun_Bullet",

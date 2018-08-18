@@ -16214,6 +16214,7 @@ MonoBehaviour:
   m_WeaponType: 4
   m_GrabPosRight: {fileID: 270105589}
   m_GrabPosLeft: {fileID: 501540203}
+  RecoilRecovery: 0.8
   m_IsShooting: 0
   m_MuzzleFlash: {fileID: 709935542}
   m_MuzzleFlash2: {fileID: 1025994315}
@@ -41639,6 +41640,7 @@ MonoBehaviour:
   m_WeaponType: 0
   m_GrabPosRight: {fileID: 190643038}
   m_GrabPosLeft: {fileID: 0}
+  RecoilRecovery: 0.8
   m_IsShooting: 0
 --- !u!65 &1008355443
 BoxCollider:
@@ -44307,6 +44309,7 @@ MonoBehaviour:
   m_WeaponType: 2
   m_GrabPosRight: {fileID: 196751857}
   m_GrabPosLeft: {fileID: 595243537}
+  RecoilRecovery: 0.8
   m_IsShooting: 0
   m_MuzzleFlash: {fileID: 1651225039}
   m_MuzzleFlash2: {fileID: 1612550467}
@@ -50195,6 +50198,7 @@ MonoBehaviour:
   m_WeaponType: 3
   m_GrabPosRight: {fileID: 201536473}
   m_GrabPosLeft: {fileID: 2121761572}
+  RecoilRecovery: 0.8
   m_IsShooting: 0
   m_ShootPos: {fileID: 985347205}
 --- !u!23 &1295045753
@@ -50488,6 +50492,7 @@ MonoBehaviour:
   m_WeaponType: 1
   m_GrabPosRight: {fileID: 481398092}
   m_GrabPosLeft: {fileID: 2016017174}
+  RecoilRecovery: 0.8
   m_IsShooting: 0
   m_MuzzleFlash: {fileID: 1796680890}
   m_MuzzleFlash2: {fileID: 1465279824}
@@ -55172,6 +55177,7 @@ GameObject:
   - component: {fileID: 1491306657}
   - component: {fileID: 1491306658}
   - component: {fileID: 1491306659}
+  - component: {fileID: 1491306660}
   m_Layer: 8
   m_Name: Santa
   m_TagString: Player
@@ -55455,6 +55461,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RayTarget: {fileID: 1079941399}
+  m_CrossHairImages:
+  - {fileID: 1654548403}
+  - {fileID: 449075901}
+  - {fileID: 140234212}
+  - {fileID: 949223535}
+  recoil_multiplyer: 5.5
 --- !u!114 &1491306659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55479,6 +55491,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &1491306660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491306644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5260c5cfe0f03b458189e6884b0c918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1492422524
 GameObject:
   m_ObjectHideFlags: 0
@@ -61189,6 +61212,7 @@ MonoBehaviour:
   m_WeaponType: 6
   m_GrabPosRight: {fileID: 896987208}
   m_GrabPosLeft: {fileID: 139078115}
+  RecoilRecovery: 0.8
   m_IsShooting: 0
   m_MuzzleFlash: {fileID: 1317954023}
   m_MuzzleFlash2: {fileID: 203593179}
@@ -61293,7 +61317,7 @@ RectTransform:
   m_GameObject: {fileID: 1583937281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.00012207031, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000057, y: 1.0000057, z: 1.0000057}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000057}
   m_Children: []
   m_Father: {fileID: 2017496360}
   m_RootOrder: 5

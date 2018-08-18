@@ -13,6 +13,9 @@ public class Gun : Weapon
     private Animator m_Ani;
     public Animator m_GunAni;
 
+    //Test
+    public float RecoilMultiplyer = 1;
+
     public override void Shoot()
     {
         if (m_AmmoBulletNum <= 0)
@@ -102,7 +105,7 @@ public class Gun : Weapon
         m_GunAni.SetBool("Shoot_b", m_IsShooting);
         Invoke("SetIsShootingFalse", 0.1f);
 
-        m_StackedRecoil += m_Recoil;
+        HandleRecoil();
     }
 
     public void Makeflash()
