@@ -14,8 +14,12 @@ public class ResultScoreContainerScript : MonoBehaviour {
 
     void Start () {
         DontDestroyOnLoad(gameObject);
+        kills = 0;
+        waves = 0;
+        score = 0;
         doCalcTime = true;
         timeInSec = 0f;
+        isGameClear = false;
 	}
 
     void Update() {

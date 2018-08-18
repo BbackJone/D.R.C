@@ -85,11 +85,16 @@ public class PlayerAction : MonoBehaviour {
                     StopCoroutine("Getkey");
 
                     var stageMgr = GameObject.Find("StageMgr").GetComponent<StageMgr>();
-                    GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>().SetResultsAndStopTime(
-                        3,
-                        (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
-                        9,
-                        false);
+
+                    var rsc = GameObject.Find("ResultScoreContainer");
+                    if (rsc != null) {
+                        var rscs = rsc.GetComponent<ResultScoreContainerScript>();
+                        rscs.SetResultsAndStopTime(
+                            rscs.kills,
+                            (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
+                            9,
+                            false);
+                    }
                 }
 
                 if (m_DeathTimer < 2f)

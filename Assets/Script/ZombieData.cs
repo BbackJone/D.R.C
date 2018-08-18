@@ -33,6 +33,8 @@ public class ZombieData : MonoBehaviour
 
     public string m_ZombieSort;     //This is required to get DB Info. 
 
+    private bool IsDeadConfirmed = false;
+
     void Awake()
     {
         Initialize();
@@ -70,6 +72,19 @@ public class ZombieData : MonoBehaviour
     public void GetDamage(int _damage)
     {
         m_Hp -= _damage;
-        if (m_Hp < 0) m_Hp = 0;
+        if (m_Hp < 0)
+        {
+            if (!IsDeadConfirmed)
+            {
+                var rsc = GameObject.Find("ResultScoreContainer");
+                if (rsc != null)
+                {
+                    var rscs = rsc.GetComponent<ResultScoreContainerScript>();
+                    rscs.kills++;
+                }
+                IsDeadConfirmed = true;
+            }
+            m_Hp = 0;
+        }
     }
 }
