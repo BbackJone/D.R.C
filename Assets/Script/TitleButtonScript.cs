@@ -83,10 +83,17 @@ public class TitleButtonScript : MonoBehaviour {
         }
     }
 
-    // temporary function?
     public void ResetSave() {
+        StartCoroutine(ResetSaveCo());
+    }
+
+    IEnumerator ResetSaveCo()
+    {
+        var lu = GameObject.Find("LanguageUpdater").GetComponent<LanguageUpdater>();
+        while (!lu.lm.IsLoaded) { yield return new WaitForEndOfFrame(); }
+
         SaveData.ClearAll();
-        GameObject.Find("SaveClearButton").transform.Find("Text").GetComponent<Text>().text = "Cleared!";
-        transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = "Continue Data\nNot Found";
+        GameObject.Find("SaveClearButton").transform.Find("Text").GetComponent<Text>().text = lu.lm.Get("settings_cleared");
+        transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = lu.lm.Get("title_continue_nf");
     }
 }

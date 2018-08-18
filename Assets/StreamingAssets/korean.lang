@@ -1,0 +1,20 @@
+﻿title_newgame: 새 게임
+title_continue_nf: 계속하기[newline]데이터 없음
+title_continue: 계속하기[newline]웨이브 {0}
+title_loading: 불러오는 중...
+
+title_help_story: 스토리
+title_help_story_details: 어느 해 12월 24일 크리스마스 이브 저녁... 산타는 오늘도 부랴부랴 선물들을 챙겨 마법의 숲을 나섰습니다. 아이들에게 선물을 줄 생각을 하며 흥에 겨워하며 코가 붉은 루돌프를 타고 마을을 향한 산타는 이내 경악하고 말았습니다. 마을은 좀비 바이러스 대재앙이 발생하여 폐허가 되었기 때문이었습니다. 그때 마을 한구석에서 살아있는 아이의 울음소리가 들렸습니다. 아이를 구하기위해 산타는 오래된 무기들의 먼지를 닦아냈습니다. 올해의 크리스마스는 붉게 붉게 물들것 같습니다.
+title_help_credits: 만든 사람들
+title_help_credits_details: 경북대학교 게임제작동아리[newline]레볼루션[newline][newline]개발[newline]박준하[newline]박세찬[newline]신우현
+
+settings_title: 설정
+settings_volume: 음량
+settings_musicvol: 음악
+settings_sevol: 효과음
+settings_control: 조작
+settings_sensitivity: 회전 감도
+settings_clearsavedata: 계속하기 데이터 제거
+settings_cleared: 제거 완료!
+
+ok: 확인

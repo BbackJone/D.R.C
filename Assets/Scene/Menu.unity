@@ -18408,6 +18408,77 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 851717567}
   m_Mesh: {fileID: 4300000, guid: 76254b4a1339aa24aa6f075338cc3176, type: 3}
+--- !u!1 &861519644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 861519646}
+  - component: {fileID: 861519645}
+  m_Layer: 0
+  m_Name: LanguageUpdater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &861519645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861519644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838a82171df34384f8605b8dcfc3ee9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsToTranslate:
+  - text: {fileID: 1034859932}
+    key: title_newgame
+  - text: {fileID: 973974515}
+    key: settings_title
+  - text: {fileID: 591582032}
+    key: settings_volume
+  - text: {fileID: 2074438458}
+    key: settings_musicvol
+  - text: {fileID: 488768639}
+    key: settings_sevol
+  - text: {fileID: 837262625}
+    key: settings_control
+  - text: {fileID: 1385863037}
+    key: settings_sensitivity
+  - text: {fileID: 1250031375}
+    key: settings_clearsavedata
+  - text: {fileID: 1521339588}
+    key: ok
+  - text: {fileID: 932370292}
+    key: title_help_story
+  - text: {fileID: 42602924}
+    key: title_help_story_details
+  - text: {fileID: 277431716}
+    key: title_help_credits
+  - text: {fileID: 923757844}
+    key: title_help_credits_details
+  - text: {fileID: 1261119312}
+    key: ok
+  - text: {fileID: 1829432756}
+    key: title_loading
+--- !u!4 &861519646
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861519644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 385.92145, y: 182.76933, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867176372
 GameObject:
   m_ObjectHideFlags: 0
@@ -22590,7 +22661,7 @@ MonoBehaviour:
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 5
-    m_AlignByGeometry: 1
+    m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -34652,7 +34723,7 @@ MonoBehaviour:
     m_MinSize: 0
     m_MaxSize: 56
     m_Alignment: 5
-    m_AlignByGeometry: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -35773,7 +35844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 80}
+  m_AnchoredPosition: {x: -240, y: 80}
   m_SizeDelta: {x: 360, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829432756
@@ -35796,13 +35867,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d4977e0365c2ba948835ec7110ed1e8d, type: 3}
+    m_Font: {fileID: 12800000, guid: dd0014c3bb8ad374f9c819ca5cb3234b, type: 3}
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 48
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

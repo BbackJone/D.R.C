@@ -1,0 +1,20 @@
+title_newgame: New Game
+title_continue_nf: Continue Data[newline]Not Found
+title_continue: Continue from[newline]Wave {0}
+title_loading: Now Loading...
+
+title_help_story: Story
+title_help_story_details: asdf
+title_help_credits: Credits
+title_help_credits_details: asdf
+
+settings_title: Settings
+settings_volume: Volume
+settings_musicvol: Music
+settings_sevol: SE
+settings_control: Control
+settings_sensitivity: Sensitivity
+settings_clearsavedata: Clear Saved Data
+settings_cleared: Cleared!
+
+ok: OK
