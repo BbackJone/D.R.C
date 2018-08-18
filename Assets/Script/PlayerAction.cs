@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAction : MonoBehaviour {
 
@@ -27,6 +28,9 @@ public class PlayerAction : MonoBehaviour {
     public Transform left_leg;
     public Transform right_leg;
 
+    private UnityEngine.UI.Image curtain;
+    private float curtainAlpha;
+
 	// Use this for initialization
     void Awake()
     {
@@ -45,6 +49,9 @@ public class PlayerAction : MonoBehaviour {
             var gameController = GameObject.Find("GameController");
             if (gameController != null) gameController.GetComponent<SantaPositionPreserver>().LoadSantaPos(gameObject);
         }
+
+        curtain = GameObject.Find("FadeCurtain").GetComponent<UnityEngine.UI.Image>();
+        curtainAlpha = 0f;
 
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
@@ -76,13 +83,27 @@ public class PlayerAction : MonoBehaviour {
 
                     StopCoroutine("MoveControl");
                     StopCoroutine("Getkey");
+
+                    var stageMgr = GameObject.Find("StageMgr").GetComponent<StageMgr>();
+                    GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>().SetResultsAndStopTime(
+                        3,
+                        (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
+                        9,
+                        false);
                 }
 
                 if (m_DeathTimer < 2f)
                     m_DeathTimer += Time.deltaTime;
                 else
                 {
-                    this.gameObject.SetActive(false);
+                    curtain.enabled = true;
+                    curtainAlpha += Time.deltaTime;
+                    if (curtainAlpha > 1f) {
+                        curtainAlpha = 1f;
+                        curtain.color = new Color(0f, 0f, 0f, 1f);
+                        SceneManager.LoadScene("Result");
+                    }
+                    curtain.color = new Color(0f, 0f, 0f, curtainAlpha);
                 }
 
             }

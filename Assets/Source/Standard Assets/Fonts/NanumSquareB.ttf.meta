@@ -1,22 +1,23 @@
 fileFormatVersion: 2
-guid: d4977e0365c2ba948835ec7110ed1e8d
-timeCreated: 1533739590
-licenseType: Free
+guid: dd0014c3bb8ad374f9c819ca5cb3234b
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
+  fontSize: 36
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Titillium Web
+  fontName: NanumSquare
   fontNames:
-  - Titillium Web
-  fallbackFontReferences: []
+  - NanumSquare
+  fallbackFontReferences:
+  - {instanceID: 0}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

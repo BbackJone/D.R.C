@@ -14,6 +14,8 @@ public class PlayerInputTouch : MonoBehaviour {
     private float rotateXSensitivity = 0.20f;
     private float rotateYSensitivity = 0.12f;
 
+    public float rotateUserSensitivity { get; set; }
+
     private Vector3 touchPos;
     public float lookY { get; set; }
 
@@ -44,9 +46,14 @@ public class PlayerInputTouch : MonoBehaviour {
             touchDragDeltaA[i] = Vector2.zero;
         }
         */
-}
+
+        // rotateUserSensitivity range: [0.2 - 2.0] (default: 1.1)
+        rotateUserSensitivity = (PlayerPrefs.GetFloat("sensitivity") * 1.8f) + 0.2f;
+    }
 
     void Update() {
+        if (Time.timeScale == 0f) return;
+
         // Move character
         if (controlStick != null) { 
             Vector3 vec = new Vector3(controlStick.xAxis * stickSensitivity, 0, controlStick.yAxis * stickSensitivity);
@@ -70,8 +77,8 @@ public class PlayerInputTouch : MonoBehaviour {
                             touchDragDist += touch.deltaPosition.magnitude;
                         } else {
                             // apply rotation
-                            transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity);
-                            lookY -= touch.deltaPosition.y * rotateYSensitivity;
+                            transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity * rotateUserSensitivity);
+                            lookY -= touch.deltaPosition.y * rotateYSensitivity * rotateUserSensitivity;
                             lookY = Mathf.Clamp(lookY, -80f, 50f);
                             data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
                         }
