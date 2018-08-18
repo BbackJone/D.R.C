@@ -8,6 +8,10 @@ title_help_story_details: asdf
 title_help_credits: Credits
 title_help_credits_details: asdf
 
+title_store_title: Store
+title_store_desc: Unlock new weapons[newline]using your coins!
+title_store_coin: Your Coins:
+
 settings_title: Settings
 settings_title_paused: Game Paused
 settings_volume: Volume
