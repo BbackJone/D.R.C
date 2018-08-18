@@ -4176,7 +4176,7 @@ GameObject:
   - component: {fileID: 140200143}
   m_Layer: 0
   m_Name: SA_Env_Dirt (10)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5235,7 +5235,7 @@ GameObject:
   - component: {fileID: 186765052}
   m_Layer: 0
   m_Name: SA_Env_Dirt (34)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7114,7 +7114,7 @@ GameObject:
   - component: {fileID: 268972608}
   m_Layer: 0
   m_Name: SA_Env_Dirt (6)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -19358,7 +19358,7 @@ GameObject:
   - component: {fileID: 401928826}
   m_Layer: 0
   m_Name: SA_Env_Dirt (24)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -20307,7 +20307,7 @@ GameObject:
   - component: {fileID: 463766755}
   m_Layer: 0
   m_Name: SA_Env_Dirt (4)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -20558,6 +20558,105 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 468460522}
   m_Mesh: {fileID: 4300000, guid: 4ee657a274164f848b05b5199966495c, type: 3}
+--- !u!1 &472849603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 472849604}
+  - component: {fileID: 472849608}
+  - component: {fileID: 472849607}
+  - component: {fileID: 472849606}
+  - component: {fileID: 472849605}
+  m_Layer: 8
+  m_Name: footcollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &472849604
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472849603}
+  m_LocalRotation: {x: -0.99976194, y: 0.008098005, z: 0.0054309363, w: 0.019519685}
+  m_LocalPosition: {x: -0.009, y: 0.109, z: -0.186}
+  m_LocalScale: {x: 0.2564303, y: 0.095180094, z: 0.13880013}
+  m_Children: []
+  m_Father: {fileID: 1189851448}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 182.242, y: 0.6049957, z: 0.9159851}
+--- !u!114 &472849605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472849603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf453a80b1971146aa72ac554c0218c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SandSound: {fileID: 8300000, guid: f642d3a7495c63d4590e2363cc5829e5, type: 3}
+  WalkSound: {fileID: 8300000, guid: 4d18e4a882ca22b40b54dd6b2d078ec8, type: 3}
+--- !u!65 &472849606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472849603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &472849607
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472849603}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &472849608
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472849603}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &473869574
 GameObject:
   m_ObjectHideFlags: 0
@@ -27286,7 +27385,7 @@ GameObject:
   - component: {fileID: 551514993}
   m_Layer: 0
   m_Name: SA_Env_Dirt (7)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -27711,7 +27810,7 @@ GameObject:
   - component: {fileID: 564238093}
   m_Layer: 0
   m_Name: SA_Env_Dirt (28)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -29134,7 +29233,7 @@ GameObject:
   - component: {fileID: 619895667}
   m_Layer: 0
   m_Name: SA_Env_Dirt (29)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -29314,7 +29413,7 @@ GameObject:
   - component: {fileID: 628066982}
   m_Layer: 0
   m_Name: SA_Env_Dirt (11)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -30384,7 +30483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!1 &662695734
 GameObject:
   m_ObjectHideFlags: 0
@@ -31927,7 +32025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
 --- !u!65 &728759347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46620,7 +46717,7 @@ GameObject:
   - component: {fileID: 957764198}
   m_Layer: 0
   m_Name: SA_Env_Dirt
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -51818,7 +51915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &970882832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52489,7 +52585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &994316599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53846,7 +53941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1311660023226734, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1951334270980572, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -53866,7 +53961,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1345503404266304, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1370718782566476, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -53894,7 +53989,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1001507928472498, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1125186463572284, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -53946,7 +54041,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1339931918574824, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1050656352926272, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -53970,7 +54065,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1097409399054998, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1544133151998860, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54010,7 +54105,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1621438330816764, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1797820913463568, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54018,7 +54113,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1440082751235494, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1318174320706134, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54038,11 +54133,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737258849219034, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1402645754260270, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1005379583653734, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54202,7 +54297,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1157984391857592, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1066789201999364, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54246,7 +54341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1261755684073854, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1769806993069450, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54302,7 +54397,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1338666972923164, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1318289813846738, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54330,7 +54425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1487179200611626, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1874647875561910, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54430,7 +54525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1568852751095342, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1134072921178374, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54566,7 +54661,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737352853790626, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1081642021046492, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -54590,7 +54685,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1303698510967976, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
-      value: Floor
+      value: Sand
       objectReference: {fileID: 0}
     - target: {fileID: 1758047485275802, guid: 2208a1fd6e47e8d469f88da2af649979, type: 2}
       propertyPath: m_TagString
@@ -55217,7 +55312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &1078474555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55317,7 +55411,7 @@ GameObject:
   - component: {fileID: 1086052595}
   m_Layer: 0
   m_Name: SA_Env_Dirt (1)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -58000,7 +58094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 512098498}
-  - {fileID: 1698410980}
+  - {fileID: 472849604}
   m_Father: {fileID: 1681509939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58260,7 +58354,7 @@ GameObject:
   - component: {fileID: 1197342257}
   m_Layer: 0
   m_Name: SA_Env_Dirt (25)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -59636,7 +59730,7 @@ GameObject:
   - component: {fileID: 1240178739}
   m_Layer: 0
   m_Name: SA_Env_Dirt (5)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -66050,7 +66144,7 @@ GameObject:
   - component: {fileID: 1489135001}
   m_Layer: 0
   m_Name: SA_Env_Dirt (35)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -66570,7 +66664,7 @@ MonoBehaviour:
   m_Audiosouce: {fileID: 0}
   m_AudioClipArr:
   - {fileID: 8300000, guid: f4f289ffdf976df409378ed8d5d8f167, type: 3}
-  - {fileID: 8300000, guid: f642d3a7495c63d4590e2363cc5829e5, type: 3}
+  - {fileID: 8300000, guid: fcc385275aa54f7489042362327da5ed, type: 3}
   - {fileID: 8300000, guid: 4d18e4a882ca22b40b54dd6b2d078ec8, type: 3}
   - {fileID: 8300000, guid: f4b1aa6bbffd8b344b7b860d2c7ea46c, type: 3}
   - {fileID: 8300000, guid: 8497fe11d1df23a4c9a4d1d180c9f0b5, type: 3}
@@ -71544,13 +71638,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1680903026}
-  m_LocalRotation: {x: 0.17206407, y: -0.024056891, z: -0.026420275, w: 0.9844376}
-  m_LocalPosition: {x: -0.5072686, y: 0.2970466, z: -0.21730274}
-  m_LocalScale: {x: 0.25643036, y: 0.2815503, z: 0.5241503}
+  m_LocalRotation: {x: 0.008190271, y: -0.0073162885, z: -0.0066688634, w: 0.9999175}
+  m_LocalPosition: {x: -0.015, y: -0.11, z: 0.194}
+  m_LocalScale: {x: 0.25643036, y: 0.095177874, z: 0.13880402}
   m_Children: []
   m_Father: {fileID: 516000246}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.933, y: -0.845, z: -0.771}
 --- !u!114 &1680903028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72133,105 +72227,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1047114194}
   m_GameObject: {fileID: 1698338244}
   m_Mesh: {fileID: 4300000, guid: c941162159723dc4580012d76ca20516, type: 3}
---- !u!1 &1698410979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1698410980}
-  - component: {fileID: 1698410984}
-  - component: {fileID: 1698410983}
-  - component: {fileID: 1698410982}
-  - component: {fileID: 1698410981}
-  m_Layer: 8
-  m_Name: foocollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1698410980
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1698410979}
-  m_LocalRotation: {x: -0.4097935, y: -0.029795397, z: -0.007857618, w: 0.91165775}
-  m_LocalPosition: {x: -0.43527737, y: -0.40315902, z: -0.2442624}
-  m_LocalScale: {x: 0.27167013, y: 0.32461053, z: 0.57896125}
-  m_Children: []
-  m_Father: {fileID: 1189851448}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1698410981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1698410979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf453a80b1971146aa72ac554c0218c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SandSound: {fileID: 8300000, guid: f642d3a7495c63d4590e2363cc5829e5, type: 3}
-  WalkSound: {fileID: 8300000, guid: 4d18e4a882ca22b40b54dd6b2d078ec8, type: 3}
---- !u!65 &1698410982
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1698410979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1698410983
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1698410979}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1698410984
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1698410979}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1700746909
 GameObject:
   m_ObjectHideFlags: 0
@@ -75222,7 +75217,7 @@ GameObject:
   - component: {fileID: 1818316649}
   m_Layer: 0
   m_Name: SA_Env_Dirt (31)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -81282,7 +81277,7 @@ GameObject:
   - component: {fileID: 1868031443}
   m_Layer: 0
   m_Name: SA_Env_Dirt (30)
-  m_TagString: Floor
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -85349,7 +85344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ef63b1cd0d8e94a88a018e77a29d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &2072698664
 BoxCollider:
   m_ObjectHideFlags: 0
