@@ -18,12 +18,14 @@ public class PlayerData : MonoBehaviour {
     public Transform rightHand { get; set; }
     public bool m_isReloading { get; set; }       //플레이어가 장전 중일때는 공격을 할수 없습니다.
     public bool m_isShooting { get; set; }
+    public bool m_isSwaping { get; set; }
 
     //Other components
     public Camera m_Camera { get; set; }
     public Animator m_Ani { get; set; }
     public Rigidbody m_Rigidbody { get; set; }
     private AimSystem m_AimSystem;
+    private AimIK m_AimIK;
 
     void Awake()
     {
@@ -31,6 +33,7 @@ public class PlayerData : MonoBehaviour {
         m_Ani = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AimSystem = GetComponent<AimSystem>();
+        m_AimIK = GetComponent<AimIK>();
 
         m_Weapons = new List<Weapon>();
 
@@ -48,6 +51,7 @@ public class PlayerData : MonoBehaviour {
 
         m_WeaponInhand = m_Weapons[0];
         m_WeaponInhand.gameObject.SetActive(true);
+        m_AimIK.SetHandsIKPosition(m_WeaponInhand.m_GrabPosRight, m_WeaponInhand.m_GrabPosLeft);
 
         m_MaxHp = 30;
     }
@@ -64,6 +68,7 @@ public class PlayerData : MonoBehaviour {
         m_Speed = 5f;
         m_isReloading = false;
         m_isShooting = false;
+        m_isSwaping = false;
         m_Money = 0;
     }
 
