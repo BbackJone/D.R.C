@@ -11,6 +11,8 @@ public class PlayerAction : MonoBehaviour {
         ASPHALTWALK,
         RIFLERELOAD,
         HANDGUNRELOAD,
+        MINIGUNRELOAD,
+        MINIGUNSHOT,
     }
 
     private PlayerData m_Data;
