@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
 
+    public AudioSource AudioSource;
+    public AudioClip AudioClip;
     private PlayerData m_Data;
 
 	// Use this for initialization
@@ -44,5 +46,6 @@ public class PlayerInteraction : MonoBehaviour {
     public void GetDamage(int _damage)
     {
         m_Data.m_Hp -= _damage;
+        AudioSource.PlayOneShot(AudioClip);
     }
 }

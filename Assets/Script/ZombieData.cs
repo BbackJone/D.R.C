@@ -16,6 +16,8 @@ public struct ZomebieDB
 
 public class ZombieData : MonoBehaviour
 {
+    public AudioSource AudioSource;
+    public AudioClip AudioClip;
     //this is information about this
     public int m_Hp { get; set; }
     public float m_Speed { get; set; }
@@ -71,5 +73,6 @@ public class ZombieData : MonoBehaviour
     {
         m_Hp -= _damage;
         if (m_Hp < 0) m_Hp = 0;
+        AudioSource.PlayOneShot(AudioClip);
     }
 }
