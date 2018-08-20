@@ -34,6 +34,8 @@ public enum Weapon_Type
 
 public abstract class Weapon : MonoBehaviour{
 
+    protected AimSystem m_AimSystem;        //please caching this variable at awake.
+
     public ObjType m_Type { get; set; }
     public string m_ObjName { get; set; }
 
@@ -100,8 +102,7 @@ public abstract class Weapon : MonoBehaviour{
 
     public void HandleRecoil()  //수정할것
     {
-        //m_StackedRecoil += m_Recoil;
-        //GetComponentInParent<PlayerInput>().m_Mouse_Y = Mathf.Lerp(GetComponentInParent<PlayerInput>().m_Mouse_Y, GetComponentInParent<PlayerInput>().m_Mouse_Y - m_Recoil * 0.5f
-            //, Time.deltaTime * 50);
+        m_StackedRecoil += m_Recoil;
+        m_AimSystem.RecoilUpward(m_Recoil);
     }
 }

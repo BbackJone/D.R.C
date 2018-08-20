@@ -8,6 +8,7 @@ public class AimSystem : MonoBehaviour {
 
     private Camera m_Camera;
     private PlayerData m_PlayerData;
+    private PlayerInput m_PlayerInput;
 
     public Transform m_RayTarget;    //if Raycast is true, this is position of RaycastHit.
                                         //but not, this is position of target moderate forward at camera.
@@ -18,12 +19,14 @@ public class AimSystem : MonoBehaviour {
     public Image[] m_CrossHairImages;   //RIght Left Up Down
 
     private Vector3[] DirectionSet = { new Vector3(1,0,0), new Vector3(-1,0,0), new Vector3(0, 1, 0), new Vector3(0, -1, 0) };
-    private float m_CrossHairOffSetPos = 16.6f;
+    public float m_CrossHairOffSetPos = 10f;
+    public float UpRecoilMultiplyer = 0.5f;
 
     private void Awake()
     {
         m_Camera = Camera.main;
         m_PlayerData = GetComponent<PlayerData>();
+        m_PlayerInput = GetComponent<PlayerInput>();
     }
 
     // Use this for initialization
@@ -34,6 +37,10 @@ public class AimSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         SetRayTargetPos();
+
+        //Handle Recoil
+        m_PlayerData.m_WeaponInhand.m_StackedRecoil = Mathf.Max(m_PlayerData.m_Move.magnitude,
+            m_PlayerData.m_WeaponInhand.m_StackedRecoil);
         UpdateCrossHair();
     }
 
@@ -54,13 +61,35 @@ public class AimSystem : MonoBehaviour {
     public void UpdateCrossHair()
     {
         float recoil = m_PlayerData.m_WeaponInhand.m_StackedRecoil;
-        Debug.Log(m_PlayerData.m_WeaponInhand.m_ObjName + "'s Recoil = " + recoil);
 
         //Set crossHair position according to magnitude of recoil
         for (int i = 0; i < 4; i++)
         {
-            Vector3 CrossHairPos = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0) + (DirectionSet[i] * m_CrossHairOffSetPos) + (DirectionSet[i] * recoil * 5.5f);
+            Vector3 CrossHairPos = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0) 
+                + (DirectionSet[i] * m_CrossHairOffSetPos) + 
+                (DirectionSet[i] * recoil * 5.5f);
             m_CrossHairImages[i].transform.position = CrossHairPos;
+        }
+    }
+
+    public void RecoilUpward(float _weaponrecoil)
+    {
+        StopCoroutine("CoRecoilUpward");
+        StartCoroutine("CoRecoilUpward", _weaponrecoil);
+    }
+
+    public IEnumerator CoRecoilUpward(float _weaponrecoil)
+    {
+        int count = 0;
+
+        while(true)
+        {
+            m_PlayerInput.m_Mouse_Y -= _weaponrecoil * UpRecoilMultiplyer * Mathf.Pow(0.5f, count+2);
+            if (count >= 10)
+                StopCoroutine("CoRecoilUpward");
+
+            count++;
+            yield return null;
         }
     }
 }

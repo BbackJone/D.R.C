@@ -24,6 +24,7 @@ public class Weapon_RPG : Weapon
 
     void Awake()
     {
+        m_AimSystem = GetComponentInParent<AimSystem>();
         m_Camera = Camera.main;
 
         RpgRocket = transform.Find("SA_Wep_RPGLauncher_Rocket").GetComponent<RPGRocket>();
@@ -60,5 +61,7 @@ public class Weapon_RPG : Weapon
 
         gameObject.SendMessage("PlaySound", 0);
         m_AmmoBulletNum -= 1;
+
+        HandleRecoil();
     }
 }

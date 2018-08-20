@@ -10,8 +10,6 @@ public class SplashDamage : MonoBehaviour {
     public int m_Damage;
     public float m_PushingForce;
 
-    public bool m_DamageOnce = false;
-
 	// Use this for initialization
 	void Awake () {
         m_SpereCol = GetComponent<SphereCollider>();
@@ -19,14 +17,14 @@ public class SplashDamage : MonoBehaviour {
 
     private void OnEnable()
     {
-        m_DamageOnce = false;
+        m_SpereCol.enabled = true;
+        Invoke("DisableCollider", 0.2f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && m_DamageOnce == false)
+        if(other.CompareTag("Player"))
         {
-            m_DamageOnce = true;
             float RadiusOfExplode = m_SpereCol.radius;
             float DistanceWithPlayer = Vector3.Distance(other.transform.position, transform.position);
 
@@ -45,5 +43,10 @@ public class SplashDamage : MonoBehaviour {
                 + m_PushingForce);
             other.gameObject.GetComponent<Rigidbody>().AddForce(ForceDirection * force, ForceMode.Impulse);
         }
+    }
+
+    public void DisableCollider()
+    {
+        m_SpereCol.enabled = false;
     }
 }

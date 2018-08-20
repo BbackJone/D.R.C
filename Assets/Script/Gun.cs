@@ -38,6 +38,7 @@ public class Gun : Weapon
     void Awake()
     {
         m_Ani = transform.root.GetComponent<Animator>();
+        m_AimSystem = GetComponentInParent<AimSystem>();
 
         Initialize();
     }

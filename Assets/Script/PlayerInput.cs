@@ -60,13 +60,8 @@ public class PlayerInput : MonoBehaviour
 
             TempVec.z = Input.GetAxis("Vertical");
             TempVec.x = Input.GetAxis("Horizontal");
-        if (TempVec.x != 0|| TempVec.z !=0)
-        {
-            //if (!WalkSource.isPlaying)
-                //WalkSource.PlayOneShot(WalkSource.clip);
-        }
 
-        m_Data.m_Move = TempVec;
+        m_Data.m_Move = Vector3.ClampMagnitude(TempVec, 1f);
         m_Mouse_X = Input.GetAxis("Mouse X");
         m_Mouse_Y -= Input.GetAxis("Mouse Y") * m_mouseSensitivity * (Screen.width / 1280f) * Time.deltaTime;
 

@@ -13,6 +13,7 @@ public class Weapon_Katana : Weapon
 
     // Use this for initialization
     void Awake(){
+        m_AimSystem = GetComponentInParent<AimSystem>();
         Initialize();
     }
 
