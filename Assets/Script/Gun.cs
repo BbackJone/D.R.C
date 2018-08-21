@@ -13,7 +13,6 @@ public class Gun : Weapon
     private Animator m_Ani;
     public Animator m_GunAni;
 
-    //Test
     public float RecoilMultiplyer = 1;
 
     public override void Shoot()

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Weapon_RPG : Weapon
 {
     private Camera m_Camera;
+    public Animator m_GunAni;
 
     public Transform m_ShootPos;
     private int m_RaycastLayermask;       //Layer for raycast to ignore
@@ -62,6 +63,17 @@ public class Weapon_RPG : Weapon
         gameObject.SendMessage("PlaySound", 0);
         m_AmmoBulletNum -= 1;
 
+        //SetAni
+        m_IsShooting = true;
+        m_GunAni.SetBool("Shoot_b", m_IsShooting);
+        Invoke("SetIsShootingFalse", 0.1f);
+
         HandleRecoil();
+    }
+
+    public void SetIsShootingFalse()
+    {
+        m_IsShooting = false;
+        m_GunAni.SetBool("Shoot_b", m_IsShooting);
     }
 }
