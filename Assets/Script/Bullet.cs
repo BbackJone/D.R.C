@@ -100,6 +100,22 @@ public class Bullet : MonoBehaviour{
                 CancelInvoke();
                 Remove();
             }
+            else if (hit[i].transform.CompareTag("Floor"))
+            {
+                Vector3 CollsionPoint = hit[i].point;
+                m_LineRenderer.SetPosition(1, CollsionPoint);
+                ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Concrete + Hole Unlit", CollsionPoint, this.transform.rotation);   //Make particle at attack point
+                CancelInvoke();
+                Remove();
+            }
+            else if (hit[i].transform.CompareTag("Sand"))
+            {
+                Vector3 CollsionPoint = hit[i].point;
+                m_LineRenderer.SetPosition(1, CollsionPoint);
+                ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Dirt + Hole", CollsionPoint, this.transform.rotation);   //Make particle at attack point
+                CancelInvoke();
+                Remove();
+            }
         }
     }
 
@@ -129,6 +145,22 @@ public class Bullet : MonoBehaviour{
                     CancelInvoke();
                     Remove();
                 }
+            }
+            else if (hit[i].transform.CompareTag("Floor"))
+            {
+                Vector3 CollsionPoint = hit[i].point;
+                m_LineRenderer.SetPosition(1, CollsionPoint);
+                ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Concrete + Hole Unlit", CollsionPoint, this.transform.rotation);   //Make particle at attack point
+                CancelInvoke();
+                Remove();
+            }
+            else if (hit[i].transform.CompareTag("Sand"))
+            {
+                Vector3 CollsionPoint = hit[i].point;
+                m_LineRenderer.SetPosition(1, CollsionPoint);
+                ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Dirt + Hole", CollsionPoint, this.transform.rotation);   //Make particle at attack point
+                CancelInvoke();
+                Remove();
             }
         }
     }

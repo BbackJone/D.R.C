@@ -2,6 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//When creating particle, if no more pooled particle trash old particle and make the old particle to be a new particle
+public class ParticleOrderList
+{
+    public class node
+    {
+        public int index;
+        public node nextNode;
+
+        public node(int _index)
+        {
+            index = _index;
+        }
+    }
+
+    public void PushBack(node _node)
+    {
+        if(lastNode != null)
+        {
+            lastNode.nextNode = _node;
+            lastNode = _node;
+            lastNode.nextNode = null;
+        }
+        else
+        {
+            firstNode = _node;
+            lastNode = _node;
+            lastNode.nextNode = null;
+        }
+    }
+    public void PushFront(node _node)
+    {
+        if(firstNode != null)
+        {
+            _node.nextNode = firstNode;
+            firstNode = _node;
+        }
+        else
+        {
+            firstNode = _node;
+            lastNode = _node;
+        }
+    }
+
+    public node PopFront()
+    {
+        node originFirst = new node(firstNode.index);
+        firstNode = firstNode.nextNode;
+        return originFirst;
+    }
+
+    public node firstNode;
+    public node lastNode;
+}
+
 public class ObjectPoolMgr : MonoBehaviour {
 
     public static ObjectPoolMgr instance;
@@ -19,6 +73,8 @@ public class ObjectPoolMgr : MonoBehaviour {
 
     public Vector3[] m_PoolingPos;
     private Transform m_Directory_PooledObject;     //Forder that contains pooledObjects.
+
+    public Dictionary<string, ParticleOrderList> m_ParticleOrderList = new Dictionary<string, ParticleOrderList>();
 
     void Awake()
     {
@@ -90,6 +146,14 @@ public class ObjectPoolMgr : MonoBehaviour {
 
         //SniperBullet
         AddObjectToPool(17, 5, ObjType.OBJ_BULLET, true);
+
+        //Bullet Impact_Concrete
+        AddObjectToPool(18, 100, ObjType.OBJ_ETC, false);
+        m_ParticleOrderList.Add("WFXMR_BImpact Concrete + Hole Unlit", new ParticleOrderList());
+
+        //Bullet Impact_Dirt
+        AddObjectToPool(19, 100, ObjType.OBJ_ETC, false);
+        m_ParticleOrderList.Add("WFXMR_BImpact Dirt + Hole", new ParticleOrderList());
     }
 
     public void AddObjectToPool(int _childindex, int _amountToPool, ObjType _objtype, bool _shouldexpand)
@@ -184,5 +248,37 @@ public class ObjectPoolMgr : MonoBehaviour {
                 m_PooledObject[itemToPool.ObjName].Add(Obj);
             }
         }
+    }
+
+    public GameObject MakeParticle(string _objname, Vector3 _pos, Quaternion _rot)
+    {
+        List<GameObject> objlist = m_PooledObject[_objname];
+        for (int i = 0; i < objlist.Count; i++)
+        {
+            if (!objlist[i].activeInHierarchy)
+            {
+                objlist[i].transform.position = _pos;
+                objlist[i].transform.rotation = _rot;
+                objlist[i].SetActive(true);
+                m_ParticleOrderList[_objname].PushBack(new ParticleOrderList.node(i));
+                return objlist[i];
+            }
+        }
+
+        //set inactive oldest particle
+        int firstNodeIndex = m_ParticleOrderList[_objname].firstNode.index;
+        objlist[firstNodeIndex].SetActive(false);
+
+        //make the oldest particle to be a new particle
+        objlist[firstNodeIndex].transform.position = _pos;
+        objlist[firstNodeIndex].transform.rotation = _rot;
+        objlist[firstNodeIndex].SetActive(true);
+
+        //pick a first node and push that node to a back of a list
+        ParticleOrderList.node firstNode = m_ParticleOrderList[_objname].PopFront();
+        Debug.Log("Pop first");
+        m_ParticleOrderList[_objname].PushBack(firstNode);
+
+        return null;
     }
 }

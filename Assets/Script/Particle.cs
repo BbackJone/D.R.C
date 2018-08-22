@@ -21,7 +21,12 @@ public class Particle : MonoBehaviour {
         {
             Timer += Time.deltaTime;
             if (Timer > m_StayTime)
+            {
                 gameObject.SetActive(false);
+                if (ObjectPoolMgr.instance.m_ParticleOrderList.ContainsKey(gameObject.name))
+                    ObjectPoolMgr.instance.m_ParticleOrderList[gameObject.name].PopFront();
+            }
+                
 
             yield return null;
         }

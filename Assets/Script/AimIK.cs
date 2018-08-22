@@ -41,8 +41,11 @@ public class AimIK : MonoBehaviour {
 
     private void OnAnimatorIK(int layerIndex)
     {
+        m_LeftHandIKWeight = 1 - m_Ani.GetFloat("LeftHandIKWeight");
+        m_RightHandIKWeight = 1 - m_Ani.GetFloat("RightHandIKWeight");
+
         //Hand IK
-        if(m_LeftHandPosition)
+        if (m_LeftHandPosition)
         {
             m_Ani.SetIKPositionWeight(AvatarIKGoal.LeftHand, m_LeftHandIKWeight);
             m_Ani.SetIKPosition(AvatarIKGoal.LeftHand, m_LeftHandPosition.position);
