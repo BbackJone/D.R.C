@@ -22,6 +22,8 @@ public class TitleButtonScript : MonoBehaviour {
             if (!SaveData.SaveExists(0)) return;
         }
 
+        if (Time.timeScale == 0f) return;
+
         if (isButtonPressed) return;
         isButtonPressed = true;
 
