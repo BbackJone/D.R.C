@@ -1083,7 +1083,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: M4
   weaponPrice: 30
-  weaponPurchaseButton: {fileID: 1434810930}
+  weaponPurchaseButton: {fileID: 1434810929}
+  weaponPurchaseButtonImage: {fileID: 1434810930}
   weaponDescText: {fileID: 2000468824}
   weaponPriceText: {fileID: 475368811}
   coinCounterText: {fileID: 1510403537}
@@ -19805,7 +19806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Minigun
   weaponPrice: 120
-  weaponPurchaseButton: {fileID: 257352190}
+  weaponPurchaseButton: {fileID: 257352189}
+  weaponPurchaseButtonImage: {fileID: 257352190}
   weaponDescText: {fileID: 187857032}
   weaponPriceText: {fileID: 303342778}
   coinCounterText: {fileID: 1510403537}
@@ -34730,7 +34732,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Sniper
   weaponPrice: 30
-  weaponPurchaseButton: {fileID: 1750132672}
+  weaponPurchaseButton: {fileID: 1750132671}
+  weaponPurchaseButtonImage: {fileID: 1750132672}
   weaponDescText: {fileID: 11012824}
   weaponPriceText: {fileID: 1841982381}
   coinCounterText: {fileID: 1510403537}
@@ -39503,7 +39506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: RPG
   weaponPrice: 120
-  weaponPurchaseButton: {fileID: 1816402463}
+  weaponPurchaseButton: {fileID: 1816402462}
+  weaponPurchaseButtonImage: {fileID: 1816402463}
   weaponDescText: {fileID: 450155399}
   weaponPriceText: {fileID: 2030108239}
   coinCounterText: {fileID: 1510403537}

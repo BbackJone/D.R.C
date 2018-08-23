@@ -7,7 +7,8 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
     public string weaponName;
     public int weaponPrice;
 
-    public Image weaponPurchaseButton;
+    public Button weaponPurchaseButton;
+    public Image weaponPurchaseButtonImage;
     public Text weaponDescText;
     public Text weaponPriceText;
 
@@ -31,7 +32,7 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
             return;
         }
 
-        if (weaponPurchaseButton == null || weaponDescText == null || weaponPriceText == null) {
+        if (weaponPurchaseButtonImage == null || weaponDescText == null || weaponPriceText == null) {
             Debug.LogError("WeaponPurchaseButtonManager: Missing required objects, check inspector!");
             enabled = false;
             return;
@@ -52,11 +53,11 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
                 weaponDescText.text = lu.lm.Get("title_store_" + weaponName + "_desc");
                 weaponPriceText.text = weaponPrice + "";
                 if (PlayerPrefs.GetInt("WeaponPurchased_" + weaponName, 0) == 0) {
-                    weaponPurchaseButton.enabled = true;
-                    weaponPurchaseButton.color = Color.white;
+                    weaponPurchaseButton.interactable = true;
+                    weaponPurchaseButtonImage.color = Color.white;
                 } else {
-                    weaponPurchaseButton.enabled = false;
-                    weaponPurchaseButton.color = Color.green;
+                    weaponPurchaseButton.interactable = false;
+                    weaponPurchaseButtonImage.color = Color.green;
                 }
             }
             yield return new WaitForEndOfFrame();
