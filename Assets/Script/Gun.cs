@@ -63,7 +63,8 @@ public class Gun : Weapon
     {
         for(int i = 0; i < 3; i++)      //Shoot 3 bullet per 0.15 sec at once 
         {
-            ShootBullet();
+            if (m_AmmoBulletNum > 0)
+                ShootBullet();
             yield return new WaitForSeconds(0.15f);
         }
     }

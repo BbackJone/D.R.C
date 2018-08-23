@@ -23,6 +23,9 @@ public class PlayerInput : MonoBehaviour
     and "GetButtonMessage()" order problem*/
     public bool init_Getbutton_order_safety { get; set; }
 
+    public float viewUpLimit = -80;
+    public float viewDownLimit = 50;
+
     // Use this for initialization
     void Awake()
     {
@@ -65,6 +68,10 @@ public class PlayerInput : MonoBehaviour
         m_Mouse_X = Input.GetAxis("Mouse X");
         m_Mouse_Y -= Input.GetAxis("Mouse Y") * m_mouseSensitivity * (Screen.width / 1280f) * Time.deltaTime;
 
+        if (Input.GetButton("Fire2"))   //left shift
+        {
+            gameObject.SendMessage("Firebullet");
+        }
         if (Input.GetKeyDown("f"))   //left shift
         {
             gameObject.SendMessage("Firebullet");
@@ -95,7 +102,7 @@ public class PlayerInput : MonoBehaviour
     void ViewControl()
     {
         transform.Rotate(Vector3.up * m_Mouse_X * Time.deltaTime * m_mouseSensitivity * (Screen.width / 1280f));
-        m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, -80f, 50f);
+        m_Mouse_Y = Mathf.Clamp(m_Mouse_Y, viewUpLimit, viewDownLimit);
         m_Data.m_Camera.transform.eulerAngles = new Vector3(m_Mouse_Y, m_Data.m_Camera.transform.eulerAngles.y, 0f);
 
         //idle and walk animation itself bend santa's waist

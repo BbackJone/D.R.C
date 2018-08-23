@@ -79,7 +79,7 @@ public class PlayerInputTouch : MonoBehaviour {
                             // apply rotation
                             transform.Rotate(Vector3.up * touch.deltaPosition.x * rotateXSensitivity * rotateUserSensitivity);
                             lookY -= touch.deltaPosition.y * rotateYSensitivity * rotateUserSensitivity;
-                            lookY = Mathf.Clamp(lookY, -80f, 50f);
+                            lookY = Mathf.Clamp(lookY, -80f, 35f);
                             data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
                         }
                     } else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) {

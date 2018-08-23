@@ -22,8 +22,8 @@ public class PlayerData : MonoBehaviour {
 
     //Other components
     public Camera m_Camera { get; set; }
-    public Animator m_Ani { get; set; }
     public Rigidbody m_Rigidbody { get; set; }
+    private Animator m_Ani;
     private AimSystem m_AimSystem;
     private AimIK m_AimIK;
 
@@ -52,8 +52,6 @@ public class PlayerData : MonoBehaviour {
         m_WeaponInhand = m_Weapons[0];
         m_WeaponInhand.gameObject.SetActive(true);
         m_AimIK.SetHandsIKPosition(m_WeaponInhand.m_GrabPosRight, m_WeaponInhand.m_GrabPosLeft);
-
-        m_MaxHp = 30;
     }
 
     void OnEnable()
@@ -71,11 +69,4 @@ public class PlayerData : MonoBehaviour {
         m_isSwaping = false;
         m_Money = 0;
     }
-
-    //Test
-    private void Update()
-    {
-        m_Hp = m_MaxHp;
-    }
-
 }

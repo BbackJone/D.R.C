@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour{
 
     void Start()
     {
-        m_Speed = 1000f;
+        m_Speed = 3000f;
         m_StayTime = 0.5f;
         if (gameObject.name == "Sniper_Bullet")
             m_Penetration = true;
@@ -48,7 +48,10 @@ public class Bullet : MonoBehaviour{
     void OnEnable()
     {
         m_PrevPos = transform.position;
+        m_LineRenderer.SetPosition(0, m_PrevPos);
+        m_LineRenderer.SetPosition(1, m_PrevPos);
         Invoke("Remove", m_StayTime);   //Remove this after "m_StayTime"
+        StartCoroutine("CoCollisionCheck");
     }
 
     //proceed and Check Collision
@@ -60,7 +63,17 @@ public class Bullet : MonoBehaviour{
         transform.Translate(Vector3.forward * Time.deltaTime * m_Speed);
 
         m_LineRenderer.SetPosition(1, transform.position);
-        CollisionCheck();
+    }
+
+    public IEnumerator CoCollisionCheck()
+    {
+        while (true)
+        {
+            //We have to wait for unity to render a bullet trail before it destroyed.
+            yield return new WaitForEndOfFrame();
+
+            CollisionCheck();
+        }
     }
 
     void CollisionCheck()
@@ -149,7 +162,6 @@ public class Bullet : MonoBehaviour{
             else if (hit[i].transform.CompareTag("Floor"))
             {
                 Vector3 CollsionPoint = hit[i].point;
-                m_LineRenderer.SetPosition(1, CollsionPoint);
                 ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Concrete + Hole Unlit", CollsionPoint, this.transform.rotation);   //Make particle at attack point
                 CancelInvoke();
                 Remove();
@@ -157,7 +169,6 @@ public class Bullet : MonoBehaviour{
             else if (hit[i].transform.CompareTag("Sand"))
             {
                 Vector3 CollsionPoint = hit[i].point;
-                m_LineRenderer.SetPosition(1, CollsionPoint);
                 ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Dirt + Hole", CollsionPoint, this.transform.rotation);   //Make particle at attack point
                 CancelInvoke();
                 Remove();

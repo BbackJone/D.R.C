@@ -8,6 +8,7 @@ public class AimIK : MonoBehaviour {
     //Other component
     private Animator m_Ani;
     private AimSystem m_Aimsystem;
+    private PlayerData m_PlayerData;
 
     private Transform m_AimTarget;
     public Transform m_AimPivot;       //This will make hands up and down according to direction player is looking.
@@ -31,6 +32,7 @@ public class AimIK : MonoBehaviour {
         m_Aimsystem = GetComponent<AimSystem>();
         m_AimTarget = m_Aimsystem.m_RayTarget;
         m_RightShoulder = m_Ani.GetBoneTransform(HumanBodyBones.RightShoulder).transform;
+        m_PlayerData = GetComponent<PlayerData>();
     }
 
     private void OnAnimatorMove()
@@ -41,8 +43,7 @@ public class AimIK : MonoBehaviour {
 
     private void OnAnimatorIK(int layerIndex)
     {
-        m_LeftHandIKWeight = 1 - m_Ani.GetFloat("LeftHandIKWeight");
-        m_RightHandIKWeight = 1 - m_Ani.GetFloat("RightHandIKWeight");
+        SetHandIKWeight();
 
         //Hand IK
         if (m_LeftHandPosition)
@@ -84,5 +85,22 @@ public class AimIK : MonoBehaviour {
         Quaternion TargetRotation = Quaternion.LookRotation(DestDir);
 
         m_AimPivot.rotation = Quaternion.Lerp(m_AimPivot.rotation, TargetRotation, Time.deltaTime * 20);
+    }
+
+    public void SetHandIKWeight()
+    {
+        m_LeftHandIKWeight = 1 - m_Ani.GetFloat("LeftHandIKWeight");
+        m_RightHandIKWeight = 1 - m_Ani.GetFloat("RightHandIKWeight");
+
+        //if (m_PlayerData.m_isReloading)
+        //{
+        //    m_LeftHandIKWeight = 0;
+        //    m_RightHandIKWeight = 0;
+        //}
+        //if (m_PlayerData.m_isSwaping)
+        //{
+        //    m_LeftHandIKWeight = 0;
+        //    m_RightHandIKWeight = 0;
+        //}
     }
 }

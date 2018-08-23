@@ -1946,7 +1946,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 73333630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1985,13 +1985,13 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6649,7 +6649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &248537804
 Transform:
   m_ObjectHideFlags: 0
@@ -11211,7 +11211,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1247014562
+  randomSeed: -508621111
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -23309,6 +23309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 4
+  m_MaxRecoil: 5
   m_GrabPosRight: {fileID: 1522094527}
   m_GrabPosLeft: {fileID: 129067733}
   m_IsShooting: 0
@@ -52399,6 +52400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 0
+  m_MaxRecoil: 5
   m_GrabPosRight: {fileID: 1930264918}
   m_GrabPosLeft: {fileID: 1457807719}
   m_IsShooting: 0
@@ -54083,6 +54085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 2
+  m_MaxRecoil: 5
   m_GrabPosRight: {fileID: 196751857}
   m_GrabPosLeft: {fileID: 595243537}
   m_IsShooting: 0
@@ -54436,7 +54439,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1079941395}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -54652,7 +54655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1086802803
 Transform:
   m_ObjectHideFlags: 0
@@ -54797,7 +54800,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -840203015
+  randomSeed: 303624006
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -63459,6 +63462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 3
+  m_MaxRecoil: 5
   m_GrabPosRight: {fileID: 1208400886}
   m_GrabPosLeft: {fileID: 1817581417}
   m_IsShooting: 0
@@ -63753,6 +63757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 1
+  m_MaxRecoil: 5
   m_GrabPosRight: {fileID: 196946396}
   m_GrabPosLeft: {fileID: 416547887}
   m_IsShooting: 0
@@ -66872,7 +66877,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -265054825
+  randomSeed: 765259284
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -72027,6 +72032,8 @@ MonoBehaviour:
   m_UI: {fileID: 1611716509}
   m_Mouse_Y: 0
   m_mouseSensitivity: 0
+  viewUpLimit: -80
+  viewDownLimit: 35
 --- !u!114 &1491306653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77937,6 +77944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponType: 6
+  m_MaxRecoil: 5
   m_GrabPosRight: {fileID: 2114850278}
   m_GrabPosLeft: {fileID: 1224451142}
   m_IsShooting: 0
@@ -98361,7 +98369,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0
+        value: 0.092170715
         inSlope: 0.06090353
         outSlope: 0.06090353
         tangentMode: 0

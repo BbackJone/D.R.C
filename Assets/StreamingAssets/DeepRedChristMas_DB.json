@@ -64,7 +64,7 @@
       "Autoshot": false,
       "BodyDamage": 50,
       "HeadDamage": 100,
-      "ReloadTime": 1.567
+      "ReloadTime": 1.25
     },
     {
       "Name": "M4",
@@ -76,18 +76,20 @@
       "Autoshot": true,
       "BodyDamage": 80,
       "HeadDamage": 160,
-      "ReloadTime": 1.99    },
+      "ReloadTime": 1.59
+    },
     {
       "Name": "Sniper",
       "MaxBullet": 1,
       "Recoil": 40,
       "Weight": 10,
-      "Shotrate": 2,
+      "Shotrate": 1,
       "Bulletsort": "Sniper_Bullet",
       "Autoshot": false,
       "BodyDamage": 100,
       "HeadDamage": 500,
-      "ReloadTime": 2    },
+      "ReloadTime": 0.79
+    },
     {
       "Name": "Bow",
       "MaxBullet": 1,
@@ -122,19 +124,19 @@
       "Autoshot": false,
       "BodyDamage": 100,
       "HeadDamage": 60,
-      "ReloadTime": 1.933
+      "ReloadTime": 1.54
     },
     {
       "Name": "Minigun",
       "MaxBullet": 300,
-      "Recoil": 5,
+      "Recoil": 1,
       "Weight": 20,
       "Shotrate": 0.05,
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": true,
       "BodyDamage": 50,
       "HeadDamage": 100,
-      "ReloadTime": 3.866
+      "ReloadTime": 3.09
     }
   ],
   "Wave": [

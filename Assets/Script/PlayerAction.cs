@@ -18,6 +18,7 @@ public class PlayerAction : MonoBehaviour {
     private float m_AttackTimer;
     private CameraMove m_CameraMove;
     private AimIK m_AimIK;
+    private Animator m_Ani;
 
     public bool m_Death { get; set; }
     public float m_DeathTimer { get; set; }     //time between player's death and player's extinction.
@@ -37,6 +38,9 @@ public class PlayerAction : MonoBehaviour {
         m_Data = GetComponent<PlayerData>();
         m_CameraMove = Camera.main.GetComponent<CameraMove>();
         m_AimIK = GetComponent<AimIK>();
+        m_Ani = GetComponent<Animator>();
+
+        m_Data.m_MaxHp = 30;
     }
 
 	void Start () {
@@ -52,17 +56,15 @@ public class PlayerAction : MonoBehaviour {
 
         curtain = GameObject.Find("FadeCurtain").GetComponent<UnityEngine.UI.Image>();
         curtainAlpha = 0f;
-
-        StartCoroutine("DeadCheck");
-        StartCoroutine("CountTime");
-        StartCoroutine("Playermove");
 	}
     
 
     void OnEnable()
     {
         m_Death = false;
+        m_Ani.SetBool("DeathBool", m_Death);
         m_DeathTimer = 0f;
+        m_Data.m_Hp = m_Data.m_MaxHp;
 
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
@@ -78,8 +80,8 @@ public class PlayerAction : MonoBehaviour {
                 if (m_Death != true)
                 {
                     m_Death = true;
-                    m_Data.m_Ani.SetBool("DeathBool", m_Death);
-                    m_Data.m_Ani.SetTrigger("DeathTrigger");
+                    m_Ani.SetBool("DeathBool", m_Death);
+                    m_Ani.SetTrigger("DeathTrigger");
 
                     StopCoroutine("MoveControl");
                     StopCoroutine("Getkey");
@@ -130,8 +132,8 @@ public class PlayerAction : MonoBehaviour {
             transform.Translate(Vector3.forward * m_Data.m_Move.z * Time.deltaTime * m_Data.m_Speed);
             transform.Translate(Vector3.right * m_Data.m_Move.x * Time.deltaTime * m_Data.m_Speed);
 
-            m_Data.m_Ani.SetFloat("Speed_Horizontal", m_Data.m_Move.x);
-            m_Data.m_Ani.SetFloat("Speed_Vertical", m_Data.m_Move.z);
+            m_Ani.SetFloat("Speed_Horizontal", m_Data.m_Move.x);
+            m_Ani.SetFloat("Speed_Vertical", m_Data.m_Move.z);
             yield return null;
         }
     }
@@ -147,6 +149,9 @@ public class PlayerAction : MonoBehaviour {
 
     public void Firebullet()
     {
+        if (m_Ani.GetBool("IsReloading"))
+            return;
+
         //Reload when there is no bullet
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum <= 0
             && m_Data.m_WeaponInhand.m_ObjName != "Katana")
@@ -164,7 +169,7 @@ public class PlayerAction : MonoBehaviour {
         {
             m_AttackTimer = 0f;
             m_Data.m_isShooting = true;
-            m_Data.m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
+            m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
             Invoke("SetShootingFalse", 0.05f);
             Shoot();
         }
@@ -172,7 +177,7 @@ public class PlayerAction : MonoBehaviour {
 
     public void SwapWeapon()
     {
-        m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
+        m_Ani.SetBool("Minigun_Attack_Bool", false);
 
         for (int i = 0; i < m_Data.m_Weapons.Count; i++)
         {
@@ -180,7 +185,7 @@ public class PlayerAction : MonoBehaviour {
             Weapon _weap = m_Data.m_Weapons[i];
             if (_weap.gameObject.activeInHierarchy)
             {
-                m_Data.m_Ani.SetTrigger("WeaponSwap");
+                m_Ani.SetTrigger("WeaponSwap");
 
                 m_Data.m_WeaponInhand.gameObject.SetActive(false);
 
@@ -188,7 +193,7 @@ public class PlayerAction : MonoBehaviour {
                 if (i == m_Data.m_Weapons.Count - 1)
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
-                    m_Data.m_Ani.SetInteger("Weapon_Code", 0);
+                    m_Ani.SetInteger("Weapon_Code", 0);
                     gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP));
 
                 }
@@ -196,7 +201,7 @@ public class PlayerAction : MonoBehaviour {
                 else
                 {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
-                    m_Data.m_Ani.SetInteger("Weapon_Code", i + 1);
+                    m_Ani.SetInteger("Weapon_Code", i + 1);
                     gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP));
 
                 }
@@ -213,12 +218,13 @@ public class PlayerAction : MonoBehaviour {
                 if (m_Data.m_isReloading == true)
                 {
                     m_Data.m_isReloading = false;
-                    m_Data.m_Ani.SetBool("WeaponReloadBool", false);
+                    m_Ani.SetBool("'Bool", false);
                 }
 
                 //Set bool.
                 m_Data.m_isSwaping = true;
-                m_Data.m_Ani.SetBool("Swap_b", m_Data.m_isSwaping);
+                m_Ani.SetBool("Swap_b", m_Data.m_isSwaping);
+                CancelInvoke("SetSwapingFalse");
                 Invoke("SetSwapingFalse", 1f);
 
                 //Set IK Position
@@ -249,9 +255,10 @@ public class PlayerAction : MonoBehaviour {
         {
             //m_Data.m_Ani.SetTrigger("WeaponReload");
             m_Data.m_isReloading = true;
-            m_Data.m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
-            Invoke("SetRelaodingFalse", m_Data.m_WeaponInhand.m_ReloadTime);         //DB에 리로딩 시간 적어넣을것
-            m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
+            m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
+            CancelInvoke("SetRelaodingFalse");
+            Invoke("SetRelaodingFalse", m_Data.m_WeaponInhand.m_ReloadTime);
+            m_Ani.SetBool("Minigun_Attack_Bool", false);
 
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
             {
@@ -260,7 +267,6 @@ public class PlayerAction : MonoBehaviour {
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
             {
                 gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD));
-
             }
         }
     }
@@ -272,25 +278,25 @@ public class PlayerAction : MonoBehaviour {
         {
             m_Data.m_WeaponInhand.ChargeBullet();
             m_Data.m_isReloading = false;
-            m_Data.m_Ani.SetBool("WeaponReloadBool", false);
+            //m_Ani.SetBool("WeaponReloadBool", false);
         }
     }
 
     void SetShootingFalse()
     {
         m_Data.m_isShooting = false;
-        m_Data.m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
+        m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
     }
 
     void SetRelaodingFalse()
     {
         m_Data.m_isReloading = false;
-        m_Data.m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
+        m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
     }
 
     void SetSwapingFalse()
     {
         m_Data.m_isSwaping = false;
-        m_Data.m_Ani.SetBool("Swap_b", m_Data.m_isSwaping);
+        m_Ani.SetBool("Swap_b", m_Data.m_isSwaping);
     }
 }
