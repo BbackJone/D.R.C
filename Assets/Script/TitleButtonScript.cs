@@ -95,6 +95,10 @@ public class TitleButtonScript : MonoBehaviour {
         while (!lu.lm.IsLoaded) { yield return new WaitForEndOfFrame(); }
 
         SaveData.ClearAll();
+        MarkSaveAsCleared(lu);
+    }
+
+    public void MarkSaveAsCleared(LanguageUpdater lu) {
         GameObject.Find("SaveClearButton").transform.Find("Text").GetComponent<Text>().text = lu.lm.Get("settings_cleared");
         transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = lu.lm.Get("title_continue_nf");
     }

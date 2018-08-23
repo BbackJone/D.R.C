@@ -58,6 +58,7 @@ public class ResultUpdateScript : MonoBehaviour {
             int curCoin = PlayerPrefs.GetInt("coins", 0);
             int newCoin = rscs.score / 10;
             PlayerPrefs.SetInt("coins", curCoin + newCoin);
+            PlayerPrefs.Save();
             varCoin.text = string.Format(lu.lm.Get("result_coins"), newCoin);
 
             Destroy(rsc);

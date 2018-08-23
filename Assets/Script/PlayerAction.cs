@@ -92,7 +92,7 @@ public class PlayerAction : MonoBehaviour {
                         rscs.SetResultsAndStopTime(
                             rscs.kills,
                             (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
-                            9,
+                            (stageMgr.m_CurrentWave.Level * 10) + rscs.kills,
                             false);
                     }
                 }

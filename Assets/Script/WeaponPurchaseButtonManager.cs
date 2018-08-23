@@ -68,6 +68,7 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
         if (coin >= weaponPrice) {
             PlayerPrefs.SetInt("coins", coin - weaponPrice);
             PlayerPrefs.SetInt("WeaponPurchased_" + weaponName, 1);
+            PlayerPrefs.Save();
         } else {
             StopCoroutine(SetRedThenFadeRevertCoinCounterColor());
             StartCoroutine(SetRedThenFadeRevertCoinCounterColor());

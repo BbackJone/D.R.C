@@ -8,6 +8,10 @@ title_help_story_details: On a christmas eve night... Santa left his place with 
 title_help_credits: Credits
 title_help_credits_details: Kyungpook National Univ.[newline]Game Creation Club[newline]Revolution[newline][newline]Created by[newline]Park Junha[newline]Park Sechan[newline]Shin Woohyun
 
+title_reset_title: Clear saved data?
+title_reset_desc: This will remove all of the saved data including:[newline]  - Continue data[newline]  - Purchased weapons[newline]  - Collected coins[newline][newline]Are you sure?
+title_reset_cancel: No way!
+
 title_store_title: Store
 title_store_desc: Unlock new weapons[newline]using your coins!
 title_store_coin: Coins: {0}[newline]Coins can be obtained by playing the game

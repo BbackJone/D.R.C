@@ -58,13 +58,18 @@ public class PlayerData : MonoBehaviour {
 
     void OnEnable()
     {
-        m_Hp = m_MaxHp;
+        //m_Hp = m_MaxHp;
     }
 
     void Start()
     {
         m_Type = ObjType.OBJ_PLAYER;
-        m_Hp = m_MaxHp;
+        var sdm = GameObject.Find("SaveDataManager");
+        if (sdm != null) {
+            m_Hp = sdm.GetComponent<SaveDataManager>().currentSaveData.health;
+        } else {
+            m_Hp = m_MaxHp;
+        }
         m_Speed = 5f;
         m_isReloading = false;
         m_isShooting = false;
@@ -75,7 +80,7 @@ public class PlayerData : MonoBehaviour {
     //Test
     private void Update()
     {
-        m_Hp = m_MaxHp;
+        //m_Hp = m_MaxHp;
     }
 
 }

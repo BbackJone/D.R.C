@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class SettingsIngameScript : MonoBehaviour {
     private StageMgr stageMgr;
     private SaveDataManager saveMgr;
+    private ResultScoreContainerScript rscs;
+    private PlayerData pdata;
     private bool saveFeatureAvailable;
 
     public Slider musicVolumeSlider;
@@ -24,10 +26,12 @@ public class SettingsIngameScript : MonoBehaviour {
         if (musicVolumeSlider.value != musicVol) {
             PlayerPrefs.SetFloat("musicvol", musicVolumeSlider.value);
             musicVol = musicVolumeSlider.value;
+            PlayerPrefs.Save();
         }
         if (seVolumeSlider.value != seVol) {
             PlayerPrefs.SetFloat("sevol", seVolumeSlider.value);
             seVol = seVolumeSlider.value;
+            PlayerPrefs.Save();
         }
         if (touchSensitivitySlider.value != sensitivity) {
             PlayerPrefs.SetFloat("sensitivity", touchSensitivitySlider.value);
@@ -35,13 +39,16 @@ public class SettingsIngameScript : MonoBehaviour {
             if (touchInput != null) {
                 touchInput.rotateUserSensitivity = (sensitivity * 1.8f) + 0.2f;
             }
+            PlayerPrefs.Save();
         }
     }
 
     void OnEnable() {
         stageMgr = GameObject.Find("StageMgr").GetComponent<StageMgr>();
         saveMgr = GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>();
-        saveFeatureAvailable = (ObjectManager.m_Inst != null && stageMgr != null && saveMgr != null);
+        rscs = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
+        pdata = GameObject.Find("Santa").GetComponent<PlayerData>();
+        saveFeatureAvailable = (ObjectManager.m_Inst != null && stageMgr != null && saveMgr != null && rscs != null && pdata != null);
     }
 
     private void ShowSettings() {
@@ -72,6 +79,9 @@ public class SettingsIngameScript : MonoBehaviour {
         if (saveFeatureAvailable) {
             SaveData sd = saveMgr.currentSaveData;
             sd.currentWave = stageMgr.m_CurrentWave.Level;
+            sd.kills = rscs.kills;
+            sd.elapsedTime = (int)rscs.timeInSec;
+            sd.health = pdata.m_Hp;
             SaveData.Write(sd, 0);
             Time.timeScale = 1f;
             ObjectManager.m_Inst.NextScene("Menu");
