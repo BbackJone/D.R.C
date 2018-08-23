@@ -23,8 +23,8 @@ public class ResultScoreContainerScript : MonoBehaviour {
 	}
 
     void Update() {
-        if (doCalcTime && Time.timeScale != 0f) {
-            timeInSec += Time.deltaTime;
+        if (doCalcTime) {
+            timeInSec += Time.deltaTime * Time.timeScale;
         }
     }
 

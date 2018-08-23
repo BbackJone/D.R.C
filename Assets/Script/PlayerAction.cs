@@ -234,6 +234,42 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
+    public void SwapWeaponTo(int index) {
+        m_Data.m_Ani.SetBool("Minigun_Attack_Bool", false);
+
+        if (m_Data.m_WeaponInhand == m_Data.m_Weapons[index]) return;
+
+        m_Data.m_Ani.SetTrigger("WeaponSwap");
+        m_Data.m_WeaponInhand.gameObject.SetActive(false);
+
+        m_Data.m_WeaponInhand = m_Data.m_Weapons[index];
+        m_Data.m_Ani.SetInteger("Weapon_Code", index);
+        gameObject.SendMessage("PlaySound", value: SOUNDCLIP.SWAP);
+
+        m_Data.m_WeaponInhand.gameObject.SetActive(true);
+        Check_WeaponisAuto();
+
+        //If the weapon is sniper, move camera position
+        if (m_Data.m_WeaponInhand.m_ObjName == "Sniper")
+            m_CameraMove.CameraLerp(CAMERAPOS.SNIPER_SHOOTPOS);
+        else
+            m_CameraMove.CameraLerp(CAMERAPOS.NORMALPOS);
+
+        //if player was reloading, cancel relaoding.
+        if (m_Data.m_isReloading == true) {
+            m_Data.m_isReloading = false;
+            m_Data.m_Ani.SetBool("WeaponReloadBool", false);
+        }
+
+        //Set bool.
+        m_Data.m_isSwaping = true;
+        m_Data.m_Ani.SetBool("Swap_b", m_Data.m_isSwaping);
+        Invoke("SetSwapingFalse", 1f);
+
+        //Set IK Position
+        m_AimIK.SetHandsIKPosition(m_Data.m_WeaponInhand.m_GrabPosRight, m_Data.m_WeaponInhand.m_GrabPosLeft);
+    }
+
     //if weapon allows auto firing, change the property of attack button to "continuous"
     void Check_WeaponisAuto()
     {

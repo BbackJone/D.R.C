@@ -17,6 +17,13 @@ title_store_Sniper_desc: 스나이퍼 라이플[newline]적을 관통하는 저�
 title_store_Minigun_desc: 미니건[newline]총알을 퍼붓는 무기
 title_store_RPG_desc: RPG[newline]강력한 폭발을 일으키는 무기
 
+weapon_Katana: 대검
+weapon_Handgun: 권총
+weapon_M4: M4
+weapon_Sniper: 스나이퍼
+weapon_Minigun: 미니건
+weapon_RPG: RPG
+
 settings_title: 설정
 settings_title_paused: 일시정지
 settings_volume: 음량
