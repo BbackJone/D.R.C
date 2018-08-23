@@ -16,6 +16,7 @@ public struct WeaponDB
     public int BodyDamage;
     public int HeadDamage;
     public float ReloadTime;
+    public bool EnabledByDefault;
 }
 
 public enum Weapon_Type
@@ -47,6 +48,7 @@ public abstract class Weapon : MonoBehaviour{
     public int m_BodyDamage { get; set; }
     public int m_HeadDamage { get; set; }
     public float m_ReloadTime { get; set; }         //재장전 시간
+    public bool m_EnabledByDefault { get; set; }
     public Weapon_Type m_WeaponType;
 
     public Transform m_ShootTarget { get; set; }
@@ -54,6 +56,8 @@ public abstract class Weapon : MonoBehaviour{
 
     public Transform m_GrabPosRight;
     public Transform m_GrabPosLeft;
+
+    public bool m_WeaponEnabled;
 
     //state(for animation)
     public bool m_IsShooting;
@@ -71,6 +75,9 @@ public abstract class Weapon : MonoBehaviour{
         m_BodyDamage = DBData.BodyDamage;
         m_HeadDamage = DBData.HeadDamage;
         m_ReloadTime = DBData.ReloadTime;
+        m_EnabledByDefault = DBData.EnabledByDefault;
+
+        m_WeaponEnabled = (m_EnabledByDefault ? true : (PlayerPrefs.GetInt("WeaponPurchased_" + m_ObjName, 0) == 1 ? true : false));
 
         m_Type = ObjType.OBJ_WEAPON;
     }

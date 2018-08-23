@@ -52,7 +52,8 @@
       "Autoshot": false,
       "BodyDamage": 150,
       "HeadDamage": 300,
-      "ReloadTime": 0
+      "ReloadTime": 0,
+	  "EnabledByDefault": true
     },
     {
       "Name": "Handgun",
@@ -64,7 +65,8 @@
       "Autoshot": false,
       "BodyDamage": 50,
       "HeadDamage": 100,
-      "ReloadTime": 1.567
+      "ReloadTime": 1.567,
+	  "EnabledByDefault": true
     },
     {
       "Name": "M4",
@@ -76,7 +78,9 @@
       "Autoshot": true,
       "BodyDamage": 80,
       "HeadDamage": 160,
-      "ReloadTime": 1.99    },
+      "ReloadTime": 1.99,
+	  "EnabledByDefault": false
+    },
     {
       "Name": "Sniper",
       "MaxBullet": 1,
@@ -87,7 +91,9 @@
       "Autoshot": false,
       "BodyDamage": 100,
       "HeadDamage": 500,
-      "ReloadTime": 2    },
+      "ReloadTime": 2,
+	  "EnabledByDefault": false
+    },
     {
       "Name": "Bow",
       "MaxBullet": 1,
@@ -98,7 +104,8 @@
       "Autoshot": true,
       "BodyDamage": 50,
       "HeadDamage": 1000,
-      "ReloadTime": 1
+      "ReloadTime": 1,
+	  "EnabledByDefault": false
     },
     {
       "Name": "FlameThrower",
@@ -110,7 +117,8 @@
       "Autoshot": true,
       "BodyDamage": 10,
       "HeadDamage": 10,
-      "ReloadTime": 1
+      "ReloadTime": 1,
+	  "EnabledByDefault": false
     },
     {
       "Name": "RPG",
@@ -122,7 +130,8 @@
       "Autoshot": false,
       "BodyDamage": 100,
       "HeadDamage": 60,
-      "ReloadTime": 1.933
+      "ReloadTime": 1.933,
+	  "EnabledByDefault": false
     },
     {
       "Name": "Minigun",
@@ -134,7 +143,8 @@
       "Autoshot": true,
       "BodyDamage": 50,
       "HeadDamage": 100,
-      "ReloadTime": 3.866
+      "ReloadTime": 3.866,
+	  "EnabledByDefault": false
     }
   ],
   "Wave": [

@@ -11,6 +11,7 @@ public class ResultUpdateScript : MonoBehaviour {
     public Text varWave;
     public Text varScore;
     public Text varTime;
+    public Text varCoin;
 
     public Text textReturn;
     private bool isTitleLoading = false;
@@ -53,6 +54,11 @@ public class ResultUpdateScript : MonoBehaviour {
         {
             var rscs = rsc.GetComponent<ResultScoreContainerScript>();
             varTitle.text = (rscs.isGameClear ? lu.lm.Get("result_title_clear") : lu.lm.Get("result_title"));
+
+            int curCoin = PlayerPrefs.GetInt("coins", 0);
+            int newCoin = rscs.score / 10;
+            PlayerPrefs.SetInt("coins", curCoin + newCoin);
+            varCoin.text = string.Format(lu.lm.Get("result_coins"), newCoin);
 
             Destroy(rsc);
         }
