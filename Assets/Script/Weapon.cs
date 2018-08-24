@@ -26,7 +26,8 @@ public enum Weapon_Type
     RPG,
     SNIPER,
     BOW,
-    MINIGUN
+    MINIGUN,
+    FLAMETHROWER
 }
 
 //Weapon_Code in animator parameter

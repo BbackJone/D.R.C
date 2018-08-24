@@ -64,7 +64,7 @@ public class StageMgr : MonoBehaviour
     private void Update()
     {
         m_GameTime += Time.deltaTime;
-        //ZombieSpawnTimer();
+        ZombieSpawnTimer();
 
 
         //Test

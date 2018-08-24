@@ -43,7 +43,8 @@ public class AimIK : MonoBehaviour {
 
     private void OnAnimatorIK(int layerIndex)
     {
-        SetHandIKWeight();
+        m_LeftHandIKWeight = 1 - m_Ani.GetFloat("LeftHandIKWeight");
+        m_RightHandIKWeight = 1 - m_Ani.GetFloat("RightHandIKWeight");
 
         //Hand IK
         if (m_LeftHandPosition)
@@ -85,22 +86,5 @@ public class AimIK : MonoBehaviour {
         Quaternion TargetRotation = Quaternion.LookRotation(DestDir);
 
         m_AimPivot.rotation = Quaternion.Lerp(m_AimPivot.rotation, TargetRotation, Time.deltaTime * 20);
-    }
-
-    public void SetHandIKWeight()
-    {
-        m_LeftHandIKWeight = 1 - m_Ani.GetFloat("LeftHandIKWeight");
-        m_RightHandIKWeight = 1 - m_Ani.GetFloat("RightHandIKWeight");
-
-        //if (m_PlayerData.m_isReloading)
-        //{
-        //    m_LeftHandIKWeight = 0;
-        //    m_RightHandIKWeight = 0;
-        //}
-        //if (m_PlayerData.m_isSwaping)
-        //{
-        //    m_LeftHandIKWeight = 0;
-        //    m_RightHandIKWeight = 0;
-        //}
     }
 }
