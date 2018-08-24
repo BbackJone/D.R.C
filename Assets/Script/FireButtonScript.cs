@@ -4,15 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FireButtonScript : MonoBehaviour, IPointerDownHandler {
-    private PlayerAction action;
+public class FireButtonScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
+    private PlayerData playerData;
 
     void Start() {
-        action = GameObject.Find("Santa").GetComponent<PlayerAction>();
-        if (action == null) enabled = false;
+        playerData = ObjectManager.m_Inst.Objects.m_Playerlist[0].GetComponent<PlayerData>();
+        if (playerData == null)
+            enabled = false;
     }
 
     public void OnPointerDown(PointerEventData eventData) {
-        action.Firebullet();
+        playerData.m_isShooting = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        playerData.m_isShooting = false;
     }
 }

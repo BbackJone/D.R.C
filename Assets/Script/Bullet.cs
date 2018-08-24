@@ -14,8 +14,6 @@ public class Bullet : MonoBehaviour{
     private int m_BodyDamage;
     private int m_HeadDamage;
 
-    private LineRenderer m_LineRenderer;
-
     //Raycast Parameters
     public Vector3 m_PrevPos;
 
@@ -32,7 +30,6 @@ public class Bullet : MonoBehaviour{
     // Use this for initialization
     void Awake()
     {
-        m_LineRenderer = transform.GetComponent<LineRenderer>();
     }
 
     void Start()
@@ -48,8 +45,6 @@ public class Bullet : MonoBehaviour{
     void OnEnable()
     {
         m_PrevPos = transform.position;
-        m_LineRenderer.SetPosition(0, m_PrevPos);
-        m_LineRenderer.SetPosition(1, m_PrevPos);
         Invoke("Remove", m_StayTime);   //Remove this after "m_StayTime"
         StartCoroutine("CoCollisionCheck");
     }
@@ -58,11 +53,8 @@ public class Bullet : MonoBehaviour{
     private void FixedUpdate()
     {
         m_PrevPos = transform.position;
-        m_LineRenderer.SetPosition(0, m_PrevPos);
 
         transform.Translate(Vector3.forward * Time.deltaTime * m_Speed);
-
-        m_LineRenderer.SetPosition(1, transform.position);
     }
 
     public IEnumerator CoCollisionCheck()
@@ -106,7 +98,6 @@ public class Bullet : MonoBehaviour{
             if (hit[i].transform.CompareTag("Enemy"))
             {
                 Vector3 CollsionPoint = hit[i].point;
-                m_LineRenderer.SetPosition(1, CollsionPoint);
                 int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
                 hit[i].transform.gameObject.SendMessage("GetDamage", DamageSet);
                 ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
@@ -116,7 +107,6 @@ public class Bullet : MonoBehaviour{
             else if (hit[i].transform.CompareTag("Floor"))
             {
                 Vector3 CollsionPoint = hit[i].point;
-                m_LineRenderer.SetPosition(1, CollsionPoint);
                 ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Concrete + Hole Unlit", CollsionPoint, this.transform.rotation);   //Make particle at attack point
                 CancelInvoke();
                 Remove();
@@ -124,7 +114,6 @@ public class Bullet : MonoBehaviour{
             else if (hit[i].transform.CompareTag("Sand"))
             {
                 Vector3 CollsionPoint = hit[i].point;
-                m_LineRenderer.SetPosition(1, CollsionPoint);
                 ObjectPoolMgr.instance.MakeParticle("WFXMR_BImpact Dirt + Hole", CollsionPoint, this.transform.rotation);   //Make particle at attack point
                 CancelInvoke();
                 Remove();

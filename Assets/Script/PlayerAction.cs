@@ -25,6 +25,7 @@ public class PlayerAction : MonoBehaviour {
 
     public MyButton m_AttackButton;     //This is necessary to determine 
                                         //whether you will allow automatic firing of weapons.
+    public bool m_FireOnceBool = false;
 
     public Transform left_leg;
     public Transform right_leg;
@@ -69,6 +70,7 @@ public class PlayerAction : MonoBehaviour {
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");
+        StartCoroutine("CheckIsShooting");
     }
 
     IEnumerator DeadCheck()
@@ -85,6 +87,7 @@ public class PlayerAction : MonoBehaviour {
 
                     StopCoroutine("MoveControl");
                     StopCoroutine("Getkey");
+                    StopCoroutine("CheckIsShooting");
 
                     var stageMgr = GameObject.Find("StageMgr").GetComponent<StageMgr>();
                     GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>().SetResultsAndStopTime(
@@ -168,9 +171,6 @@ public class PlayerAction : MonoBehaviour {
             && !m_Data.m_isSwaping && !m_Data.m_isReloading) //(katana doesn't have buttlet)
         {
             m_AttackTimer = 0f;
-            m_Data.m_isShooting = true;
-            m_Ani.SetBool("Shoot_b", m_Data.m_isShooting);
-            Invoke("SetShootingFalse", 0.05f);
             Shoot();
         }
     }
@@ -268,6 +268,30 @@ public class PlayerAction : MonoBehaviour {
             {
                 gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD));
             }
+        }
+    }
+
+    public IEnumerator CheckIsShooting()
+    {
+        while(true)
+        {
+            if (m_Data.m_isShooting && m_Data.m_WeaponInhand.m_Autoshot)
+            {
+                Firebullet();
+            }
+            else if (m_Data.m_isShooting && !m_Data.m_WeaponInhand.m_Autoshot)
+            {
+                if (m_FireOnceBool == false)
+                {
+                    m_FireOnceBool = true;
+                    Firebullet();
+                }
+            }
+            else if (!m_Data.m_isShooting)
+            {
+                m_FireOnceBool = false;
+            }
+            yield return null;
         }
     }
 

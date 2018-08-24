@@ -5,18 +5,21 @@ using UnityEngine;
 public class FlameThrower : Weapon {
 
     private GameObject m_FlameParticle;
+    private ParticleSystem m_FlameParticleSystem;
 
     private void Awake()
     {
         Initialize();
 
         m_FlameParticle = transform.GetChild(0).gameObject;
-        m_FlameParticle.SetActive(false);
+        //m_FlameParticle.SetActive(false);
+        m_FlameParticleSystem = m_FlameParticle.GetComponent<ParticleSystem>();
     }
 
     private void OnEnable()
     {
         m_StackedRecoil = 0;
+        m_FlameParticleSystem.enableEmission = false;
         StartCoroutine("NarrowDownAim");
     }
 
@@ -31,16 +34,19 @@ public class FlameThrower : Weapon {
         Debug.Log("Flame Shoot");
         if(m_AmmoBulletNum > 0)
         {
-            StartCoroutine("ShootFlame");
+            m_FlameParticleSystem.enableEmission = true;
+
+            m_AmmoBulletNum -= 1;
+            gameObject.SendMessage("PlaySound", value: 0);
+
+            //If don't cancelInvoke in a few time, stop shoot function is exacuted.
+            CancelInvoke("StopFire");
+            Invoke("StopFire", m_ShotRate * 3);
         }
     }
 
-    public IEnumerator ShootFlame()
+    public void StopFire()
     {
-        while(true)
-        {
-            m_FlameParticle.SetActive(true);
-            yield return null;
-        }
+        m_FlameParticleSystem.enableEmission = false;
     }
 }

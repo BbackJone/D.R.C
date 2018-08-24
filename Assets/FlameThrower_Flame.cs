@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class FlameThrower_Flame : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void OnParticleCollision(GameObject other)
     {
         if(other.CompareTag("Enemy"))

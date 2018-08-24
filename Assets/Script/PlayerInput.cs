@@ -68,14 +68,16 @@ public class PlayerInput : MonoBehaviour
         m_Mouse_X = Input.GetAxis("Mouse X");
         m_Mouse_Y -= Input.GetAxis("Mouse Y") * m_mouseSensitivity * (Screen.width / 1280f) * Time.deltaTime;
 
-        if (Input.GetButton("Fire2"))   //left shift
-        {
-            gameObject.SendMessage("Firebullet");
-        }
         if (Input.GetKeyDown("f"))   //left shift
         {
-            gameObject.SendMessage("Firebullet");
+            //gameObject.SendMessage("Firebullet");
+            m_Data.m_isShooting = true;
         }
+        if(Input.GetKeyUp("f"))
+        {
+            m_Data.m_isShooting = false;
+        }
+
         if (Input.GetKeyDown("r"))   //left shift
         {
             if (!m_Data.m_isReloading)

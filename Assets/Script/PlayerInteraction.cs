@@ -8,8 +8,9 @@ public class PlayerInteraction : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+        ObjListAdd();       //Put this object at ObjMgr.
         m_Data = GetComponent<PlayerData>();
-	}
+    }
 
     void OnEnable()
     {
@@ -19,7 +20,6 @@ public class PlayerInteraction : MonoBehaviour {
     void Start()
     {
         StartCoroutine("PlayerStateCheck");
-        ObjListAdd();       //Put this object at ObjMgr.
     }
 
     //If player dead and become inactive, do game over check.

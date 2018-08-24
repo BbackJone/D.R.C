@@ -20,18 +20,7 @@ public class Gun : Weapon
         if (m_AmmoBulletNum <= 0)
             return;
 
-        if (m_WeaponType == Weapon_Type.RIFLE)
-        {
-            StopCoroutine("Shoot_Rifle");
-            StartCoroutine("Shoot_Rifle");
-        }
-        else if (m_WeaponType == Weapon_Type.MINIGUN)
-        {
-            StopCoroutine("Shoot_Minigun");
-            StartCoroutine("Shoot_Minigun");
-        }
-        else
-            ShootBullet();
+        ShootBullet();
     }
 
     void Awake()

@@ -32,7 +32,7 @@ public class RPGRocket : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, direction.magnitude))
             {
-                if (hit.transform.CompareTag("Floor") || hit.transform.CompareTag("Enemy"))
+                if (hit.transform.CompareTag("Floor") || hit.transform.CompareTag("Sand") || hit.transform.CompareTag("Enemy"))
                 {
                     Vector3 CollsionPoint = hit.point;
                     ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));

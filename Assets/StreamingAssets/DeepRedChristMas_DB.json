@@ -112,7 +112,7 @@
       "Autoshot": true,
       "BodyDamage": 10,
       "HeadDamage": 10,
-      "ReloadTime": 1
+      "ReloadTime": 1.54
     },
     {
       "Name": "RPG",

@@ -5,15 +5,20 @@ using UnityEngine;
 public class Weapon_Katana : Weapon
 {
     private string m_ParticleName;
+    private Animator m_PlayerAni;
 
     public override void Shoot()
     {
+
+        m_PlayerAni.SetTrigger("KatanaAttack");
+
         gameObject.SendMessage("PlaySound", 0);
     }
 
     // Use this for initialization
     void Awake(){
         m_AimSystem = GetComponentInParent<AimSystem>();
+        m_PlayerAni = GetComponentInParent<Animator>();
         Initialize();
     }
 

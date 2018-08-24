@@ -31,7 +31,7 @@ public enum Weapon_Type
 }
 
 //Weapon_Code in animator parameter
-// 0 : katana // 1 : handgun // 2 : rifle // 3 : Minigun // 4 : RPG // 5 : Sniper
+// 0 : katana // 1 : handgun // 2 : rifle // 3 : Minigun // 4 : RPG // 5 : Sniper // 6 : Flame Thrower
 
 public abstract class Weapon : MonoBehaviour{
 
