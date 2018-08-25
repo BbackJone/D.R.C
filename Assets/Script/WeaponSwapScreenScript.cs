@@ -9,6 +9,7 @@ public class WeaponSwapScreenScript : MonoBehaviour {
     }
 
     public void ShowWeaponSwapScreen() {
+        if (Time.timeScale == 0f) return;
         Time.timeScale = 0.15f;
         gameObject.SetActive(true);
     }
