@@ -57,13 +57,12 @@ public class PlayerData : MonoBehaviour {
 
     void OnEnable()
     {
-        m_Hp = m_MaxHp;
+        //m_Hp = m_MaxHp;
     }
 
     void Start()
     {
         m_Type = ObjType.OBJ_PLAYER;
-        m_Hp = m_MaxHp;
         m_MaxSpeed = 7f;
         m_Speed = m_MaxSpeed - m_WeaponInhand.m_Weight;
         m_isReloading = false;
@@ -74,6 +73,6 @@ public class PlayerData : MonoBehaviour {
 
     private void Update()
     {
-        m_Hp = m_MaxHp;
+        //m_Hp = m_MaxHp;
     }
 }

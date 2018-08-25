@@ -13,6 +13,7 @@ public class ReloadButtonScript : MonoBehaviour, IPointerDownHandler {
     }
 
     public void OnPointerDown(PointerEventData eventData) {
+        if (Time.timeScale == 0f) return;
         action.Reload();
     }
 }

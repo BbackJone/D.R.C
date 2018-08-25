@@ -1,0 +1,53 @@
+title_newgame: New Game
+title_continue_nf: Continue Data[newline]Not Found
+title_continue: Continue from[newline]Wave {0}
+title_loading: Now Loading...
+
+title_help_story: Story
+title_help_story_details: On a christmas eve night... Santa left his place with a bunch of presents he prepared. He was happy and excited about meeting all the kids and giving presents...until he arrived in a devastated city where zombie viruses have spread all over the place. Suddenly he heard a baby crying... Santa decided to save kids from a zombie nightmare. As he bring up his weapons, the night has just begun.
+title_help_credits: Credits
+title_help_credits_details: Kyungpook National Univ.[newline]Game Creation Club[newline]Revolution[newline][newline]Created by[newline]Park Junha[newline]Park Sechan[newline]Shin Woohyun
+
+title_reset_title: Clear saved data?
+title_reset_desc: This will remove all of the saved data including:[newline]  - Continue data[newline]  - Purchased weapons[newline]  - Collected coins[newline][newline]Are you sure?
+title_reset_cancel: No way!
+
+title_store_title: Store
+title_store_desc: Unlock new weapons[newline]using your coins!
+title_store_coin: Coins: {0}[newline]Coins can be obtained by playing the game
+
+title_store_M4_desc: M4[newline]Assault rifle with burst shot
+title_store_Sniper_desc: Sniper Rifle[newline]Penetrate enemies
+title_store_Minigun_desc: Minigun[newline]Raining bullets
+title_store_RPG_desc: RPG[newline]Creates powerful explosion
+
+weapon_Katana: Katana
+weapon_Handgun: Handgun
+weapon_M4: M4
+weapon_Sniper: Sniper
+weapon_Minigun: Minigun
+weapon_RPG: RPG
+
+settings_title: Settings
+settings_title_paused: Game Paused
+settings_volume: Volume
+settings_musicvol: Music
+settings_sevol: SE
+settings_control: Control
+settings_sensitivity: Sensitivity
+settings_clearsavedata: Clear Saved Data
+settings_cleared: Cleared!
+settings_resume: Resume
+settings_saveandexit: Save and Exit
+
+result_title: Game Over
+result_title_clear: Congratulations!
+result_kills: Kills
+result_waves: Waves
+result_totalscore: Total Score
+result_time: Play Time
+result_return: Return
+result_loading: Please wait...
+result_coins: You earned {0} coins!
+
+ok: OK

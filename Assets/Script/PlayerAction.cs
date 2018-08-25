@@ -65,7 +65,16 @@ public class PlayerAction : MonoBehaviour {
         m_Death = false;
         m_Ani.SetBool("DeathBool", m_Death);
         m_DeathTimer = 0f;
-        m_Data.m_Hp = m_Data.m_MaxHp;
+        var sdm = GameObject.Find("SaveDataManager");
+        if (sdm != null)
+        {
+            if (sdm.GetComponent<SaveDataManager>().currentSaveData != null) m_Data.m_Hp = sdm.GetComponent<SaveDataManager>().currentSaveData.health;
+            else m_Data.m_Hp = m_Data.m_MaxHp;
+        }
+        else
+        {
+            m_Data.m_Hp = m_Data.m_MaxHp;
+        }
 
         StartCoroutine("DeadCheck");
         StartCoroutine("CountTime");
@@ -90,11 +99,16 @@ public class PlayerAction : MonoBehaviour {
                     StopCoroutine("CheckIsShooting");
 
                     var stageMgr = GameObject.Find("StageMgr").GetComponent<StageMgr>();
-                    GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>().SetResultsAndStopTime(
-                        3,
-                        (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
-                        9,
-                        false);
+
+                    var rsc = GameObject.Find("ResultScoreContainer");
+                    if (rsc != null) {
+                        var rscs = rsc.GetComponent<ResultScoreContainerScript>();
+                        rscs.SetResultsAndStopTime(
+                            rscs.kills,
+                            (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
+                            (stageMgr.m_CurrentWave.Level * 10) + rscs.kills,
+                            false);
+                    }
                 }
 
                 if (m_DeathTimer < 2f)
@@ -236,6 +250,42 @@ public class PlayerAction : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    public void SwapWeaponTo(int index) {
+        m_Ani.SetBool("Minigun_Attack_Bool", false);
+
+        if (m_Data.m_WeaponInhand == m_Data.m_Weapons[index]) return;
+
+        m_Ani.SetTrigger("WeaponSwap");
+        m_Data.m_WeaponInhand.gameObject.SetActive(false);
+
+        m_Data.m_WeaponInhand = m_Data.m_Weapons[index];
+        m_Ani.SetInteger("Weapon_Code", index);
+        gameObject.SendMessage("PlaySound", value: SOUNDCLIP.SWAP);
+
+        m_Data.m_WeaponInhand.gameObject.SetActive(true);
+        Check_WeaponisAuto();
+
+        //If the weapon is sniper, move camera position
+        if (m_Data.m_WeaponInhand.m_ObjName == "Sniper")
+            m_CameraMove.CameraLerp(CAMERAPOS.SNIPER_SHOOTPOS);
+        else
+            m_CameraMove.CameraLerp(CAMERAPOS.NORMALPOS);
+
+        //if player was reloading, cancel relaoding.
+        if (m_Data.m_isReloading == true) {
+            m_Data.m_isReloading = false;
+            m_Ani.SetBool("WeaponReloadBool", false);
+        }
+
+        //Set bool.
+        m_Data.m_isSwaping = true;
+        m_Ani.SetBool("Swap_b", m_Data.m_isSwaping);
+        Invoke("SetSwapingFalse", 1f);
+
+        //Set IK Position
+        m_AimIK.SetHandsIKPosition(m_Data.m_WeaponInhand.m_GrabPosRight, m_Data.m_WeaponInhand.m_GrabPosLeft);
     }
 
     //if weapon allows auto firing, change the property of attack button to "continuous"

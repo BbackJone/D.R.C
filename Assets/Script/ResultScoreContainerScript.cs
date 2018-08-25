@@ -14,13 +14,26 @@ public class ResultScoreContainerScript : MonoBehaviour {
 
     void Start () {
         DontDestroyOnLoad(gameObject);
+
+        var sdm = GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>();
+        if (sdm != null) {
+            kills = sdm.currentSaveData.kills;
+            waves = sdm.currentSaveData.currentWave;
+            score = 0;      // to be calculated later
+            timeInSec = sdm.currentSaveData.elapsedTime;
+        } else {
+            kills = 0;
+            waves = 0;
+            score = 0;
+            timeInSec = 0f;
+        }
         doCalcTime = true;
-        timeInSec = 0f;
-	}
+        isGameClear = false;
+    }
 
     void Update() {
-        if (doCalcTime && Time.timeScale != 0f) {
-            timeInSec += Time.deltaTime;
+        if (doCalcTime) {
+            timeInSec += Time.deltaTime * Time.timeScale;
         }
     }
 

@@ -35,6 +35,7 @@ public class ObjectManager : MonoBehaviour
     void Awake()
     {
         //Screen.SetResolution(720, 1280, true);
+        Application.targetFrameRate = 60;
         if (m_Inst == null)
         {
             m_Inst = this;

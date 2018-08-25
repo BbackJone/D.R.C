@@ -8,8 +8,8 @@ public class PlayerInteraction : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        ObjListAdd();       //Put this object at ObjMgr.
         m_Data = GetComponent<PlayerData>();
+        ObjListAdd();       //Put this object at ObjMgr.
     }
 
     void OnEnable()

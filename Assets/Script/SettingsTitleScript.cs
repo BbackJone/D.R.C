@@ -19,10 +19,12 @@ public class SettingsTitleScript : MonoBehaviour {
         if (musicVolumeSlider.value != musicVol) {
             PlayerPrefs.SetFloat("musicvol", musicVolumeSlider.value);
             musicVol = musicVolumeSlider.value;
+            PlayerPrefs.Save();
         }
         if (seVolumeSlider.value != seVol) {
             PlayerPrefs.SetFloat("sevol", seVolumeSlider.value);
             seVol = seVolumeSlider.value;
+            PlayerPrefs.Save();
         }
         if (touchSensitivitySlider.value != sensitivity) {
             PlayerPrefs.SetFloat("sensitivity", touchSensitivitySlider.value);
@@ -30,6 +32,7 @@ public class SettingsTitleScript : MonoBehaviour {
             if (touchInput != null) {
                 touchInput.rotateUserSensitivity = (sensitivity * 1.8f) + 0.2f;
             }
+            PlayerPrefs.Save();
         }
     }
 
