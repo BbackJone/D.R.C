@@ -40,6 +40,24 @@ public class PlayerInput : MonoBehaviour
         m_mouseSensitivity = 100f;
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Input.mousePosition.x < Screen.width / 2 && Input.mousePosition.y > Screen.height / 2)
+            {
+                StartCoroutine(SingleShot());
+            }
+        }
+    }
+
+    IEnumerator SingleShot()
+    {
+        m_Data.m_isShooting = true;
+        yield return new WaitForEndOfFrame();
+        m_Data.m_isShooting = false;
+    }
+
     private void LateUpdate()
     {
         ViewControl();

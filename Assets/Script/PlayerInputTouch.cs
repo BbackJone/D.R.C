@@ -67,6 +67,12 @@ public class PlayerInputTouch : MonoBehaviour {
             for (int i = 0; i < Input.touchCount; i++) {
                 Touch touch = Input.GetTouch(i);
 
+                // top-left singleshot
+                if (touch.phase == TouchPhase.Began && touch.position.x < Screen.width / 2 && touch.position.y > Screen.height / 2)
+                {
+                    StartCoroutine(SingleShot());
+                }
+
                 // if this touch pointer is not using control stick...
                 if (touch.fingerId != controlStick.draggingPointer) {
                     // assume this touch is trying to rotate camera
@@ -86,7 +92,7 @@ public class PlayerInputTouch : MonoBehaviour {
                         touchDragDist = 0;
                     }
 
-                    break;
+                    //break;
                 }
             }
         }
@@ -143,5 +149,12 @@ public class PlayerInputTouch : MonoBehaviour {
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
 #endif
+    }
+
+    IEnumerator SingleShot()
+    {
+        data.m_isShooting = true;
+        yield return new WaitForEndOfFrame();
+        data.m_isShooting = false;
     }
 }
