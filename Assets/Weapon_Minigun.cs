@@ -11,7 +11,9 @@ public class Weapon_Minigun : Weapon {
     public Transform m_ShootPos;
 
     public Animator m_GunAni;
-    public Animator m_GunRotateAni;
+    private Animator m_GunRotateAni;
+
+    private float m_PreShootRotateTime = 0f;
 
     public float RecoilMultiplyer = 1;
 
@@ -19,6 +21,16 @@ public class Weapon_Minigun : Weapon {
     {
         if (m_AmmoBulletNum <= 0)
             return;
+
+        CancelInvoke("CancelShoot");
+        Invoke("CancelShoot", m_ShotRate * 3);
+
+        if (m_PreShootRotateTime < 0.5f)
+        {
+            m_GunRotateAni.SetBool("IsRotating", true);
+            m_PreShootRotateTime += m_ShotRate;
+            return;
+        }
 
         ShootBullet();
     }
@@ -91,6 +103,12 @@ public class Weapon_Minigun : Weapon {
     {
         m_IsShooting = false;
         m_GunAni.SetBool("Shoot_b", m_IsShooting);
+    }
+
+    public void CancelShoot()
+    {
+        m_PreShootRotateTime = 0f;
+        m_GunRotateAni.SetBool("IsRotating", false);
     }
 
     public Quaternion GetRecoiledDirection(Vector3 _dirVector)
