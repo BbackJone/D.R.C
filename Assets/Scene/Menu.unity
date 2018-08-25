@@ -35929,6 +35929,7 @@ GameObject:
   - component: {fileID: 1827796973}
   - component: {fileID: 1827796972}
   - component: {fileID: 1827796974}
+  - component: {fileID: 1827796975}
   m_Layer: 0
   m_Name: sound
   m_TagString: Untagged
@@ -36060,6 +36061,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1827796975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1827796971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf266b2b3eadd2d44b0934a74531bce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmClip: {fileID: 8300000, guid: 5162f36fcd993814584c2a5172ecaba9, type: 3}
+  bgmSource: {fileID: 1827796974}
 --- !u!1 &1829432754
 GameObject:
   m_ObjectHideFlags: 0
