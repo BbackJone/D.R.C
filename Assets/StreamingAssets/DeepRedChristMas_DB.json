@@ -73,7 +73,7 @@
       "MaxBullet": 30,
       "Recoil": 1.5,
       "Weight": 2,
-      "Shotrate": 0.25,
+      "Shotrate": 0.1,
       "Bulletsort": "Handgun_Bullet",
       "Autoshot": true,
       "BodyDamage": 80,
