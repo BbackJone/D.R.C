@@ -68,6 +68,7 @@ public class AimSystem : MonoBehaviour {
         }
 
         m_LookTarget = m_RayStartPos + m_Camera.transform.forward * LookDistance;
+        Debug.DrawRay(m_RayStartPos, m_Camera.transform.forward * 100);
     }
 
     public void UpdateCrossHair()

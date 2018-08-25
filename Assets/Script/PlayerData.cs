@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour {
 
     //Player's values
+    public float m_MaxSpeed { get; set; }
     public float m_Speed { get; set; }
     public Vector3 m_Move { get; set; }  //current speed value
     public int m_Money { get; set; }
@@ -63,10 +64,16 @@ public class PlayerData : MonoBehaviour {
     {
         m_Type = ObjType.OBJ_PLAYER;
         m_Hp = m_MaxHp;
-        m_Speed = 5f;
+        m_MaxSpeed = 7f;
+        m_Speed = m_MaxSpeed - m_WeaponInhand.m_Weight;
         m_isReloading = false;
         m_isShooting = false;
         m_isSwaping = false;
         m_Money = 0;
+    }
+
+    private void Update()
+    {
+        m_Hp = m_MaxHp;
     }
 }

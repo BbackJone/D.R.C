@@ -230,6 +230,9 @@ public class PlayerAction : MonoBehaviour {
                 //Set IK Position
                 m_AimIK.SetHandsIKPosition(m_Data.m_WeaponInhand.m_GrabPosRight, m_Data.m_WeaponInhand.m_GrabPosLeft);
 
+                //Set Speed
+                m_Data.m_Speed = m_Data.m_MaxSpeed - m_Data.m_WeaponInhand.m_Weight;
+
                 break;
             }
         }
