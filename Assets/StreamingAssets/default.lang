@@ -20,6 +20,7 @@ title_store_M4_desc: M4[newline]Assault rifle with burst shot
 title_store_Sniper_desc: Sniper Rifle[newline]Penetrate enemies
 title_store_Minigun_desc: Minigun[newline]Raining bullets
 title_store_RPG_desc: RPG[newline]Creates powerful explosion
+title_store_Flamethrower_desc: Flamethrower[newline]Temporary text
 
 weapon_Katana: Katana
 weapon_Handgun: Handgun
@@ -27,6 +28,7 @@ weapon_M4: M4
 weapon_Sniper: Sniper
 weapon_Minigun: Minigun
 weapon_RPG: RPG
+weapon_Flamethrower: Flamethrower
 
 settings_title: Settings
 settings_title_paused: Game Paused

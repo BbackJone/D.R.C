@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class footstep : MonoBehaviour {
     public AudioSource FstepSourse;
+    
     public AudioClip[] FstepClip;
 
     private Transform leftFootTrans;
@@ -35,7 +36,9 @@ public class footstep : MonoBehaviour {
         }
         if (clip != null)
         {
-            FstepSourse.PlayOneShot(clip, maxvol);
+            
+                FstepSourse.PlayOneShot(clip, maxvol);
+          
         }
     }
 
@@ -59,8 +62,9 @@ public class footstep : MonoBehaviour {
         }
         if (clip != null)
         {
-            FstepSourse.PlayOneShot(clip, maxvol);
+            
+                FstepSourse.PlayOneShot(clip, maxvol);
+          
         }
     }
-
 }
