@@ -15,6 +15,8 @@ public class CameraMove : MonoBehaviour {
 
     private PlayerData m_PlayerData;
 
+    private Vector3 m_SniperCameraTempPos;
+
     public void Awake()
     {
         m_PlayerData = transform.parent.GetComponent<PlayerData>();
@@ -30,11 +32,14 @@ public class CameraMove : MonoBehaviour {
             StartCoroutine("CoCameraLerp", m_NormalPos);
         }
         else if (_camerapos == CAMERAPOS.SNIPER_SHOOTPOS)
+        {
             StartCoroutine("CoSniperCameraLerp");
+        }
     }
 
     public IEnumerator CoCameraLerp(Transform _destpos)
     {
+        CancelInvoke("StopCameraLerp");
         Invoke("StopCameraLerp", 2f);
         while(true)
         {
@@ -51,9 +56,20 @@ public class CameraMove : MonoBehaviour {
 
     public IEnumerator CoSniperCameraLerp()
     {
+        float timeSinceStartCo = 0;
+
         while (true)
         {
-            transform.position = Vector3.Lerp(m_SniperPos.position, m_NormalPos.position, (m_PlayerData.m_Move.magnitude/2f));
+            m_SniperCameraTempPos = Vector3.Lerp(m_SniperPos.position, m_NormalPos.position, (m_PlayerData.m_Move.magnitude/2f));
+
+            if (timeSinceStartCo < 1)
+            {
+                transform.position = Vector3.Lerp(transform.position, m_SniperCameraTempPos, 0.1f);
+                timeSinceStartCo += Time.deltaTime;
+            }
+            else
+                transform.position = m_SniperCameraTempPos;
+
             yield return null;
         }
     }
