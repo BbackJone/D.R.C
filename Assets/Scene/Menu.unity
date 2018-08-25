@@ -31384,7 +31384,7 @@ GameObject:
   - component: {fileID: 1160126341}
   - component: {fileID: 1160126340}
   m_Layer: 8
-  m_Name: TiltleSanta
+  m_Name: TitleSanta
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
