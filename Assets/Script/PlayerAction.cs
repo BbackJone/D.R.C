@@ -91,6 +91,8 @@ public class PlayerAction : MonoBehaviour {
                 if (m_Death != true)
                 {
                     m_Death = true;
+                    m_Ani.SetLayerWeight(1, 0f);
+                    m_AimIK.enabled = false;
                     m_Ani.SetBool("DeathBool", m_Death);
                     m_Ani.SetTrigger("DeathTrigger");
 

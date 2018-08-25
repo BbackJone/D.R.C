@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : Weapon
-{
+public class Weapon_Minigun : Weapon {
+
     //this makes spark effect when bullet is fired.
     public MeshRenderer m_MuzzleFlash;
     public MeshRenderer m_MuzzleFlash2;
-    private float muzzleFlashMinimumSize = 0.05f;
-    private float muzzleFlashMaximumSize = 0.225f;
 
     public Transform m_ShootPos;
 
     public Animator m_GunAni;
+    public Animator m_GunRotateAni;
 
     public float RecoilMultiplyer = 1;
 
@@ -27,6 +26,7 @@ public class Gun : Weapon
     void Awake()
     {
         m_AimSystem = GetComponentInParent<AimSystem>();
+        m_GunRotateAni = GetComponent<Animator>();
 
         Initialize();
     }
@@ -46,13 +46,8 @@ public class Gun : Weapon
         m_AmmoBulletNum = 0;
 
         m_AmmoBulletNum = m_MaxBulletNum;
-
-        if (m_WeaponType == Weapon_Type.HANDGUN)
-        {
-            muzzleFlashMaximumSize = 0.125f;
-        }
     }
-    
+
     public void ShootBullet()
     {
         //Get Bullet Direction
@@ -77,14 +72,8 @@ public class Gun : Weapon
 
     public void Makeflash()
     {
-        //m_MuzzleFlash.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
-        //m_MuzzleFlash2.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
-
-        m_MuzzleFlash.transform.localRotation = Quaternion.Euler(Random.Range(0, 90), m_MuzzleFlash.transform.localRotation.eulerAngles.y, m_MuzzleFlash.transform.localRotation.eulerAngles.z);
-        m_MuzzleFlash2.transform.localRotation = Quaternion.Euler(m_MuzzleFlash2.transform.localRotation.eulerAngles.x, Random.Range(0, 90), m_MuzzleFlash2.transform.localRotation.eulerAngles.z);
-
-        m_MuzzleFlash.transform.localScale = new Vector3(Random.Range(muzzleFlashMinimumSize, muzzleFlashMaximumSize), 1f, Random.Range(muzzleFlashMinimumSize, muzzleFlashMaximumSize));
-        m_MuzzleFlash2.transform.localScale = new Vector3(Random.Range(muzzleFlashMinimumSize, muzzleFlashMaximumSize), 1f, Random.Range(muzzleFlashMinimumSize, muzzleFlashMaximumSize));
+        m_MuzzleFlash.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
+        m_MuzzleFlash2.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
 
         m_MuzzleFlash.enabled = true;
         m_MuzzleFlash2.enabled = true;
@@ -116,4 +105,3 @@ public class Gun : Weapon
         return (Quaternion.LookRotation(retVector));
     }
 }
-
