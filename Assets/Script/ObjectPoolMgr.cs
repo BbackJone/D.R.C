@@ -97,13 +97,13 @@ public class ObjectPoolMgr : MonoBehaviour {
         AddObjectToPool(0, 50, ObjType.OBJ_ENEMY, false);
 
         //Particle(FX_BloodSplatter_Katana)
-        AddObjectToPool(1, 10, ObjType.OBJ_ETC, true);
+        AddObjectToPool(1, 20, ObjType.OBJ_ETC, true);
 
         //Bullet
         AddObjectToPool(2, 50, ObjType.OBJ_BULLET, true);
 
         //Particle(FX_BloodSplatter_Bullet)
-        AddObjectToPool(3, 10, ObjType.OBJ_ETC, true);
+        AddObjectToPool(3, 50, ObjType.OBJ_ETC, true);
 
         //Zomebie(SA_Zombie_RoadWorker)            
         AddObjectToPool(4, 50, ObjType.OBJ_ENEMY, false);
@@ -208,7 +208,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         //if the number of pooled object is required to expand, it expand that
         if (m_ObjectToPool[_objname].ShouldExpand)
         {
-            MakePool();
+            MakePool(_objname);
             CreatePooledObject(_objname, _pos, _rot);
         }
 
@@ -247,6 +247,41 @@ public class ObjectPoolMgr : MonoBehaviour {
                 }
                 m_PooledObject[itemToPool.ObjName].Add(Obj);
             }
+        }
+    }
+
+    public void MakePool(string objToExpand)
+    {
+        //Pooling 을 하는 작업이다.
+        foreach (KeyValuePair<string, ObjectToPool> iter in m_ObjectToPool)
+        {
+            if (iter.Key != objToExpand) continue;
+            ObjectToPool itemToPool = iter.Value;
+            for (int j = 0; j < itemToPool.AmountToPool; j++)
+            {
+                GameObject Obj = Instantiate(itemToPool.Obj);
+                Obj.name = itemToPool.ObjName;
+                int PosIndex = Random.Range(0, m_PoolingPos.Length);
+                Obj.transform.position = m_PoolingPos[PosIndex];
+                Transform Parent_Directory = m_Directory_PooledObject;
+                for (int h = 0; h < m_Directory_PooledObject.childCount; h++)
+                {
+                    if (string.Equals(m_Directory_PooledObject.GetChild(h).name, Obj.name))
+                    {
+                        Parent_Directory = m_Directory_PooledObject.GetChild(h);
+                        break;
+                    }
+                }
+                Obj.transform.SetParent(Parent_Directory);
+                Obj.SetActive(false);
+
+                if (!m_PooledObject.ContainsKey(itemToPool.ObjName))
+                {
+                    m_PooledObject.Add(itemToPool.ObjName, new List<GameObject>());
+                }
+                m_PooledObject[itemToPool.ObjName].Add(Obj);
+            }
+            break;
         }
     }
 
