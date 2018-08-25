@@ -48,7 +48,7 @@ public class LanguageManager {
             {
                 WWW www = new WWW("jar:file://" + Application.dataPath + "!/assets/" + userlang + ".lang");
                 yield return www;
-                if (string.IsNullOrEmpty(www.error))
+                if (string.IsNullOrEmpty(www.text))
                 {
                     additionalLanguageExist = false;
                 }
@@ -70,6 +70,7 @@ public class LanguageManager {
                     additionalLanguageExist = false;
                 }
             }
+
             if (!additionalLanguageExist)
             {
                 // no additional language found - just use default
