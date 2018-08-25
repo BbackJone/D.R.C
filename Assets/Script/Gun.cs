@@ -10,7 +10,6 @@ public class Gun : Weapon
 
     public Transform m_ShootPos;
 
-    private Animator m_Ani;
     public Animator m_GunAni;
 
     public float RecoilMultiplyer = 1;
@@ -25,7 +24,6 @@ public class Gun : Weapon
 
     void Awake()
     {
-        m_Ani = transform.root.GetComponent<Animator>();
         m_AimSystem = GetComponentInParent<AimSystem>();
 
         Initialize();
@@ -46,34 +44,6 @@ public class Gun : Weapon
         m_AmmoBulletNum = 0;
 
         m_AmmoBulletNum = m_MaxBulletNum;
-    }
-
-    public IEnumerator Shoot_Rifle()
-    {
-        for(int i = 0; i < 3; i++)      //Shoot 3 bullet per 0.15 sec at once 
-        {
-            if (m_AmmoBulletNum > 0)
-                ShootBullet();
-            yield return new WaitForSeconds(0.15f);
-        }
-    }
-
-    public IEnumerator Shoot_Minigun()
-    {
-        if (!m_Ani.GetBool("Minigun_Attack_Bool"))
-        {
-            m_Ani.SetBool("Minigun_Attack_Bool", true);
-            yield return new WaitForSeconds(1.5f);
-        }
-        int k = 30;
-        while (m_AmmoBulletNum > 0 && k > 0)
-        {
-            if (!m_Ani.GetBool("Minigun_Attack_Bool")) break;
-            ShootBullet();
-            k--;
-            yield return new WaitForSeconds(0.05f);
-        }
-        m_Ani.SetBool("Minigun_Attack_Bool", false);
     }
     
     public void ShootBullet()
