@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : Weapon
-{
+public class Weapon_Minigun : Weapon {
+
     //this makes spark effect when bullet is fired.
     public MeshRenderer m_MuzzleFlash;
     public MeshRenderer m_MuzzleFlash2;
@@ -11,6 +11,7 @@ public class Gun : Weapon
     public Transform m_ShootPos;
 
     public Animator m_GunAni;
+    public Animator m_GunRotateAni;
 
     public float RecoilMultiplyer = 1;
 
@@ -25,6 +26,7 @@ public class Gun : Weapon
     void Awake()
     {
         m_AimSystem = GetComponentInParent<AimSystem>();
+        m_GunRotateAni = GetComponent<Animator>();
 
         Initialize();
     }
@@ -45,7 +47,7 @@ public class Gun : Weapon
 
         m_AmmoBulletNum = m_MaxBulletNum;
     }
-    
+
     public void ShootBullet()
     {
         //Get Bullet Direction
@@ -57,7 +59,7 @@ public class Gun : Weapon
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
-        gameObject.SendMessage("PlaySound", value:0);
+        gameObject.SendMessage("PlaySound", value: 0);
         Makeflash();
 
         //SetAni

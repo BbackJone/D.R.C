@@ -79732,7 +79732,7 @@ MonoBehaviour:
   m_GrabPosLeft: {fileID: 1817581417}
   m_WeaponEnabled: 0
   m_IsShooting: 0
-  m_GunAni: {fileID: 0}
+  m_GunAni: {fileID: 1076492293}
   m_ShootPos: {fileID: 985347205}
 --- !u!23 &1295045753
 MeshRenderer:
@@ -96799,6 +96799,8 @@ GameObject:
   - component: {fileID: 1579888156}
   - component: {fileID: 1579888155}
   - component: {fileID: 1579888154}
+  - component: {fileID: 1579888157}
+  - component: {fileID: 1579888158}
   m_Layer: 0
   m_Name: Minigun
   m_TagString: Untagged
@@ -96890,6 +96892,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579888152}
   m_Mesh: {fileID: 4300000, guid: 2b353dea1ad0e084582b92446598f0be, type: 3}
+--- !u!114 &1579888157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579888152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699b9e4ccc7d2fe46b15706baade564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WeaponType: 0
+  m_MaxRecoil: 5
+  m_GrabPosRight: {fileID: 0}
+  m_GrabPosLeft: {fileID: 0}
+  m_WeaponEnabled: 0
+  m_IsShooting: 0
+  m_MuzzleFlash: {fileID: 0}
+  m_MuzzleFlash2: {fileID: 0}
+  m_ShootPos: {fileID: 0}
+  m_GunAni: {fileID: 0}
+  m_GunRotateAni: {fileID: 0}
+  RecoilMultiplyer: 1
+--- !u!95 &1579888158
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579888152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1580989065
 GameObject:
   m_ObjectHideFlags: 0
