@@ -15,4 +15,10 @@ public class StoreTitleScript : MonoBehaviour {
         Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
+
+    public void MoneyCheat()
+    {
+        PlayerPrefs.SetInt("coins", 65535);
+        PlayerPrefs.Save();
+    }
 }
