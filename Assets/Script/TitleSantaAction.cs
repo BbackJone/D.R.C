@@ -7,9 +7,6 @@ public class TitleSantaAction : MonoBehaviour {
     private PlayerData m_Data;
     private CameraMove m_CameraMove;
     private Animator m_Ani;
-    
-    public Transform left_leg;
-    public Transform right_leg;
 
     public Transform Look_target;
 
@@ -21,20 +18,9 @@ public class TitleSantaAction : MonoBehaviour {
         m_Ani = GetComponent<Animator>();
     }
 
-    void Start()
-    {
-        StartCoroutine("Playermove");
-    }
-
     void OnEnable()
     {
         StartCoroutine("Playermove");
-    }
-
-    private void Update()
-    {
-        left_leg.LookAt(Look_target);
-        right_leg.LookAt(Look_target);
     }
     
     IEnumerator Playermove()

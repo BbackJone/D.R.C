@@ -14,7 +14,7 @@ public class PlayerInputTouch : MonoBehaviour {
     private float rotateXSensitivity = 0.20f;
     private float rotateYSensitivity = 0.12f;
 
-    public float rotateUserSensitivity { get; set; }
+    public float rotateUserSensitivity;
 
     private Vector3 touchPos;
     public float lookY { get; set; }

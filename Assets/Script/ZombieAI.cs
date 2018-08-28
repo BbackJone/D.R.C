@@ -33,7 +33,7 @@ public class ZombieAI : MonoBehaviour {
 
         m_Nav.enabled = true;
 
-        StartCoroutine("FindTarget");
+        m_target = GetTarget();
         StartCoroutine("TargetAttack");
         StartCoroutine("NavMove");
         StartCoroutine("DeathCheck");
@@ -52,15 +52,15 @@ public class ZombieAI : MonoBehaviour {
         {
             if (m_target)
             {
-                m_TargetDistance = Vector3.Distance(this.transform.position, m_target.position);
-
-                if (m_TargetDistance < m_Data.m_AttackRange)
+                if (m_Data.m_AttackTimer < m_Data.m_AttackSpeed)
                 {
-                    if (m_Data.m_AttackTimer < m_Data.m_AttackSpeed)
-                    {
-                        m_Data.m_AttackTimer += Time.deltaTime;
-                    }
-                    else
+                    m_Data.m_AttackTimer += Time.deltaTime;
+                }
+                else
+                {
+                    m_TargetDistance = Vector3.Distance(this.transform.position, m_target.position);
+
+                    if (m_TargetDistance < m_Data.m_AttackRange)
                     {
                         m_Data.m_AttackTimer = 0f;
                         transform.LookAt(m_target);
@@ -88,16 +88,6 @@ public class ZombieAI : MonoBehaviour {
         }
     }
 
-    //FindTarget per 5 seconds.
-    private IEnumerator FindTarget()
-    {
-        while (true)
-        {
-            m_target = GetTarget();
-            yield return new WaitForSeconds(5f);
-        }
-    }
-
     IEnumerator DeathCheck()
     {
         while (true)
@@ -120,9 +110,6 @@ public class ZombieAI : MonoBehaviour {
                     if (rv == 1) {
                         // spawn heart drop at 4% rate
                         ObjectPoolMgr.instance.CreatePooledObject("DropHeart", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                    } else if (rv == 2) {
-                        // spawn ammo drop at 4% rate
-                        ObjectPoolMgr.instance.CreatePooledObject("DropAmmo", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
                     }
                 }
 

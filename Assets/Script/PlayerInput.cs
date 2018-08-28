@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
     public bool init_Getbutton_order_safety { get; set; }
 
     public float viewUpLimit = -80;
-    public float viewDownLimit = 50;
+    public float viewDownLimit = 35;
 
     // Use this for initialization
     void Awake()
@@ -38,6 +38,8 @@ public class PlayerInput : MonoBehaviour
         m_Mouse_X = 0f;
         //m_Mouse_Y = transform.GetChild(2).eulerAngles.x;
         m_mouseSensitivity = 100f;
+        viewUpLimit = -80;
+        viewDownLimit = 35;
     }
 
     private void Update()

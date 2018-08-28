@@ -64,29 +64,7 @@ public class StageMgr : MonoBehaviour
     private void Update()
     {
         m_GameTime += Time.deltaTime;
-        //ZombieSpawnTimer();
-
-
-        //Test
-        if (Input.GetKeyDown("y"))
-        {
-            SpawnZombie("DevilZombie");
-        }
-
-        if (Input.GetKeyDown("u"))
-        {
-            SpawnZombie("RugbyZombie");
-        }
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            SpawnZombie("PrisonerZombie");
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SpawnZombie("SoldierZombie");
-        }
+        ZombieSpawnTimer();
     }
 
 

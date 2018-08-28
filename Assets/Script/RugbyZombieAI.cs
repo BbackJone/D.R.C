@@ -31,17 +31,13 @@ public class RugbyZombieAI : MonoBehaviour {
         m_Attacking = false;
     }
 
-    // Use this for initialization
-    void Start () {
-    }
-
     void OnEnable()
     {
         StageMgr.instance.AddSpecialZombieNumber(1);
 
         m_Nav.enabled = true;
 
-        StartCoroutine("FindTarget");
+        m_target = GetTarget();
         StartCoroutine("NavMove");
 
         m_Data.m_AttackTimer = m_Data.m_AttackSpeed;
@@ -99,15 +95,6 @@ public class RugbyZombieAI : MonoBehaviour {
             }
         }
         return target.transform;
-    }
-
-    private IEnumerator FindTarget()
-    {
-        while (true)
-        {
-            m_target = GetTarget();
-            yield return new WaitForSeconds(5f);
-        }
     }
 
     IEnumerator NavMove()

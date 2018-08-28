@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class ZombieInteraction : MonoBehaviour {
 
-	// Use this for initialization
-    void Awake()
-    {
-    }
-
     void Start()
     {
         ObjListAdd();          //Put this object at ObjMgr.

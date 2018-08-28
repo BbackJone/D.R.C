@@ -55,7 +55,8 @@ public class Weapon_RPG : Weapon
         Vector3 Dir = m_ShootTarget.position - m_ShootPos.position;
         Dir = Dir / Dir.magnitude;
 
-        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", m_ShootPos.transform.position, Quaternion.LookRotation(Dir)).GetComponent<RPGRocket>();
+        var newRocket = ObjectPoolMgr.instance.CreatePooledObject("Rocket", m_ShootPos.transform.position,
+            Quaternion.LookRotation(Dir)).GetComponent<RPGRocket>();
         newRocket.m_BodyDamage = m_BodyDamage;
         newRocket.m_HeadDamage = m_HeadDamage;
         newRocket.Fire();

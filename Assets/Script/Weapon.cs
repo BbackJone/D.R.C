@@ -103,7 +103,7 @@ public abstract class Weapon : MonoBehaviour{
         while(true)
         {
             m_StackedRecoil = Mathf.Max(0, m_StackedRecoil - (7 * Time.deltaTime));
-            
+
             yield return null;
         }
     }

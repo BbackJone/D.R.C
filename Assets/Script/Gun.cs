@@ -77,9 +77,6 @@ public class Gun : Weapon
 
     public void Makeflash()
     {
-        //m_MuzzleFlash.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
-        //m_MuzzleFlash2.transform.eulerAngles += new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
-
         m_MuzzleFlash.transform.localRotation = Quaternion.Euler(Random.Range(0, 90), m_MuzzleFlash.transform.localRotation.eulerAngles.y, m_MuzzleFlash.transform.localRotation.eulerAngles.z);
         m_MuzzleFlash2.transform.localRotation = Quaternion.Euler(m_MuzzleFlash2.transform.localRotation.eulerAngles.x, Random.Range(0, 90), m_MuzzleFlash2.transform.localRotation.eulerAngles.z);
 

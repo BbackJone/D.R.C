@@ -81,12 +81,6 @@ public class AimIK : MonoBehaviour {
 
     public void SetAimpivotRotation()
     {
-        //Weapon Direction IK
-        //Vector3 DestDir = m_AimTarget.position - m_AimPivot.position;
-        //Quaternion TargetRotation = Quaternion.LookRotation(DestDir);
-        //
-        //m_AimPivot.rotation = Quaternion.Lerp(m_AimPivot.rotation, TargetRotation, Time.deltaTime * 20);
-
         Vector3 DestDir = m_Aimsystem.m_LookTarget - m_AimPivot.position;
         Quaternion TargetRotation = Quaternion.LookRotation(DestDir);
 

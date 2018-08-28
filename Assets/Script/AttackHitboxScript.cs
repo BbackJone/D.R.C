@@ -13,7 +13,7 @@ public class AttackHitboxScript : MonoBehaviour {
 
     private void Start()
     {
-        data = GameObject.Find("Santa").GetComponent<PlayerData>();
+        data = ObjectManager.m_Inst.Objects.m_Playerlist[0].GetComponent<PlayerData>();
     }
 
     private void OnTriggerEnter(Collider other)

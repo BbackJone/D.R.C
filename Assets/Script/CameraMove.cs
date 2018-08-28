@@ -44,7 +44,7 @@ public class CameraMove : MonoBehaviour {
         while(true)
         {
             transform.position = Vector3.Lerp(transform.position, _destpos.position, 0.1f);
-            
+
             yield return null;
         }
     }

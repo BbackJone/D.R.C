@@ -36,10 +36,12 @@ public class ZombieData : MonoBehaviour
     public string m_ZombieSort;     //This is required to get DB Info. 
 
     private bool IsDeadConfirmed = false;
+    ResultScoreContainerScript resultScoreContainer;
 
     void Awake()
     {
         Initialize();
+        resultScoreContainer = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
     }
 
     void Start()
@@ -78,12 +80,7 @@ public class ZombieData : MonoBehaviour
         {
             if (!IsDeadConfirmed)
             {
-                var rsc = GameObject.Find("ResultScoreContainer");
-                if (rsc != null)
-                {
-                    var rscs = rsc.GetComponent<ResultScoreContainerScript>();
-                    rscs.kills++;
-                }
+                resultScoreContainer.kills++;
                 IsDeadConfirmed = true;
             }
             m_Hp = 0;

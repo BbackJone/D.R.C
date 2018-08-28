@@ -96,8 +96,7 @@ public class PlayerAction : MonoBehaviour {
                     m_Ani.SetBool("DeathBool", m_Death);
                     m_Ani.SetTrigger("DeathTrigger");
 
-                    StopCoroutine("MoveControl");
-                    StopCoroutine("Getkey");
+                    StopCoroutine("Playermove");
                     StopCoroutine("CheckIsShooting");
 
                     var stageMgr = GameObject.Find("StageMgr").GetComponent<StageMgr>();

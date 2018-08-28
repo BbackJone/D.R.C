@@ -38,7 +38,7 @@ public class SoldierZombieAI : MonoBehaviour {
 
         m_Nav.enabled = true;
 
-        StartCoroutine("FindTarget");
+        m_target = GetTarget();
         StartCoroutine("TargetAttack");
         StartCoroutine("NavMove");
         StartCoroutine("DeathCheck");
@@ -102,15 +102,6 @@ public class SoldierZombieAI : MonoBehaviour {
             yield return new WaitForSeconds(0.5f);
         }
     }
-
-    //FindTarget per 5 seconds.
-    private IEnumerator FindTarget() {
-        while (true) {
-            m_target = GetTarget();
-            yield return new WaitForSeconds(5f);
-        }
-    }
-
 
     IEnumerator DeathCheck() {
         while (true) {

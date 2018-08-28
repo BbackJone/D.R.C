@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class WeaponSwapScreenScript : MonoBehaviour {
 
-	void Start() {
-
-    }
-
     public void ShowWeaponSwapScreen() {
         if (Time.timeScale == 0f) return;
         Time.timeScale = 0.15f;
