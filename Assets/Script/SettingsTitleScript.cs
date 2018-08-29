@@ -56,6 +56,9 @@ public class SettingsTitleScript : MonoBehaviour {
     }
 
     public void HideSettingsAndResume() {
+        // Fix for the problem where touch sensitivity is not immediately applied when changed
+        GameObject.Find("TitleSanta").SendMessage("UpdateSensitivity");
+
         HideSettings();
         Time.timeScale = 1f;
     }
