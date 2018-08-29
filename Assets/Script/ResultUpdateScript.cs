@@ -21,13 +21,13 @@ public class ResultUpdateScript : MonoBehaviour {
 
         if (rsc != null) {
             var rscs = rsc.GetComponent<ResultScoreContainerScript>();
-            varKill.text = rscs.kills + "";
+            varKill.text = rscs.kills + " (" + rscs.spkills + ")";
             varWave.text = rscs.waves + "";
             varScore.text = rscs.score + "";
             var ts = new TimeSpan(0, 0, (int)StageMgr.instance.m_GameTime);
             varTime.text = string.Format("{0:00}:{1:00}", (int)ts.TotalMinutes, ts.Seconds);
         } else {
-            varKill.text = "123";
+            varKill.text = "123 (0)";
             varWave.text = "456";
             varScore.text = "789";
             varTime.text = "00:00";

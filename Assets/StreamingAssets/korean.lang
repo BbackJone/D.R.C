@@ -44,7 +44,7 @@ settings_saveandexit: 저장하고 나가기
 
 result_title: 게임 오버
 result_title_clear: 축하합니다!
-result_kills: 죽인 좀비
+result_kills: 죽인 좀비 (특수)
 result_waves: 웨이브
 result_totalscore: 최종 점수
 result_time: 플레이 시간

@@ -44,7 +44,7 @@ settings_saveandexit: Save and Exit
 
 result_title: Game Over
 result_title_clear: Congratulations!
-result_kills: Kills
+result_kills: Kills (Special)
 result_waves: Waves
 result_totalscore: Total Score
 result_time: Play Time

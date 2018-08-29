@@ -107,8 +107,9 @@ public class PlayerAction : MonoBehaviour {
                         var rscs = rsc.GetComponent<ResultScoreContainerScript>();
                         rscs.SetResultsAndStopTime(
                             rscs.kills,
+                            rscs.spkills,
                             (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
-                            (stageMgr.m_CurrentWave.Level * 10) + rscs.kills,
+                            (stageMgr.m_CurrentWave.Level * 10) + rscs.kills + (rscs.spkills * 10),
                             false);
                     }
                 }

@@ -35,7 +35,8 @@ public class ZombieData : MonoBehaviour
 
     public string m_ZombieSort;     //This is required to get DB Info. 
 
-    private bool IsDeadConfirmed = false;
+    private bool isSpecialZombie = false;
+    private bool isDeadConfirmed = false;
     ResultScoreContainerScript resultScoreContainer;
 
     void Awake()
@@ -78,10 +79,11 @@ public class ZombieData : MonoBehaviour
         m_Hp -= _damage;
         if (m_Hp < 0)
         {
-            if (!IsDeadConfirmed)
+            if (!isDeadConfirmed)
             {
                 resultScoreContainer.kills++;
-                IsDeadConfirmed = true;
+                if (isSpecialZombie) resultScoreContainer.spkills++;
+                isDeadConfirmed = true;
             }
             m_Hp = 0;
         }

@@ -17,6 +17,7 @@ public class GameDB
 public class SaveData {
     public int currentWave;
     public int kills;
+    public int spkills;
     public int elapsedTime;
     public int health;
 
@@ -47,6 +48,7 @@ public class SaveData {
         // input new save data here
         sd.currentWave = 1;
         sd.kills = 0;
+        sd.spkills = 0;
         sd.elapsedTime = 0;
         sd.health = 30;
 
@@ -88,17 +90,25 @@ public class SaveData {
     }
 
     private static string SaveDataToString(SaveData sd) {
-        return string.Join(delimiter.ToString(), new string[] { sd.currentWave.ToString(), sd.kills.ToString(), sd.elapsedTime.ToString(), sd.health.ToString() });
+        return string.Join(delimiter.ToString(), new string[] { sd.currentWave.ToString(),
+                                                                sd.kills.ToString(),
+                                                                sd.elapsedTime.ToString(),
+                                                                sd.health.ToString(),
+                                                                sd.spkills.ToString() });
     }
 
     private static SaveData StringToSaveData(string rsd) {
         string[] rsds = rsd.Split(delimiter);
-        if (rsds.Length != 4) return null;
+        if (rsds.Length != 5) return null;
+
         SaveData sd = new SaveData();
+
         sd.currentWave = int.Parse(rsds[0]);
         sd.kills = int.Parse(rsds[1]);
         sd.elapsedTime = int.Parse(rsds[2]);
         sd.health = int.Parse(rsds[3]);
+        sd.spkills = int.Parse(rsds[4]);
+
         return sd;
     }
 
