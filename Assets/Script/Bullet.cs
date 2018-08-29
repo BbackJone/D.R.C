@@ -32,16 +32,23 @@ public class Bullet : MonoBehaviour{
     void Awake()
     {
         m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
+        // Fix for problem where bullet instantly disappear on first shot
+        m_Speed = 3000f;
+        m_StayTime = 0.5f;
+        if (gameObject.name == "Sniper_Bullet") m_Penetration = true;
+        else m_Penetration = false;
     }
 
     void Start()
     {
+        /*
         m_Speed = 3000f;
         m_StayTime = 0.5f;
         if (gameObject.name == "Sniper_Bullet")
             m_Penetration = true;
         else
             m_Penetration = false;
+        */
     }
 
     void OnEnable()
