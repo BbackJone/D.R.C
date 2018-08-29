@@ -56,6 +56,7 @@ public class SettingsTitleScript : MonoBehaviour {
     }
 
     public void HideSettingsAndResume() {
+        if (helpScreen.activeSelf) helpScreen.SetActive(false);
         HideSettings();
         Time.timeScale = 1f;
     }
