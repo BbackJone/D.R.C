@@ -16,11 +16,11 @@ title_store_title: 상점
 title_store_desc: 코인을 사용하여[newline]새로운 무기를 얻으세요!
 title_store_coin: 내 코인: {0}[newline]코인은 게임을 플레이하면 얻을 수 있습니다
 
-title_store_M4_desc: M4[newline]3점사 돌격소총
+title_store_M4_desc: M4[newline]평범한 돌격소총
 title_store_Sniper_desc: 스나이퍼 라이플[newline]적을 관통하는 저격소총
 title_store_Minigun_desc: 미니건[newline]총알을 퍼붓는 무기
 title_store_RPG_desc: RPG[newline]강력한 폭발을 일으키는 무기
-title_store_Flamethrower_desc: 화염방사기[newline]임시 텍스트
+title_store_Flamethrower_desc: 화염방사기[newline]넓은 범위에 불을 내뿜는 무기
 
 weapon_Katana: 대검
 weapon_Handgun: 권총

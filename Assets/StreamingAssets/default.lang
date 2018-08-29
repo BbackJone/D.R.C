@@ -16,11 +16,11 @@ title_store_title: Store
 title_store_desc: Unlock new weapons[newline]using your coins!
 title_store_coin: Coins: {0}[newline]Coins can be obtained by playing the game
 
-title_store_M4_desc: M4[newline]Assault rifle with burst shot
+title_store_M4_desc: M4[newline]Typical assault rifle
 title_store_Sniper_desc: Sniper Rifle[newline]Penetrate enemies
 title_store_Minigun_desc: Minigun[newline]Raining bullets
 title_store_RPG_desc: RPG[newline]Creates powerful explosion
-title_store_Flamethrower_desc: Flamethrower[newline]Temporary text
+title_store_Flamethrower_desc: Flamethrower[newline]Sets fire on wide range
 
 weapon_Katana: Katana
 weapon_Handgun: Handgun
