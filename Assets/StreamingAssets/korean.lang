@@ -30,6 +30,8 @@ weapon_Minigun: 미니건
 weapon_RPG: RPG
 weapon_Flamethrower: 화염방사기
 
+game_score: 점수
+
 settings_title: 설정
 settings_title_paused: 일시정지
 settings_volume: 음량

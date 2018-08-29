@@ -72,6 +72,8 @@ public class ZombieData : MonoBehaviour
         m_ObjName = DBData.Name;
        
         m_Type = ObjType.OBJ_ENEMY;
+
+        isSpecialZombie = !m_ObjName.Contains("Normal");
     }
 
     public void GetDamage(int _damage)

@@ -30,6 +30,8 @@ weapon_Minigun: Minigun
 weapon_RPG: RPG
 weapon_Flamethrower: Flamethrower
 
+game_score: Score
+
 settings_title: Settings
 settings_title_paused: Game Paused
 settings_volume: Volume

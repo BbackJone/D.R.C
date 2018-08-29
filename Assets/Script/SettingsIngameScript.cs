@@ -86,7 +86,9 @@ public class SettingsIngameScript : MonoBehaviour {
             sd.kills = rscs.kills;
             sd.elapsedTime = (int)StageMgr.instance.m_GameTime;
             sd.health = pdata.m_Hp;
+            sd.spkills = rscs.spkills;
             SaveData.Write(sd, 0);
+            Destroy(GameObject.Find("ResultScoreContainer"));
             Time.timeScale = 1f;
             ObjectManager.m_Inst.NextScene("Menu");
         } else {

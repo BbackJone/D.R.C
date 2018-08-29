@@ -109,7 +109,7 @@ public class PlayerAction : MonoBehaviour {
                             rscs.kills,
                             rscs.spkills,
                             (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
-                            (stageMgr.m_CurrentWave.Level * 10) + rscs.kills + (rscs.spkills * 10),
+                            ((stageMgr.m_CurrentWave.Level - 1) * 10) + rscs.kills + (rscs.spkills * 10),
                             false);
                     }
                 }
