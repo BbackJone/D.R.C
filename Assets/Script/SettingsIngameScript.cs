@@ -66,6 +66,10 @@ public class SettingsIngameScript : MonoBehaviour {
     }
 
     public void PauseAndShowSettings() {
+        // Fix for the problem where player was able to pause when died
+        // Note: pdata is not initiated if settings screen has not been shown
+        if (GameObject.Find("Santa").GetComponent<PlayerData>().m_Hp == 0) return;
+
         Time.timeScale = 0f;
         ShowSettings();
     }
