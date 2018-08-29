@@ -24,6 +24,8 @@ public class AimSystem : MonoBehaviour {
     public float m_CrossHairOffSetPos = 10f;
     public float UpRecoilMultiplyer = 0.5f;
 
+    private float CrosshairOffsetResolutionMultiplier = 1f;
+
     //Test 
     public float LookDistance = 100f;
 
@@ -42,6 +44,8 @@ public class AimSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         SetRayTargetPos();
+
+        CrosshairOffsetResolutionMultiplier = Screen.width / 720f;
 
         //Handle Recoil(When moving, spread cross hair)
         m_PlayerData.m_WeaponInhand.m_StackedRecoil = Mathf.Max(m_PlayerData.m_Move.magnitude,
@@ -77,8 +81,8 @@ public class AimSystem : MonoBehaviour {
         for (int i = 0; i < 4; i++)
         {
             Vector3 CrossHairPos = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0) 
-                + (DirectionSet[i] * m_CrossHairOffSetPos) + 
-                (DirectionSet[i] * recoil * 5.5f);
+                + (DirectionSet[i] * m_CrossHairOffSetPos * CrosshairOffsetResolutionMultiplier) + 
+                (DirectionSet[i] * recoil * 5.5f * CrosshairOffsetResolutionMultiplier);
             m_CrossHairImages[i].transform.position = CrossHairPos;
         }
     }
