@@ -86,11 +86,6 @@ public abstract class Weapon : MonoBehaviour{
         m_Type = ObjType.OBJ_WEAPON;
     }
 
-    public void ObjListAdd()
-    {
-        ObjectManager.m_Inst.Objects.m_Weaponlist.Add(this);
-    }
-
     public void ChargeBullet()
     {
         m_AmmoBulletNum = m_MaxBulletNum;

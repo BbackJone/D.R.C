@@ -16,7 +16,7 @@ public class Weapon_Katana : Weapon
     {
         m_PlayerAni.SetTrigger("KatanaAttack");
         Invoke("BoxColOn", 0.75f * 0.3f);
-        Invoke("BoxColOff", 0.75f * 0.55f);
+        Invoke("BoxColOff", 0.75f * 0.9f);
         StartCoroutine("SetProceedDirection");
 
         gameObject.SendMessage("PlaySound", 0);
@@ -37,8 +37,6 @@ public class Weapon_Katana : Weapon
 	void Start () {
         m_ObjName = "Katana";
         m_ParticleName = "FX_BloodSplatter_Katana";
-
-        ObjListAdd();
     }
 
     void OnTriggerEnter(Collider col)
@@ -64,7 +62,7 @@ public class Weapon_Katana : Weapon
 
     public IEnumerator SetProceedDirection()
     {
-        Invoke("CancelSetProceedDirection", 0.75f);
+        Invoke("CancelSetProceedDirection", 0.9f);
         int LoopCount = 0;
         while (true)
         {
@@ -72,7 +70,6 @@ public class Weapon_Katana : Weapon
             int PrevIndex = Mathf.Max(0, LoopCount - 1);
             m_SwingingDirection = m_CurrentPos[LoopCount] - m_CurrentPos[PrevIndex];
             LoopCount++;
-            Debug.Log("LoopCount");
             yield return new WaitForSeconds(0.1f);
         }
     }

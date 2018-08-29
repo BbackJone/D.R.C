@@ -24,7 +24,7 @@ public class ResultUpdateScript : MonoBehaviour {
             varKill.text = rscs.kills + "";
             varWave.text = rscs.waves + "";
             varScore.text = rscs.score + "";
-            var ts = new TimeSpan(0, 0, (int)rscs.timeInSec);
+            var ts = new TimeSpan(0, 0, (int)StageMgr.instance.m_GameTime);
             varTime.text = string.Format("{0:00}:{1:00}", (int)ts.TotalMinutes, ts.Seconds);
         } else {
             varKill.text = "123";

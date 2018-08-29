@@ -100,7 +100,7 @@ public class ObjectPoolMgr : MonoBehaviour {
         AddObjectToPool(1, 20, ObjType.OBJ_ETC, true);
 
         //Bullet
-        AddObjectToPool(2, 50, ObjType.OBJ_BULLET, true);
+        AddObjectToPool(2, 20, ObjType.OBJ_BULLET, true);
 
         //Particle(FX_BloodSplatter_Bullet)
         AddObjectToPool(3, 50, ObjType.OBJ_ETC, true);
@@ -311,7 +311,6 @@ public class ObjectPoolMgr : MonoBehaviour {
 
         //pick a first node and push that node to a back of a list
         ParticleOrderList.node firstNode = m_ParticleOrderList[_objname].PopFront();
-        Debug.Log("Pop first");
         m_ParticleOrderList[_objname].PushBack(firstNode);
 
         return null;

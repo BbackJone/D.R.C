@@ -13,7 +13,7 @@ public class FadeCurtainEffectScript : MonoBehaviour {
         image.enabled = true;
         if (image == null) Destroy(gameObject);
     }
-    	
+    
 	void Update () {
         alpha -= Time.deltaTime * 4f;
         if (alpha < 0) Destroy(gameObject);

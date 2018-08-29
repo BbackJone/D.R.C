@@ -37,7 +37,7 @@ public class RugbyZombieAI : MonoBehaviour {
 
         m_Nav.enabled = true;
 
-        m_target = GetTarget();
+        m_target = ObjectManager.m_Inst.m_Player.transform;
         StartCoroutine("NavMove");
 
         m_Data.m_AttackTimer = m_Data.m_AttackSpeed;
@@ -75,26 +75,6 @@ public class RugbyZombieAI : MonoBehaviour {
                 }
             }
         }
-    }
-
-    public Transform GetTarget()
-    {
-        if (ObjectManager.m_Inst.Objects.m_Playerlist.Count <= 0)
-            return null;
-
-        float MinDis = 100000f;
-        PlayerInteraction target = null;
-        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
-        {
-            if (pm == null) continue;
-            float dis = Vector3.Distance(pm.transform.position, this.transform.position);
-            if (MinDis > dis)
-            {
-                MinDis = dis;
-                target = pm;
-            }
-        }
-        return target.transform;
     }
 
     IEnumerator NavMove()

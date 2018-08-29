@@ -7,10 +7,7 @@ public class ResultScoreContainerScript : MonoBehaviour {
     public int kills { get; set; }
     public int waves { get; set; }
     public int score { get; set; }
-    public float timeInSec { get; set; }
     public bool isGameClear { get; set; }
-
-    bool doCalcTime;
 
     void Start () {
         DontDestroyOnLoad(gameObject);
@@ -20,26 +17,17 @@ public class ResultScoreContainerScript : MonoBehaviour {
             kills = sdm.currentSaveData.kills;
             waves = sdm.currentSaveData.currentWave;
             score = 0;      // to be calculated later
-            timeInSec = sdm.currentSaveData.elapsedTime;
+            StageMgr.instance.m_GameTime = sdm.currentSaveData.elapsedTime;
         } else {
             kills = 0;
             waves = 0;
             score = 0;
-            timeInSec = 0f;
+            StageMgr.instance.m_GameTime = 0f;
         }
-        doCalcTime = true;
         isGameClear = false;
     }
 
-    void Update() {
-        if (doCalcTime) {
-            timeInSec += Time.deltaTime * Time.timeScale;
-        }
-    }
-
     public void SetResultsAndStopTime(int kills, int waves, int score, bool isGameClear) {
-        doCalcTime = false;
-
         this.kills = kills;
         this.waves = waves;
         this.score = score;

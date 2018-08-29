@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour {
     public PlayerData m_Player;
     private Canvas m_Canvas;        //the place system draws user interfaces
 
-    public GameObject m_GameOver;       //gameover picture
     public Image m_RedAim;         //Redaim picture
     public Text m_BulletNum;
     public Text m_Hp;
@@ -36,29 +35,23 @@ public class UIManager : MonoBehaviour {
 	void Start () {
         m_SceneTimer = 0f;
         StartCoroutine("ShowPlayerData");
-	}
+    }
 
     //Get player's bullet remained and HP.
     IEnumerator ShowPlayerData()
     {
         while(true)
         {
-            m_BulletNum.text = m_Player.m_WeaponInhand.m_AmmoBulletNum.ToString() + "/" + m_Player.m_WeaponInhand.m_MaxBulletNum.ToString();
-            m_Hp.text = m_Player.m_Hp.ToString() + "/" + m_Player.m_MaxHp;
+            m_BulletNum.text = string.Format("{0} / {1}", m_Player.m_WeaponInhand.m_AmmoBulletNum, m_Player.m_WeaponInhand.m_MaxBulletNum);
+            m_Hp.text = string.Format("{0} / {1}", m_Player.m_Hp, m_Player.m_MaxHp);
             yield return null;
         }
-    }
-
-    //Activate "Game over"UI when player die.
-    public void ActiveUI(string _str)
-    {
-        m_GameOver.SetActive(true);
     }
 
     //change scene
     public void NextScene(string _Str)
     {
-          SceneManager.LoadScene(_Str);
+        SceneManager.LoadScene(_Str);
     }
 
     //change scene with delay
@@ -100,7 +93,7 @@ public class UIManager : MonoBehaviour {
         _imageSeconds.Image.gameObject.SetActive(true);
         m_RedAimTimer = 0;
 
-        //Set the alpha of image 0
+        //Set the alpha of image 1
         Color alpha = _imageSeconds.Image.color;
         alpha.a = 1f;
         _imageSeconds.Image.color = alpha;

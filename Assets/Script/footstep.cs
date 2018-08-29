@@ -15,7 +15,7 @@ public class footstep : MonoBehaviour {
         leftFootTrans = GetComponent<Animator>().GetBoneTransform(HumanBodyBones.LeftFoot);
         rightFootTrans = GetComponent<Animator>().GetBoneTransform(HumanBodyBones.RightFoot);
     }
-
+    
     void LeftFootstep()
     {
         AudioClip clip = null;
@@ -36,9 +36,7 @@ public class footstep : MonoBehaviour {
         }
         if (clip != null)
         {
-            
-                FstepSourse.PlayOneShot(clip, maxvol);
-          
+            FstepSourse.PlayOneShot(clip, maxvol);
         }
     }
 
@@ -62,9 +60,7 @@ public class footstep : MonoBehaviour {
         }
         if (clip != null)
         {
-            
-                FstepSourse.PlayOneShot(clip, maxvol);
-          
+            FstepSourse.PlayOneShot(clip, maxvol);
         }
     }
 }

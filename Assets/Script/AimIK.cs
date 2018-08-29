@@ -84,6 +84,6 @@ public class AimIK : MonoBehaviour {
         Vector3 DestDir = m_Aimsystem.m_LookTarget - m_AimPivot.position;
         Quaternion TargetRotation = Quaternion.LookRotation(DestDir);
 
-        m_AimPivot.rotation = Quaternion.Lerp(m_AimPivot.rotation, TargetRotation, Time.deltaTime * 20);
+        m_AimPivot.rotation = Quaternion.Lerp(m_AimPivot.rotation, TargetRotation, 0.4f);
     }
 }

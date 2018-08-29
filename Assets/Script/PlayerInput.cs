@@ -81,8 +81,8 @@ public class PlayerInput : MonoBehaviour
 
         Vector3 TempVec = m_Data.m_Move;
 
-            TempVec.z = Input.GetAxis("Vertical");
-            TempVec.x = Input.GetAxis("Horizontal");
+        TempVec.z = Input.GetAxis("Vertical");
+        TempVec.x = Input.GetAxis("Horizontal");
 
         m_Data.m_Move = Vector3.ClampMagnitude(TempVec, 1f);
         m_Mouse_X = Input.GetAxis("Mouse X");

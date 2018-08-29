@@ -19,7 +19,7 @@ public class StageMgr : MonoBehaviour
     public static StageMgr instance;    //singleton
     public GameObject[] m_LevelImage;
     public WaveDB m_CurrentWave;
-    public float m_GameTime;
+    public float m_GameTime;    //Initializing at ResultScoreContainerScript.
 
     public int m_Spawned_NormalZombieNumber = 0;     //number of all amount of spawned zombies
     public int m_Spawned_SpecialZombieNumber = 0;
@@ -43,7 +43,6 @@ public class StageMgr : MonoBehaviour
         int startWave = 1;
         if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
 
-        m_GameTime = 0;
         m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[startWave];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
@@ -63,8 +62,11 @@ public class StageMgr : MonoBehaviour
 
     private void Update()
     {
-        m_GameTime += Time.deltaTime;
+        m_GameTime += Time.deltaTime * Time.timeScale;
         ZombieSpawnTimer();
+
+        if (Input.GetKeyDown("y"))
+            SpawnZombie("RugbyZombie");
     }
 
 

@@ -27,17 +27,11 @@ public class TitleButtonScript : MonoBehaviour {
         if (isButtonPressed) return;
         isButtonPressed = true;
 
-        ObjectManager.m_Inst.Objects.m_Playerlist.Clear();
-        ObjectManager.m_Inst.Objects.m_Colleaguelist.Clear();
-        ObjectManager.m_Inst.Objects.m_Enemylist.Clear();
-        ObjectManager.m_Inst.Objects.m_Weaponlist.Clear();
-        ObjectManager.m_Inst.Objects.m_Bulletlist.Clear();
+        ObjectManager.m_Inst.m_Player = null;
 
         GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>().InitGameSaveData(isContinue);
         
         var titleSanta = GameObject.Find("TitleSanta");
-        //titleSanta.GetComponent<TitleSantaAction>().enabled = false;
-        //titleSanta.GetComponent<PlayerInput>().enabled = false;
         GameObject.Find("GameController").GetComponent<SantaPositionPreserver>().SaveSantaPos(titleSanta.transform.position, titleSanta.transform.rotation,
                                                                                               titleSanta.GetComponent<PlayerInput>().m_Mouse_Y);
 

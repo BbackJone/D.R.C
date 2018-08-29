@@ -43,12 +43,11 @@ public class AimSystem : MonoBehaviour {
 	void Update () {
         SetRayTargetPos();
 
-        //Handle Recoil
+        //Handle Recoil(When moving, spread cross hair)
         m_PlayerData.m_WeaponInhand.m_StackedRecoil = Mathf.Max(m_PlayerData.m_Move.magnitude,
             m_PlayerData.m_WeaponInhand.m_StackedRecoil);
         UpdateCrossHair();
     }
-
 
     public void SetRayTargetPos()
     {
@@ -68,7 +67,6 @@ public class AimSystem : MonoBehaviour {
         }
 
         m_LookTarget = m_RayStartPos + m_Camera.transform.forward * LookDistance;
-        Debug.DrawRay(m_RayStartPos, m_Camera.transform.forward * 100);
     }
 
     public void UpdateCrossHair()

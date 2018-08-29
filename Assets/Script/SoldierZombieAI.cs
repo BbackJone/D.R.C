@@ -6,7 +6,6 @@ using UnityEngine.AI;   //this for NavMeshAgent
 public class SoldierZombieAI : MonoBehaviour {
 
     private ZombieData m_Data;
-    private ZombieInteraction m_Interaction;
     private Animator m_Ani;
     private NavMeshAgent m_Nav;     //for finding route or move zombie
 
@@ -26,7 +25,6 @@ public class SoldierZombieAI : MonoBehaviour {
     void Awake() {
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
-        m_Interaction = GetComponent<ZombieInteraction>();
         m_Ani = GetComponent<Animator>();
 
         body_col = obj_body.GetComponent<BoxCollider>();
@@ -38,7 +36,7 @@ public class SoldierZombieAI : MonoBehaviour {
 
         m_Nav.enabled = true;
 
-        m_target = GetTarget();
+        m_target = ObjectManager.m_Inst.m_Player.transform;
         StartCoroutine("TargetAttack");
         StartCoroutine("NavMove");
         StartCoroutine("DeathCheck");
@@ -131,27 +129,6 @@ public class SoldierZombieAI : MonoBehaviour {
 
             yield return null;
         }
-    }
-
-    //Set nearest enemy as target
-    public Transform GetTarget()
-    {
-        if (ObjectManager.m_Inst.Objects.m_Playerlist.Count <= 0)
-            return null;
-
-        float MinDis = 100000f;
-        PlayerInteraction target = null;
-        foreach (PlayerInteraction pm in ObjectManager.m_Inst.Objects.m_Playerlist)
-        {
-            if (pm == null) continue;
-            float dis = Vector3.Distance(pm.transform.position, this.transform.position);
-            if (MinDis > dis)
-            {
-                MinDis = dis;
-                target = pm;
-            }
-        }
-        return target.transform;
     }
 
     public void MakeFlash()

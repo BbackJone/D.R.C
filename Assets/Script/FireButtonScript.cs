@@ -15,7 +15,7 @@ public class FireButtonScript : MonoBehaviour, IPointerDownHandler {
     private bool autofireByFireButton = false;
 
     void Start() {
-        playerData = ObjectManager.m_Inst.Objects.m_Playerlist[0].GetComponent<PlayerData>();
+        playerData = ObjectManager.m_Inst.m_Player.GetComponent<PlayerData>();
         if (playerData == null)
             enabled = false;
 

@@ -24,7 +24,10 @@ public class Particle : MonoBehaviour {
             {
                 gameObject.SetActive(false);
                 if (ObjectPoolMgr.instance.m_ParticleOrderList.ContainsKey(gameObject.name))
+                {
                     ObjectPoolMgr.instance.m_ParticleOrderList[gameObject.name].PopFront();
+                    Debug.Log("PopFront");
+                }
             }
                 
 

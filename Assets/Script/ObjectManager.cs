@@ -26,7 +26,8 @@ public class ObjectManager : MonoBehaviour
     //SingleTon
     public static ObjectManager m_Inst;
 
-    public ObjectsWithTag Objects { get; set; }
+    //public ObjectsWithTag Objects { get; set; }
+    public PlayerInteraction m_Player { get; set; }
     private UIManager m_UIMgr;
     public DBManager m_DBMgr { get; set; }    //NotRef
     private STATE_ID m_SceneState;
@@ -34,8 +35,6 @@ public class ObjectManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        //Screen.SetResolution(720, 1280, true);
-        //Application.targetFrameRate = 60;
         if (m_Inst == null)
         {
             m_Inst = this;
@@ -48,22 +47,9 @@ public class ObjectManager : MonoBehaviour
         }
 
         m_DBMgr = new DBManager();
-        Objects = new ObjectsWithTag();
+        //Objects = new ObjectsWithTag();
 
         m_UIMgr = GetComponent<UIManager>();
-    }
-
-    //모든 플레이어가 죽었으면 게임오버 UI를 띄웁니다.
-    public void GameOverCheck()
-    {
-        List<PlayerInteraction> Templist = Objects.m_Playerlist;
-        for (int i = 0; i < Templist.Count; i++)
-        {
-            if (Templist[i].gameObject.activeInHierarchy)
-                return;
-        }
-        m_UIMgr.ActiveUI("GameOver");
-        m_UIMgr.StartCoroutine("NextScene", "Menu");
     }
 
     public void NextScene(string _str)     //Button에서 실행시켜주기 위함 

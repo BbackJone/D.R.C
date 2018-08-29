@@ -11,7 +11,6 @@ public class SwapButtonScript : MonoBehaviour, IPointerDownHandler {
     void Start() {
         action = GameObject.Find("Santa").GetComponent<PlayerAction>();
 
-        //if (action == null || weaponSwapScreen == null) enabled = false;
         if (action == null) enabled = false;
     }
 

@@ -23,8 +23,6 @@ public class PlayerAction : MonoBehaviour {
     public bool m_Death { get; set; }
     public float m_DeathTimer { get; set; }     //time between player's death and player's extinction.
 
-    public MyButton m_AttackButton;     //This is necessary to determine 
-                                        //whether you will allow automatic firing of weapons.
     public bool m_FireOnceBool = false;
 
     public Transform left_leg;
@@ -190,10 +188,8 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
-    public void SwapWeapon()
+    public void SwapWeapon()        //For PC
     {
-        m_Ani.SetBool("Minigun_Attack_Bool", false);
-
         for (int i = 0; i < m_Data.m_Weapons.Count; i++)
         {
             //find Weapon in hand in weapon list
@@ -223,7 +219,6 @@ public class PlayerAction : MonoBehaviour {
 
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
-                Check_WeaponisAuto();
 
                 //If the weapon is sniper, move camera position
                 if(m_Data.m_WeaponInhand.m_ObjName == "Sniper")
@@ -255,9 +250,7 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
-    public void SwapWeaponTo(int index) {
-        m_Ani.SetBool("Minigun_Attack_Bool", false);
-
+    public void SwapWeaponTo(int index) {       //For Mobile
         if (m_Data.m_WeaponInhand == m_Data.m_Weapons[index]) return;
 
         m_Ani.SetTrigger("WeaponSwap");
@@ -268,7 +261,6 @@ public class PlayerAction : MonoBehaviour {
         gameObject.SendMessage("PlaySound", value: SOUNDCLIP.SWAP);
 
         m_Data.m_WeaponInhand.gameObject.SetActive(true);
-        Check_WeaponisAuto();
 
         //If the weapon is sniper, move camera position
         if (m_Data.m_WeaponInhand.m_ObjName == "Sniper")
@@ -289,19 +281,9 @@ public class PlayerAction : MonoBehaviour {
 
         //Set IK Position
         m_AimIK.SetHandsIKPosition(m_Data.m_WeaponInhand.m_GrabPosRight, m_Data.m_WeaponInhand.m_GrabPosLeft);
-    }
 
-    //if weapon allows auto firing, change the property of attack button to "continuous"
-    void Check_WeaponisAuto()
-    {
-        if (m_Data.m_WeaponInhand.m_Autoshot)
-        {
-            //m_AttackButton.Change_Continuous_Attrib(true);
-        }
-        else if (!m_Data.m_WeaponInhand.m_Autoshot)
-        {
-            //m_AttackButton.Change_Continuous_Attrib(false);
-        }
+        //Set Speed
+        m_Data.m_Speed = m_Data.m_MaxSpeed - m_Data.m_WeaponInhand.m_Weight;
     }
 
     public void Reload()
@@ -309,12 +291,10 @@ public class PlayerAction : MonoBehaviour {
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum < m_Data.m_WeaponInhand.m_MaxBulletNum
             && m_Data.m_isReloading == false)
         {
-            //m_Data.m_Ani.SetTrigger("WeaponReload");
             m_Data.m_isReloading = true;
             m_Ani.SetBool("Reload_b", m_Data.m_isReloading);
             CancelInvoke("SetRelaodingFalse");
             Invoke("SetRelaodingFalse", m_Data.m_WeaponInhand.m_ReloadTime);
-            m_Ani.SetBool("Minigun_Attack_Bool", false);
 
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
             {

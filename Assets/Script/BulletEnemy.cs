@@ -5,7 +5,6 @@ using UnityEngine;
 public class BulletEnemy : MonoBehaviour{
 
     public ObjType m_Type { get; set; }
-    public ObjectManager m_ObjMgr { get; set; }
 
     public float m_Speed { get; set; }
     public int m_BodyDamage;
@@ -31,7 +30,6 @@ public class BulletEnemy : MonoBehaviour{
     void Awake()
     {
         m_StayTime = 2f;
-        m_ObjMgr = GameObject.FindGameObjectWithTag("GameController").GetComponent<ObjectManager>();
         m_LineRenderer = transform.GetComponent<LineRenderer>();
     }
 

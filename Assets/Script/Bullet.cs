@@ -42,8 +42,6 @@ public class Bullet : MonoBehaviour{
             m_Penetration = true;
         else
             m_Penetration = false;
-
-        ObjListAdd();
     }
 
     void OnEnable()
@@ -72,11 +70,6 @@ public class Bullet : MonoBehaviour{
     void Remove()
     {
         gameObject.SetActive(false);
-    }
-
-    public void ObjListAdd()
-    {
-        ObjectManager.m_Inst.Objects.m_Bulletlist.Add(this);
     }
 
     public void RayCast_NonPenetration()
@@ -118,7 +111,6 @@ public class Bullet : MonoBehaviour{
         Vector3 direction = transform.position - m_PrevPos;
         Ray ray = new Ray(m_PrevPos, direction.normalized);
         RaycastHit[] hit;
-        Debug.DrawRay(m_PrevPos, direction * 100, Color.red);
 
         hit = Physics.RaycastAll(ray, direction.magnitude, m_RaycastLayermask).OrderBy(h=>h.distance).ToArray();
         for (int i = 0; i < hit.Length; i++)
@@ -128,7 +120,6 @@ public class Bullet : MonoBehaviour{
                 Vector3 CollsionPoint = hit[i].point;
                 int[] DamageSet = new int[2] { m_HeadDamage, m_BodyDamage };
                 hit[i].transform.gameObject.SendMessage("GetDamage", DamageSet);
-                Debug.Log("Head Damage : " + DamageSet[0] + "Name : " + hit[i].transform.name);
                 ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
 
                 //Minus 50 Damage per every penetration

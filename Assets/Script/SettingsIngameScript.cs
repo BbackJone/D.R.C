@@ -80,7 +80,7 @@ public class SettingsIngameScript : MonoBehaviour {
             SaveData sd = saveMgr.currentSaveData;
             sd.currentWave = stageMgr.m_CurrentWave.Level;
             sd.kills = rscs.kills;
-            sd.elapsedTime = (int)rscs.timeInSec;
+            sd.elapsedTime = (int)StageMgr.instance.m_GameTime;
             sd.health = pdata.m_Hp;
             SaveData.Write(sd, 0);
             Time.timeScale = 1f;

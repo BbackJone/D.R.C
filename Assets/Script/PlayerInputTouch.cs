@@ -34,20 +34,12 @@ public class PlayerInputTouch : MonoBehaviour {
         if (controlStick == null) enabled = false;
         data = GetComponent<PlayerData>();
         action = GetComponent<PlayerAction>();
-        //lookY = data.m_Camera.transform.eulerAngles.y;
 
         data.m_Camera.transform.eulerAngles = new Vector3(lookY, data.m_Camera.transform.eulerAngles.y, 0f);
 
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
-        /*
-        touchDragDeltaA = new Vector2[20];
-        for (int i = 0; i < 20; i++) {
-            touchDragDeltaA[i] = Vector2.zero;
-        }
-        */
 
-        // rotateUserSensitivity range: [0.2 - 2.0] (default: 1.1)
         rotateUserSensitivity = (PlayerPrefs.GetFloat("sensitivity") * 1.8f) + 0.2f;
     }
 

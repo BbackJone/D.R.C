@@ -27,7 +27,6 @@ public class DevilZombieAction : MonoBehaviour {
     void ShootFlame()
     {
         m_Ani.SetTrigger("Attack");
-
         //Make a shoot direction vector
         Vector3 ShootDirection;
         if (m_AI.m_target)

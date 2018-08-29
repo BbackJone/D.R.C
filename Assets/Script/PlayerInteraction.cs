@@ -11,36 +11,7 @@ public class PlayerInteraction : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         m_Data = GetComponent<PlayerData>();
-        ObjListAdd();       //Put this object at ObjMgr.
-    }
-
-    void OnEnable()
-    {
-        StartCoroutine("PlayerStateCheck");
-    }
-
-    void Start()
-    {
-        StartCoroutine("PlayerStateCheck");
-    }
-
-    //If player dead and become inactive, do game over check.
-    IEnumerator PlayerStateCheck()
-    {
-        while (true)
-        {
-            if (m_Data == false)
-            {
-                ObjectManager.m_Inst.GameOverCheck();
-            }
-
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
-    public void ObjListAdd()
-    {
-        ObjectManager.m_Inst.Objects.m_Playerlist.Add(this);
+        ObjectManager.m_Inst.m_Player = this;
     }
 
     public void GetDamage(int _damage)

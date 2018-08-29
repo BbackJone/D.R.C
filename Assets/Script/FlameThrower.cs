@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class FlameThrower : Weapon {
 
-    private GameObject m_FlameParticle;
     private ParticleSystem m_FlameParticleSystem;
 
     private void Awake()
     {
         Initialize();
 
-        m_FlameParticle = transform.GetChild(0).gameObject;
-        //m_FlameParticle.SetActive(false);
-        m_FlameParticleSystem = m_FlameParticle.GetComponent<ParticleSystem>();
+        m_FlameParticleSystem = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
     private void OnEnable()
@@ -25,13 +22,11 @@ public class FlameThrower : Weapon {
 
     // Use this for initialization
     void Start () {
-        ObjListAdd();
         m_AmmoBulletNum = m_MaxBulletNum;
     }
 	
     public override void Shoot()
     {
-        Debug.Log("Flame Shoot");
         if(m_AmmoBulletNum > 0)
         {
             m_FlameParticleSystem.enableEmission = true;

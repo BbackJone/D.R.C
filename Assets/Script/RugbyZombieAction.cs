@@ -49,10 +49,10 @@ public class RugbyZombieAction : MonoBehaviour {
     {
         while(true)
         {
-            if (m_RushTimer < 2f && !m_Data.m_Death)
+            if (m_RushTimer < 2.5f && !m_Data.m_Death)
             {
                 m_RushTimer += Time.deltaTime;
-                transform.Translate(Vector3.forward * Time.deltaTime * m_Data.m_Speed * 5);
+                transform.Translate(Vector3.forward * Time.deltaTime * m_Data.m_Speed * 3);
             }
             else
             {

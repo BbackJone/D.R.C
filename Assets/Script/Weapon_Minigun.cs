@@ -54,7 +54,6 @@ public class Weapon_Minigun : Weapon {
 
     void Start()
     {
-        ObjListAdd();
         m_AmmoBulletNum = 0;
 
         m_AmmoBulletNum = m_MaxBulletNum;

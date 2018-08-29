@@ -30,7 +30,8 @@ public class SmashAttack : MonoBehaviour {
             m_CollidOnceCheck = true;
             Invoke("ResetColliderOnceCheck", 1f);
 
-            other.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddForce(transform.forward * 40, ForceMode.Impulse);
+
             other.gameObject.SendMessage("GetDamage", 1);
         }
     }

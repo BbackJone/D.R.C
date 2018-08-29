@@ -55,11 +55,6 @@ public class PlayerData : MonoBehaviour {
         m_AimIK.SetHandsIKPosition(m_WeaponInhand.m_GrabPosRight, m_WeaponInhand.m_GrabPosLeft);
     }
 
-    void OnEnable()
-    {
-        //m_Hp = m_MaxHp;
-    }
-
     void Start()
     {
         m_Type = ObjType.OBJ_PLAYER;
@@ -69,10 +64,5 @@ public class PlayerData : MonoBehaviour {
         m_isShooting = false;
         m_isSwaping = false;
         m_Money = 0;
-    }
-
-    private void Update()
-    {
-        //m_Hp = m_MaxHp;
     }
 }

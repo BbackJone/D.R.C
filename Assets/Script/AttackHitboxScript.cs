@@ -13,7 +13,7 @@ public class AttackHitboxScript : MonoBehaviour {
 
     private void Start()
     {
-        data = ObjectManager.m_Inst.Objects.m_Playerlist[0].GetComponent<PlayerData>();
+        data = ObjectManager.m_Inst.m_Player.GetComponent<PlayerData>();
     }
 
     private void OnTriggerEnter(Collider other)
