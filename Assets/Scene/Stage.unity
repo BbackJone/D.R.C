@@ -1153,7 +1153,7 @@ MonoBehaviour:
   musicVolumeSlider: {fileID: 2060783195}
   seVolumeSlider: {fileID: 1341843557}
   touchSensitivitySlider: {fileID: 914008170}
-  touchInput: {fileID: 0}
+  touchInput: {fileID: 1491306655}
 --- !u!1 &39713126
 GameObject:
   m_ObjectHideFlags: 0

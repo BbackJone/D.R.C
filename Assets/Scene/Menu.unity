@@ -29099,7 +29099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dc9d5921e3289419964c1caf0260db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AttackButton: {fileID: 0}
   m_FireOnceBool: 0
   left_leg: {fileID: 1504409328}
   right_leg: {fileID: 313903382}
@@ -29126,6 +29125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlStick: {fileID: 1760125549}
+  rotateUserSensitivity: 0
 --- !u!114 &1160126349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44906,7 +44906,7 @@ MonoBehaviour:
   musicVolumeSlider: {fileID: 937979930}
   seVolumeSlider: {fileID: 1415848535}
   touchSensitivitySlider: {fileID: 689602197}
-  touchInput: {fileID: 0}
+  touchInput: {fileID: 1160126348}
 --- !u!1 &1990783028
 GameObject:
   m_ObjectHideFlags: 0

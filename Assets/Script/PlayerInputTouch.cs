@@ -42,8 +42,7 @@ public class PlayerInputTouch : MonoBehaviour {
 
         UpdateSensitivity();
     }
-
-    // Fix for the problem where touch sensitivity is not immediately applied when changed
+    
     public void UpdateSensitivity() {
         rotateUserSensitivity = (PlayerPrefs.GetFloat("sensitivity") * 1.8f) + 0.2f;
     }
