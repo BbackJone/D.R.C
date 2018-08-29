@@ -74,7 +74,10 @@ public class PlayerAction : MonoBehaviour {
             m_Data.m_Hp = m_Data.m_MaxHp;
         }
 
-        StartCoroutine("DeadCheck");
+        // Fix for the problem where santa plays death animation on menu when exited the game scene while dying
+        if (gameObject.name != "TitleSanta") {
+            StartCoroutine("DeadCheck");
+        }
         StartCoroutine("CountTime");
         StartCoroutine("Playermove");
         StartCoroutine("CheckIsShooting");
