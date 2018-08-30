@@ -3323,7 +3323,7 @@ Animator:
   m_GameObject: {fileID: 124567825}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
-  m_Controller: {fileID: 9100000, guid: 92c93b80307cf90438fcfadd52eab10c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 493772e11b846f14dab22ef0ac541cf9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3661,7 +3661,7 @@ Animator:
   m_GameObject: {fileID: 132411304}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
-  m_Controller: {fileID: 9100000, guid: 92c93b80307cf90438fcfadd52eab10c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 493772e11b846f14dab22ef0ac541cf9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -21362,7 +21362,7 @@ Animator:
   m_GameObject: {fileID: 355136616}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
-  m_Controller: {fileID: 9100000, guid: 92c93b80307cf90438fcfadd52eab10c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 493772e11b846f14dab22ef0ac541cf9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -32590,11 +32590,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 743659786}
-  - component: {fileID: 743659792}
   - component: {fileID: 743659791}
   - component: {fileID: 743659790}
   - component: {fileID: 743659788}
   - component: {fileID: 743659787}
+  - component: {fileID: 743659789}
   m_Layer: 0
   m_Name: 0.NormalZombie1
   m_TagString: Enemy
@@ -32646,6 +32646,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_body: {fileID: 1628404334}
   obj_head: {fileID: 2043535677}
+--- !u!95 &743659789
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743659785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
+  m_Controller: {fileID: 9100000, guid: 493772e11b846f14dab22ef0ac541cf9, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 0
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &743659790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32683,24 +32700,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
---- !u!95 &743659792
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 95318775684294928, guid: c5d5b84ec26458047af14e92826a4547,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 743659785}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
-  m_Controller: {fileID: 9100000, guid: 92c93b80307cf90438fcfadd52eab10c, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 0
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &750416844
 GameObject:
   m_ObjectHideFlags: 0
@@ -68922,7 +68921,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491306644}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a92200d8b8206c642be58084aa5f4748, type: 3}
   m_Name: 
@@ -68960,7 +68959,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491306644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b571327ea467ec4eaad0c07202b7b9d, type: 3}
   m_Name: 
@@ -91558,7 +91557,7 @@ Animator:
   m_GameObject: {fileID: 2046373081}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
-  m_Controller: {fileID: 9100000, guid: 92c93b80307cf90438fcfadd52eab10c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 493772e11b846f14dab22ef0ac541cf9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
