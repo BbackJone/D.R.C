@@ -46471,7 +46471,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -78921,7 +78921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735c80ab4c146a049b443d3d4aee68c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WonderingPosParent: {fileID: 0}
 --- !u!114 &1662353065
 MonoBehaviour:
   m_ObjectHideFlags: 0

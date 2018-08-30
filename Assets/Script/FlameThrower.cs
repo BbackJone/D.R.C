@@ -36,9 +36,7 @@ public class FlameThrower : Weapon {
 
             //If don't cancelInvoke in a few time, stop shoot function is exacuted.
             CancelInvoke("StopFire");
-            Invoke("StopFire", m_Shot
-                
-                * 3);
+            Invoke("StopFire", m_ShotRate * 3);
         }
     }
 
