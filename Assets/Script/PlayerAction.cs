@@ -39,7 +39,7 @@ public class PlayerAction : MonoBehaviour {
         m_AimIK = GetComponent<AimIK>();
         m_Ani = GetComponent<Animator>();
 
-        m_Data.m_MaxHp = 30;
+        m_Data.m_MaxHp = 3000;
     }
 
 	void Start () {
