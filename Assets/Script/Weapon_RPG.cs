@@ -40,7 +40,7 @@ public class Weapon_RPG : Weapon
 
     void Start()
     {
-        m_AmmoBulletNum = 0;
+        m_AmmoBulletNum = 1;
         m_RaycastLayermask = ~((1 << 2) | (1 << 8)); //ignore second and eighth layer
     }
 

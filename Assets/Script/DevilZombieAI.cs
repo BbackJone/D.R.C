@@ -29,7 +29,7 @@ public class DevilZombieAI : MonoBehaviour
 
     void OnEnable()
     {
-        StageMgr.instance.AddSpecialZombieNumber(1);
+        StageMgr.instance.AddDevilZombieNumber(1);
 
         m_Nav.baseOffset = 0;
         m_Nav.enabled = true;
@@ -129,7 +129,7 @@ public class DevilZombieAI : MonoBehaviour
                     head_col.enabled = true;
                     //Because SetActive(false) with colliders inactive make a kind of bug(collider components are out of order), this is required
                     gameObject.SetActive(false);
-                    StageMgr.instance.AddSpecialZombieNumber(-1);
+                    StageMgr.instance.AddDevilZombieNumber(-1);
                 }
             }
 

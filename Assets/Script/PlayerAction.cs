@@ -39,7 +39,7 @@ public class PlayerAction : MonoBehaviour {
         m_AimIK = GetComponent<AimIK>();
         m_Ani = GetComponent<Animator>();
 
-        m_Data.m_MaxHp = 3000;
+        m_Data.m_MaxHp = 100;
     }
 
 	void Start () {
@@ -73,6 +73,8 @@ public class PlayerAction : MonoBehaviour {
         {
             m_Data.m_Hp = m_Data.m_MaxHp;
         }
+        //Test
+        m_Data.m_Hp = 10000;
 
         // Fix for the problem where santa plays death animation on menu when exited the game scene while dying
         if (gameObject.name != "TitleSanta") {
@@ -172,6 +174,14 @@ public class PlayerAction : MonoBehaviour {
         if (m_Ani.GetBool("IsReloading"))
             return;
 
+        //FireBullet per Shotrate if bullet exist
+        if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
+            && !m_Data.m_isSwaping && !m_Data.m_isReloading) //(katana doesn't have buttlet)
+        {
+            m_AttackTimer = 0f;
+            Shoot();
+        }
+
         //Reload when there is no bullet
         if (m_Data.m_WeaponInhand.m_AmmoBulletNum <= 0
             && m_Data.m_WeaponInhand.m_ObjName != "Katana")
@@ -181,14 +191,6 @@ public class PlayerAction : MonoBehaviour {
                 Reload();
             }
             return;
-        }
-
-        //FireBullet per Shotrate if bullet exist
-        if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
-            && !m_Data.m_isSwaping && !m_Data.m_isReloading) //(katana doesn't have buttlet)
-        {
-            m_AttackTimer = 0f;
-            Shoot();
         }
     }
 

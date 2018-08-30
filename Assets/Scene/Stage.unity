@@ -312,14 +312,17 @@ MonoBehaviour:
     Level: 0
     NormalZombieNumber: 0
     SpecialZombieNumber: 0
+    DevilZombieNumber: 0
     NormalZombieSpeedRate: 0
     NormalZombiePowerRate: 0
     NormalZombieHealthRate: 0
   m_GameTime: 0
   m_Spawned_NormalZombieNumber: 0
   m_Spawned_SpecialZombieNumber: 0
+  m_Spawned_DevilZombieNumber: 0
   m_Current_NormalZombieNumber: 0
   m_Current_SpecialZombieNumber: 0
+  m_Current_DevilZombieNumber: 0
 --- !u!4 &11752934
 Transform:
   m_ObjectHideFlags: 0
@@ -24130,6 +24133,7 @@ MonoBehaviour:
   fireTail: {fileID: 1532187693}
   m_BodyDamage: 0
   m_HeadDamage: 0
+  m_ToPlayerDamage: 10
 --- !u!23 &487295765
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32374,7 +32378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a629611cb4840a4f18bd0355fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
 --- !u!65 &728759347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37717,6 +37720,7 @@ MonoBehaviour:
   fireTail: {fileID: 967333433}
   m_BodyDamage: 0
   m_HeadDamage: 0
+  m_ToPlayerDamage: 10
 --- !u!23 &832342153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37793,7 +37797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2677af28e27ecf541b938fb5358a8d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Damage: 70
+  m_Damage: 10
   m_PushingForce: 10
 --- !u!135 &832749415
 SphereCollider:
@@ -50811,7 +50815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a629611cb4840a4f18bd0355fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &970882832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51464,7 +51467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a629611cb4840a4f18bd0355fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &994316599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53454,7 +53456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a629611cb4840a4f18bd0355fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &1078474555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58595,7 +58596,7 @@ GameObject:
   - component: {fileID: 1177591619}
   - component: {fileID: 1177591617}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: 20.SoldierZombieBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58612,8 +58613,8 @@ Transform:
   m_LocalPosition: {x: 0.121, y: 1.88, z: 1.52}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.29999998}
   m_Children: []
-  m_Father: {fileID: 1459206888}
-  m_RootOrder: 2
+  m_Father: {fileID: 1665428016}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0.34300002, y: 0, z: 0}
 --- !u!120 &1177591617
 LineRenderer:
@@ -68077,7 +68078,6 @@ Transform:
   m_Children:
   - {fileID: 2127318129}
   - {fileID: 1167384130}
-  - {fileID: 1177591616}
   m_Father: {fileID: 1665428016}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -68105,9 +68105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_body: {fileID: 276885052}
   obj_head: {fileID: 1469968963}
-  body_col: {fileID: 0}
-  head_col: {fileID: 0}
-  bullet: {fileID: 1177591615}
   m_MuzzleFlash: {fileID: 1250766990}
   m_MuzzleFlash2: {fileID: 871682335}
 --- !u!114 &1459206892
@@ -73951,7 +73948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a629611cb4840a4f18bd0355fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &1560428336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76625,6 +76621,7 @@ Transform:
   - {fileID: 73333631}
   - {fileID: 248537804}
   - {fileID: 1086802803}
+  - {fileID: 1177591616}
   m_Father: {fileID: 586331949}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91876,7 +91873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a629611cb4840a4f18bd0355fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!65 &2072698664
 BoxCollider:
   m_ObjectHideFlags: 0
