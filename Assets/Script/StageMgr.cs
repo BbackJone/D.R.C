@@ -43,7 +43,7 @@ public class StageMgr : MonoBehaviour
         int startWave = 1;
         if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
 
-        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[startWave];
+        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[4];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
