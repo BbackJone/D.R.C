@@ -183,7 +183,8 @@ public class PlayerAction : MonoBehaviour {
             return;
         }
 
-        //FireBullet per Shotrate if bullet exist
+        //FireBullet per Shot
+        if bullet exist
         if (m_AttackTimer >= m_Data.m_WeaponInhand.m_ShotRate
             && !m_Data.m_isSwaping && !m_Data.m_isReloading) //(katana doesn't have buttlet)
         {

@@ -150,7 +150,7 @@
   "Wave": [
     {
       "Level": 1,
-      "NormalZombieNumber": 100,
+      "NormalZombieNumber": 30,
       "SpecialZombieNumber": 0,
       "NormalZombieSpeedRate": 1,
       "NormalZombiePowerRate": 1,
@@ -158,32 +158,32 @@
     },
     {
       "Level": 2,
-      "NormalZombieNumber": 200,
-      "SpecialZombieNumber": 3,
+      "NormalZombieNumber": 40,
+      "SpecialZombieNumber": 2,
       "NormalZombieSpeedRate": 1.1,
       "NormalZombiePowerRate": 1.1,
       "NormalZombieHealthRate": 1.1
     },
     {
       "Level": 3,
-      "NormalZombieNumber": 400,
-      "SpecialZombieNumber": 10,
+      "NormalZombieNumber": 60,
+      "SpecialZombieNumber": 3,
       "NormalZombieSpeedRate": 1.1,
       "NormalZombiePowerRate": 1.2,
       "NormalZombieHealthRate": 1.2
     },
     {
       "Level": 4,
-      "NormalZombieNumber": 600,
-      "SpecialZombieNumber": 15,
+      "NormalZombieNumber": 80,
+      "SpecialZombieNumber": 4,
       "NormalZombieSpeedRate": 1.2,
       "NormalZombiePowerRate": 1.2,
       "NormalZombieHealthRate": 1.4
     },
     {
       "Level": 5,
-      "NormalZombieNumber": 1000,
-      "SpecialZombieNumber": 20,
+      "NormalZombieNumber": 110,
+      "SpecialZombieNumber": 5,
       "NormalZombieSpeedRate": 1.3,
       "NormalZombiePowerRate": 1.4,
       "NormalZombieHealthRate": 1.5

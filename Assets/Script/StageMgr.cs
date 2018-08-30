@@ -40,10 +40,10 @@ public class StageMgr : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        int startWave = 3;
+        int startWave = 1;
         if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
 
-        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[3];
+        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[startWave];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
@@ -88,7 +88,7 @@ public class StageMgr : MonoBehaviour
         //Spawn Normal zombies
         if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber)
         {
-            if (m_GameTime % 1f < 0.5f)
+            if (m_GameTime % 1f < 0.2f)
             {
                 int ZombieNameIndex = Random.Range(0, m_NormalZombieNameList.Count);
                 SpawnZombie(m_NormalZombieNameList[ZombieNameIndex]);
