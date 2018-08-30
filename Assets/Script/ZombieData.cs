@@ -81,6 +81,7 @@ public class ZombieData : MonoBehaviour
         m_Hp -= _damage;
         if (m_Hp < 0)
         {
+            AudioSource.PlayOneShot(AudioClip);
             if (!isDeadConfirmed)
             {
                 resultScoreContainer.kills++;
@@ -89,6 +90,6 @@ public class ZombieData : MonoBehaviour
             }
             m_Hp = 0;
         }
-        AudioSource.PlayOneShot(AudioClip);
+        
     }
 }

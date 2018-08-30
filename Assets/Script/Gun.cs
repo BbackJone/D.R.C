@@ -9,7 +9,7 @@ public class Gun : Weapon
     public MeshRenderer m_MuzzleFlash2;
     private float muzzleFlashMinimumSize = 0.05f;
     private float muzzleFlashMaximumSize = 0.225f;
-
+    private GameObject soundObject;
     public Transform m_ShootPos;
 
     public Animator m_GunAni;
@@ -25,8 +25,8 @@ public class Gun : Weapon
     }
 
     void Awake()
-    {
-        m_AimSystem = GetComponentInParent<AimSystem>();
+    {    soundObject = GameObject.Find("/Stage/Santa");
+    m_AimSystem = GetComponentInParent<AimSystem>();
 
         Initialize();
     }
@@ -63,7 +63,7 @@ public class Gun : Weapon
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
-        gameObject.SendMessage("PlaySound", value: 0);
+        soundObject.SendMessage("PlaySound", 0,0);
         Makeflash();
 
         //SetAni

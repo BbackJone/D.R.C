@@ -21,4 +21,15 @@ public class titlesound : MonoBehaviour {
     {
         AudioSource.PlayOneShot(AudioClip[2]);
     }
+    public void uisound4()
+    {
+
+        AudioSource.PlayOneShot(AudioClip[3]);
+    }
+    public void uisound5()
+    {
+
+   
+        AudioSource.PlayOneShot(AudioClip[4]);
+    }
 }

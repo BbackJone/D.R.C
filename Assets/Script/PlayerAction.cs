@@ -210,7 +210,7 @@ public class PlayerAction : MonoBehaviour {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[0];
 
                     m_Ani.SetInteger("Weapon_Code", 0);
-                    gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP));
+                    gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP),0);
 
                 }
                 //change current weapon to weapon with next code.
@@ -219,7 +219,7 @@ public class PlayerAction : MonoBehaviour {
                     m_Data.m_WeaponInhand = m_Data.m_Weapons[i + 1];
 
                     m_Ani.SetInteger("Weapon_Code", i + 1);
-                    gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP));
+                    gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.SWAP),0);
 
                 }
                 m_Data.m_WeaponInhand.gameObject.SetActive(true);
@@ -262,7 +262,7 @@ public class PlayerAction : MonoBehaviour {
 
         m_Data.m_WeaponInhand = m_Data.m_Weapons[index];
         m_Ani.SetInteger("Weapon_Code", index);
-        gameObject.SendMessage("PlaySound", value: SOUNDCLIP.SWAP);
+        gameObject.SendMessage("PlaySound", (int)SOUNDCLIP.SWAP,0);
 
         m_Data.m_WeaponInhand.gameObject.SetActive(true);
 
@@ -302,11 +302,11 @@ public class PlayerAction : MonoBehaviour {
 
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.RIFLE)
             {
-                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.RIFLERELOAD));
+                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.RIFLERELOAD),0);
             }
             if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.HANDGUN)
             {
-                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD));
+                gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD),0);
             }
         }
     }

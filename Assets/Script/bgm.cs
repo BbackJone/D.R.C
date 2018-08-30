@@ -18,7 +18,7 @@ public class bgm : MonoBehaviour {
         {
             if (!bgmSource.isPlaying)
             {
-                bgmSource.PlayOneShot(bgmClip,0.0f);
+                bgmSource.PlayOneShot(bgmClip,0.5f);
             }
             yield return new WaitForSeconds(2);
         }
