@@ -38,11 +38,13 @@ public class ZombieData : MonoBehaviour
     private bool isSpecialZombie = false;
     private bool isDeadConfirmed = false;
     ResultScoreContainerScript resultScoreContainer;
+    TurretSpawnerScript turretSpawnerScript;
 
     void Awake()
     {
         Initialize();
         resultScoreContainer = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
+        turretSpawnerScript = GameObject.Find("TurretSpawner").GetComponent<TurretSpawnerScript>();
     }
 
     void Start()
@@ -84,7 +86,12 @@ public class ZombieData : MonoBehaviour
             if (!isDeadConfirmed)
             {
                 resultScoreContainer.kills++;
-                if (isSpecialZombie) resultScoreContainer.spkills++;
+                turretSpawnerScript.Charge(1);
+                if (isSpecialZombie)
+                {
+                    resultScoreContainer.spkills++;
+                    turretSpawnerScript.Charge(2);
+                }
                 isDeadConfirmed = true;
             }
             m_Hp = 0;

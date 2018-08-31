@@ -157,6 +157,9 @@ public class ObjectPoolMgr : MonoBehaviour {
 
         //Soldier Zombie Bullet
         AddObjectToPool(20, 10, ObjType.OBJ_BULLET, true);
+
+        //Soldier Zombie Bullet
+        AddObjectToPool(21, 5, ObjType.OBJ_COLLEAGUE, true);
     }
 
     public void AddObjectToPool(int _childindex, int _amountToPool, ObjType _objtype, bool _shouldexpand)
