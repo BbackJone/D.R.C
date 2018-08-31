@@ -21,7 +21,7 @@ public class DropsScript : MonoBehaviour {
         if (m_Data != null) {
             try {
                 if (type == DropsType.Heart) {
-                    m_Data.m_Hp = Math.Min(m_Data.m_Hp + 5, m_Data.m_MaxHp);
+                    m_Data.m_Hp = Math.Min(m_Data.m_Hp + 20, m_Data.m_MaxHp);
                 }
             } catch (Exception) { }
 

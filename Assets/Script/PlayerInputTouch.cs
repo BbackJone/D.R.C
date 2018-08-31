@@ -56,7 +56,7 @@ public class PlayerInputTouch : MonoBehaviour {
         // Move character
         if (controlStick != null) { 
             Vector3 vec = new Vector3(controlStick.xAxis * stickSensitivity, 0, controlStick.yAxis * stickSensitivity);
-            data.m_Move = vec;
+            data.m_Move = Vector3.ClampMagnitude(vec, 1);
         }
 
         #region Look-around only implementation

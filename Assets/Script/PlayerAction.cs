@@ -111,6 +111,7 @@ public class PlayerAction : MonoBehaviour {
                             (stageMgr != null ? stageMgr.m_CurrentWave.Level : 0),
                             ((stageMgr.m_CurrentWave.Level - 1) * 10) + rscs.kills + (rscs.spkills * 10),
                             false);
+                        SaveData.ClearAll();
                     }
                 }
 
@@ -152,8 +153,10 @@ public class PlayerAction : MonoBehaviour {
             transform.Translate(Vector3.forward * m_Data.m_Move.z * Time.deltaTime * m_Data.m_Speed);
             transform.Translate(Vector3.right * m_Data.m_Move.x * Time.deltaTime * m_Data.m_Speed);
 
-            m_Ani.SetFloat("Speed_Horizontal", m_Data.m_Move.x * (m_Data.m_Speed * 0.5f + 3.5f));
-            m_Ani.SetFloat("Speed_Vertical", m_Data.m_Move.z * (m_Data.m_Speed * 0.5f + 3.5f));
+            float speed_hor = m_Data.m_Move.x * (m_Data.m_Speed * 0.5f + 3.5f);
+            float speed_ver = m_Data.m_Move.z * (m_Data.m_Speed * 0.5f + 3.5f);
+            m_Ani.SetFloat("Speed_Horizontal", speed_hor);
+            m_Ani.SetFloat("Speed_Vertical", speed_ver);
             yield return null;
         }
     }

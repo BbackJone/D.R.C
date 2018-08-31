@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ControlStickScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler {
     Vector3 startPos;
-    const float range = 100;
+    const float range = 90;
     
     /// <summary>
     /// Range between -1 to 1
@@ -31,14 +31,26 @@ public class ControlStickScript : MonoBehaviour, IPointerDownHandler, IPointerUp
     void Start () {
         startPos = transform.position;
 	}
+
+    void FixedUpdate() {
+        if (!dragging) {
+            xAxisRaw = xAxisRaw * 0.67f;
+            yAxisRaw = yAxisRaw * 0.67f;
+            xAxis = xAxisRaw / range;
+            yAxis = yAxisRaw / range;
+            transform.position = new Vector3(startPos.x + xAxisRaw, startPos.y + yAxisRaw, startPos.z);
+        }
+    }
     	
     public void OnDrag(PointerEventData eventData) {
         draggingPointer = eventData.pointerId;
-        xAxisRaw = Mathf.Clamp(eventData.position.x - startPos.x, -range, range);
-        yAxisRaw = Mathf.Clamp(eventData.position.y - startPos.y, -range, range);
+        Vector2 stickpos = new Vector2(eventData.position.x - startPos.x, eventData.position.y - startPos.y);
+        xAxisRaw = stickpos.x;
+        yAxisRaw = stickpos.y;
         xAxis = xAxisRaw / range;
         yAxis = yAxisRaw / range;
-        transform.position = new Vector3(startPos.x + xAxisRaw, startPos.y + yAxisRaw, startPos.z);
+        stickpos = Vector2.ClampMagnitude(stickpos, range);
+        transform.position = new Vector3(startPos.x + stickpos.x, startPos.y + stickpos.y, startPos.z);
     }
 
     public void OnPointerDown(PointerEventData eventData) {
@@ -47,11 +59,13 @@ public class ControlStickScript : MonoBehaviour, IPointerDownHandler, IPointerUp
     }
 
     public void OnPointerUp(PointerEventData eventData) {
+        /*
         transform.position = startPos;
         xAxisRaw = 0;
         yAxisRaw = 0;
         xAxis = 0;
         yAxis = 0;
+        */
         draggingPointer = -1;
         dragging = false;
     }

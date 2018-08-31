@@ -15,7 +15,7 @@ public class FadeCurtainEffectScript : MonoBehaviour {
     }
     
 	void Update () {
-        alpha -= Mathf.Min(0.0167f, Time.deltaTime * 4f);
+        alpha -= Mathf.Min(0.033f, Time.deltaTime * 4f);
         if (alpha < 0) Destroy(gameObject);
         image.color = new Color(0f, 0f, 0f, alpha);
 	}
