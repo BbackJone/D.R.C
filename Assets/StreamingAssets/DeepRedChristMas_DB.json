@@ -192,6 +192,96 @@
       "NormalZombieSpeedRate": 1.3,
       "NormalZombiePowerRate": 1.4,
       "NormalZombieHealthRate": 1.5
+    },
+    {
+      "Level": 6,
+      "NormalZombieNumber": 140,
+      "SpecialZombieNumber": 5,
+      "DevilZombieNumber": 2,
+      "NormalZombieSpeedRate": 1.4,
+      "NormalZombiePowerRate": 1.5,
+      "NormalZombieHealthRate": 1.6
+    },
+    {
+      "Level": 7,
+      "NormalZombieNumber": 170,
+      "SpecialZombieNumber": 5,
+      "DevilZombieNumber": 2,
+      "NormalZombieSpeedRate": 1.5,
+      "NormalZombiePowerRate": 1.6,
+      "NormalZombieHealthRate": 1.7
+    },
+    {
+      "Level": 8,
+      "NormalZombieNumber": 210,
+      "SpecialZombieNumber": 7,
+      "DevilZombieNumber": 3,
+      "NormalZombieSpeedRate": 1.5,
+      "NormalZombiePowerRate": 1.6,
+      "NormalZombieHealthRate": 1.7
+    },
+    {
+      "Level": 9,
+      "NormalZombieNumber": 250,
+      "SpecialZombieNumber": 8,
+      "DevilZombieNumber": 3,
+      "NormalZombieSpeedRate": 1.6,
+      "NormalZombiePowerRate": 1.7,
+      "NormalZombieHealthRate": 1.8
+    },
+    {
+      "Level": 10,
+      "NormalZombieNumber": 290,
+      "SpecialZombieNumber": 8,
+      "DevilZombieNumber": 3,
+      "NormalZombieSpeedRate": 1.6,
+      "NormalZombiePowerRate": 1.7,
+      "NormalZombieHealthRate": 1.8
+    },
+    {
+      "Level": 11,
+      "NormalZombieNumber": 350,
+      "SpecialZombieNumber": 9,
+      "DevilZombieNumber": 3,
+      "NormalZombieSpeedRate": 1.7,
+      "NormalZombiePowerRate": 1.8,
+      "NormalZombieHealthRate": 1.9
+    },
+    {
+      "Level": 12,
+      "NormalZombieNumber": 410,
+      "SpecialZombieNumber": 10,
+      "DevilZombieNumber": 3,
+      "NormalZombieSpeedRate": 1.7,
+      "NormalZombiePowerRate": 1.8,
+      "NormalZombieHealthRate": 1.9
+    },
+    {
+      "Level": 13,
+      "NormalZombieNumber": 500,
+      "SpecialZombieNumber": 10,
+      "DevilZombieNumber": 4,
+      "NormalZombieSpeedRate": 1.8,
+      "NormalZombiePowerRate": 1.9,
+      "NormalZombieHealthRate": 1.9
+    },
+    {
+      "Level": 14,
+      "NormalZombieNumber": 600,
+      "SpecialZombieNumber": 11,
+      "DevilZombieNumber": 4,
+      "NormalZombieSpeedRate": 1.9,
+      "NormalZombiePowerRate": 2.0,
+      "NormalZombieHealthRate": 2.0
+    },
+    {
+      "Level": 15,
+      "NormalZombieNumber": 750,
+      "SpecialZombieNumber": 12,
+      "DevilZombieNumber": 4,
+      "NormalZombieSpeedRate": 2.0,
+      "NormalZombiePowerRate": 2.0,
+      "NormalZombieHealthRate": 2.0
     }
   ]
 }

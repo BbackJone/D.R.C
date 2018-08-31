@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour {
 
     public void GetDamage(int _damage)
     {
-        m_Data.m_Hp -= _damage;
+        m_Data.m_Hp = Mathf.Max(m_Data.m_Hp - _damage, 0);
         AudioSource.PlayOneShot(AudioClip);
     }
 }

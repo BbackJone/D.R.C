@@ -46,7 +46,7 @@ public class StageMgr : MonoBehaviour
         int startWave = 1;
         if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
 
-        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[4];
+        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[1];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
@@ -65,17 +65,7 @@ public class StageMgr : MonoBehaviour
     private void Update()
     {
         m_GameTime += Time.deltaTime * Time.timeScale;
-        //ZombieSpawnTimer();
-
-        //Debug용
-        if (Input.GetKeyDown("y"))
-            SpawnZombie("RugbyZombie");
-        if (Input.GetKeyDown("u"))
-            SpawnZombie("PrisonerZombie");
-        if (Input.GetKeyDown("i"))
-            SpawnZombie("SoldierZombie");
-        if (Input.GetKeyDown("o"))
-            SpawnZombie("DevilZombie");
+        ZombieSpawnTimer();
     }
 
 
