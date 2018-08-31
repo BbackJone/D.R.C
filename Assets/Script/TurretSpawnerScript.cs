@@ -39,6 +39,5 @@ public class TurretSpawnerScript : MonoBehaviour {
         if (chargeRate < 100) return;
         chargeRate = 0;
         var newTurret = ObjectPoolMgr.instance.CreatePooledObject("TurretBody", position.position, position.rotation);
-        newTurret.SetActive(true);
     }
 }
