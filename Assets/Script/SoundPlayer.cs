@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundPlayer : MonoBehaviour {
 
+    private float sevol;
     public AudioSource m_Audiosouce;
 
     public AudioClip[] m_AudioClipArr;
@@ -12,12 +13,17 @@ public class SoundPlayer : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
+        
         m_Audiosouce = GetComponent<AudioSource>();
+    }
+    private void Update()
+    {
+        sevol = PlayerPrefs.GetFloat("sevol");
     }
 
     public void PlaySound(int _soundclip)
     {
-        m_Audiosouce.PlayOneShot(m_AudioClipArr[_soundclip]);
+        m_Audiosouce.PlayOneShot(m_AudioClipArr[_soundclip],sevol);
     }
 
     public bool isPlaying()

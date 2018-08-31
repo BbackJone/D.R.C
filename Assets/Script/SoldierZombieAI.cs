@@ -8,6 +8,7 @@ public class SoldierZombieAI : MonoBehaviour {
     private ZombieData m_Data;
     private Animator m_Ani;
     private NavMeshAgent m_Nav;     //for finding route or move zombie
+    private float sevol;
 
     public GameObject obj_body;
     public GameObject obj_head;
@@ -26,6 +27,7 @@ public class SoldierZombieAI : MonoBehaviour {
     public MeshRenderer m_MuzzleFlash2;
 
     void Awake() {
+
         
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
@@ -33,6 +35,10 @@ public class SoldierZombieAI : MonoBehaviour {
 
         body_col = obj_body.GetComponent<BoxCollider>();
         head_col = obj_head.GetComponent<BoxCollider>();
+    }
+    private void Update()
+    {
+        sevol = PlayerPrefs.GetFloat("sevol");
     }
 
     void OnEnable() {
@@ -81,7 +87,7 @@ public class SoldierZombieAI : MonoBehaviour {
     public void Shoot()
     {
         gameObject.SendMessage("ShootGun");
-        AudioSource.PlayClipAtPoint(AudioClip,transform.position);
+        AudioSource.PlayClipAtPoint(AudioClip,transform.position,sevol);
         Instantiate(bullet, transform).SetActive(true);
 
         MakeFlash();    //make muzzleflash

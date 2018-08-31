@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlameThrower : Weapon {
+    private float sevol;
 
     private ParticleSystem m_FlameParticleSystem;
     public AudioSource AudioSource;
     public AudioClip AudioClip;
     private void Awake()
     {
+        
         Initialize();
 
         m_FlameParticleSystem = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
@@ -25,7 +27,11 @@ public class FlameThrower : Weapon {
     void Start () {
         m_AmmoBulletNum = m_MaxBulletNum;
     }
-	
+    private void Update()
+    {
+        sevol = PlayerPrefs.GetFloat("sevol");
+    }
+
     public override void Shoot()
     {
         if(m_AmmoBulletNum > 0)
@@ -33,7 +39,7 @@ public class FlameThrower : Weapon {
             if(m_FlameParticleSystem.enableEmission == false)
             {
                 m_FlameParticleSystem.enableEmission = true;
-                AudioSource.PlayOneShot(AudioClip);
+                AudioSource.PlayOneShot(AudioClip,sevol);
             }
             m_AmmoBulletNum -= 1;
             

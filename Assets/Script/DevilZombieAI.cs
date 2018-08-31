@@ -5,6 +5,7 @@ using UnityEngine.AI;   //this for NavMeshAgent
 
 public class DevilZombieAI : MonoBehaviour
 {
+    private float sevol;
     private ZombieData m_Data;
     private Animator m_Ani;
     private NavMeshAgent m_Nav;     //for finding route or move zombie
@@ -22,6 +23,7 @@ public class DevilZombieAI : MonoBehaviour
 
     void Awake()
     {
+        
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
         m_Ani = GetComponent<Animator>();
@@ -29,11 +31,15 @@ public class DevilZombieAI : MonoBehaviour
         body_col = obj_body.GetComponent<BoxCollider>();
         head_col = obj_head.GetComponent<BoxCollider>();
     }
+    private void Update()
+    {
+        sevol = PlayerPrefs.GetFloat("sevol");
+    }
 
     void OnEnable()
     {
         StageMgr.instance.AddSpecialZombieNumber(1);
-        AudioSource.PlayOneShot(AudioClip);
+        AudioSource.PlayOneShot(AudioClip,sevol);
         m_Nav.baseOffset = 0;
         m_Nav.enabled = true;
         m_Nav.baseOffset = Random.Range(15,26);

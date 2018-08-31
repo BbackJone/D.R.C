@@ -16,6 +16,7 @@ public struct ZomebieDB
 
 public class ZombieData : MonoBehaviour
 {
+    private float sevol;
     public AudioSource AudioSource;
     public AudioClip AudioClip;
     //this is information about this
@@ -41,6 +42,7 @@ public class ZombieData : MonoBehaviour
 
     void Awake()
     {
+        
         Initialize();
         resultScoreContainer = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
     }
@@ -48,6 +50,10 @@ public class ZombieData : MonoBehaviour
     void Start()
     {
         m_Price = 1;
+    }
+    private void Update()
+    {
+        sevol = PlayerPrefs.GetFloat("sevol");
     }
 
     void OnEnable()
@@ -82,7 +88,7 @@ public class ZombieData : MonoBehaviour
         m_Hp -= _damage;
         if (m_Hp <= 0)
         {
-            AudioSource.PlayOneShot(AudioClip);
+            AudioSource.PlayOneShot(AudioClip,sevol);
             if (!isDeadConfirmed)
             {
                 resultScoreContainer.kills++;
