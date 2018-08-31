@@ -44579,6 +44579,22 @@ MonoBehaviour:
     key: settings_saveandexit
   - text: {fileID: 5354373}
     key: game_score
+  - text: {fileID: 622804358}
+    key: weapon_Katana
+  - text: {fileID: 1075034890}
+    key: weapon_Handgun
+  - text: {fileID: 172770129}
+    key: weapon_M4
+  - text: {fileID: 2125111817}
+    key: weapon_Sniper
+  - text: {fileID: 409868032}
+    key: weapon_Minigun
+  - text: {fileID: 1370018832}
+    key: weapon_RPG
+  - text: {fileID: 1275576937}
+    key: weapon_Flamethrower
+  - text: {fileID: 1144705552}
+    key: weapon_Turret
 --- !u!4 &819176700
 Transform:
   m_ObjectHideFlags: 0
