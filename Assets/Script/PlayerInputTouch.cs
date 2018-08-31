@@ -30,8 +30,6 @@ public class PlayerInputTouch : MonoBehaviour {
     //private Vector2[] touchDragDeltaA;
     private float touchDragDist;
 
-    private bool isSingleShotAreaPressed = false;
-    
 	void Start () {
         if (controlStick == null) enabled = false;
         data = GetComponent<PlayerData>();
@@ -42,12 +40,11 @@ public class PlayerInputTouch : MonoBehaviour {
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
 
-        StartCoroutine(SingleShot());
         UpdateSensitivity();
     }
     
     public void UpdateSensitivity() {
-        rotateUserSensitivity = (PlayerPrefs.GetFloat("sensitivity") * 1.8f) + 0.2f;
+        rotateUserSensitivity = (PlayerPrefs.GetFloat("sensitivity", 0.5f) * 1.8f) + 0.2f;
     }
 
     void Update() {
@@ -62,18 +59,10 @@ public class PlayerInputTouch : MonoBehaviour {
         #region Look-around only implementation
         // Handle camera movement
         if (Input.touchCount > 0) {
-            isSingleShotAreaPressed = false;
 
             // for every active touch pointer...
             for (int i = 0; i < Input.touchCount; i++) {
                 Touch touch = Input.GetTouch(i);
-
-                // top-left singleshot
-                if (touch.position.x < Screen.width / 2 && touch.position.y > Screen.height / 2)
-                {
-                    //StartCoroutine(SingleShot());
-                    isSingleShotAreaPressed = true;
-                }
 
                 // if this touch pointer is not using control stick...
                 if (touch.fingerId != controlStick.draggingPointer) {
@@ -151,23 +140,5 @@ public class PlayerInputTouch : MonoBehaviour {
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
 #endif
-    }
-
-    IEnumerator SingleShot()
-    {
-        while (true)
-        {
-            if (isSingleShotAreaPressed)
-            {
-                bool prevShooting = data.m_isShooting;
-                data.m_isShooting = true;
-                while (isSingleShotAreaPressed)
-                {
-                    yield return new WaitForEndOfFrame();
-                }
-                data.m_isShooting = prevShooting;
-            }
-            yield return new WaitForEndOfFrame();
-        }
     }
 }

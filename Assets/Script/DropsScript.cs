@@ -11,7 +11,12 @@ public class DropsScript : MonoBehaviour {
 
     public DropsType type;
 
-	void Update() {
+    private void OnEnable()
+    {
+        Invoke("DisableItem", 20f);
+    }
+
+    void Update() {
         transform.Rotate(Vector3.down * 50f * Time.deltaTime);
 	}
 
@@ -20,12 +25,17 @@ public class DropsScript : MonoBehaviour {
 
         if (m_Data != null) {
             try {
-                if (type == DropsType.Heart) {
+                if (type == DropsType.Heart && m_Data.m_Hp > 0) {
                     m_Data.m_Hp = Math.Min(m_Data.m_Hp + 20, m_Data.m_MaxHp);
                 }
             } catch (Exception) { }
 
             gameObject.SetActive(false);
         }
+    }
+
+    void DisableItem()
+    {
+        gameObject.SetActive(false);
     }
 }

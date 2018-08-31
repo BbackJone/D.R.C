@@ -92,7 +92,7 @@ public class StageMgr : MonoBehaviour
     {
         //Spawn Normal zombies
         if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber
-            && m_Current_NormalZombieNumber < 80)   //Prevent from dopping frame rate as a result of too many mob
+            && m_Current_NormalZombieNumber < 70)   //Prevent from dopping frame rate as a result of too many mob
         {
             if (m_GameTime % 1f < 0.1f)
             {

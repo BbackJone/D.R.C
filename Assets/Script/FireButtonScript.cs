@@ -12,7 +12,7 @@ public class FireButtonScript : MonoBehaviour, IPointerDownHandler {
     private float imageColor = 1f;
     private const float imageColorBright = 1f;
     private const float imageColorDark = 0.4f;
-    private bool autofireByFireButton = false;
+    public bool autofireByFireButton = false;
 
     void Start() {
         playerData = ObjectManager.m_Inst.m_Player.GetComponent<PlayerData>();

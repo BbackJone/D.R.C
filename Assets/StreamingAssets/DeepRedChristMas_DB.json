@@ -3,7 +3,7 @@
     {
       "Name": "NormalZombie",
       "Hp": 100,
-      "Speed": 4,
+      "Speed": 4.7,
       "AttackDamage": 10,
       "AttackRange": 2,
       "AttackSpeed": 2.5
@@ -159,7 +159,7 @@
     },
     {
       "Level": 2,
-      "NormalZombieNumber": 40,
+      "NormalZombieNumber": 50,
       "SpecialZombieNumber": 2,
       "DevilZombieNumber": 0,
       "NormalZombieSpeedRate": 1.1,
@@ -168,7 +168,7 @@
     },
     {
       "Level": 3,
-      "NormalZombieNumber": 60,
+      "NormalZombieNumber": 100,
       "SpecialZombieNumber": 3,
       "DevilZombieNumber": 1,
       "NormalZombieSpeedRate": 1.1,
@@ -177,7 +177,7 @@
     },
     {
       "Level": 4,
-      "NormalZombieNumber": 80,
+      "NormalZombieNumber": 150,
       "SpecialZombieNumber": 4,
       "DevilZombieNumber": 1,
       "NormalZombieSpeedRate": 1.2,
@@ -186,8 +186,8 @@
     },
     {
       "Level": 5,
-      "NormalZombieNumber": 110,
-      "SpecialZombieNumber": 5,
+      "NormalZombieNumber": 200,
+      "SpecialZombieNumber": 4,
       "DevilZombieNumber": 2,
       "NormalZombieSpeedRate": 1.3,
       "NormalZombiePowerRate": 1.4,
@@ -195,8 +195,8 @@
     },
     {
       "Level": 6,
-      "NormalZombieNumber": 140,
-      "SpecialZombieNumber": 5,
+      "NormalZombieNumber": 260,
+      "SpecialZombieNumber": 4,
       "DevilZombieNumber": 2,
       "NormalZombieSpeedRate": 1.4,
       "NormalZombiePowerRate": 1.5,
@@ -204,8 +204,8 @@
     },
     {
       "Level": 7,
-      "NormalZombieNumber": 170,
-      "SpecialZombieNumber": 5,
+      "NormalZombieNumber": 330,
+      "SpecialZombieNumber": 4,
       "DevilZombieNumber": 2,
       "NormalZombieSpeedRate": 1.5,
       "NormalZombiePowerRate": 1.6,
@@ -213,8 +213,8 @@
     },
     {
       "Level": 8,
-      "NormalZombieNumber": 210,
-      "SpecialZombieNumber": 7,
+      "NormalZombieNumber": 400,
+      "SpecialZombieNumber": 5,
       "DevilZombieNumber": 3,
       "NormalZombieSpeedRate": 1.5,
       "NormalZombiePowerRate": 1.6,
@@ -222,8 +222,8 @@
     },
     {
       "Level": 9,
-      "NormalZombieNumber": 250,
-      "SpecialZombieNumber": 8,
+      "NormalZombieNumber": 500,
+      "SpecialZombieNumber": 5,
       "DevilZombieNumber": 3,
       "NormalZombieSpeedRate": 1.6,
       "NormalZombiePowerRate": 1.7,
@@ -231,8 +231,8 @@
     },
     {
       "Level": 10,
-      "NormalZombieNumber": 290,
-      "SpecialZombieNumber": 8,
+      "NormalZombieNumber": 600,
+      "SpecialZombieNumber": 5,
       "DevilZombieNumber": 3,
       "NormalZombieSpeedRate": 1.6,
       "NormalZombiePowerRate": 1.7,
@@ -240,8 +240,8 @@
     },
     {
       "Level": 11,
-      "NormalZombieNumber": 350,
-      "SpecialZombieNumber": 9,
+      "NormalZombieNumber": 700,
+      "SpecialZombieNumber": 5,
       "DevilZombieNumber": 3,
       "NormalZombieSpeedRate": 1.7,
       "NormalZombiePowerRate": 1.8,
@@ -249,8 +249,8 @@
     },
     {
       "Level": 12,
-      "NormalZombieNumber": 410,
-      "SpecialZombieNumber": 10,
+      "NormalZombieNumber": 800,
+      "SpecialZombieNumber": 6,
       "DevilZombieNumber": 3,
       "NormalZombieSpeedRate": 1.7,
       "NormalZombiePowerRate": 1.8,
@@ -258,8 +258,8 @@
     },
     {
       "Level": 13,
-      "NormalZombieNumber": 500,
-      "SpecialZombieNumber": 10,
+      "NormalZombieNumber": 900,
+      "SpecialZombieNumber": 6,
       "DevilZombieNumber": 4,
       "NormalZombieSpeedRate": 1.8,
       "NormalZombiePowerRate": 1.9,
@@ -267,8 +267,8 @@
     },
     {
       "Level": 14,
-      "NormalZombieNumber": 600,
-      "SpecialZombieNumber": 11,
+      "NormalZombieNumber": 1000,
+      "SpecialZombieNumber": 7,
       "DevilZombieNumber": 4,
       "NormalZombieSpeedRate": 1.9,
       "NormalZombiePowerRate": 2.0,
@@ -276,9 +276,9 @@
     },
     {
       "Level": 15,
-      "NormalZombieNumber": 750,
-      "SpecialZombieNumber": 12,
-      "DevilZombieNumber": 4,
+      "NormalZombieNumber": 1100,
+      "SpecialZombieNumber": 7,
+      "DevilZombieNumber": 5,
       "NormalZombieSpeedRate": 2.0,
       "NormalZombiePowerRate": 2.0,
       "NormalZombieHealthRate": 2.0

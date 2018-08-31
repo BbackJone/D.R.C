@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class FireGuide : MonoBehaviour {
+public class FireGuide : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
     private Image image;
     private Color originalColor;
     private float alpha;
 
     public bool guideCounter = false;
+
+    private PlayerData playerData;
+    public FireButtonScript fireButton;
 
     private void Awake()
     {
@@ -20,8 +24,9 @@ public class FireGuide : MonoBehaviour {
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("GuidedCount", 0) < 3) StartCoroutine(FadeGuide());
-        else gameObject.SetActive(false);
+        if (PlayerPrefs.GetInt("GuidedCount", 0) < 3) StartCoroutine("FadeGuide");
+        else image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
+        playerData = ObjectManager.m_Inst.m_Player.GetComponent<PlayerData>();
     }
 
     IEnumerator FadeGuide() {
@@ -40,6 +45,31 @@ public class FireGuide : MonoBehaviour {
             PlayerPrefs.SetInt("GuidedCount", PlayerPrefs.GetInt("GuidedCount", 0) + 1);
             PlayerPrefs.Save();
         }
-        gameObject.SetActive(false);
+        StopCoroutine("FadeGuide");
 	}
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (playerData.m_WeaponInhand.m_Autoshot)
+        {
+            playerData.m_isShooting = true;
+        }
+        else
+        {
+            StartCoroutine(SingleShot());
+        }
+    }
+
+    public void OnPointerUp(PointerEventData data)
+    {
+        if(!fireButton.autofireByFireButton)
+            playerData.m_isShooting = false;
+    }
+
+    IEnumerator SingleShot()
+    {
+        playerData.m_isShooting = true;
+        yield return new WaitForEndOfFrame();
+        playerData.m_isShooting = false;
+    }
 }
