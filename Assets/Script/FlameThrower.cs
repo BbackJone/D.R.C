@@ -29,8 +29,12 @@ public class FlameThrower : Weapon {
     {
         if(m_AmmoBulletNum > 0)
         {
-            m_FlameParticleSystem.enableEmission = true;
-
+            if (m_FlameParticleSystem.enableEmission == false)
+            {
+                m_FlameParticleSystem.enableEmission = true;
+                StartCoroutine("ShootCollider");
+            }
+            
             m_AmmoBulletNum -= 1;
             gameObject.SendMessage("PlaySound", value: 0);
 
@@ -43,5 +47,16 @@ public class FlameThrower : Weapon {
     public void StopFire()
     {
         m_FlameParticleSystem.enableEmission = false;
+        StopCoroutine("ShootCollider");
+    }
+
+    IEnumerator ShootCollider()
+    {
+        while (true)
+        {
+            Quaternion Temp = Quaternion.Euler(transform.rotation.eulerAngles.x /2, transform.rotation.eulerAngles.y , transform.rotation.eulerAngles.z);
+            ObjectPoolMgr.instance.CreatePooledObject("FlameSphereCol", m_FlameParticleSystem.transform.position, m_FlameParticleSystem.transform.rotation);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlameThrower_Flame : MonoBehaviour {
 
-    private void OnParticleCollision(GameObject other)
+    private void OnParticleTrigger(GameObject other)
     {
         if(other.CompareTag("Enemy"))
         {

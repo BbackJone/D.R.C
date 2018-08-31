@@ -3,7 +3,7 @@
     {
       "Name": "NormalZombie",
       "Hp": 100,
-      "Speed": 5,
+      "Speed": 4,
       "AttackDamage": 10,
       "AttackRange": 2,
       "AttackSpeed": 2.5
@@ -27,7 +27,7 @@
     {
       "Name": "PrisonerZombie",
       "Hp": 1,
-      "Speed": 7,
+      "Speed": 6,
       "AttackDamage": 50,
       "AttackRange": 5,
       "AttackSpeed": 1
