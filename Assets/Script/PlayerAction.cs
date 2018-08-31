@@ -308,6 +308,16 @@ public class PlayerAction : MonoBehaviour {
             {
                 gameObject.SendMessage("PlaySound", (int)(SOUNDCLIP.HANDGUNRELOAD),0);
             }
+            
+            if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.SNIPER)
+            {
+                gameObject.SendMessage("PlaySound", 7, 0);
+            }
+            
+            if (m_Data.m_WeaponInhand.m_WeaponType == Weapon_Type.MINIGUN)
+            {
+                gameObject.SendMessage("PlaySound", 13, 0);
+            }
         }
     }
 

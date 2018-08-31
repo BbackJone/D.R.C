@@ -5,7 +5,8 @@ using UnityEngine;
 public class FlameThrower : Weapon {
 
     private ParticleSystem m_FlameParticleSystem;
-
+    public AudioSource AudioSource;
+    public AudioClip AudioClip;
     private void Awake()
     {
         Initialize();
@@ -29,10 +30,13 @@ public class FlameThrower : Weapon {
     {
         if(m_AmmoBulletNum > 0)
         {
-            m_FlameParticleSystem.enableEmission = true;
-
+            if(m_FlameParticleSystem.enableEmission == false)
+            {
+                m_FlameParticleSystem.enableEmission = true;
+                AudioSource.PlayOneShot(AudioClip);
+            }
             m_AmmoBulletNum -= 1;
-            gameObject.SendMessage("PlaySound", value: 0);
+            
 
             //If don't cancelInvoke in a few time, stop shoot function is exacuted.
             CancelInvoke("StopFire");
@@ -42,6 +46,8 @@ public class FlameThrower : Weapon {
 
     public void StopFire()
     {
+        AudioSource.Stop();
         m_FlameParticleSystem.enableEmission = false;
     }
+
 }

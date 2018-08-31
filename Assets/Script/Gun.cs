@@ -25,7 +25,8 @@ public class Gun : Weapon
     }
 
     void Awake()
-    {    soundObject = GameObject.Find("/Stage/Santa");
+    {
+        soundObject = ObjectManager.m_Inst.m_Player.gameObject;
     m_AimSystem = GetComponentInParent<AimSystem>();
 
         Initialize();
@@ -63,7 +64,26 @@ public class Gun : Weapon
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
-        soundObject.SendMessage("PlaySound", 0,0);
+        if (m_WeaponType == Weapon_Type.HANDGUN)
+        {
+            soundObject.SendMessage("PlaySound", 10, 0);
+        }
+        if (m_WeaponType == Weapon_Type.SNIPER)
+        {
+            soundObject.SendMessage("PlaySound", 6, 0);
+        }
+        if (m_WeaponType == Weapon_Type.RIFLE)
+        {
+            soundObject.SendMessage("PlaySound", 9, 0);
+        }
+        if (m_WeaponType == Weapon_Type.RPG)
+        {
+            soundObject.SendMessage("PlaySound", 8, 0);
+
+        }
+
+
+
         Makeflash();
 
         //SetAni
