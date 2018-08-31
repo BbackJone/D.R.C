@@ -11,13 +11,11 @@ public class SoldierZombieAI : MonoBehaviour {
 
     public GameObject obj_body;
     public GameObject obj_head;
-    public BoxCollider body_col;
-    public BoxCollider head_col;
+    private BoxCollider body_col;
+    private BoxCollider head_col;
 
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
-
-    public GameObject bullet;
 
     public MeshRenderer m_MuzzleFlash;
     public MeshRenderer m_MuzzleFlash2;
@@ -62,10 +60,7 @@ public class SoldierZombieAI : MonoBehaviour {
                     } else {
                         m_Data.m_AttackTimer = 0f;
                         transform.LookAt(m_target);
-                        if (bullet != null)
-                        {
-                            Invoke("Shoot", 0.2f);
-                        }
+                        Invoke("Shoot", 0.2f);
                     }
                 }
             }
@@ -77,7 +72,10 @@ public class SoldierZombieAI : MonoBehaviour {
     public void Shoot()
     {
         gameObject.SendMessage("ShootGun");
-        Instantiate(bullet, transform).SetActive(true);
+        GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject("SoldierZombieBullet",
+            transform.position, transform.rotation);
+        bullet.SendMessage("SetBodyDamage", m_Data.m_AttackDamage);
+        bullet.SendMessage("SetHeadDamage", m_Data.m_AttackDamage);
 
         MakeFlash();    //make muzzleflash
     }

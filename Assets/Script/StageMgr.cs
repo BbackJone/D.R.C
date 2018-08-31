@@ -8,6 +8,7 @@ public struct WaveDB
     public int Level;
     public int NormalZombieNumber;
     public int SpecialZombieNumber;
+    public int DevilZombieNumber;
     public float NormalZombieSpeedRate;
     public float NormalZombiePowerRate;
     public float NormalZombieHealthRate;
@@ -23,8 +24,10 @@ public class StageMgr : MonoBehaviour
 
     public int m_Spawned_NormalZombieNumber = 0;     //number of all amount of spawned zombies
     public int m_Spawned_SpecialZombieNumber = 0;
+    public int m_Spawned_DevilZombieNumber = 0;     //number of all amount of spawned zombies
     public int m_Current_NormalZombieNumber = 0;     //number of zombies which are alive in stage
     public int m_Current_SpecialZombieNumber = 0;
+    public int m_Current_DevilZombieNumber = 0;
 
     private SaveDataManager m_SaveMgr;
 
@@ -49,7 +52,6 @@ public class StageMgr : MonoBehaviour
         StartCoroutine("CheckWave");
 
         m_SpecialZombieNameList.Add("RugbyZombie");
-        m_SpecialZombieNameList.Add("DevilZombie");
         m_SpecialZombieNameList.Add("PrisonerZombie");
         m_SpecialZombieNameList.Add("SoldierZombie");
 
@@ -63,10 +65,17 @@ public class StageMgr : MonoBehaviour
     private void Update()
     {
         m_GameTime += Time.deltaTime * Time.timeScale;
-        ZombieSpawnTimer();
+        //ZombieSpawnTimer();
 
+        //Debug용
         if (Input.GetKeyDown("y"))
             SpawnZombie("RugbyZombie");
+        if (Input.GetKeyDown("u"))
+            SpawnZombie("PrisonerZombie");
+        if (Input.GetKeyDown("i"))
+            SpawnZombie("SoldierZombie");
+        if (Input.GetKeyDown("o"))
+            SpawnZombie("DevilZombie");
     }
 
 
@@ -86,9 +95,10 @@ public class StageMgr : MonoBehaviour
     public void ZombieSpawnTimer()
     {
         //Spawn Normal zombies
-        if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber)
+        if (m_Spawned_NormalZombieNumber < m_CurrentWave.NormalZombieNumber
+            && m_Current_NormalZombieNumber < 80)   //Prevent from dopping frame rate as a result of too many mob
         {
-            if (m_GameTime % 1f < 0.2f)
+            if (m_GameTime % 1f < 0.1f)
             {
                 int ZombieNameIndex = Random.Range(0, m_NormalZombieNameList.Count);
                 SpawnZombie(m_NormalZombieNameList[ZombieNameIndex]);
@@ -98,10 +108,19 @@ public class StageMgr : MonoBehaviour
         //Spawn Special zombies
         if (m_Spawned_SpecialZombieNumber < m_CurrentWave.SpecialZombieNumber)
         {
-            if (m_GameTime % 1f < 0.1f)
+            if (m_GameTime % 2f < 0.1f)
             {
                 int ZombieNameIndex = Random.Range(0, m_SpecialZombieNameList.Count);
                 SpawnZombie(m_SpecialZombieNameList[ZombieNameIndex]);
+            }
+        }
+
+        //Spawn Devil zombies
+        if (m_Spawned_DevilZombieNumber < m_CurrentWave.DevilZombieNumber)
+        {
+            if (m_GameTime % 8f < 0.1f)
+            {
+                SpawnZombie("DevilZombie");
             }
         }
     }
@@ -128,6 +147,13 @@ public class StageMgr : MonoBehaviour
             m_Spawned_SpecialZombieNumber += _num;
     }
 
+    public void AddDevilZombieNumber(int _num)
+    {
+        m_Current_DevilZombieNumber += _num;
+        if (_num > 0)
+            m_Spawned_DevilZombieNumber += _num;
+    }
+
     public void NextWave()
     {
         m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[m_CurrentWave.Level + 1];
@@ -145,7 +171,8 @@ public class StageMgr : MonoBehaviour
 
         while(true)
         {
-            if (m_Current_NormalZombieNumber + m_Current_SpecialZombieNumber <= 0)
+            if (m_Current_NormalZombieNumber + m_Current_SpecialZombieNumber
+                + m_Current_DevilZombieNumber <= 0)
             {
                 NextWave();
             }

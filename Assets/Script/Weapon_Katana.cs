@@ -9,7 +9,7 @@ public class Weapon_Katana : Weapon
 
     private BoxCollider m_BoxCol;
 
-    private Vector3[] m_CurrentPos = new Vector3[7];
+    private Vector3[] m_CurrentPos = new Vector3[9];
     private Vector3 m_SwingingDirection;        //Direction to make blood direction
 
     public override void Shoot()
@@ -34,7 +34,12 @@ public class Weapon_Katana : Weapon
         Initialize();
     }
 
-	void Start () {
+    private void OnEnable()
+    {
+        StartCoroutine("NarrowDownAim");
+    }
+
+    void Start () {
         m_ObjName = "Katana";
         m_ParticleName = "FX_BloodSplatter_Katana";
     }

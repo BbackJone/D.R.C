@@ -11,6 +11,7 @@ public class RPGRocket : MonoBehaviour {
 
     public int m_BodyDamage;
     public int m_HeadDamage;
+    public int m_ToPlayerDamage = 10;
 
     public void Remove()
     {
@@ -35,7 +36,8 @@ public class RPGRocket : MonoBehaviour {
                 if (hit.transform.CompareTag("Floor") || hit.transform.CompareTag("Sand") || hit.transform.CompareTag("Enemy"))
                 {
                     Vector3 CollsionPoint = hit.point;
-                    ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));
+                    GameObject obj = ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));
+                    obj.SendMessage("SetDamage", m_ToPlayerDamage);
 
                     DamageNearEnemies(hit.point, 4);
                     DamageNearEnemies(hit.point, 6);

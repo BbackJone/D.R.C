@@ -50,7 +50,7 @@ public class SaveData {
         sd.kills = 0;
         sd.spkills = 0;
         sd.elapsedTime = 0;
-        sd.health = 30;
+        sd.health = 100;
 
         return sd;
     }

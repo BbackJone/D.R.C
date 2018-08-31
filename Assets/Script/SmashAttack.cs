@@ -32,7 +32,7 @@ public class SmashAttack : MonoBehaviour {
 
             other.GetComponent<Rigidbody>().AddForce(transform.forward * 40, ForceMode.Impulse);
 
-            other.gameObject.SendMessage("GetDamage", 1);
+            other.gameObject.SendMessage("GetDamage", m_Data.m_AttackDamage);
         }
     }
 

@@ -78,7 +78,7 @@ public class BulletEnemy : MonoBehaviour{
             if(hit.transform.CompareTag("Player"))
             {
                 Vector3 CollsionPoint = hit.point;
-                hit.transform.gameObject.SendMessage("GetDamage", 1);
+                hit.transform.SendMessage("GetDamage", m_BodyDamage);
                 ObjectPoolMgr.instance.CreatePooledObject("FX_BloodSplatter_Bullet", CollsionPoint, this.transform.rotation);   //Make particle at attack point
                 CancelInvoke();
                 Remove();
@@ -88,6 +88,6 @@ public class BulletEnemy : MonoBehaviour{
 
     void Remove()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -27,5 +27,6 @@ public class DevilZombieAction : MonoBehaviour {
 
         GameObject Flame = ObjectPoolMgr.instance.CreatePooledObject("FlameParticle", transform.position,
             Quaternion.LookRotation(ShootDirection.normalized));
+        Flame.SendMessage("SetDamage", m_Data.m_AttackDamage);
     }
 }

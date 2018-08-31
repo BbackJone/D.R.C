@@ -3,8 +3,8 @@
     {
       "Name": "NormalZombie",
       "Hp": 100,
-      "Speed": 4.5,
-      "AttackDamage": 15,
+      "Speed": 5,
+      "AttackDamage": 10,
       "AttackRange": 2,
       "AttackSpeed": 2.5
     },
@@ -12,7 +12,7 @@
       "Name": "RugbyZombie",
       "Hp": 700,
       "Speed": 4.5,
-      "AttackDamage": 40,
+      "AttackDamage": 30,
       "AttackRange": 20,
       "AttackSpeed": 15
     },
@@ -20,7 +20,7 @@
       "Name": "DevilZombie",
       "Hp": 400,
       "Speed": 5,
-      "AttackDamage": 50,
+      "AttackDamage": 40,
       "AttackRange": 40,
       "AttackSpeed": 8
     },
@@ -36,7 +36,7 @@
       "Name": "SoldierZombie",
       "Hp": 400,
       "Speed": 4,
-      "AttackDamage": 15,
+      "AttackDamage": 10,
       "AttackRange": 15,
       "AttackSpeed": 1
     }
@@ -152,6 +152,7 @@
       "Level": 1,
       "NormalZombieNumber": 30,
       "SpecialZombieNumber": 0,
+      "DevilZombieNumber": 0,
       "NormalZombieSpeedRate": 1,
       "NormalZombiePowerRate": 1,
       "NormalZombieHealthRate": 1
@@ -160,6 +161,7 @@
       "Level": 2,
       "NormalZombieNumber": 40,
       "SpecialZombieNumber": 2,
+      "DevilZombieNumber": 0,
       "NormalZombieSpeedRate": 1.1,
       "NormalZombiePowerRate": 1.1,
       "NormalZombieHealthRate": 1.1
@@ -168,6 +170,7 @@
       "Level": 3,
       "NormalZombieNumber": 60,
       "SpecialZombieNumber": 3,
+      "DevilZombieNumber": 1,
       "NormalZombieSpeedRate": 1.1,
       "NormalZombiePowerRate": 1.2,
       "NormalZombieHealthRate": 1.2
@@ -176,6 +179,7 @@
       "Level": 4,
       "NormalZombieNumber": 80,
       "SpecialZombieNumber": 4,
+      "DevilZombieNumber": 1,
       "NormalZombieSpeedRate": 1.2,
       "NormalZombiePowerRate": 1.2,
       "NormalZombieHealthRate": 1.4
@@ -184,6 +188,7 @@
       "Level": 5,
       "NormalZombieNumber": 110,
       "SpecialZombieNumber": 5,
+      "DevilZombieNumber": 2,
       "NormalZombieSpeedRate": 1.3,
       "NormalZombiePowerRate": 1.4,
       "NormalZombieHealthRate": 1.5

@@ -7,13 +7,14 @@ public class AttackHitboxScript : MonoBehaviour {
     /// <summary>
     /// Damage dealt to player when the hitbox is triggered.
     /// </summary>
-    public int damage = 1;
+    private int damage;
 
     private PlayerData data;
 
     private void Start()
     {
         data = ObjectManager.m_Inst.m_Player.GetComponent<PlayerData>();
+        damage = GetComponentInParent<ZombieData>().m_AttackDamage;
     }
 
     private void OnTriggerEnter(Collider other)

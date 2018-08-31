@@ -154,6 +154,9 @@ public class ObjectPoolMgr : MonoBehaviour {
         //Bullet Impact_Dirt
         AddObjectToPool(19, 100, ObjType.OBJ_ETC, false);
         m_ParticleOrderList.Add("WFXMR_BImpact Dirt + Hole", new ParticleOrderList());
+
+        //Soldier Zombie Bullet
+        AddObjectToPool(20, 10, ObjType.OBJ_BULLET, true);
     }
 
     public void AddObjectToPool(int _childindex, int _amountToPool, ObjType _objtype, bool _shouldexpand)

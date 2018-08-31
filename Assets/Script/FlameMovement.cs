@@ -47,7 +47,8 @@ public class FlameMovement : MonoBehaviour
             if (hit.transform.CompareTag("Floor") || hit.transform.CompareTag("Sand"))
             {
                 Vector3 CollsionPoint = hit.point;
-                ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));   //Make particle at attack point
+                GameObject obj = ObjectPoolMgr.instance.CreatePooledObject("ExplosionParticle", CollsionPoint, Quaternion.LookRotation(Vector3.up));   //Make particle at attack point
+                obj.SendMessage("SetDamage", m_Damage);
                 CancelInvoke();
                 Remove();
             }
@@ -57,5 +58,10 @@ public class FlameMovement : MonoBehaviour
     void Remove()
     {
         gameObject.SetActive(false);
+    }
+
+    public void SetDamage(int _dmg)
+    {
+        m_Damage = _dmg;
     }
 }

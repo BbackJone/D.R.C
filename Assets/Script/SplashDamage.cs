@@ -31,7 +31,7 @@ public class SplashDamage : MonoBehaviour {
             //form of y = a(x - b)^2   =>     Damage following distance
             int Damage = (int)((m_Damage / (Mathf.Pow(RadiusOfExplode, 2))) *
                 Mathf.Pow((DistanceWithPlayer - RadiusOfExplode), 2));
-            other.gameObject.SendMessage("GetDamage", 1);
+            other.gameObject.SendMessage("GetDamage", Damage);
 
             //Make normalized vector that is direction of forcing player.
             Vector3 ForceDirection = other.transform.position - transform.position;
@@ -48,5 +48,10 @@ public class SplashDamage : MonoBehaviour {
     public void DisableCollider()
     {
         m_SpereCol.enabled = false;
+    }
+
+    public void SetDamage(int _dmg)
+    {
+        m_Damage = _dmg;
     }
 }
