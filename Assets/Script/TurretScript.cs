@@ -7,7 +7,10 @@ public class TurretScript : MonoBehaviour {
     private const float fireTimeConst = 0.5f;
     private float fireTime = fireTimeConst;
 
+    private Transform muzzleFlash;
+
     void OnEnable() {
+        muzzleFlash = transform.GetChild(1);
         StartCoroutine(RunTurret());
 	}
 
@@ -74,6 +77,9 @@ public class TurretScript : MonoBehaviour {
                     bullet.SendMessage("SetBodyDamage", 20);
                     bullet.SendMessage("SetHeadDamage", 40);
 
+                    muzzleFlash.gameObject.SetActive(true);
+                    Invoke("TurnOffMuzzleFlash", 0.05f);
+
                     fireTime += fireTimeConst;
                 }
 
@@ -96,5 +102,10 @@ public class TurretScript : MonoBehaviour {
             }
         }
         return tMin;
+    }
+
+    void TurnOffMuzzleFlash()
+    {
+        muzzleFlash.gameObject.SetActive(false);
     }
 }
