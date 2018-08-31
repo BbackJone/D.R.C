@@ -5,9 +5,11 @@ using UnityEngine;
 public class FlameThrower : Weapon {
 
     private ParticleSystem m_FlameParticleSystem;
-
+    public AudioSource AudioSource;
+    public AudioClip AudioClip;
     private void Awake()
     {
+        
         Initialize();
 
         m_FlameParticleSystem = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
@@ -24,7 +26,7 @@ public class FlameThrower : Weapon {
     void Start () {
         m_AmmoBulletNum = m_MaxBulletNum;
     }
-	
+
     public override void Shoot()
     {
         if(m_AmmoBulletNum > 0)
@@ -33,10 +35,9 @@ public class FlameThrower : Weapon {
             {
                 m_FlameParticleSystem.enableEmission = true;
                 StartCoroutine("ShootCollider");
+                AudioSource.PlayOneShot(AudioClip, VolumeHolderScript.instance.seVol);
             }
-            
             m_AmmoBulletNum -= 1;
-            gameObject.SendMessage("PlaySound", value: 0);
 
             //If don't cancelInvoke in a few time, stop shoot function is exacuted.
             CancelInvoke("StopFire");
@@ -46,6 +47,7 @@ public class FlameThrower : Weapon {
 
     public void StopFire()
     {
+        AudioSource.Stop();
         m_FlameParticleSystem.enableEmission = false;
         StopCoroutine("ShootCollider");
     }
@@ -59,4 +61,5 @@ public class FlameThrower : Weapon {
             yield return new WaitForSeconds(0.2f);
         }
     }
+
 }

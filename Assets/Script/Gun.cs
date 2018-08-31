@@ -9,7 +9,7 @@ public class Gun : Weapon
     public MeshRenderer m_MuzzleFlash2;
     private float muzzleFlashMinimumSize = 0.05f;
     private float muzzleFlashMaximumSize = 0.225f;
-
+    private GameObject soundObject;
     public Transform m_ShootPos;
 
     public Animator m_GunAni;
@@ -26,7 +26,8 @@ public class Gun : Weapon
 
     void Awake()
     {
-        m_AimSystem = GetComponentInParent<AimSystem>();
+        soundObject = ObjectManager.m_Inst.m_Player.gameObject;
+    m_AimSystem = GetComponentInParent<AimSystem>();
 
         Initialize();
     }
@@ -63,7 +64,26 @@ public class Gun : Weapon
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
-        gameObject.SendMessage("PlaySound", value: 0);
+        if (m_WeaponType == Weapon_Type.HANDGUN)
+        {
+            soundObject.SendMessage("PlaySound", 10, 0);
+        }
+        if (m_WeaponType == Weapon_Type.SNIPER)
+        {
+            soundObject.SendMessage("PlaySound", 6, 0);
+        }
+        if (m_WeaponType == Weapon_Type.RIFLE)
+        {
+            soundObject.SendMessage("PlaySound", 9, 0);
+        }
+        if (m_WeaponType == Weapon_Type.RPG)
+        {
+            soundObject.SendMessage("PlaySound", 8, 0);
+
+        }
+
+
+
         Makeflash();
 
         //SetAni

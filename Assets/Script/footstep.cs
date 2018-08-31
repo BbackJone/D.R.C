@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class footstep : MonoBehaviour {
     public AudioSource FstepSourse;
-    
     public AudioClip[] FstepClip;
 
     private Transform leftFootTrans;
@@ -12,10 +11,11 @@ public class footstep : MonoBehaviour {
 
     private void Awake()
     {
+        
         leftFootTrans = GetComponent<Animator>().GetBoneTransform(HumanBodyBones.LeftFoot);
         rightFootTrans = GetComponent<Animator>().GetBoneTransform(HumanBodyBones.RightFoot);
     }
-    
+
     void LeftFootstep()
     {
         AudioClip clip = null;
@@ -26,12 +26,12 @@ public class footstep : MonoBehaviour {
             if (hit.collider.CompareTag("Floor"))
             {
                 clip = FstepClip[0];
-                maxvol = UnityEngine.Random.Range(0.2f, 0.9f);
+                maxvol = UnityEngine.Random.Range(0.4f, 0.9f) * VolumeHolderScript.instance.seVol;
             }
             else if (hit.collider.CompareTag("Sand"))
             {
                 clip = FstepClip[1];
-                maxvol = UnityEngine.Random.Range(0.1f, 0.5f);
+                maxvol = UnityEngine.Random.Range(0.4f, 0.9f) * VolumeHolderScript.instance.seVol;
             }
         }
         if (clip != null)
@@ -50,12 +50,12 @@ public class footstep : MonoBehaviour {
             if (hit.collider.CompareTag("Floor"))
             {
                 clip = FstepClip[0];
-                maxvol = UnityEngine.Random.Range(0.2f, 0.9f);
+                maxvol = UnityEngine.Random.Range(0.4f, 0.9f) * VolumeHolderScript.instance.seVol;
             }
             else if (hit.collider.CompareTag("Sand"))
             {
                 clip = FstepClip[1];
-                maxvol = UnityEngine.Random.Range(0.1f, 0.5f);
+                maxvol = UnityEngine.Random.Range(0.4f, 0.9f) * VolumeHolderScript.instance.seVol;
             }
         }
         if (clip != null)

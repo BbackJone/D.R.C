@@ -15,6 +15,7 @@ public class Weapon_Minigun : Weapon {
 
     private float m_PreShootRotateTime = 0f;
 
+    private GameObject soundObject;
     public float RecoilMultiplyer = 1;
 
     public override void Shoot()
@@ -24,11 +25,14 @@ public class Weapon_Minigun : Weapon {
 
         CancelInvoke("CancelShoot");
         Invoke("CancelShoot", m_ShotRate * 3);
-
+        if (m_PreShootRotateTime == 0f) {
+            soundObject.SendMessage("PlaySound", 12);
+}
         if (m_PreShootRotateTime < 0.5f)
         {
             m_GunRotateAni.SetBool("IsRotating", true);
             m_PreShootRotateTime += m_ShotRate;
+
             return;
         }
 
@@ -37,6 +41,8 @@ public class Weapon_Minigun : Weapon {
 
     void Awake()
     {
+        soundObject = ObjectManager.m_Inst.m_Player.gameObject;
+
         m_AimSystem = GetComponentInParent<AimSystem>();
         m_GunRotateAni = GetComponent<Animator>();
 
@@ -70,7 +76,7 @@ public class Weapon_Minigun : Weapon {
         bullet.SendMessage("SetHeadDamage", m_HeadDamage);
 
         m_AmmoBulletNum -= 1;
-        gameObject.SendMessage("PlaySound", value: 0);
+        soundObject.SendMessage("PlaySound", 9);
         Makeflash();
 
         //SetAni

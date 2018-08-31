@@ -14,6 +14,9 @@ public class SoldierZombieAI : MonoBehaviour {
     private BoxCollider body_col;
     private BoxCollider head_col;
 
+    public AudioSource AudioSource;
+    public AudioClip AudioClip;
+
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
 
@@ -21,6 +24,8 @@ public class SoldierZombieAI : MonoBehaviour {
     public MeshRenderer m_MuzzleFlash2;
 
     void Awake() {
+
+        
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
         m_Ani = GetComponent<Animator>();
@@ -76,6 +81,7 @@ public class SoldierZombieAI : MonoBehaviour {
             transform.position, transform.rotation);
         bullet.SendMessage("SetBodyDamage", m_Data.m_AttackDamage);
         bullet.SendMessage("SetHeadDamage", m_Data.m_AttackDamage);
+        AudioSource.PlayOneShot(AudioClip, VolumeHolderScript.instance.seVol);
 
         MakeFlash();    //make muzzleflash
     }

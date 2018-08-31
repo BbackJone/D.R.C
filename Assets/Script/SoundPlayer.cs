@@ -17,7 +17,7 @@ public class SoundPlayer : MonoBehaviour {
 
     public void PlaySound(int _soundclip)
     {
-        m_Audiosouce.PlayOneShot(m_AudioClipArr[_soundclip]);
+        m_Audiosouce.PlayOneShot(m_AudioClipArr[_soundclip], VolumeHolderScript.instance.seVol);
     }
 
     public bool isPlaying()

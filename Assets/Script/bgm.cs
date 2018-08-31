@@ -7,9 +7,22 @@ public class bgm : MonoBehaviour {
    public AudioClip bgmClip;
    public AudioSource bgmSource;
 
+    private float musicvol;
     private void Start()
     {
+        UpdateBgmVolume();
         StartCoroutine("Bgmplay");
+    }
+    private void Update()
+    {
+        if (Time.timeScale == 0f) UpdateBgmVolume();
+    }
+
+    void UpdateBgmVolume()
+    {
+        Debug.Log(VolumeHolderScript.instance.musicVol + "");
+        musicvol = VolumeHolderScript.instance.musicVol;
+        bgmSource.volume = musicvol;
     }
 
     IEnumerator Bgmplay()
@@ -18,7 +31,7 @@ public class bgm : MonoBehaviour {
         {
             if (!bgmSource.isPlaying)
             {
-                bgmSource.PlayOneShot(bgmClip,0.0f);
+                bgmSource.PlayOneShot(bgmClip);
             }
             yield return new WaitForSeconds(2);
         }

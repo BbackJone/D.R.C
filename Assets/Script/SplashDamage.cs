@@ -10,15 +10,20 @@ public class SplashDamage : MonoBehaviour {
     public int m_Damage;
     public float m_PushingForce;
 
+    private GameObject soundObject;
+
 	// Use this for initialization
 	void Awake () {
+        soundObject = ObjectManager.m_Inst.m_Player.gameObject;
         m_SpereCol = GetComponent<SphereCollider>();
     }
 
     private void OnEnable()
     {
         m_SpereCol.enabled = true;
+        soundObject.SendMessage("PlaySound", 11);
         Invoke("DisableCollider", 0.2f);
+
     }
 
     private void OnTriggerEnter(Collider other)

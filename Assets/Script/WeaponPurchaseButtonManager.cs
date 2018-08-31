@@ -14,6 +14,8 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
 
     public Text coinCounterText;
 
+    public GameObject otherObject;
+
     LanguageUpdater lu;
 
     public float fadeColor = 0.2f;
@@ -67,10 +69,12 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
     public void PurchaseWeapon() {
         int coin = PlayerPrefs.GetInt("coins", 0);
         if (coin >= weaponPrice) {
+            otherObject.SendMessage("uisound5");
             PlayerPrefs.SetInt("coins", coin - weaponPrice);
             PlayerPrefs.SetInt("WeaponPurchased_" + weaponName, 1);
             PlayerPrefs.Save();
         } else {
+            otherObject.SendMessage("uisound4");
             StopCoroutine(SetRedThenFadeRevertCoinCounterColor());
             StartCoroutine(SetRedThenFadeRevertCoinCounterColor());
         }

@@ -14,11 +14,15 @@ public class DevilZombieAI : MonoBehaviour
     private BoxCollider body_col;
     private BoxCollider head_col;
 
+    public AudioClip AudioClip;
+    public AudioSource AudioSource;
+
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
 
     void Awake()
     {
+        
         m_Nav = GetComponent<NavMeshAgent>();
         m_Data = GetComponent<ZombieData>();
         m_Ani = GetComponent<Animator>();
@@ -30,7 +34,7 @@ public class DevilZombieAI : MonoBehaviour
     void OnEnable()
     {
         StageMgr.instance.AddDevilZombieNumber(1);
-
+        AudioSource.PlayOneShot(AudioClip, VolumeHolderScript.instance.seVol);
         m_Nav.baseOffset = 0;
         m_Nav.enabled = true;
         m_Nav.baseOffset = Random.Range(15,26);

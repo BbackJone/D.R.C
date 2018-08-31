@@ -11,7 +11,7 @@ public class Weapon_Katana : Weapon
 
     private Vector3[] m_CurrentPos = new Vector3[9];
     private Vector3 m_SwingingDirection;        //Direction to make blood direction
-
+    private GameObject soundObject;
     public override void Shoot()
     {
         m_PlayerAni.SetTrigger("KatanaAttack");
@@ -19,11 +19,14 @@ public class Weapon_Katana : Weapon
         Invoke("BoxColOff", 0.75f * 0.9f);
         StartCoroutine("SetProceedDirection");
 
-        gameObject.SendMessage("PlaySound", 0);
+        Invoke("PlayKatanaSound", 0.3f);
+        
     }
 
     // Use this for initialization
     void Awake(){
+        soundObject = GameObject.Find("Santa");
+
         m_AimSystem = GetComponentInParent<AimSystem>();
         m_PlayerAni = GetComponentInParent<Animator>();
         m_BoxCol = GetComponent<BoxCollider>();
@@ -86,5 +89,10 @@ public class Weapon_Katana : Weapon
         {
             m_CurrentPos[i] = Vector3.zero;
         }
+    }
+
+    public void PlayKatanaSound()
+    {
+        soundObject.SendMessage("PlaySound", 14, 0);
     }
 }

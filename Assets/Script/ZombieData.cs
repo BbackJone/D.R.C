@@ -42,6 +42,7 @@ public class ZombieData : MonoBehaviour
 
     void Awake()
     {
+        
         Initialize();
         resultScoreContainer = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
         turretSpawnerScript = GameObject.Find("TurretSpawner").GetComponent<TurretSpawnerScript>();
@@ -58,6 +59,7 @@ public class ZombieData : MonoBehaviour
         m_Death = false;
         m_DeathTimer = 0f;
         m_AttackTimer = 1.5f;
+        isDeadConfirmed = false;
     }
 
 
@@ -81,8 +83,9 @@ public class ZombieData : MonoBehaviour
     public void GetDamage(int _damage)
     {
         m_Hp -= _damage;
-        if (m_Hp < 0)
+        if (m_Hp <= 0)
         {
+            AudioSource.PlayOneShot(AudioClip, VolumeHolderScript.instance.seVol);
             if (!isDeadConfirmed)
             {
                 resultScoreContainer.kills++;
@@ -96,6 +99,6 @@ public class ZombieData : MonoBehaviour
             }
             m_Hp = 0;
         }
-        AudioSource.PlayOneShot(AudioClip);
+        
     }
 }

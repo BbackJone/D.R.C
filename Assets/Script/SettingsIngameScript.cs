@@ -26,6 +26,7 @@ public class SettingsIngameScript : MonoBehaviour {
         if (musicVolumeSlider.value != musicVol) {
             PlayerPrefs.SetFloat("musicvol", musicVolumeSlider.value);
             musicVol = musicVolumeSlider.value;
+            VolumeHolderScript.instance.musicVol = musicVol;
             PlayerPrefs.Save();
         }
         if (seVolumeSlider.value != seVol) {

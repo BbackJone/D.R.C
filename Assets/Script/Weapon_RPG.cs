@@ -11,6 +11,7 @@ public class Weapon_RPG : Weapon
     public Transform m_ShootPos;
     private int m_RaycastLayermask;       //Layer for raycast to ignore
 
+    private GameObject soundObject;
     private RPGRocket RpgRocket = null;
     private Vector3 m_ShootDir;
 
@@ -25,6 +26,7 @@ public class Weapon_RPG : Weapon
 
     void Awake()
     {
+        soundObject = ObjectManager.m_Inst.m_Player.gameObject;
         m_AimSystem = GetComponentInParent<AimSystem>();
         m_Camera = Camera.main;
 
@@ -60,7 +62,7 @@ public class Weapon_RPG : Weapon
         newRocket.m_HeadDamage = m_HeadDamage;
         newRocket.Fire();
 
-        gameObject.SendMessage("PlaySound", 0);
+        soundObject.SendMessage("PlaySound", 8);
         m_AmmoBulletNum -= 1;
 
         //SetAni

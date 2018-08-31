@@ -8,27 +8,16 @@ public class TurretScript : MonoBehaviour {
     private float fireTime = fireTimeConst;
 
     private Transform muzzleFlash;
+    public AudioClip AudioClip;
+    public AudioSource AudioSource;
+
 
     void OnEnable() {
         muzzleFlash = transform.GetChild(1);
         StartCoroutine(RunTurret());
 	}
 
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.gameObject.name);
-        if (other.gameObject.tag == "Enemy")
-        {
-            enemiesInRange.Add(other.transform);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        enemiesInRange.Remove(other.transform);
-    }
-    */
+    
 
     IEnumerator RunTurret() {
         while (true) {
@@ -54,15 +43,6 @@ public class TurretScript : MonoBehaviour {
                 yield return new WaitForSeconds(1f);
                 continue;
             }
-            /*
-            if (enemiesInRange.Count == 0)
-            {
-                yield return new WaitForSeconds(1f);
-                continue;
-            }
-            Transform targetEnemy = enemiesInRange[0];
-            ZombieData zombieData = targetEnemy.GetComponent<ZombieData>();
-            */
 
             // attack target until it dies
             while (zombieData.m_Hp != 0)
@@ -76,6 +56,7 @@ public class TurretScript : MonoBehaviour {
                     GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject("Handgun_Bullet", transform.position, transform.rotation);
                     bullet.SendMessage("SetBodyDamage", 20);
                     bullet.SendMessage("SetHeadDamage", 40);
+                    AudioSource.PlayOneShot(AudioClip);
 
                     muzzleFlash.gameObject.SetActive(true);
                     Invoke("TurnOffMuzzleFlash", 0.05f);
