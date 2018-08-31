@@ -14,6 +14,9 @@ public class DevilZombieAI : MonoBehaviour
     private BoxCollider body_col;
     private BoxCollider head_col;
 
+    public AudioClip AudioClip;
+    public AudioSource AudioSource;
+
     public Transform m_target { get; set; }
     public float m_TargetDistance { get; set; }
 
@@ -30,7 +33,7 @@ public class DevilZombieAI : MonoBehaviour
     void OnEnable()
     {
         StageMgr.instance.AddSpecialZombieNumber(1);
-
+        AudioSource.PlayOneShot(AudioClip);
         m_Nav.baseOffset = 0;
         m_Nav.enabled = true;
         m_Nav.baseOffset = Random.Range(15,26);

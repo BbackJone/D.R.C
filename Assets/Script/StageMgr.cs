@@ -67,6 +67,8 @@ public class StageMgr : MonoBehaviour
 
         if (Input.GetKeyDown("y"))
             SpawnZombie("RugbyZombie");
+        if (Input.GetKeyDown("u"))
+            SpawnZombie("DevilZombie");
     }
 
 
