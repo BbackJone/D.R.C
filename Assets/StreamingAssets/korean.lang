@@ -21,6 +21,7 @@ title_store_Sniper_desc: 스나이퍼 라이플[newline]적을 관통하는 저�
 title_store_Minigun_desc: 미니건[newline]총알을 퍼붓는 무기
 title_store_RPG_desc: RPG[newline]강력한 폭발을 일으키는 무기
 title_store_Flamethrower_desc: 화염방사기[newline]넓은 범위에 불을 내뿜는 무기
+title_store_Turret_desc: 포탑[newline]적을 자동으로 공격하는 포탑
 
 weapon_Katana: 대검
 weapon_Handgun: 권총
@@ -29,6 +30,7 @@ weapon_Sniper: 스나이퍼
 weapon_Minigun: 미니건
 weapon_RPG: RPG
 weapon_Flamethrower: 화염방사기
+weapon_Turret: 포탑 설치
 
 game_score: 점수
 
