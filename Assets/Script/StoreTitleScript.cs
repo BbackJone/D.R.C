@@ -8,7 +8,6 @@ public class StoreTitleScript : MonoBehaviour {
     {
         Time.timeScale = 0f;
         gameObject.SetActive(true);
-        MoneyCheat();
     }
 
     public void HideStore()

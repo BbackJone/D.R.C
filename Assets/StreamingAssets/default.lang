@@ -9,7 +9,7 @@ title_help_credits: Credits
 title_help_credits_details: Kyungpook National Univ.[newline]Game Creation Club[newline]Revolution[newline][newline]Created by[newline]Park Junha[newline]Park Sechan[newline]Shin Woohyun
 
 title_reset_title: Clear saved data?
-title_reset_desc: This will remove all of the saved data including:[newline]  - Continue data[newline]  - Purchased weapons[newline]  - Collected coins[newline][newline]Are you sure?
+title_reset_desc: This will remove your continue data![newline][newline]Are you sure?
 title_reset_cancel: No way!
 
 title_store_title: Store
@@ -44,7 +44,7 @@ settings_sensitivity: Sensitivity
 settings_clearsavedata: Clear Saved Data
 settings_cleared: Cleared!
 settings_resume: Resume
-settings_saveandexit: Save and Exit
+settings_saveandexit: Quit Game
 
 result_title: Game Over
 result_title_clear: Congratulations!

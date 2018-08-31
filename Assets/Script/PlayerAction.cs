@@ -73,8 +73,6 @@ public class PlayerAction : MonoBehaviour {
         {
             m_Data.m_Hp = m_Data.m_MaxHp;
         }
-        //Test
-        m_Data.m_Hp = 10000;
 
         // Fix for the problem where santa plays death animation on menu when exited the game scene while dying
         if (gameObject.name != "TitleSanta") {
@@ -154,8 +152,8 @@ public class PlayerAction : MonoBehaviour {
             transform.Translate(Vector3.forward * m_Data.m_Move.z * Time.deltaTime * m_Data.m_Speed);
             transform.Translate(Vector3.right * m_Data.m_Move.x * Time.deltaTime * m_Data.m_Speed);
 
-            m_Ani.SetFloat("Speed_Horizontal", m_Data.m_Move.x);
-            m_Ani.SetFloat("Speed_Vertical", m_Data.m_Move.z);
+            m_Ani.SetFloat("Speed_Horizontal", m_Data.m_Move.x * (m_Data.m_Speed * 0.5f + 3.5f));
+            m_Ani.SetFloat("Speed_Vertical", m_Data.m_Move.z * (m_Data.m_Speed * 0.5f + 3.5f));
             yield return null;
         }
     }

@@ -31,6 +31,11 @@ public class ResultScoreContainerScript : MonoBehaviour {
     }
 
     public void SetResultsAndStopTime(int kills, int spkills, int waves, int score, bool isGameClear) {
+        SetResults(kills, spkills, waves, score, isGameClear);
+    }
+
+    public void SetResults(int kills, int spkills, int waves, int score, bool isGameClear)
+    {
         this.kills = kills;
         this.spkills = spkills;
         this.waves = waves;

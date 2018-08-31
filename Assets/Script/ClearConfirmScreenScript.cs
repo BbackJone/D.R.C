@@ -15,9 +15,6 @@ public class ClearConfirmScreenScript : MonoBehaviour {
 
     public void ClearSaveAndHideClearConfirmScreen() {
         // continue data will get cleared by TitleButtonScript.
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("coins", 0);
-        PlayerPrefs.Save();
         HideClearConfirmScreen();
     }
 }

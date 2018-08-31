@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TurretSpawnerScript : MonoBehaviour {
     public Text chargeRateText;
+    public AudioClip AudioClip;
+    public AudioSource AudioSource;
 
     public int chargeRate = 100;
 
@@ -37,6 +39,7 @@ public class TurretSpawnerScript : MonoBehaviour {
     public void SpawnTurretAt(Transform position)
     {
         if (chargeRate < 100) return;
+        AudioSource.PlayOneShot(AudioClip);
         chargeRate = 0;
         var newTurret = ObjectPoolMgr.instance.CreatePooledObject("TurretBody", position.position, position.rotation);
     }

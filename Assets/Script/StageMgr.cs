@@ -34,10 +34,16 @@ public class StageMgr : MonoBehaviour
     private List<string> m_NormalZombieNameList = new List<string>();
     private List<string> m_SpecialZombieNameList = new List<string>();
 
+    private PlayerData m_Data;
+
+    private ResultScoreContainerScript rscs;
+
     private void Awake()
     {
         instance = this;
         m_SaveMgr = GameObject.Find("SaveDataManager").GetComponent<SaveDataManager>();
+        m_Data = GameObject.Find("Santa").GetComponent<PlayerData>();
+        rscs = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
     }
 
     // Use this for initialization
@@ -46,7 +52,7 @@ public class StageMgr : MonoBehaviour
         int startWave = 1;
         if (m_SaveMgr.currentSaveData != null) startWave = m_SaveMgr.currentSaveData.currentWave;
 
-        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[6];
+        m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[startWave];
 
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         StartCoroutine("CheckWave");
@@ -146,6 +152,19 @@ public class StageMgr : MonoBehaviour
 
     public void NextWave()
     {
+        if(m_CurrentWave.Level + 1 > ObjectManager.m_Inst.m_DBMgr.m_WaveDB.Count)
+        {
+            rscs.SetResultsAndStopTime(
+                            rscs.kills,
+                            rscs.spkills,
+                            m_CurrentWave.Level,
+                            ((m_CurrentWave.Level - 1) * 10) + rscs.kills + (rscs.spkills * 10),
+                            true);
+            ObjectManager.m_Inst.NextScene("Result");
+
+            return;
+        }
+
         m_CurrentWave = ObjectManager.m_Inst.m_DBMgr.m_WaveDB[m_CurrentWave.Level + 1];
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         m_Spawned_NormalZombieNumber = 0;
@@ -165,6 +184,15 @@ public class StageMgr : MonoBehaviour
                 + m_Current_DevilZombieNumber <= 0)
             {
                 NextWave();
+
+                // save
+                SaveData sd = m_SaveMgr.currentSaveData;
+                sd.currentWave = m_CurrentWave.Level;
+                sd.kills = rscs.kills;
+                sd.elapsedTime = (int)m_GameTime;
+                sd.health = m_Data.m_Hp;
+                sd.spkills = rscs.spkills;
+                SaveData.Write(sd, 0);
             }
 
             yield return null;

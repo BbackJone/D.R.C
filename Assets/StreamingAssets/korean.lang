@@ -9,7 +9,7 @@ title_help_credits: 만든 사람들
 title_help_credits_details: 경북대학교 게임제작동아리[newline]레볼루션[newline][newline]개발[newline]박준하[newline]박세찬[newline]신우현
 
 title_reset_title: 진행상황을 초기화할까요?
-title_reset_desc: 아래 데이터들이 완전히 제거됩니다![newline]  - 이어하기 데이터[newline]  - 무기 구매 내역[newline]  - 수집한 코인[newline][newline]정말 진행상황을 초기화할까요?
+title_reset_desc: 초기화하면 이어하기 데이터가 완전히 사라지게 됩니다![newline][newline]정말 진행상황을 초기화할까요?
 title_reset_cancel: 취소
 
 title_store_title: 상점
@@ -44,7 +44,7 @@ settings_sensitivity: 회전 감도
 settings_clearsavedata: 진행상황 초기화
 settings_cleared: 초기화 완료!
 settings_resume: 재개
-settings_saveandexit: 저장하고 나가기
+settings_saveandexit: 게임 중단
 
 result_title: 게임 오버
 result_title_clear: 축하합니다!

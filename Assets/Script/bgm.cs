@@ -20,7 +20,6 @@ public class bgm : MonoBehaviour {
 
     void UpdateBgmVolume()
     {
-        Debug.Log(VolumeHolderScript.instance.musicVol + "");
         musicvol = VolumeHolderScript.instance.musicVol;
         bgmSource.volume = musicvol;
     }

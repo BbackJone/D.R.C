@@ -82,6 +82,7 @@ public class SettingsIngameScript : MonoBehaviour {
 
     public void SaveAndExit() {
         if (saveFeatureAvailable) {
+            /*
             SaveData sd = saveMgr.currentSaveData;
             sd.currentWave = stageMgr.m_CurrentWave.Level;
             sd.kills = rscs.kills;
@@ -89,6 +90,7 @@ public class SettingsIngameScript : MonoBehaviour {
             sd.health = pdata.m_Hp;
             sd.spkills = rscs.spkills;
             SaveData.Write(sd, 0);
+            */
             Destroy(GameObject.Find("ResultScoreContainer"));
             Time.timeScale = 1f;
             ObjectManager.m_Inst.NextScene("Menu");
