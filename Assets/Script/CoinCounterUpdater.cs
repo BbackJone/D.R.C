@@ -20,7 +20,7 @@ public class CoinCounterUpdater : MonoBehaviour {
     }
 
     IEnumerator UpdateCoinCount() {
-        while (!lu.lm.IsLoaded) {
+        while (lu.lm == null || !lu.lm.IsLoaded) {
             yield return new WaitForEndOfFrame();
         }
 

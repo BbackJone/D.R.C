@@ -18,4 +18,9 @@ public class WeaponButtonEnabler : MonoBehaviour {
             return;
         }
     }
+
+    public void HideButton()
+    {
+        gameObject.SetActive(false);
+    }
 }

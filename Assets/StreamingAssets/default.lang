@@ -21,6 +21,7 @@ title_store_Sniper_desc: Sniper Rifle[newline]Penetrate enemies
 title_store_Minigun_desc: Minigun[newline]Raining bullets
 title_store_RPG_desc: RPG[newline]Creates powerful explosion
 title_store_Flamethrower_desc: Flamethrower[newline]Sets fire on wide range
+title_store_Turret_desc: Turret[newline]Attack enemies automatically
 
 weapon_Katana: Katana
 weapon_Handgun: Handgun
@@ -29,6 +30,7 @@ weapon_Sniper: Sniper
 weapon_Minigun: Minigun
 weapon_RPG: RPG
 weapon_Flamethrower: Flamethrower
+weapon_Turret: Install Turret
 
 game_score: Score
 
