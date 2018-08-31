@@ -29,6 +29,8 @@ public class PlayerInputTouch : MonoBehaviour {
 
     //private Vector2[] touchDragDeltaA;
     private float touchDragDist;
+
+    private bool isSingleShotAreaPressed = false;
     
 	void Start () {
         if (controlStick == null) enabled = false;
@@ -40,6 +42,7 @@ public class PlayerInputTouch : MonoBehaviour {
         mouseX = Input.mousePosition.x;
         mouseY = Input.mousePosition.y;
 
+        StartCoroutine(SingleShot());
         UpdateSensitivity();
     }
     
@@ -59,14 +62,17 @@ public class PlayerInputTouch : MonoBehaviour {
         #region Look-around only implementation
         // Handle camera movement
         if (Input.touchCount > 0) {
+            isSingleShotAreaPressed = false;
+
             // for every active touch pointer...
             for (int i = 0; i < Input.touchCount; i++) {
                 Touch touch = Input.GetTouch(i);
 
                 // top-left singleshot
-                if (touch.phase == TouchPhase.Began && touch.position.x < Screen.width / 2 && touch.position.y > Screen.height / 2)
+                if (touch.position.x < Screen.width / 2 && touch.position.y > Screen.height / 2)
                 {
-                    StartCoroutine(SingleShot());
+                    //StartCoroutine(SingleShot());
+                    isSingleShotAreaPressed = true;
                 }
 
                 // if this touch pointer is not using control stick...
@@ -149,8 +155,19 @@ public class PlayerInputTouch : MonoBehaviour {
 
     IEnumerator SingleShot()
     {
-        data.m_isShooting = true;
-        yield return new WaitForEndOfFrame();
-        data.m_isShooting = false;
+        while (true)
+        {
+            if (isSingleShotAreaPressed)
+            {
+                bool prevShooting = data.m_isShooting;
+                data.m_isShooting = true;
+                while (isSingleShotAreaPressed)
+                {
+                    yield return new WaitForEndOfFrame();
+                }
+                data.m_isShooting = prevShooting;
+            }
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
