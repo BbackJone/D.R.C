@@ -56,4 +56,19 @@ result_return: Return
 result_loading: Please wait...
 result_coins: You earned {0} coins!
 
+zombiedex_title: ZombieDex
+zombiedex_prev: <   Prev
+zombiedex_next: Next   >
+zombiedex_quit: Return
+zombiedex_NormalZombies: Zombies
+zombiedex_NormalZombies_desc: People who turned into zombies couldn't remember anything; they attack santa who came to give presents. All zombies take more damage when attacked its head, and will rarely drop an orb that recovers your health when dead. They always move towards santa, so bring them into one place and attack at once.
+zombiedex_SoldierZombie: Soldier Zombie
+zombiedex_SoldierZombie_desc: Failing to secure the village, these soldiers have turned into zombies. They have a gun and attack with it from distance. They have bit more health than normal zombies, but are slower. Take them out from distance.
+zombiedex_RugbyZombie: Rugby Zombie
+zombiedex_RugbyZombie_desc: A bunch of rugby players who once were a pride of small village has turned into zombies. They charge into santa at a distance after brief pause. Rugby Zombie's charge attack will push you hard, so be careful with those charging.
+zombiedex_PrisonerZombie: Killer Zombie
+zombiedex_PrisonerZombie_desc: They escaped from the prison while the village is in trouble, but also turned into zombies. They rush to santa and stab with dangerous weapon. Killer Zombie's attack deals devastatingly high damage, but they have very low health. take them out quickly and be careful not to be stabbed by them.
+zombiedex_DevilZombie: Devil Zombie
+zombiedex_DevilZombie_desc: A zombie in form of devil came from faraway place. They approach santa from the sky and shoot giant fireball. explosion from fireball will not only give damage to wide area, but also push you very hard. It is very hard to fight in their attack range, so take them out quickly before they come close to santa.
+
 ok: OK

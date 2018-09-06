@@ -56,4 +56,19 @@ result_return: 돌아가기
 result_loading: 불러오는 중...
 result_coins: {0} 코인을 획득했습니다!
 
+zombiedex_title: 좀비도감
+zombiedex_prev: <   이전
+zombiedex_next: 다음   >
+zombiedex_quit: 돌아가기
+zombiedex_NormalZombies: 좀비들
+zombiedex_NormalZombies_desc: 좀비가 되어버린 마을 사람들은 아무것도 기억하지 못하고 선물을 나눠주러 온 산타를 공격하려 합니다. 모든 좀비는 머리를 노리면 더 빨리 처치할 수 있으며 죽을 때 가끔씩 체력을 회복하는 아이템을 떨어트립니다. 항상 산타를 따라다니므로 한 데 몰아 공격하는 것이 좋습니다.
+zombiedex_SoldierZombie: 군인 좀비
+zombiedex_SoldierZombie_desc: 마을을 통제하지 못하고 함께 좀비가 되어버린 군인입니다. 산타에게 달라붙지 않고 조금 먼 거리에서 총으로 공격합니다. 일반 좀비보다 체력이 조금 더 많지만 이동속도가 느리니 거리를 두고 멀리서 공격하는 것이 좋습니다.
+zombiedex_RugbyZombie: 럭비 좀비
+zombiedex_RugbyZombie_desc: 한때는 마을의 자랑거리였으나 지금은 좀비가 되어버린 럭비 선수들입니다. 산타에게서 조금 떨어진 곳에 잠시 멈춰섰다가 산타를 향해 전력질주합니다. 럭비 좀비의 질주에 부딪히면 멀리 튕겨져나가게 되니 돌진을 피하면서 공격하는 것이 좋습니다.
+zombiedex_PrisonerZombie: 살인마 좀비
+zombiedex_PrisonerZombie_desc: 마을이 혼란해진 틈을 타 교도소에서 탈출했으나 좀비가 되어버린 살인마입니다. 빠른 속도로 달려와 산타를 흉기로 공격합니다. 살인마 좀비는 공격력은 강하지만 체력은 약하므로 공격을 받지 않도록 주의하며 공격하는 것이 좋습니다.
+zombiedex_DevilZombie: 악마 좀비
+zombiedex_DevilZombie_desc: 어디선가 나타난 악마 형상을 한 좀비입니다. 높은 곳에서 산타를 향해 거대한 불덩이를 발사합니다. 불덩이는 땅에 닿으면 폭발하며 산타를 멀리 밀어내 악마 좀비를 노리기 힘들게 하므로 멀리서 다가오고 있을 때 신속하게 처치하는 것이 좋습니다.
+
 ok: 확인
