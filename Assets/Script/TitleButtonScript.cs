@@ -96,4 +96,9 @@ public class TitleButtonScript : MonoBehaviour {
         GameObject.Find("SaveClearButton").transform.Find("Text").GetComponent<Text>().text = lu.lm.Get("settings_cleared");
         transform.Find("ContinueButton").transform.Find("Text").GetComponent<Text>().text = lu.lm.Get("title_continue_nf");
     }
+
+    public void LoadDexScene()
+    {
+        SceneManager.LoadScene("ZombieDex");
+    }
 }

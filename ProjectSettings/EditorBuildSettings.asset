@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Result.unity
     guid: 7125557854507c34c891cd588fe943c2
+  - enabled: 1
+    path: Assets/Scene/ZombieDex.unity
+    guid: 950244b70b4933448b9bda47d27bd9ba
   m_configObjects: {}
