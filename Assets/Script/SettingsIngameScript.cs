@@ -9,15 +9,18 @@ public class SettingsIngameScript : MonoBehaviour {
     private ResultScoreContainerScript rscs;
     private PlayerData pdata;
     private bool saveFeatureAvailable;
+    public Light sun;
 
     public Slider musicVolumeSlider;
     public Slider seVolumeSlider;
     public Slider touchSensitivitySlider;
+    public Slider brightnessSlider;
     public PlayerInputTouch touchInput;
 
     float musicVol;
     float seVol;
     float sensitivity;
+    float brightness;
 
     // Possible problem: Attack hitbox collision may continue to occur after the game paused
     // └Workaround: other scripts can use (Time.timeScale == 1f) to determine if the game is paused or not
@@ -42,6 +45,13 @@ public class SettingsIngameScript : MonoBehaviour {
             }
             PlayerPrefs.Save();
         }
+        if (brightnessSlider.value != brightness)
+        {
+            PlayerPrefs.SetFloat("brightness", brightnessSlider.value);
+            brightness = brightnessSlider.value;
+            sun.intensity = brightness;
+            PlayerPrefs.Save();
+        }
     }
 
     void OnEnable() {
@@ -56,9 +66,11 @@ public class SettingsIngameScript : MonoBehaviour {
         musicVol = PlayerPrefs.GetFloat("musicvol", 1f);
         seVol = PlayerPrefs.GetFloat("sevol", 1f);
         sensitivity = PlayerPrefs.GetFloat("sensitivity", 0.5f);
+        brightness = PlayerPrefs.GetFloat("brightness", 0.5f);
         musicVolumeSlider.value = musicVol;
         seVolumeSlider.value = seVol;
         touchSensitivitySlider.value = sensitivity;
+        brightnessSlider.value = brightness;
         gameObject.SetActive(true);
     }
 

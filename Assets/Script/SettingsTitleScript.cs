@@ -9,11 +9,14 @@ public class SettingsTitleScript : MonoBehaviour {
     public Slider musicVolumeSlider;
     public Slider seVolumeSlider;
     public Slider touchSensitivitySlider;
+    public Slider brightnessSlider;
     public PlayerInputTouch touchInput;
+    public Light sun;
 
     float musicVol;
     float seVol;
     float sensitivity;
+    float brightness;
 
     void Update() {
         if (musicVolumeSlider.value != musicVol) {
@@ -35,15 +38,24 @@ public class SettingsTitleScript : MonoBehaviour {
             }
             PlayerPrefs.Save();
         }
+        if (brightnessSlider.value != brightness)
+        {
+            PlayerPrefs.SetFloat("brightness", brightnessSlider.value);
+            brightness = brightnessSlider.value;
+            sun.intensity = brightness;
+            PlayerPrefs.Save();
+        }
     }
 
     private void ShowSettings() {
         musicVol = PlayerPrefs.GetFloat("musicvol", 1f);
         seVol = PlayerPrefs.GetFloat("sevol", 1f);
         sensitivity = PlayerPrefs.GetFloat("sensitivity", 0.5f);
+        brightness = PlayerPrefs.GetFloat("brightness", 0.5f);
         musicVolumeSlider.value = musicVol;
         seVolumeSlider.value = seVol;
         touchSensitivitySlider.value = sensitivity;
+        brightnessSlider.value = brightness;
         gameObject.SetActive(true);
     }
 

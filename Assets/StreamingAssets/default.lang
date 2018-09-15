@@ -41,6 +41,8 @@ settings_musicvol: Music
 settings_sevol: SE
 settings_control: Control
 settings_sensitivity: Sensitivity
+settings_light: Light
+settings_brightness: Brightness
 settings_clearsavedata: Clear Saved Data
 settings_cleared: Cleared!
 settings_resume: Resume

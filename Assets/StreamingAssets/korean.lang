@@ -41,6 +41,8 @@ settings_musicvol: 음악
 settings_sevol: 효과음
 settings_control: 조작
 settings_sensitivity: 회전 감도
+settings_light: 광원
+settings_brightness: 밝기
 settings_clearsavedata: 진행상황 초기화
 settings_cleared: 초기화 완료!
 settings_resume: 재개
