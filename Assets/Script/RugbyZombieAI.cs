@@ -43,6 +43,11 @@ public class RugbyZombieAI : MonoBehaviour {
         m_Data.m_AttackTimer = m_Data.m_AttackSpeed;
     }
 
+    private void Start()
+    {
+        m_Nav.speed = 2f;
+    }
+
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -50,8 +55,6 @@ public class RugbyZombieAI : MonoBehaviour {
             AttackTarget();
         DeathCheck();
     }
-
-
 
     void AttackTarget()
     {
@@ -75,6 +78,11 @@ public class RugbyZombieAI : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            m_target = ObjectManager.m_Inst.m_Player.transform;
+            AttackTarget();
+        }
     }
 
     IEnumerator NavMove()
@@ -85,14 +93,14 @@ public class RugbyZombieAI : MonoBehaviour {
             {
                 if (m_TargetDistance < m_Data.m_AttackRange)
                 {
-                    m_Nav.Stop();
+                    m_Nav.isStopped = true;
 
                     float move = m_Nav.desiredVelocity.magnitude;
                     m_Ani.SetFloat("Speed", move);
                 }
                 else if (m_Attacking == false)
                 {
-                    m_Nav.Resume();
+                    m_Nav.isStopped = false;
                     m_Nav.SetDestination(m_target.position);
 
                     float move = m_Nav.desiredVelocity.magnitude;

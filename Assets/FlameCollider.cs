@@ -40,7 +40,6 @@ public class FlameCollider : MonoBehaviour {
         {
             int[] DamageSet = new int[2] { 3, 3 };
             other.gameObject.SendMessage("GetDamage", DamageSet);
-            Debug.Log("OnTriggerStay");
         }
     }
 }

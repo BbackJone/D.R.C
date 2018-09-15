@@ -42,7 +42,6 @@ public class ZombieData : MonoBehaviour
 
     void Awake()
     {
-        
         Initialize();
         resultScoreContainer = GameObject.Find("ResultScoreContainer").GetComponent<ResultScoreContainerScript>();
         turretSpawnerScript = GameObject.Find("TurretSpawner").GetComponent<TurretSpawnerScript>();
