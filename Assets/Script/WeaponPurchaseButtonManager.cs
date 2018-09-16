@@ -73,6 +73,8 @@ public class WeaponPurchaseButtonManager : MonoBehaviour {
             PlayerPrefs.SetInt("coins", coin - weaponPrice);
             PlayerPrefs.SetInt("WeaponPurchased_" + weaponName, 1);
             PlayerPrefs.Save();
+            weaponPurchaseButton.interactable = false;
+            weaponPurchaseButtonImage.color = Color.green;
         } else {
             otherObject.SendMessage("uisound4");
             StopCoroutine(SetRedThenFadeRevertCoinCounterColor());

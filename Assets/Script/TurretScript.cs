@@ -56,7 +56,7 @@ public class TurretScript : MonoBehaviour {
                     GameObject bullet = ObjectPoolMgr.instance.CreatePooledObject("Handgun_Bullet", transform.position, transform.rotation);
                     bullet.SendMessage("SetBodyDamage", 20);
                     bullet.SendMessage("SetHeadDamage", 40);
-                    AudioSource.PlayOneShot(AudioClip);
+                    AudioSource.PlayOneShot(AudioClip, VolumeHolderScript.instance.seVol);
 
                     muzzleFlash.gameObject.SetActive(true);
                     Invoke("TurnOffMuzzleFlash", 0.05f);

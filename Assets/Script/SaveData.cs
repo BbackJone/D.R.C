@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 [System.Serializable]
@@ -20,8 +21,11 @@ public class SaveData {
     public int spkills;
     public int elapsedTime;
     public int health;
+    public List<Vector3> turretPos;
 
     private const char delimiter = '|';
+    private const char turretDelimiter = '?';
+    private const char turretPosDelimiter = '!';
 
     private SaveData() { }
     
@@ -90,16 +94,34 @@ public class SaveData {
     }
 
     private static string SaveDataToString(SaveData sd) {
+        string turretData;
+        if (sd.turretPos == null || sd.turretPos.Count == 0) {
+            turretData = null;
+        } else {
+            StringBuilder sb = new StringBuilder();
+            foreach (Vector3 tpos in sd.turretPos) {
+                sb.Append(tpos.x);
+                sb.Append(turretPosDelimiter);
+                sb.Append(tpos.y);
+                sb.Append(turretPosDelimiter);
+                sb.Append(tpos.z);
+                sb.Append(turretDelimiter);
+            }
+            sb.Length = sb.Length - 1;
+            turretData = sb.ToString();
+        }
+
         return string.Join(delimiter.ToString(), new string[] { sd.currentWave.ToString(),
                                                                 sd.kills.ToString(),
                                                                 sd.elapsedTime.ToString(),
                                                                 sd.health.ToString(),
-                                                                sd.spkills.ToString() });
+                                                                sd.spkills.ToString(),
+                                                                turretData });
     }
 
     private static SaveData StringToSaveData(string rsd) {
         string[] rsds = rsd.Split(delimiter);
-        if (rsds.Length != 5) return null;
+        if (rsds.Length < 4) return null;
 
         SaveData sd = new SaveData();
 
@@ -108,6 +130,23 @@ public class SaveData {
         sd.elapsedTime = int.Parse(rsds[2]);
         sd.health = int.Parse(rsds[3]);
         sd.spkills = int.Parse(rsds[4]);
+
+        try {
+            if (rsds.Length == 5 || string.IsNullOrEmpty(rsds[5].Trim())) {
+                sd.turretPos = null;
+            } else {
+                string[] turPos = rsds[5].Trim().Split(turretDelimiter);
+                sd.turretPos = new List<Vector3>();
+                foreach (string tur in turPos) {
+                    string[] turXY = tur.Split(turretPosDelimiter);
+                    Vector3 vTurPos = new Vector3(float.Parse(turXY[0]), float.Parse(turXY[1]), float.Parse(turXY[2]));
+                    sd.turretPos.Add(vTurPos);
+                }
+            }
+        } catch (Exception) {
+            // if any kind of error happens during turret parsing, just pretend like turrets never existed
+            sd.turretPos = null;
+        }
 
         return sd;
     }

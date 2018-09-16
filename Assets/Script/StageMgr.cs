@@ -38,6 +38,8 @@ public class StageMgr : MonoBehaviour
 
     private ResultScoreContainerScript rscs;
 
+    public TurretSpawnerScript turretSpawnerScript;
+
     private void Awake()
     {
         instance = this;
@@ -193,6 +195,8 @@ public class StageMgr : MonoBehaviour
                 sd.elapsedTime = (int)m_GameTime;
                 sd.health = m_Data.m_Hp;
                 sd.spkills = rscs.spkills;
+                sd.turretPos = turretSpawnerScript.spawnedTurrets;
+
                 SaveData.Write(sd, 0);
             }
 
