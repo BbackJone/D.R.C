@@ -114,7 +114,7 @@ public class StageMgr : MonoBehaviour
         //Spawn Devil zombies
         if (m_Spawned_DevilZombieNumber < m_CurrentWave.DevilZombieNumber)
         {
-            if (m_GameTime % 8f < 0.1f)
+            if (m_GameTime % 0.01f <= 0.00002f)
             {
                 SpawnZombie("DevilZombie");
             }
@@ -169,6 +169,7 @@ public class StageMgr : MonoBehaviour
         ShowImageForseconds(m_LevelImage[m_CurrentWave.Level-1], 3f);
         m_Spawned_NormalZombieNumber = 0;
         m_Spawned_SpecialZombieNumber = 0;
+        m_Spawned_DevilZombieNumber = 0;
 
         StopCoroutine("CheckWave");     //give 3 seconds to spawn zombie in scene
         StartCoroutine("CheckWave");
