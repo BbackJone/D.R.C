@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
+  AndroidKeystoreName: C:/Users/user/Desktop/DRCKEY~1/drckeystore.keystore
   AndroidKeyaliasName: drc
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
