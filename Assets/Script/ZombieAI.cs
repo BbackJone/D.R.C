@@ -13,6 +13,7 @@ public class ZombieAI : MonoBehaviour {
     public GameObject obj_head;
     private BoxCollider body_col;
     private BoxCollider head_col;
+    private CapsuleCollider unit_col;
 
     private Transform m_target;
     private float m_TargetDistance;
@@ -25,6 +26,7 @@ public class ZombieAI : MonoBehaviour {
 
         body_col = obj_body.GetComponent<BoxCollider>();
         head_col = obj_head.GetComponent<BoxCollider>();
+        unit_col = GetComponent<CapsuleCollider>();
     }
 
     void OnEnable()
@@ -102,6 +104,7 @@ public class ZombieAI : MonoBehaviour {
                     m_Ani.SetTrigger("DeathTrigger");
                     body_col.enabled = false;
                     head_col.enabled = false;
+                    unit_col.enabled = false;
                     StopCoroutine("FindTarget");
                     StopCoroutine("TargetAttack");
                     StopCoroutine("NavMove");
@@ -119,6 +122,7 @@ public class ZombieAI : MonoBehaviour {
                 {
                     body_col.enabled = true;
                     head_col.enabled = true;
+                    unit_col.enabled = true;
                     //Because SetActive(false) with colliders inactive make a kind of bug(collider components are out of order), this is required
                     this.gameObject.SetActive(false);
                     StageMgr.instance.AddNormalZombieNumber(-1);

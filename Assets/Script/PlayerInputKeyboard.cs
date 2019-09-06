@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerInputKeyboard : MonoBehaviour {
     private PlayerData data;
 
-    private float moveSensitivity = 1.5f;
+    private float moveSensitivity = 1.0f;
     private float dx = 0f;
     private float dy = 0f;
 
